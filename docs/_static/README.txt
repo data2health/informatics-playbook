@@ -1,0 +1,1 @@
+All static files go to this folder.
