@@ -3,12 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Reusable Data Best Practices's documentation!
-========================================================
+Reusable Data Best Practices
+============================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   chapters/chapter_1
+   chapters/chapter_2
+   chapters/chapter_3
+   chapters/chapter_4
+   chapters/chapter_5
 
 
 
