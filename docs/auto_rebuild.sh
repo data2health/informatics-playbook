@@ -1,3 +1,3 @@
 #! env bash
 # pip install watchdog
-watchmedo shell-command --pattern="*.rst;*.md" --recursive --command="make html" .
+watchmedo shell-command --pattern="*.rst;*.md;*.py" --recursive --command="make html" .

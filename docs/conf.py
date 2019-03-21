@@ -183,3 +183,13 @@ epub_exclude_files = ['search.html']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+
+
+
+try:
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_options = {}
+except ImportError:
+    print('Warning: "sphinx_rtd_theme" is not installed, fall back to default theme.')
