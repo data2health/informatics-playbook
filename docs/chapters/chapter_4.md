@@ -1,4 +1,4 @@
-# Chapter 3: Managing Translational Informatics Projects
+# Chapter 4: Managing Translational Informatics Projects
 
 ## Intended audience
 Managers of Translational Informatics Projects
