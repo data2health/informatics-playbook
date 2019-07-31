@@ -1,12 +1,12 @@
 # Chapter 3: Managing Translational Informatics Projects
 
-# Intended audience
+## Intended audience
 Managers of Translational Informatics Projects
 
-# Why is this important
+## Why is this important
 Translational Informatics projects are increasingly cross-institutional and even international; managing them comes with lots of shared pain points. This guidance will help anyone who is organizing or managing cross-functional distributed teams that develop code or that analyze data across the translational divide. Specifically, we will introduce several the practical tools and techniques for managers to facilitate these kinds of endeavors. Exercises in the companion tutorial will familiarize participants with helpful tools and techniques, and to help them make informed decisions about which tools might work best for their particular contexts. We conclude with a session wherein all participants are welcome to share additional pain points and related experience.
 
-# Takeaways
+## Takeaways
 
 #### Pick the project management technique that is appropriate for your project (agile, waterfall, kanban, etc)
 #### Understand the implications of that management technique for the full lifecycle of your project
@@ -22,5 +22,5 @@ Translational Informatics projects are increasingly cross-institutional and even
 #### Don't be afraid to course correct
 
 
-# Acknowledgements
+## Acknowledgements
 Thanks to Justin Ramsdill for the [Agile introduction](https://docs.google.com/presentation/d/1WbOkxvHcecftLYahxpeNJHbvNdQEbOPbIHf1pDPCwgU/edit#slide=id.p1) (also linked from the MTIP tutorial site).
