@@ -1,6 +1,9 @@
-# Chapter 3
+# Chapter 3: Sharing Educational resources
 
-## MTIP training
-## Identifier hygiene
-## Data Sharing Plan templates for CTSA PIs
-## Educational competencies
+# Intended audience
+
+# Why is this important
+
+# Takeaways
+
+# Acknowledgements
