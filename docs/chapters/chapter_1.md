@@ -1,4 +1,5 @@
-# Chapter 1
+# Chapter 1: Research Data Licensing
+
 # Intended audience
 
 This guidance is primarily targeted to providers of publicly-disseminated research data and knowledge and to the funders thereof. While we try to cover as much of the licensing possibilities of a data resource that we can, in a few special cases we may choose a particular "hat" to wear while evaluating to prevent a combinatorial explosion, which may also reduce the clarity of our curations for the community. In these cases, we may take on the role of a (1) non-commercial (2) academic (3) group that is (4) based in the US and trying to (5) create an aggregating resource, noting that other entities may have different results in the license commentary.
