@@ -1,9 +1,13 @@
 # Chapter 3: Sharing Educational resources
 
-# Intended audience
+## Intended audience
+TODO
 
-# Why is this important
+## Why is this important
+TODO
 
-# Takeaways
+## Takeaways
+TODO
 
-# Acknowledgements
+## Acknowledgements
+TODO
