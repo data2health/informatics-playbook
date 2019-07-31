@@ -10,16 +10,16 @@ The issue is as old as scholarship itself: readers have always required persiste
 
 The list of lessons is below; [the paper from which they are derived contains examples and rationale for each one.](10.1371/journal.pbio.2001414)
 
-## Lesson 1. Credit any derived content using its original identifier
-## Lesson 2. Help local IDs travel well: Document prefix and patterns
-## Lesson 3. Opt for simple, durable web resolution
-## Lesson 4. Avoid embedding meaning or relying on it for uniqueness
-## Lesson 5. Design new identifiers for diverse uses by others
-## Lesson 6. Implement a version-management policy
-## Lesson 7. Do not reassign or delete identifiers
-## Lesson 8. Make URIs clear and findable
-## Lesson 9. Document the identifiers you issue and use
-## Lesson 10. Reference and display responsibly
+#### Lesson 1. Credit any derived content using its original identifier
+#### Lesson 2. Help local IDs travel well: Document prefix and patterns
+#### Lesson 3. Opt for simple, durable web resolution
+#### Lesson 4. Avoid embedding meaning or relying on it for uniqueness
+#### Lesson 5. Design new identifiers for diverse uses by others
+#### Lesson 6. Implement a version-management policy
+#### Lesson 7. Do not reassign or delete identifiers
+#### Lesson 8. Make URIs clear and findable
+#### Lesson 9. Document the identifiers you issue and use
+#### Lesson 10. Reference and display responsibly
 
 
 Better identifier design, provisioning, documentation, and referencing can address many of the identifier problems encountered in the life science data cycle—leading to more efficient and effective science. However, best practices will not be adopted on the basis of their community benefit alone; the practices must be both easy and rewarding to the groups that do the implementing. In the broader context of scholarly publishing, this is just what DOIs afford; DOIs succeeded because they were well aligned with journals’ business goals (tracking citations) and because the cost was worth it to them. However, in the current world where everyone is a data provider, alignment with business goals is still being explored: meta resolvers can provide a use case for journals and websites seeking easier access to content, while software applications leverage these identifier links to mine for knowledge.
