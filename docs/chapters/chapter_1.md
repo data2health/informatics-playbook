@@ -1,10 +1,10 @@
 # Chapter 1: Research Data Licensing
 
-# Intended audience
+## Intended audience
 
 This guidance is primarily targeted to providers of publicly-disseminated research data and knowledge and to the funders thereof. While we try to cover as much of the licensing possibilities of a data resource that we can, in a few special cases we may choose a particular "hat" to wear while evaluating to prevent a combinatorial explosion, which may also reduce the clarity of our curations for the community. In these cases, we may take on the role of a (1) non-commercial (2) academic (3) group that is (4) based in the US and trying to (5) create an aggregating resource, noting that other entities may have different results in the license commentary.
 
-# Why is this important?
+## Why is this important?
 
 The increasing volume and variety of biomedical data have created new opportunities to integrate data for novel analytics and discovery. Despite a number of clinical success stories that rely on data integration (rare disease diagnostics, cancer therapeutic discovery, drug repurposing, etc.), within the academic research community, data reuse is not typically promoted. In fact, data reuse is often considered not innovative in funding proposals, and has even come under attack (the now infamous [Research Parasites NEJM article](https://www.nejm.org/doi/full/10.1056/NEJMe1516564)). 
 
@@ -14,15 +14,15 @@ How reusable are most data resources? In our [recently published manuscript](htt
 
 Putting this all together, a majority of resources would not meet basic criteria for legal frictionless use for downstream data integration and redistribution activities --despite the fact that most of these resources are publicly funded, which should mean the content is freely available for reuse by the public.
 
-# Takeaways
+## Takeaways
 
 To receive a perfect reusability score, the following criteria should be met:
 
-## A) License is public, discoverable, and standard
-## B) License requires no further negotiation and its scope is both unambiguous and covers all of the data
-## C) The data covered by the license is easily accessible
-## D) License has little or no restrictions on kinds of (re)use
-## E) License has little or no restrictions on who can (re)use the data
+### A) License is public, discoverable, and standard
+### B) License requires no further negotiation and its scope is both unambiguous and covers all of the data
+### C) The data covered by the license is easily accessible
+### D) License has little or no restrictions on kinds of (re)use
+### E) License has little or no restrictions on who can (re)use the data
 
 The full rubric is available at http://reusabledata.org/criteria.html
 
@@ -30,7 +30,7 @@ The full rubric is available at http://reusabledata.org/criteria.html
 
 The hardest data to license (in or out) is often data integrated from multiple sources with missing, heterogeneous, non-standard, and / or incompatible licenses. The opportunity exists to improve this from the groud up; while the situation will never be perfect, it could be substantially improved with modest effort.
 
-# Acknowledgements
+## Acknowledgements
 
 ReusableData.org is funded by the National Center for Advancing Translational Sciences (NCATS) OT3 TR002019 as part of the [Biomedical Data Translator project](https://ncats.nih.gov/translator). 
 The (Re)usable Data Project would like to acknowledge the assistance of many more people than can be listed here. Please visit the [about page](http://reusabledata.org/about.html) for the full list.
