@@ -13,6 +13,7 @@ Each chapter should have the following sections:
 | Section  | Description |
 |  --------|-------------|
 |Intended audience | The chapters will cover heterogeous and not necessarily overlapping target audiences; therefore please include a short description to ensure readers' time is wisely spent. |
+| Current version / status | Guidance tbd, but some indication of whether the draft is early, actively soliciting comments, or ready to implement |
 |Why this is important| Description of the problem and vision for what best practices will address or make possible|
 | Takeaway List | A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles). 
 | Deep dive into takeaways | Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight as to why doing it one way (vs. another) is better. |
