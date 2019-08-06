@@ -16,7 +16,7 @@ Each chapter should have the following sections:
 |Why this is important| Description of the problem and vision for what best practices will address or make possible|
 | Takeaway List | A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles). 
 | Deep dive into takeaways | Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight as to why doing it one way (vs. another) is better. |
-|Lessons learned / summary | This section is optional but encouraged in chapters where the majority of the content is incorporated by reference only | 
+|Lessons learned / summary | This section is optional but encouraged in chapters where the source of truth for the majority of the content is external (Incorporated here by reference only) | 
 | Acknowledgements | Key sources and or contributors. Note that references are most easily incorporated as hyperlinks rather than footnotes.|
 
 
