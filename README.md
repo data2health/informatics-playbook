@@ -7,6 +7,18 @@ https://reusable-data-best-practices.readthedocs.io
 
 Any new commit push to this repo will trigger a rebuild, so you will see the latest changes from the above URL.
 
+## Chapter Template [DRAFT]
+Each chapter should have the following sections:
+
+| Section  | Description |
+|  --------|-------------|
+|Intended audience | The chapters will cover heterogeous and not necessarily overlapping target audiences; therefore please include a short description to ensure readers' time is wisely spent. |
+|Why this is important| Description of the problem and vision for what best practices will address or make possible|
+|Takeaways | A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles). These should include specific examples that demonstrate that practice XYZ is possible and offer some insight as to why doing it one way (vs. another) is better. |
+|Lessons learned / summary || This section is optional but encouraged in chapters where the majority of the content is incorporated by reference only | 
+| Acknowledgements | Key sources and or contributors. Note that references are most easily incorporated as hyperlinks rather than footnotes.|
+
+
 ## Instruction for making changes
 
 ### Folder structure
