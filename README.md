@@ -14,8 +14,9 @@ Each chapter should have the following sections:
 |  --------|-------------|
 |Intended audience | The chapters will cover heterogeous and not necessarily overlapping target audiences; therefore please include a short description to ensure readers' time is wisely spent. |
 |Why this is important| Description of the problem and vision for what best practices will address or make possible|
-|Takeaways | A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles). These should include specific examples that demonstrate that practice XYZ is possible and offer some insight as to why doing it one way (vs. another) is better. |
-|Lessons learned / summary || This section is optional but encouraged in chapters where the majority of the content is incorporated by reference only | 
+| Takeaway List | A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles). 
+| Deep dive into takeaways | Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight as to why doing it one way (vs. another) is better. |
+|Lessons learned / summary | This section is optional but encouraged in chapters where the majority of the content is incorporated by reference only | 
 | Acknowledgements | Key sources and or contributors. Note that references are most easily incorporated as hyperlinks rather than footnotes.|
 
 
