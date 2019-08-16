@@ -1,4 +1,4 @@
-# Chapter 2: Research Data Licensing
+# Chapter 2: Identifier best practices
 
 ## Intended audience
 
