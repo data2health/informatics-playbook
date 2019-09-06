@@ -8,7 +8,9 @@ CTSA Informatics Leads and their staff seeking to harmonize their clinical data.
 
 Clinical data is among the most valuable artifacts among CTSA hubs.  Appropriately leveraging that data for translational research, while respecting privacy and honoring hub autonomy, will advance CTSA goals and demonstrate our power as a network. The HL7 FHIR standard makes it possible for hubs to develop a next-generation repository that is truly integration-ready, whether directly for federated query or for transformation to any number of common standards.
 
-## Status and how to contribute: This document is currently a [Stub](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). Core contributors are still refining the overall structure and content in a living Google doc [here](https://docs.google.com/document/d/15EeMjsBzjHVKBjASNxH540glAZwV77z5/edit); however, comments are welcome.
+## Status and how to contribute: 
+
+This document is currently a [Stub](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). Core contributors are still refining the overall structure and content in a living Google doc [here](https://docs.google.com/document/d/15EeMjsBzjHVKBjASNxH540glAZwV77z5/edit); however, comments are welcome.
 
 ## Takeaways
 
