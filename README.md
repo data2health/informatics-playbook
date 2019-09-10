@@ -22,9 +22,9 @@ Each chapter should have the following sections:
 | Acknowledgements | Key sources and or contributors. Note that references are most easily incorporated as hyperlinks rather than footnotes.|
 | Feedback | Link for how people can comment, or contribute whether via Google form or GitHub issue |
 
-## Stages
+## Chapter status
 
-| Chapter Stage | What is in it | What the stage means |
+| Chapter status | What is in it | What the stage means |
 | -----|-----|-----|
 | Stub | Outline with importance and audience specified | Open for high-level comments |
 | Early draft | Outline and preliminary content| Open for community contributions |
