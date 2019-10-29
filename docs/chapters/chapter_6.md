@@ -10,7 +10,7 @@ Clinical data is among the most valuable artifacts among CTSA hubs.  Appropriate
 
 ## Status and how to contribute: 
 
-This document is currently a [Stub](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). Core contributors have created an model [here](https://docs.google.com/document/d/1IKKbSxe19ZgayDnv5cqTUzDswNGWQvKZNUc2IgZvaL8/edit?usp=sharing) and are still refining the overall structure and content in a living Google doc [here](https://docs.google.com/document/d/1hIX1j2yfqcVbNmVxA8LawHRQ3Ol3Vzciq5JFi9fXdnk/edit?usp=sharing); however, comments are welcome.
+This document is currently a [Stub](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). Core contributors have created an outline [here](https://docs.google.com/document/d/1IKKbSxe19ZgayDnv5cqTUzDswNGWQvKZNUc2IgZvaL8/edit?usp=sharing) and are still refining the overall structure and content in a living Google doc [here](https://docs.google.com/document/d/1hIX1j2yfqcVbNmVxA8LawHRQ3Ol3Vzciq5JFi9fXdnk/edit?usp=sharing); however, comments are welcome.
 
 ## Takeaways
 
