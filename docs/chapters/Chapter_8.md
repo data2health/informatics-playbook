@@ -95,7 +95,7 @@ Understanding & Enabling Impact in the (with the) Community. Transforming Resear
 
 Giving credit where it is due: how to make more meaningful connections between people, their roles, their work and impacts. FORCE2018, Montreal, Canada. 11 October 2018. Available [here](https://digitalhub.northwestern.edu/files/4cf0bd99-5771-4662-83b1-65c75b77aad7)
 
-Making it count: A computational approach to attribution. IEEE eScience Workshop on Research Objects (RO2018), Amsterdam, Netherlands. 29 October 2018. Available [here] (http://doi.org/10.5281/zenodo.1312652) and [here](https://digitalhub.northwestern.edu/files/fb4aa42b-ffe8-4548-b6cf-2fa6e32a80ac)
+Making it count: A computational approach to attribution. IEEE eScience Workshop on Research Objects (RO2018), Amsterdam, Netherlands. 29 October 2018. Available [here](http://doi.org/10.5281/zenodo.1312652) and [here](https://digitalhub.northwestern.edu/files/fb4aa42b-ffe8-4548-b6cf-2fa6e32a80ac)
 
 # Funding:
 
