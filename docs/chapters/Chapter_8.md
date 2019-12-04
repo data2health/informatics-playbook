@@ -99,7 +99,7 @@ Making it count: A computational approach to attribution. IEEE eScience Workshop
 
 # Funding:
 
-This work was supported in part by the CERN Knowledge Transfer Fund, the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306).
+This work was supported by the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306).
 
 
 
