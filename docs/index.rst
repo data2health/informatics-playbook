@@ -15,6 +15,9 @@ Reusable Data Best Practices
    chapters/chapter_3
    chapters/chapter_4
    chapters/chapter_5
+   chapters/chapter_6
+   chapters/chapter_7
+   chapters/chapter_8
 
 
 
