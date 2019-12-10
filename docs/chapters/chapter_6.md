@@ -30,3 +30,7 @@ The categories of best practice include the following
 Rob Schuff, (OHSU), Tom Campion (Cornell), Nick Smith (Iowa), Jennifer Creasman(UCSF), Rene Enriquez(Utah), Stuart Nelson (GWU), Boyd Knosp (Iowa). 
 
 Knosp, Boyd M., William K. Barnett, Nicholas R. Anderson, and Peter J. Embi. "Research It Maturity Models for Academic Health Centers: Early Development and Initial Evaluation." Journal of Clinical and Translational Science 2, no. 5 (2018): 289-94. https://doi.org/10.1017/cts.2018.339
+
+## Funding:
+
+This work was supported by the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306).
