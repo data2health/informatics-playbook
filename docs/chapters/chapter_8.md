@@ -25,7 +25,7 @@ The Contributor Attribution Model is currently under development [here](https://
 * [Github issues](https://github.com/data2health/architecting_attribution/issues) - Interested parties can comment on open issues or contribute their own tickets related to Attribution here. 
 * [Bi-weekly Attribution community meeting](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit) - Meeting takes place every other Thursday at 1p CT.  See [rolling meeting notes](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit). 
 
-# Takeaway List
+## Takeaway List
 
 **For individuals:**
 1. Identify contributors and track any short or long term roles on the project. 
