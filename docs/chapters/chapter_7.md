@@ -1,14 +1,14 @@
 # Chapter 7: Repository architecture and culture to support research at the hub/local level 
 
-# Intended Audience
+## Intended Audience
 
 This guidance is intended for academic  institutional repository stakeholders, such as:  (1) researchers with various goals: finding collaborators, seeking datasets for secondary analysis and teaching, sharing data for compliance with journal and funder mandates, having themselves and their team be recognized for the entirety of their research output (and make that output citable) (2) undergraduate and graduate students for learning and research (3) support staff who assist researchers in carrying out tasks and (4) departments, cores, institutions, and consortia who share, aggregate and report data. Next generation institutional repository architecture can meet the needs of all the aforementioned stakeholders and beyond, and an example can be seen in the development of InvenioRDM, a turnkey research data management repository.
 
-# Current Version
+## Current Version
 
 InvenioRDM enables organizations to securely house research products and make them discoverable, shareable, and citable – from publications and datasets, to training materials, software, study materials, lay summaries, policy documents, and more. The platform is being developed as part of a large, multi-organization collaboration which includes the Center for Data to Health (CD2H) in partnership with the European Organization for Nuclear Research (CERN), along with fourteen additional [project partners](https://inveniosoftware.org/blog/2019-04-29-rdm/). It is currently in the alpha release stage, with an [example instance](https://vtfsmghslapps04.fsm.northwestern.edu/) customized for Northwestern University acting as a showcase since October 2019. Another instance for demonstration purposes will be released at CERN in 2020.
 
-# Why is this important?
+## Why is this important?
 
 In recent years, expansion of the role of the institution in managing research outputs has been associated with increased scientific reproducibility, open science, enhancement of discovery, access, and use of information, increased collaboration and interdisciplinary research, and increased long-term stewardship of scholarly outputs [(MIT Report on the Future of Libraries, 2016)](https://future-of-libraries.mit.edu/). This management is frequently accomplished through “open, trusted, durable, interdisciplinary, interoperable content platform” that supports research data throughout its lifecycle [(MIT)](https://future-of-libraries.mit.edu/). The Confederation of Open Access Repositories (COAR), an organization serving repositories and repository networks around the globe, released in 2018 [guiding principles](https://www.coar-repositories.org/news-updates/what-we-do/next-generation-repositories/) for these platforms. The recommendations include:
 
@@ -41,7 +41,7 @@ With no shortage of [data repositories](https://journals.plos.org/plosone/s/data
 
 These desired behaviors of next generation repositories reflect researchers’ needs to make their research inclusive, participatory, and reproducible. These functions can be enabled through increased interaction with and interoperability of resources, support for commentary and annotation, support for discovery through navigation, user identification, verification, profiles, and alerts, and integration with other systems for managing research output and measuring research impact, such as CRIS systems.
 
-# Takeaway List
+## Takeaway List
 
 The architecture of a research repository able to support research needs moving forward meets all the specifications of the next generation repository as outlined above, and is modular and scalable, allowing for improvements in the future based on evolving user needs. InvenioRDM is an exemplar next generation repository, and its modular architecture and strong use of standards helps ensure the ability of the platform to support best practices in research data management. Each record in InvenioRDM is minted a DOI, a permanent identifier exposed through [DataCite](https://datacite.org/) that is available for citation and compliance with data sharing requirements. Robust metadata, an open API, and the powerful Elasticsearch full-text search engine ensures that deposited data is findable, accessible, interoperable, and reusable, and also allows for discovery through navigation and batch discovery of resources. As part of the “Reusable” element of FAIR data, licenses are declared with records in InvenioRDM to make terms of reuse immediately clear. These features of the InvenioRDM architecture support data sharing, innovation, knowledge dissemination, and interdisciplinary collaboration. 
 
@@ -57,13 +57,13 @@ To reap the greatest benefits from the next generation repository features of In
 4. Attribute credit where credit is due (attribution chapter link)
 5. Make sure you do not include any personal identifiable information (PII) in the record  
 
-# Status and Feedback Mechanisms
+## Status and Feedback Mechanisms
 
 The next generation repository InvenioRDM was launched with an alpha version at the end of October 2019. The Product Roadmap Overview can be seen [here](https://invenio-software.org/products/rdm/roadmap/), and the Invenio Project Board, outlining future month-long project sprints, can be seen [here](https://github.com/orgs/inveniosoftware/projects). The InvenioRDM team also maintains a public [GitHub site](https://github.com/galterlibrary/InvenioRDM-at-NU) where Issues can be added regarding metadata, user interface requirements, and more.
 
 Daily updates are available on a public [Gitter chat](https://gitter.im/inveniosoftware/InvenioRDM). Monthly updates are made at the Resource Discovery Core meetings (open to the CD2H community) typically held on the last Thursday of the month at 1:00pm ET. The rolling meeting notes can be seen [here](https://docs.google.com/document/d/1vVXuhtwmcOi3Ye9tCwgFaS8KxzX6BT3nqlh5YhuV9Nk/edit?usp=sharing). To contact the InvenioRDM team, please use the CD2H [#InvenioRDM](https://app.slack.com/client/T4SPTQGE7/CGH677GUT/user_profile/UGCFPEPQE) Slack channel.
 
-# Contributors to this guidebook chapter
+## Contributors to this guidebook chapter
 Name | Institution | ORCID
 -- | -- | --
 Sara Gonzales | Northwestern University | 0000-0002-1193-2298
@@ -76,7 +76,7 @@ Lars Holm Nielsen | CERN |
 Kai Wörner | Universität Hamburg | 0000-0001-8939-4437
 Kristi Holmes | Northwestern University | 0000-0001-8420-5254
 
-# Acknowledgements
+## Acknowledgements
 
 * [Brookhaven National Laboratory](https://www.bnl.gov/world/)
 * [Caltech Library](https://www.library.caltech.edu/)
@@ -92,7 +92,7 @@ Kristi Holmes | Northwestern University | 0000-0001-8420-5254
 * [Unversität Hamburg](https://www.fdm.uni-hamburg.de/en.html)
 * [WWU Münster](https://www.uni-muenster.de/en/)
 
-# Funding:
+## Funding:
 
 This work was supported in part by the CERN Knowledge Transfer Fund, the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306), and the many contributions of the project partners listed at [Invenio](https://inveniosoftware.org/products/rdm/). 
 
