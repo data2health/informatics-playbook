@@ -1,24 +1,24 @@
 # Chapter 8: Best practices for attribution and use of attribution 
 
-# Intended Audience
+## Intended Audience
 
 Individuals include scholars working in academic and non-academic institutions, libraries, industry, etc. Groups include but are not limited to university administrators, and funding agencies.
 
-# Current Version
+## Current Version
 
 This draft is part of the Reusable Data Best Practices Guidebook] as a new chapter. Feedback is still be actively solicited and welcomed, given the “living” nature of this communication mode.
 
-# Why is this important?
+## Why is this important?
 
 It is very difficult to know who is contributing to research and what those contributions are. There has been a fundamental shift to recognize both the interdisciplinary, team-based approach to science as well as the hundreds and thousands of more fine-grained contributions of varying types and intensities that are necessary to move science forward. Unfortunately, little infrastructure exists to identify, aggregate, present, and (ultimately) assess the impact of these contributions. These significant problems are technical as well as social and require an approach that assimilates cultural and social aspects of these problems in an open and community-driven manner. Ongoing efforts include the development of a [contribution role ontology](https://github.com/data2health/contributor-role-ontology) (built on CRedIT through the [CRedIT](https://github.com/data2health/credit-ontology) ontology) to support modeling of the significant ways in which the translational workforce contributes to research.
 
 Tracking and attribution of diverse contributions across the workforce support credit for work, better understanding of what skills and activities are needed, and incentivize participation in research. Moreover,  this work helps to support and enhance a collaborative informatics community by fostering and promoting the development of an academic attribution and reimbursement framework for informatics products and processes. These processes could also help facilitate contribution role to be used for academic promotion and recognition.
 
-# Status
+## Status
 
 The Contributor Attribution Model is currently under development [here](https://contributor-attribution-model.readthedocs.io/en/latest/). The Contributor Role Ontology (CRO) is released and available for use, with another release before the end of 2019. More information on the CRO is available [here](https://data2health.github.io/contributor-role-ontology/).
 
-# Feedback 
+## Feedback 
 
 * [Architecting Attribution Engagement Page](https://github.com/data2health/architecting_attribution/blob/master/engagement.md) - Provides details on areas where the team is looking for help, how to contribute. This page also shares information about events and provides a call to participants to contribute ideas here, too.  
 * CD2H [#Attribution Slack Channel](https://app.slack.com/client/T4SPTQGE7) - Project specific channel on Slack’s Instant messaging platform.  
@@ -42,7 +42,7 @@ The Contributor Attribution Model is currently under development [here](https://
 9. Likewise, publishers and funders should provide clear guidance as to how author contributions should be described for maximum effectiveness.
 10. Provide feedback to the CRediT/CRO/CAM to request any missing roles that are not represented in the ontology/data model.
 
-# Deep Dives
+## Deep Dives
 
 **For Individuals:** 
 1. **Identify contributors and track any short or long term roles on the project.** This can be tracked on a project website or a collaborative online document (like a Google doc or a GitHub repository). Project websites can provide a nice way to provide acknowledgement to project collaborators, especially for those who may not be an author on a resulting paper.
@@ -59,19 +59,19 @@ The Contributor Attribution Model is currently under development [here](https://
 9. **Likewise, publishers and funders should provide clear guidance as to how author contributions should be described for maximum effectiveness.** Many publishers currently use the CRediT taxonomy for describing author roles. We recommend extending this to include the roles in the Contributor Role Ontology.
 10. **After using attribution tools and best practices described here, scholars and organizational representatives should provide feedback to the CRediT/CRO/CAM to request any missing roles that are not represented in the ontology/data model.** This can be done via our GitHub issue tracker here: https://github.com/data2health/contributor-role-ontology/issues.
 
-# Contributors to this guidebook chapter
+## Contributors to this guidebook chapter
 Name | Institution | ORCID | [Contributor roles](https://www.ebi.ac.uk/ols/ontologies/cro) per CRediT or CRO
 -- | -- | -- | --
 Nicole Vasilevsky | Oregon Health Science University | 0000-0001-5208-3432 | CREDIT_00000013 writing original draft role
 Lisa O'Keefe | Northwestern University | 0000-0003-1211-7583 | CRO:0000065 
 Kristi Holmes | Northwestern University | 0000-0001-8420-5254 | CREDIT_00000013 writing original draft role
 
-# Acknowledgements
+## Acknowledgements
 
 * [CRediT](https://casrai.org/credit/) - Contributor Roles Taxonomy. 
 CASRAI. 
 
-# Relevant Resources
+## Relevant Resources
 
 **Papers:**
 Ilik V, Conlon M, Triggs G, White M, Javed M, Brush M, Gutzman K Essaid S, Friedman P, Porter S, Szomszor M, Haendel MA, Eichmann D and Holmes KL (2018) OpenVIVO: Transparency in Scholarship. Front. Res. Metr. Anal. 2:12. doi: 10.3389/frma.2017.00012
@@ -97,7 +97,7 @@ Giving credit where it is due: how to make more meaningful connections between p
 
 Making it count: A computational approach to attribution. IEEE eScience Workshop on Research Objects (RO2018), Amsterdam, Netherlands. 29 October 2018. Available [here](http://doi.org/10.5281/zenodo.1312652) and [here](https://digitalhub.northwestern.edu/files/fb4aa42b-ffe8-4548-b6cf-2fa6e32a80ac)
 
-# Funding:
+## Funding:
 
 This work was supported by the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306).
 
