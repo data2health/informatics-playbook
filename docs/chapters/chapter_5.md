@@ -18,6 +18,8 @@
 
 
 
+
+
     i. **Cloud hosting** for software applications and platforms, leveraging AWS environment managed by NCATS and provisioned by CD2H  
     ii. **Tool registry** to assist in the sharing and quality assurance of shared software components developed by CTSA hubs     **\&lt;LINK TO SLIDES RE: TOOL REGISTRY PROJECT\&gt;**  
     iii. **Build and test framework** for collaborative software development projects  
