@@ -15,6 +15,7 @@
   **A. Mission and purpose of the CD2H Tool and Cloud Community Core:** Computational technologies and tools are vital to clinical and translational research; however,CTSA hubs currently develop, deploy, and manage these key resources independently. As a result, these processes are tedious, costly, and heterogeneous. This core will address this by establishing a common tool and cloud computing architecture, and will provide CTSA hubs with an affordable, easy to use, and scalable deployment paradigm. We envision that such an approach will support a robust ecosystem that demonstrates the use of shared tools and platforms for the collaborative analysis of clinical data. Hubs can easily promote and deploy their own products as well as adopt other products, thereby transcending long-standing &quot;boundaries&quot; and solving common and recurring information needs.  
   **B. Value and vision:**  
   **C. Dimensions of tool and cloud architecture and capabilities:**  
+  ![](CloudDiagram.PNG)
 
 
 
