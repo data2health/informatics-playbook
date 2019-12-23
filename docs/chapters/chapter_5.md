@@ -25,39 +25,39 @@
     3. **Build and test framework** for collaborative software development projects
     4. **Sandboxes** to provide spaces for informatics-focused workgroups seeking solutions to shared data analytic and management challenges
     5. **Benchmarking** of algorithms and predictive models using Challenge framework  
-4.  **Status and feedback mechanisms:**  
-  A. **CD2H cloud hosting architecture** (v1.0) currently available for community feedback and comments:
-    1. [CD2H-NCATS Cloud Architecture proposal](https://docs.google.com/presentation/d/1O8C0Kj5AtX-69C0eY79zaftAQFPYAWAELAZ2Y7-vnnA/edit#slide=id.g5e2ce0d5ce_5_0)
-    2. [Architecture Response Form](https://docs.google.com/forms/d/e/1FAIpQLScVXPr_wPDVDdbxn4NXCOPVVXnN2rzfMjtrPle6DZjr2jPlIw/viewform?vc=0&amp;c=0&amp;w=1&amp;usp=mail_form_link)
-  B. **CD2H cloud resource request &quot;intake&quot; form** (process for requesting access to CD2H provisioned cloud infrastructure)
-    i.  [Cloud resource request intake form](https://forms.gle/YdZHUSR9NT2ktt1EA)
-    ii. Cloud deployment projects dashboard (under development)
-  C. **Prototype shared tools** deployed using NCATS/CD2H cloud resources or other Tool and Cloud Community Core capabilities:
-    i. [Competitions](http://competitions.cd2h.org/) (peer review and competitive application management)
-    ii. [Leaf](http://rit.uw.edu/leaf) (platform agnostic clinical data browser)
-  D. Program-wide **CD2H tool registry**
-    i.  [CD2H Labs](http://labs.cd2h.org/labs/)
-  E. **Benchmarking projects** leverage Challenge framework:
-    i. [Metadata Challenge](http://synapse.org/metadatachallenge) (sharing of cancer-focused datasets)
-    ii. [EHR Challenge](http://synapse.org/ehr_dream_challenge_mortality) (mortality prediction)      
-3. 5) **Takeaway list:**
-  1. Creating a common cloud computing architecture that can enable the rapid deployment and sharing of reusable software components by CTSA hubs;
-  2. Demonstrating the use of shared tools and platforms for the collaborative analysis of clinical data in a manner that transcends individual CTSA hub &quot;boundaries&quot;
-  3. Disseminating a common set of tools that can be employed for the both local and collaborative query of common data warehousing platforms and underlying data models
-  4. Piloting the &quot;cloudification&quot; of software artifacts that can be shared across CTSA hubs to address common and recurring information needs.
-4. 6) **Deep dive into takeaways:**
-  1. [CD2H-NCATS Cloud Deployment Checklist](https://docs.google.com/presentation/d/1rVAgHFmiKszxF-_VJLvY9JK91Lg3IjwAV8kM78qzuX4/edit?usp=sharing)
-  2. [CD2H-NCATS Cloud Deployment Process Workflow](https://docs.google.com/presentation/d/1GYGgSbglIuHxAd0qkYRXbcWL4g1jmB-N-gMlQoYQMIc/edit?usp=sharing)
-  3. [CD2H-NCATS Architecture Design Proposal](http://bit.ly/cd2h-cloud-rfc)
-  4. [CD2H-NCATS Architecture Request for Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLScVXPr_wPDVDdbxn4NXCOPVVXnN2rzfMjtrPle6DZjr2jPlIw/viewform?vc=0&amp;c=0&amp;w=1&amp;usp=mail_form_link)
-  5. [CD2H-NCATS Federated Authentication (UNA) Overview](https://drive.google.com/open?id=1DclEZEwvEasCX0QfBeJZOTlRB0VYCoOQ)
-  6. Code and documentation repositories for ongoing Tool and Cloud Community Core projects:
-    1. [Tool-Cloud-Infrastructure Core GitHub repo](https://github.com/data2health/tools-cloud-infrastructure)
-    2. [Cloud-Tool-Architecture project GitHub repo](https://github.com/data2health/Cloud-Tool-Architecture)
-    3. [Competitions project GitHub repo](https://github.com/data2health/competitions-project)
-    4. [EHR Dream Challenge project GitHub repo](https://github.com/data2health/DREAM-Challenge)
-5. 7) **Acknowledgements**
-  1. \&lt;LIST CLOUD CORE PARTICIPANTS\&gt;
-## Cloud Collaboration software
-## Cloud architecture
-## Software best practices
+4.  **Status and feedback mechanisms:**    
+  A. **CD2H cloud hosting architecture** (v1.0) currently available for community feedback and comments:  
+    1. [CD2H-NCATS Cloud Architecture proposal](https://docs.google.com/presentation/d/1O8C0Kj5AtX-69C0eY79zaftAQFPYAWAELAZ2Y7-vnnA/edit#slide=id.g5e2ce0d5ce_5_0)  
+    2. [Architecture Response Form](https://docs.google.com/forms/d/e/1FAIpQLScVXPr_wPDVDdbxn4NXCOPVVXnN2rzfMjtrPle6DZjr2jPlIw/viewform?vc=0&amp;c=0&amp;w=1&amp;usp=mail_form_link)  
+  B. **CD2H cloud resource request &quot;intake&quot; form** (process for requesting access to CD2H provisioned cloud infrastructure)  
+    i.  [Cloud resource request intake form](https://forms.gle/YdZHUSR9NT2ktt1EA)  
+    ii. Cloud deployment projects dashboard (under development)  
+  C. **Prototype shared tools** deployed using NCATS/CD2H cloud resources or other Tool and Cloud Community Core capabilities:  
+    i. [Competitions](http://competitions.cd2h.org/) (peer review and competitive application management)  
+    ii. [Leaf](http://rit.uw.edu/leaf) (platform agnostic clinical data browser)  
+  D. Program-wide **CD2H tool registry**  
+    i.  [CD2H Labs](http://labs.cd2h.org/labs/)  
+  E. **Benchmarking projects** leverage Challenge framework:  
+    i. [Metadata Challenge](http://synapse.org/metadatachallenge) (sharing of cancer-focused datasets)  
+    ii. [EHR Challenge](http://synapse.org/ehr_dream_challenge_mortality) (mortality prediction)        
+5. **Takeaway list:**  
+  A. Creating a common cloud computing architecture that can enable the rapid deployment and sharing of reusable software components by CTSA hubs;  
+  B. Demonstrating the use of shared tools and platforms for the collaborative analysis of clinical data in a manner that transcends individual CTSA hub &quot;boundaries&quot;  
+  C. Disseminating a common set of tools that can be employed for the both local and collaborative query of common data warehousing platforms and underlying data models  
+  D. Piloting the &quot;cloudification&quot; of software artifacts that can be shared across CTSA hubs to address common and recurring information needs.  
+6.  **Deep dive into takeaways:**  
+  A. [CD2H-NCATS Cloud Deployment Checklist](https://docs.google.com/presentation/d/1rVAgHFmiKszxF-_VJLvY9JK91Lg3IjwAV8kM78qzuX4/edit?usp=sharing)  
+  B. [CD2H-NCATS Cloud Deployment Process Workflow](https://docs.google.com/presentation/d/1GYGgSbglIuHxAd0qkYRXbcWL4g1jmB-N-gMlQoYQMIc/edit?usp=sharing)  
+  C. [CD2H-NCATS Architecture Design Proposal](http://bit.ly/cd2h-cloud-rfc)  
+  D. [CD2H-NCATS Architecture Request for Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLScVXPr_wPDVDdbxn4NXCOPVVXnN2rzfMjtrPle6DZjr2jPlIw/viewform?vc=0&amp;c=0&amp;w=1&amp;usp=mail_form_link)  
+  E. [CD2H-NCATS Federated Authentication (UNA) Overview](https://drive.google.com/open?id=1DclEZEwvEasCX0QfBeJZOTlRB0VYCoOQ)  
+  F. Code and documentation repositories for ongoing Tool and Cloud Community Core projects:  
+    1. [Tool-Cloud-Infrastructure Core GitHub repo](https://github.com/data2health/tools-cloud-infrastructure)  
+    2. [Cloud-Tool-Architecture project GitHub repo](https://github.com/data2health/Cloud-Tool-Architecture)  
+    3. [Competitions project GitHub repo](https://github.com/data2health/competitions-project)  
+    4. [EHR Dream Challenge project GitHub repo](https://github.com/data2health/DREAM-Challenge)  
+7.  **Acknowledgements**    
+  1. \&lt;LIST CLOUD CORE PARTICIPANTS\&gt;  
+## Cloud Collaboration software  
+## Cloud architecture  
+## Software best practices  
