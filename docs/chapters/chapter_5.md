@@ -4,17 +4,17 @@
 
 **Chapter 5: Software and Cloud Architecture (draft, v1.0)**
 
-1. **Intended audience(s):**
-  A. **CTSA hub leaders** (strategic recommendations concerning the use of cloud computing and reusable software resources at the hub and network levels)    
-  B. **Clinical and translational scientists** (project-level recommendations concerning the use of cloud computing and reusable software resources to meet individual needs and enhance the reproducibility, rigor, and shareability of research products)  
-  C. **Informatics and technology solution providers** (technical recommendation concerning how to access and utilize CD2H provisioned cloud computing resources and reusable software components)  
-2. 2) **Current version / status:**
-  A. **Last revision:** 12/18/2019
-  B. **Status:** draft, outline
-3. 3) **Lessons learned / summary:**
-  1. **Mission and purpose of the CD2H Tool and Cloud Community Core:** Computational technologies and tools are vital to clinical and translational research; however,CTSA hubs currently develop, deploy, and manage these key resources independently. As a result, these processes are tedious, costly, and heterogeneous. This core will address this by establishing a common tool and cloud computing architecture, and will provide CTSA hubs with an affordable, easy to use, and scalable deployment paradigm. We envision that such an approach will support a robust ecosystem that demonstrates the use of shared tools and platforms for the collaborative analysis of clinical data. Hubs can easily promote and deploy their own products as well as adopt other products, thereby transcending long-standing &quot;boundaries&quot; and solving common and recurring information needs.
-  2. **Value and vision:**
-  3. **Dimensions of tool and cloud architecture and capabilities:**
+1. **Intended audience(s):**  
+  **A. CTSA hub leaders** (strategic recommendations concerning the use of cloud computing and reusable software resources at the hub and network levels)    
+  **B. Clinical and translational scientists** (project-level recommendations concerning the use of cloud computing and reusable software resources to meet individual needs and enhance the reproducibility, rigor, and shareability of research products)  
+  **C. Informatics and technology solution providers** (technical recommendation concerning how to access and utilize CD2H provisioned cloud computing resources and reusable software components)  
+2. **Current version / status:**  
+  **A. Last revision:** 12/18/2019  
+  **B. Status:** draft, outline  
+3.  **Lessons learned / summary:**  
+  **A. Mission and purpose of the CD2H Tool and Cloud Community Core:** Computational technologies and tools are vital to clinical and translational research; however,CTSA hubs currently develop, deploy, and manage these key resources independently. As a result, these processes are tedious, costly, and heterogeneous. This core will address this by establishing a common tool and cloud computing architecture, and will provide CTSA hubs with an affordable, easy to use, and scalable deployment paradigm. We envision that such an approach will support a robust ecosystem that demonstrates the use of shared tools and platforms for the collaborative analysis of clinical data. Hubs can easily promote and deploy their own products as well as adopt other products, thereby transcending long-standing &quot;boundaries&quot; and solving common and recurring information needs.  
+  **B. Value and vision:**  
+  **C. Dimensions of tool and cloud architecture and capabilities:**  
 <img src="./CloudDiagram.PNG" height="80%" width="95%"/>
 
 1.
