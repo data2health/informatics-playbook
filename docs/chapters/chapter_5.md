@@ -4,10 +4,10 @@
 
 **Chapter 5: Software and Cloud Architecture (draft, v1.0)**
 
-1)**Intended audience(s):**
-  A. **CTSA hub leaders** (strategic recommendations concerning the use of cloud computing and reusable software resources at the hub and network levels)
-  B. **Clinical and translational scientists** (project-level recommendations concerning the use of cloud computing and reusable software resources to meet individual needs and enhance the reproducibility, rigor, and shareability of research products)
-  C. **Informatics and technology solution providers** (technical recommendation concerning how to access and utilize CD2H provisioned cloud computing resources and reusable software components)
+1. **Intended audience(s):**
+  A. **CTSA hub leaders** (strategic recommendations concerning the use of cloud computing and reusable software resources at the hub and network levels)    
+  B. **Clinical and translational scientists** (project-level recommendations concerning the use of cloud computing and reusable software resources to meet individual needs and enhance the reproducibility, rigor, and shareability of research products)  
+  C. **Informatics and technology solution providers** (technical recommendation concerning how to access and utilize CD2H provisioned cloud computing resources and reusable software components)  
 2. 2) **Current version / status:**
   A. **Last revision:** 12/18/2019
   B. **Status:** draft, outline
