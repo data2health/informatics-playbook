@@ -15,16 +15,15 @@
   **A. Mission and purpose of the CD2H Tool and Cloud Community Core:** Computational technologies and tools are vital to clinical and translational research; however,CTSA hubs currently develop, deploy, and manage these key resources independently. As a result, these processes are tedious, costly, and heterogeneous. This core will address this by establishing a common tool and cloud computing architecture, and will provide CTSA hubs with an affordable, easy to use, and scalable deployment paradigm. We envision that such an approach will support a robust ecosystem that demonstrates the use of shared tools and platforms for the collaborative analysis of clinical data. Hubs can easily promote and deploy their own products as well as adopt other products, thereby transcending long-standing &quot;boundaries&quot; and solving common and recurring information needs.  
   **B. Value and vision:**  
   **C. Dimensions of tool and cloud architecture and capabilities:**  
-<img src="./CloudDiagram.PNG" height="80%" width="95%"/>
 
-1.
-  1.
-    1. **Cloud hosting** for software applications and platforms, leveraging AWS environment managed by NCATS and provisioned by CD2H
-    2. **Tool registry** to assist in the sharing and quality assurance of shared software components developed by CTSA hubs
-      1. **\&lt;LINK TO SLIDES RE: TOOL REGISTRY PROJECT\&gt;**
-    3. **Build and test framework** for collaborative software development projects
-    4. **Sandboxes** to provide spaces for informatics-focused workgroups seeking solutions to shared data analytic and management challenges
-    5. **Benchmarking** of algorithms and predictive models using Challenge framework  
+
+
+    i. **Cloud hosting** for software applications and platforms, leveraging AWS environment managed by NCATS and provisioned by CD2H  
+    ii. **Tool registry** to assist in the sharing and quality assurance of shared software components developed by CTSA hubs  
+      1. **\&lt;LINK TO SLIDES RE: TOOL REGISTRY PROJECT\&gt;**  
+    iii. **Build and test framework** for collaborative software development projects  
+    iv. **Sandboxes** to provide spaces for informatics-focused workgroups seeking solutions to shared data analytic and management challenges  
+    v. **Benchmarking** of algorithms and predictive models using Challenge framework  
 4.  **Status and feedback mechanisms:**    
   A. **CD2H cloud hosting architecture** (v1.0) currently available for community feedback and comments:  
     1. [CD2H-NCATS Cloud Architecture proposal](https://docs.google.com/presentation/d/1O8C0Kj5AtX-69C0eY79zaftAQFPYAWAELAZ2Y7-vnnA/edit#slide=id.g5e2ce0d5ce_5_0)  
