@@ -2,7 +2,7 @@
 
 ## Intended audience	
 
-*Educators at CTSAs who want to build a community of learners around their educational material.*
+Educators at CTSAs who want to build a community of learners around their educational material, or make their educational materials discoverable and usable by others.
 
 ## Current version / status	
 
