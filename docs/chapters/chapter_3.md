@@ -1,4 +1,4 @@
-# Chapter 9: Sharing Educational Resources
+# Chapter 3: Sharing Educational Resources
 
 ## Intended audience	
 
