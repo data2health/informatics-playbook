@@ -11,7 +11,10 @@ tbd, but some indication of whether the draft is early, actively soliciting comm
 # Lessons learned / summary	
 
 This section is optional but encouraged in chapters where the source of truth for the majority of the content is external (Incorporated here by reference only)
-Why this is important	Description of the problem and vision for what best practices will address or make possible
+
+# Why this is important	
+
+Description of the problem and vision for what best practices will address or make possible
 
 # Status and feedback mechanisms	
 
