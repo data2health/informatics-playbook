@@ -32,7 +32,8 @@ Additionally, a learning community provides an opportunity for those with interm
 
 *A bulleted list of things you can read and implement (similar to top 10 PLoS Top 10 articles).*
 
-# Deep dive into takeaways	
+## Deep dive into takeaways	
 
-Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.
-Acknowledgements
+*Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.*
+
+## Acknowledgements
