@@ -18,13 +18,11 @@ Educators at CTSAs who want to build a community of learners around their educat
 
 ## Why this is important	
 
-Keeping educational resources up to date and discoverable is difficult for single sites. In addition, sites replicating educational material that already exists is wasteful and largely ignores the possibility of building educational communities around such resources.
+Keeping educational resources up to date and discoverable is difficult for single CTSA sites. In addition, sites replicating educational material that already exists is wasteful and largely ignores the possibility of building educational communities around such resources.
 
-One alternative that exists is providing collective ownership, such as the model for The Carpentries (Software, Data, and Library Carpentry), or the R for Data Science learning community. Hundreds, if not thousands of educators have tested, honed, and improved the lesson material for these groups. 
+One alternative that exists is providing collective ownership, such as the model for [The Carpentries](http://carpentries.org/) (Software, Data, and Library Carpentry), or the [R for Data Science](https://www.rfordatasci.com/) learning community. Hundreds, if not thousands of educators have tested, honed, and improved the lesson material for these groups. This collective ownership of the learning material makes the material stronger and applicable to a wide range of learners. Additionally, the learning community that results from such collective ownership provides an opportunity for those with intermediate skills to improve their knowledge and practice in a safe environment. 
 
-Additionally, a learning community provides an opportunity for those with intermediate skills to improve their knowledge and practice. 
-
-Finally, making an educational resource discoverable is of vital importance.
+Additionally, making an educational resource discoverable is of vital importance. Discoverability may be done for multiple reasons: to advertise that an educational resource exists so others may take the course, or in the case of open educational resources, whether a course is appropriate to reuse, repurpose, or remix, and has additional resources so other instructors can adopt the material.
 
 ## Status and feedback mechanisms	
 
