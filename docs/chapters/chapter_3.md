@@ -44,7 +44,7 @@ One alternative to a single site maintaining an education resource is providing 
 
 1. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
 2. Add metadata that encourages reuse of your educational resource
-3. Encourage the formation of or join an education community to form around an educational resource by encouraging reuse of your educational material beyond your center.
+3. Encourage the formation of an educational community around an educational resource 
 4. Foster growth and updates of your material through quarterly hackathons or sprints
 
 ## Deep dive into takeaways	
@@ -71,6 +71,9 @@ For their workshops, The Carpentries include extensive instructor notes that cov
  
 3. Is there a code of conduct? 
 
+### 3. Encourage the formation of an educational  community around an educational resource 
+
+### 4. Foster growth and updates of your material through quarterly hackathons or sprints
 
 
 ## Acknowledgements
