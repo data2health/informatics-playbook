@@ -15,9 +15,9 @@ Educators at CTSAs who want to build a community of learners around their educat
 ## Lessons learned / summary	
 
 - Making educational resources *discoverable* requires publishing metadata about that resource
-- Understanding whether a resource is open or not affects what metadata should be published
+- Understanding whether a resource is *open* or *not open* affects what metadata should be published about it
 - Inviting other instructors and learners to utilize and update educational resources builds an educational community
-- Educational communities have multiple benefits beyond keeping course material up to date
+- Educational communities have multiple benefits beyond keeping course material up to date, including providing support for both beginner and intermediate learners
 
 ## Why this is important	
 
@@ -42,7 +42,7 @@ One alternative to a single site maintaining an education resource is providing 
 
 ## Takeaway List	
 
-1. Make metadata available by publishing metadata using a standard such as *MIER* or *Harper Lite*
+1. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
 2. Add metadata that encourages reuse of your educational resource
 3. Encourage the formation of or join an education community to form around an educational resource by encouraging reuse of your educational material beyond your center.
 4. Foster growth and updates of your material through quarterly hackathons or sprints
@@ -50,5 +50,27 @@ One alternative to a single site maintaining an education resource is providing 
 ## Deep dive into takeaways	
 
 *Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.*
+
+### 1. Make metadata available for an educational resource by publishing metadata using a standard such as *MIER* or *Harper Lite*
+
+In order for your resource to be discoverable, providing essential metadata using a standard such as *MIER* or *Harper Lite* is important.
+
+### 2. Add metadata that encourages reuse of your educational resource
+
+Both the MIER and Harper metadata standards include metadata that is specific to reusing course material:
+
+1. What is the Licensing? Is the resource available to be repurposed by others?
+
+For many instructors, if the licensing is too restrictive (such as requiring the No-Derivatives), instructors may be prevented from reusing materials. Consider licenses such as CC-BY-NC (Non Commercial), which is permissive for those who use the material for Non-Commercial uses.
+
+2. Who is the audience? Who is the material for?
+
+2. Are instructor notes available? 
+
+For their workshops, The Carpentries include extensive instructor notes that cover what worked and what didn't work during a workshop; such a resource is invaluable to understanding whether the material is at an appropriate level for learners.
+ 
+3. Is there a code of conduct? 
+
+
 
 ## Acknowledgements
