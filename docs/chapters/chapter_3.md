@@ -79,6 +79,8 @@ For their workshops, The Carpentries include extensive instructor notes that cov
 
 ### 4. Encourage the formation of an educational community around an educational resource 
 
+A quick and simple way to encourage community formation is to start a Slack workspace associated with a resource. Encourage discussion and questions there.
+
 ### 5. Foster growth and updates of your material through quarterly hackathons or sprints
 
 
