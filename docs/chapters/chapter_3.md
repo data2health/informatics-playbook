@@ -81,6 +81,8 @@ For their workshops, The Carpentries include extensive instructor notes that cov
 
 A quick and simple way to encourage community formation is to start a Slack workspace associated with a resource. Encourage discussion and questions there.
 
+Be responsive to feedback and be willing to give contributor roles to people who suggest changes to the material.
+
 ### 5. Foster growth and updates of your material through quarterly hackathons or sprints
 
 
