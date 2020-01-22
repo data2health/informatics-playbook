@@ -15,7 +15,8 @@ Educators at CTSAs who want to build a community of learners around their educat
 ## Lessons learned / summary	
 
 - Making educational resources *discoverable* requires publishing metadata about that resource
-- Understanding whether a resource is *open* or *not open* affects what metadata should be published about it
+- Consider making your resource an open educational resource (OER) by sharing the material openly
+- If your resource is an OER, make extra metadata available that emphasizes its reuse
 - Inviting other instructors and learners to utilize and update educational resources builds an educational community
 - Educational communities have multiple benefits beyond keeping course material up to date, including providing support for both beginner and intermediate learners
 
@@ -42,20 +43,25 @@ One alternative to a single site maintaining an education resource is providing 
 
 ## Takeaway List	
 
-1. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
-2. Add metadata that encourages reuse of your educational resource
-3. Encourage the formation of an educational community around an educational resource 
-4. Foster growth and updates of your material through quarterly hackathons or sprints
+1. Consider making your resource an Open Educational Resource (OER)
+2. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
+3. Add metadata that encourages reuse of your educational resource
+4. Encourage the formation of an educational community around an educational resource 
+5. Foster growth and updates of your material through quarterly hackathons or sprints
 
 ## Deep dive into takeaways	
 
 *Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.*
 
-### 1. Make metadata available for an educational resource by publishing metadata using a standard such as *MIER* or *Harper Lite*
+### 1. Consider making your resource an Open Educational Resource
+
+Making your educational resource open has lots of benefits. 
+
+### 2. Make metadata available for an educational resource by publishing metadata using a standard such as *MIER* or *Harper Lite*
 
 In order for your resource to be discoverable, providing essential metadata using a standard such as *MIER* or *Harper Lite* is important.
 
-### 2. Add metadata that encourages reuse of your educational resource
+### 3. Add metadata that encourages reuse of your educational resource
 
 Both the MIER and Harper metadata standards include metadata that is specific to reusing course material:
 
@@ -71,9 +77,9 @@ For their workshops, The Carpentries include extensive instructor notes that cov
  
 3. Is there a code of conduct? 
 
-### 3. Encourage the formation of an educational  community around an educational resource 
+### 4. Encourage the formation of an educational community around an educational resource 
 
-### 4. Foster growth and updates of your material through quarterly hackathons or sprints
+### 5. Foster growth and updates of your material through quarterly hackathons or sprints
 
 
 ## Acknowledgements
