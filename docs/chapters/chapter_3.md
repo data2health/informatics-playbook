@@ -55,15 +55,19 @@ One alternative to a single site maintaining an education resource is providing 
 
 *Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.*
 
-### 1. Consider making your resource an Open Educational Resource
+### 1. Submit your educational resource to the [CLIC Educational Clearinghouse](https://clic-ctsa.org/education)
+
+### 2. Consider making your resource an Open Educational Resource
 
 Making your educational resource open has lots of benefits. 
 
-### 2. Make metadata available for an educational resource by publishing metadata using a standard such as *MIER* or *Harper Lite*
+### 3. Make metadata available for an educational resource by publishing metadata using a standard such as *MIER* or *Harper Lite*
+
+At the very least, map your educational resource to the [Clinical and Translational Science Competencies](https://clic-ctsa.org/education/competencies) established by [CLIC](https://clic-ctsa.org/). Pay attention to the tags that people have used here as well.
 
 In order for your resource to be discoverable, providing essential metadata using a standard such as *MIER* or *Harper Lite* is important.
 
-### 3. Add metadata that encourages reuse of your educational resource
+### 4. Add metadata that encourages reuse of your educational resource
 
 Both the MIER and Harper metadata standards include metadata that is specific to reusing course material:
 
@@ -79,13 +83,13 @@ For their workshops, The Carpentries include extensive instructor notes that cov
  
 3. Is there a code of conduct? 
 
-### 4. Encourage the formation of an educational community around an educational resource 
+### 5. Encourage the formation of an educational community around an educational resource 
 
 A quick and simple way to encourage community formation is to start a Slack workspace associated with a resource. Encourage discussion and questions there.
 
 Be responsive to feedback and be willing to give contributor roles to people who suggest changes to the material.
 
-### 5. Foster growth and updates of your material through quarterly hackathons or sprints
+### 6. Foster growth and updates of your material through quarterly hackathons or sprints
 
 
 ## Acknowledgements
