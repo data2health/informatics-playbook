@@ -14,6 +14,7 @@ Educators at CTSAs who want to build a community of learners around their educat
 
 ## Lessons learned / summary	
 
+- An effective method of sharing your materials across CTSAs is through the [CLIC Education Clearinghouse](https://clic-ctsa.org/education)
 - Making educational resources *discoverable* requires publishing metadata about that resource
 - Consider making your resource an open educational resource (OER) by sharing the material openly
 - If your resource is an OER, make extra metadata available that emphasizes its reuse
@@ -43,11 +44,12 @@ One alternative to a single site maintaining an education resource is providing 
 
 ## Takeaway List	
 
-1. Consider making your resource an Open Educational Resource (OER)
-2. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
-3. Add metadata that encourages reuse of your educational resource
-4. Encourage the formation of an educational community around an educational resource 
-5. Foster growth and updates of your material through quarterly hackathons or sprints
+1. Submit your educational resource to the [CLIC Educational Clearinghouse](https://clic-ctsa.org/education)
+2. Consider making your resource an Open Educational Resource (OER)
+3. Make metadata available for an educational resource available by publishing metadata using a standard such as *MIER* or *Harper Lite*
+4. Add metadata that encourages reuse of your educational resource
+5. Encourage the formation of an educational community around an educational resource 
+6. Foster growth and updates of your material through quarterly hackathons or sprints
 
 ## Deep dive into takeaways	
 
