@@ -10,7 +10,7 @@ Educators at CTSAs who want to build a community of learners around their educat
 
 ## Guidance 
 
-*tbd, but some indication of whether the draft is early, actively soliciting comments, or ready to implement*
+*Actively Soliciting Comments and Feedback*
 
 ## Lessons learned / summary	
 
@@ -53,8 +53,6 @@ One alternative to a single site maintaining an education resource is providing 
 
 ## Deep dive into takeaways	
 
-*Each item should include specific examples that demonstrate that practice XYZ is possible and offer some insight and evidence as to why doing it one way (vs. another) is better.*
-
 ### 1. Submit your educational resource to the [CLIC Educational Clearinghouse](https://clic-ctsa.org/education)
 
 ### 2. Consider making your resource an Open Educational Resource
@@ -69,7 +67,7 @@ In order for your resource to be discoverable, providing essential metadata usin
 
 ### 4. Add metadata that encourages reuse of your educational resource
 
-Both the MIER and Harper metadata standards include metadata that is specific to reusing course material:
+Both the MIER and Harper-lite metadata standards include metadata that is specific to reusing course material:
 
 1. What is the Licensing? Is the resource available to be repurposed by others?
 
@@ -77,11 +75,11 @@ For many instructors, if the licensing is too restrictive (such as requiring the
 
 2. Who is the audience? Who is the material for?
 
-2. Are instructor notes available? 
+3. Are instructor notes available? 
 
 For their workshops, The Carpentries include extensive instructor notes that cover what worked and what didn't work during a workshop; such a resource is invaluable to understanding whether the material is at an appropriate level for learners.
  
-3. Is there a code of conduct? 
+4. Is there a code of conduct? 
 
 ### 5. Encourage the formation of an educational community around an educational resource 
 
