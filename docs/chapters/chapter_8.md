@@ -59,12 +59,12 @@ The Contributor Attribution Model is currently under development [here](https://
 9. **Likewise, publishers and funders should provide clear guidance as to how author contributions should be described for maximum effectiveness.** Many publishers currently use the CRediT taxonomy for describing author roles. We recommend extending this to include the roles in the Contributor Role Ontology.
 10. **After using attribution tools and best practices described here, scholars and organizational representatives should provide feedback to the CRediT/CRO/CAM to request any missing roles that are not represented in the ontology/data model.** This can be done via our GitHub issue tracker here: https://github.com/data2health/contributor-role-ontology/issues.
 
-## Contributors to this guidebook chapter
-Name | Institution | ORCID | [Contributor roles](https://www.ebi.ac.uk/ols/ontologies/cro) per CRediT or CRO
--- | -- | -- | --
-Nicole Vasilevsky | Oregon Health Science University | 0000-0001-5208-3432 | CREDIT_00000013 writing original draft role
-Lisa O'Keefe | Northwestern University | 0000-0003-1211-7583 | CRO:0000065 
-Kristi Holmes | Northwestern University | 0000-0001-8420-5254 | CREDIT_00000013 writing original draft role
+## Contributors to this guidebook chapter 
+[Contributor roles](https://www.ebi.ac.uk/ols/ontologies/cro) per CRediT or CRO
+
+* Nicole Vasilevsky, Oregon Health Science University, 0000-0001-5208-3432, CREDIT_00000013 writing original draft role
+* Lisa O'Keefe, Northwestern University, 0000-0003-1211-7583, CRO:0000065 project management role
+* Kristi Holmes, Northwestern University, 0000-0001-8420-5254, CREDIT_00000013 writing original draft role
 
 ## Acknowledgements
 
