@@ -36,11 +36,26 @@ Each chapter should have the following sections:
    * Every Sphinx related files are under [docs](docs) folder.
    * [index.rst](docs/index.rst) file is the the top-level index page.
    * Each chapter goes under [docs/chapters](docs/chapters) folder. They are markdown files.
-   * If you need to include static contents (pictures, css, js files), put it under [docs/_static](_docs/static) folder.
+   * If you need to include static contents (pictures, css, js files), put it under [docs/_static](docs/_static) folder.
+
+### How to create a new chapter
+
+   * Create a new chapter file with the `.md` extension under [docs/chapters](docs/chapters). Typically you can name it as `chapter_[number]_[brief name].md`.
+   * Add your content in Markdown format in this file.
+   * If you need to add a media file, upload it to [docs/_static](docs/_static) folder first, and then reference it in your markdown text.
+   * Once you are done with the content (you can always come back to make changes later), add the reference to your new chapter file in [docs/index.rst](docs/index.rst) file.
+   * Every time you commit your changes to github, after a few minutes, your changes will be compiled automatically and rendered on [the live documentation site](https://reusable-data-best-practices.readthedocs.io).
 
 ### Option 1: Edit directly on github
 
 ### Option 2: Clone the repo and edit locally and then push the changes
+
+
+## Useful resources:
+
+* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) from Github
+* [Using markdown in Sphinx](http://www.sphinx-doc.org/en/master/usage/markdown.html)
+  (Sphinx is the documention framework powering this live document)
 
 
 
