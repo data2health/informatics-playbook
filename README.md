@@ -56,6 +56,7 @@ Each chapter should have the following sections:
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) from Github
 * [Using markdown in Sphinx](http://www.sphinx-doc.org/en/master/usage/markdown.html)
   (Sphinx is the documention framework powering this live document)
+* [Convert GDoc to Markdown](https://gsuite.google.com/marketplace/app/docs_to_markdown/700168918607)
 
 
 
