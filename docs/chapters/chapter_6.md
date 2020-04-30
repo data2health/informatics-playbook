@@ -1,16 +1,19 @@
 # Chapter 6: Clinical Data Harmonization
 
-## Intended audience
+## Purpose & Intended audience
 
-CTSA Informatics Leads and their staff seeking to harmonize their clinical data. The Sustainability and Change Management Task Team(SCM) of the Clinical Data Harmonization Working Group aims to aggregate, develop, curate, and disseminate content and tools that help encourage and guide organizations’ understanding of and investments in data harmonization efforts.
+This resource offers guidance to members of the CTSA informatics community including information about Data Harmonization that key stakeholders (leadership, researchers, clinicians, CIOs) can use at their institutions. This guidance can be useful to those who are new to Data Harmonization, as well as to those who are experts and may need assistance conveying the importance of Data Harmonization to a lay audience.
 
 ## Why is this important?
 
-Clinical data is among the most valuable artifacts among CTSA hubs.  Appropriately leveraging that data for translational research, while respecting privacy and honoring hub autonomy, will advance CTSA goals and demonstrate our power as a network. The HL7 FHIR standard makes it possible for hubs to develop a next-generation repository that is truly integration-ready, whether directly for federated query or for transformation to any number of common standards.
+Clinical data are among the most valuable artifacts within CTSA hubs. Appropriately leveraging these data for translational research purposes, while respecting privacy and honoring hub autonomy, will advance CTSA goals and demonstrate its power as a network. The Health Level 7 (HL7) FHIR standard has the potential to enable hubs to develop a next-generation repository from application program interfaces (APIs) that are built into every electronic health record (EHR). For optimal harmonization, these APIs need to be integration-ready, whether used directly for federated queries or for transformation to any number of common standards.
 
 ## Status and how to contribute: 
 
-This document is currently a [Stub](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). Core contributors have created an outline [here](https://docs.google.com/document/d/1IKKbSxe19ZgayDnv5cqTUzDswNGWQvKZNUc2IgZvaL8/edit?usp=sharing) and are still refining the overall structure and content in a living Google doc [here](https://docs.google.com/document/d/1hIX1j2yfqcVbNmVxA8LawHRQ3Ol3Vzciq5JFi9fXdnk/edit?usp=sharing); however, comments are welcome.
+This document is currently in version 1.0 release.  Comments from the community are appreciated for incorporation of next version.  A commentable copy in Google doc form can be found[here](https://docs.google.com/document/d/1IKKbSxe19ZgayDnv5cqTUzDswNGWQvKZNUc2IgZvaL8/edit?usp=sharing). 
+
+
+Version 1.0 can be found [here](https://github.com/data2health/reusable-data-best-practices/blob/master/README.md#stages). 
 
 ## Takeaways
 
@@ -21,15 +24,17 @@ The categories of best practice include the following
 - Sustainability
 - Workforce
 - Infrastructure
-- Relationship w Clinical
+- Relationship w the clinical enterprise
 - Data practices
-- External relationships
+- External relationships and outreach
 
 ## Acknowledgements
+Co-leads: Boyd Knosp, University of Iowa (https://orcid.org/0000-0002-3834-3135); Catherine K. Craven, Icahn School of Medicine at Mount Sinai
 
-Rob Schuff, (OHSU), Tom Campion (Cornell), Nick Smith (Iowa), Jennifer Creasman(UCSF), Rene Enriquez(Utah), Stuart Nelson (GWU), Boyd Knosp (Iowa). 
+Christopher G. Chute, Johns Hopkins University (https://orchid.org/0000-0001-5437-2545); Jeanne Holden-Wiltse, University of Rochester CTSI (https://orcid.org/0000-0003-2694-7465); Laura Paglione, Spherical Cow Group (https://orcid.org/0000-0003-3188-6273); Svetlana Rojevsky, Tufts Clinical and Translational Science Institute (https://orcid.org/0000-0002-8353-9006); Juliane Schneider, Harvard Catalyst | Clinical and Translational Science Center (https://orcid.org/0000-0002-7664-3331); Adam Wilcox, University of Washington.
 
-Knosp, Boyd M., William K. Barnett, Nicholas R. Anderson, and Peter J. Embi. "Research It Maturity Models for Academic Health Centers: Early Development and Initial Evaluation." Journal of Clinical and Translational Science 2, no. 5 (2018): 289-94. https://doi.org/10.1017/cts.2018.339
+Edited by: Lisa O’Keefe, Charisse Madlock-Brown, Andréa Volz
+
 
 ## Funding:
 
