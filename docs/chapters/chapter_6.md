@@ -1,4 +1,4 @@
-# Chapter 6: Clinical Data Harmonization
+# Chapter 6: Understanding Data Harmonization
 
 ## Purpose & Intended audience
 
