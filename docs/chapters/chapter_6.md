@@ -10,7 +10,7 @@ Clinical data are among the most valuable artifacts within CTSA hubs. Appropriat
 
 ## Status and how to contribute: 
 
-This document is currently in version 1.0 release.  Comments from the community are appreciated for incorporation of next version. [A commentable copy in Google doc form is available].(https://docs.google.com/document/d/1hIX1j2yfqcVbNmVxA8LawHRQ3Ol3Vzciq5JFi9fXdnk/edit?usp=sharing). 
+This document is currently in version 1.0 release.  Comments from the community are appreciated for incorporation of next version. [A commentable copy in Google doc form is available](https://docs.google.com/document/d/1hIX1j2yfqcVbNmVxA8LawHRQ3Ol3Vzciq5JFi9fXdnk/edit?usp=sharing). 
 
 The live version (Chapter 6, Version 1.0) is rendered at:
 
