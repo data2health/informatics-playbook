@@ -48,7 +48,7 @@ To support local RDM, institutions can foster a culture of research data managem
 To reap the greatest benefits from the next generation repository features of InvenioRDM, create robust records that make the most of its many features. Consider these **Top 5 Rules for Depositing Research Object Records**: 
 
 1. Make your deposit open access if possible
-2. Use the appropriate license, see [Reusable Data Best Practivces Chapter 1](reusable-data-best-practices.readthedocs.io/en/latest/chapters/chapter_1.html#)
+2. Use the appropriate license, see [Reusable Data Best Practices Chapter 1](reusable-data-best-practices.readthedocs.io/en/latest/chapters/chapter_1.html#)
 3. Add [meaningful metadata](https://blog.datacite.org/metadig-recommendations-for-fair-datacite-metadata/) to records 
 4. Attribute credit where credit is due (attribution chapter link)
 5. Make sure you do not include any personal identifiable information (PII) in the record  
@@ -70,7 +70,7 @@ InvenioRDM enables organizations to securely house research products and make th
 Name | site | ORCID
 * Sara Gonzales | Northwestern University | 0000-0002-1193-2298
 * Lisa O'Keefe | Northwestern University | 0000-0003-1211-7583
-* Guillaume Viger | Northwestern Univerity | 
+* Guillaume Viger | Northwestern University | 
 * Matt Carson | Northwestern University | 0000-0003-4105-9220
 * Tom Morrell | Caltech Library | 0000-0001-9266-5146
 * Carlos Fernando Gamboa | Brookhaven National Laboratory
