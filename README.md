@@ -30,9 +30,13 @@ Each chapter should have the following sections:
 | Ready for comment | Mature draft | Actively soliciting more in-depth community feedback |
 | Implementation-ready | Mature draft revised in light of input | Ready to be implemented, and evolved according to real world experince with it|
 
+## Add google document to chapters
+`main.py` allows you to convert a google document to a markdown file and add it to chapters. To use this run `python main.py <your_google_document_url>`. The images will be downloaded to `docs/_static` and the document will be added to `docs/chapters`.
+
 ## Instruction for making changes
 
 ### Folder structure
+   * This project requires `credentials.json` for the google doc apis to work. This has to be at the root folder of the project. See here how to get the `credentials.json` [https://developers.google.com/docs/api/quickstart/js](https://developers.google.com/docs/api/quickstart/js).
    * Every Sphinx related files are under [docs](docs) folder.
    * [index.rst](docs/index.rst) file is the the top-level index page.
    * Each chapter goes under [docs/chapters](docs/chapters) folder. They are markdown files.

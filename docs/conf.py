@@ -42,7 +42,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.githubpages',
-    'recommonmark'
+    'recommonmark',
+    'sphinxjp.themes.basicstrap'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -188,8 +189,20 @@ todo_include_todos = True
 
 
 try:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_options = {}
+    #import sphinx_rtd_theme
+    #html_theme = 'sphinx_rtd_theme'
+    html_theme = 'basicstrap'
+    html_css_files = [
+        'css/custom.css',
+    ]
+    html_js_files = [
+        'js/custom.js',
+    ]
+    html_theme_options = {
+        'googlewebfont': True,
+        'googlewebfont_url': 'http://fonts.googleapis.com/css?family=Roboto',
+        'googlewebfont_style': "font-family: 'Roboto', sans-serif",
+    }
+
 except ImportError:
     print('Warning: "sphinx_rtd_theme" is not installed, fall back to default theme.')
