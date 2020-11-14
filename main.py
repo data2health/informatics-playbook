@@ -31,7 +31,7 @@ def is_heading(paragraph):
 
 def main():
     # The ID of a sample document.
-    DOCUMENT_ID = '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc' #'1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
+    DOCUMENT_ID = '1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ' #'1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
 
     try:
         result = re.search('d/(.*)/edit', sys.argv[1])
