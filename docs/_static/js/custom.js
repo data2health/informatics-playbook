@@ -15,12 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < references.length; i++){
        const element = references[i];
        sectionMap.push({href:element.href, text:element.innerText.toLowerCase()})
-
     }
 
 
     for(let i = 0; i < externalReferences.length; i++){
-
         let innerText = externalReferences[i].innerText.toLowerCase()
         let internalReference = sectionMap.find(section=>section.text == innerText);
         if(internalReference){
@@ -38,7 +36,31 @@ document.addEventListener('DOMContentLoaded', function() {
         let sup = document.createElement("sup");
         let textNode = document.createTextNode(`[${foundCitation?foundCitation.number:newCitation.number}]`);
         sup.appendChild(textNode);
+        sup.classList.add('citation');
         externalReferences[i].appendChild(sup);
+    }
+
+
+    // Temporary hack for broken search links
+    // Some search result links look like this "chapters/chapter_6undefined?highlight=harmonization"
+    // It seems that the theme parses the page extension to "undefined" instead of ".html"
+    // We check in each anchor link if this is the case and replace the href
+    if(window.location.href.includes('search.html')){
+        // apparently the theme does some modification after the dom has been loaded
+        let tries = 0;
+        let interval = setInterval(function () {
+            if(tries>5){
+                clearInterval(interval)
+            }
+            tries++;
+            let anchors = document.getElementsByTagName('a');
+            for (let i = 0; i < anchors.length; i++) {
+                if (anchors[i].href.includes('undefined')) {
+                    anchors[i].href = anchors[i].href.replace('undefined', '.html');
+                }
+            }
+        }, 1000)
+
     }
 
     // search links are broken
