@@ -305,7 +305,7 @@ NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for resear
 NIH and related agencies, together with CD2H, have leadership positions in the newly established HL7 FHIR Accelerator for research called Vulcan. The goal of this effort is to ensure the needs and requirements of translational research, specifically those of  the [CTSA](#ctsa) community, are accommodated and incorporated in [FHIR](#fhir) development, evolution, and maturation.
   
   
-![image](../_static/grGvEKRD6jnkmDi_WOnCAF3C7z2obKwyqsi61xsPcnipx0mKKpZwklgWVSdtlUhEkejxaOMjy_7Ag5xEPBjV5BjZ1niGPYMqWlPD9AAuwlrxjFZpLxjQzM6KqNQg8RnwmnfaLlvWnog619VjwQ.jpg)   
+![image](../_static/lnbDTYpK6eW6Yxvx3Mwmbndut4wwD1-Lt_qkQh201iUOSbzyzjiYfG2bYXbNlw1L5ce4r2ShQz01zXxYrn8I6rb54t-74AC2l_oTsL-hxrL6WBP3Opev7W3m_6-s4yIv2uhchM70jfs1sZgNUA.jpg)   
 
 ### How does FHIR work?
 
@@ -313,7 +313,7 @@ NIH and related agencies, together with CD2H, have leadership positions in the n
 [FHIR](#fhir) has modular data models that can carry a flexible payload (data), and reusable “containers” that can be assembled into working systems. This model enables the exchange of well-defined structured data in small discrete units.
   
   
-![image](../_static/Qb7du8_bUw6_pjW0FmuISlGc-aWcQbK94SAe-houXxECBFxrJLEB6hyIZ_yb3H1VHIZ1YFw4nbGLNdlqVFjFgiEN2h7Ra_ah5LQ7VHY6d2n3UAgoY0he1hoHJziFTu-mWGfRTKUe55wSqCHzKw.jpg)   
+![image](../_static/UR6OxsiTv8jq_Hy3HJKqt-LexYN4F0UZMWfhJ0xPxxK_TjMrGKUifuTd8xa6r7gMJ2fYMih0fA9XoFKqGR-5QiJ17L78IcNBiVs_7SoYjuX0BCpV4gAn8c8gwmg8os_zO4GZkbpY1tYOVE8CGw.jpg)   
   
 
 
