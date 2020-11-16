@@ -21,6 +21,7 @@ WEB_URL_REGEX = r"""(?i)\b((?:https?:(?:/{1,3}|[a-z0-9%])|[a-z0-9.\-]+[.](?:com|
 # '16U5sLssOMuG8X8GF-qIo7VXW9BQJ_E0QIz6C5CzP7t0'
 # '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc' primary file
 
+
 def is_heading(paragraph):
     named_style_type = paragraph.get('paragraphStyle').get('namedStyleType')
     if 'HEADING' in named_style_type:
@@ -28,6 +29,167 @@ def is_heading(paragraph):
         # using this for now until I find an alternative
         return int(re.search(r'[-+]?[0-9]+', named_style_type)[0])
     return 0
+
+
+def get_formatting(mdFile, index, document, item):
+    if item.get('paragraph'):
+        bullet_list = []
+        if item.get('paragraph').get('bullet'):
+            bullet_point = ''
+            # don't currently use this, until I understand how gdocs handles ordered lists
+            is_ordered = False
+            for element in item.get('paragraph').get('elements'):
+                if element.get('footnoteReference', {}).get('footnoteNumber'):
+                    # don't know why this exists, I just pass it to not break the script
+                    pass
+                else:
+                    content = element.get('textRun').get('content')
+                    bullet_point = bullet_point + content
+
+            ordering_separator = f"{is_ordered} " if is_ordered else '- '
+            # apply 2 spaces per nesting level
+            nesting_level = item.get('paragraph').get('bullet').get('nestingLevel')
+            spacing = ''
+            if nesting_level:
+                spacing = (int(nesting_level)) * 2 * ' '
+            mdFile.write(spacing + ordering_separator + bullet_point)
+
+            # check next item, if it is not a bullet point then add a new line so the next item does not
+            # collide with the last bullet point
+            try:
+                if document['body']['content'][index + 1]:
+                    if not document['body']['content'][index + 1].get('paragraph', {}).get('bullet'):
+                        mdFile.new_line()
+            except IndexError:
+                pass
+            '''for element in item.get('paragraph').get('elements'):
+                content = element.get('textRun').get('content')
+                bullet_list.append(content.rstrip('\n').strip())
+                mdFile.new_list(bullet_list)'''
+        else:
+            for element in item.get('paragraph').get('elements'):
+                # search for images
+                if element.get('inlineObjectElement'):
+                    inline_object = document.get('inlineObjects'). \
+                        get(element.get('inlineObjectElement').get('inlineObjectId'))
+                    object_properties = inline_object.get('inlineObjectProperties').get('embeddedObject')
+                    image_path = object_properties.get('imageProperties').get('contentUri')
+                    urllib.request.urlretrieve(image_path,
+                                               filename=f"docs/_static/{image_path.split('/')[-1]}.jpg")
+
+                    mdFile.new_line(mdFile.new_inline_image(text='image',
+                                                            path=f"../_static/{image_path.split('/')[-1]}.jpg"))
+
+                    # add an empty character to prevent image collision with text
+                    mdFile.write(' ')
+
+                # search for text elements
+                if element.get('textRun'):
+                    text_run = element.get('textRun')
+                    is_section_link = True if text_run.get("textStyle", {}).get('link', {}).get('bookmarkId') or \
+                                              text_run.get("textStyle", {}).get('link', {}).get('headingId') else False
+
+                    content = text_run.get('content')
+                    if is_section_link:
+                        link_to = content.replace(" ", "-").lower()
+                        content = f"[{content}](#{link_to})"
+
+                    #  escape starting strings like "n." where n is any number to prevent breaking md format
+                    for match in re.finditer(r'^[-+]?[0-9]+\.', content):
+                        content = content[:match.start() + 1] + '\\' + content[match.start() + 1:]
+
+                    # find links in text and format them accordingly
+                    for match in re.finditer(WEB_URL_REGEX, content):
+                        wrapped_in_parenthesis = False
+                        try:
+                            # if string is already wrapped in parenthesis we do not need to add our own
+                            # for the markdown formatting
+                            if content[:match.start() - 1] == '(' and content[match.start() + 1:] == ')':
+                                wrapped_in_parenthesis = True
+                        except IndexError:
+                            pass
+                        if wrapped_in_parenthesis:
+                            content = content[:match.start() - 1] + f"[{match.group(1)}]" + \
+                                      content[match.start() - 1:]
+                        else:
+                            # we must add the parenthesis around the matching url on our own
+                            # this SHOULD work not tested yet
+                            content = content[:match.start()] + f"[{match.group(1)}]" + \
+                                      f"({content[match.start():match.end()]})" + content[match.end():]
+                    # managing some edge cases for now
+                    # until a solution is found for every case
+
+                    if content.replace(' ', '') == '\n':  # using strip() removes \n as well
+                        mdFile.new_line()
+                        continue
+                    if content == ' ':
+                        mdFile.write(' ')
+                        continue
+
+                    try:
+                        is_bold = element.get('textRun').get('textStyle').get('bold')
+                        is_italic = element.get('textRun').get('textStyle').get('italic')
+                        is_strikethrough = element.get('textRun').get('textStyle').get('strikethrough')
+                    except AttributeError:
+                        is_italic = False
+                        is_bold = False
+                        is_strikethrough = False
+                    bold_italics_code = ''
+                    if is_bold:
+                        bold_italics_code = bold_italics_code + 'b'
+                    if is_italic:
+                        bold_italics_code = bold_italics_code + 'i'
+
+                    # find newlines in text
+                    add_new_line = False
+                    if '\n' in content:
+                        add_new_line = True
+
+                    # find if text starts or ends with space or tab
+                    starts_with_space = False
+                    ends_with_space = False
+
+                    if re.match(r'\s', content):
+                        starts_with_space = True
+                    if content.endswith(' '):
+                        ends_with_space = True
+
+                    # add the white space before any formatting to prevent breaking the format
+                    if starts_with_space:
+                        mdFile.write(' ')
+
+                    # if these conditions meet we should transform the text to a header
+                    # google docs is weird with its results so we have to check a lot of conditions
+                    _is_heading = is_heading(item.get('paragraph'))
+                    if _is_heading:
+                        mdFile.new_header(level=_is_heading, title=content.rstrip('\n').strip(),
+                                          add_table_of_contents='n')
+                    # else just write plain text
+                    else:
+                        stripped_content = content.rstrip('\n').strip()
+
+                        # recommonmark doesn't allow strikethroughs :(
+                        # if is_strikethrough:
+                        #    stripped_content = f"~~{stripped_content}~~"
+                        mdFile.write(stripped_content,
+                                     bold_italics_code=bold_italics_code)
+
+                    # add them after all formatting
+                    if ends_with_space:
+                        mdFile.write(' ')
+                    if add_new_line:
+                        # alternatively use mdFile.write('\n') to add a completely new line
+                        # mdFile.write('\\')
+                        mdFile.write('\n')
+                        mdFile.new_line()
+
+        # add a space between each element
+        spacing = item.get('paragraph').get('paragraphStyle').get('lineSpacing')
+        if spacing:
+            mdFile.write((int(spacing) // 100) * '\n')
+        else:
+            pass
+            # mdFile.new_line()
 
 
 def main():
@@ -67,169 +229,24 @@ def main():
     document.get('inlineObjects')
     mdFile = MdUtils(file_name='docs/chapters/Example_Markdown', title=document.get('title'))
 
+    # iterate all basic formatting first
+    # google docs api splits the document in a non-directional format
+    # 'body', 'footnotes', 'footers', 'lists', 'inlineObjects' etc
     for (index, item) in enumerate(document['body']['content']):
-        if item.get('paragraph'):
-            bullet_list = []
-            if item.get('paragraph').get('bullet'):
-                bullet_point = ''
-                # don't currently use this, until I understand how gdocs handles ordered lists
-                is_ordered = False
-                for element in item.get('paragraph').get('elements'):
-                    if element.get('footnoteReference', {}).get('footnoteNumber'):
-                        # don't know why this exists, I just pass it to not break the script
-                        pass
-                    else:
-                        content = element.get('textRun').get('content')
-                        bullet_point = bullet_point + content
+        get_formatting(mdFile, index, document, item)
 
-                ordering_separator = f"{is_ordered} " if is_ordered else '- '
-                # apply 2 spaces per nesting level
-                nesting_level = item.get('paragraph').get('bullet').get('nestingLevel')
-                spacing = ''
-                if nesting_level:
-                    spacing = (int(nesting_level)) * 2 * ' '
-                mdFile.write(spacing + ordering_separator + bullet_point)
+    # then add and iterate all the footnotes
+    mdFile.new_header(level=2, title='References',
+                      add_table_of_contents='n')
+    for key, value in document['footnotes'].items():
+        for (index, item) in enumerate(value['content']):
+            get_formatting(mdFile, index, document, item)
 
-                # check next item, if it is not a bullet point then add a new line so the next item does not
-                # collide with the last bullet point
-                try:
-                    if document['body']['content'][index + 1]:
-                        if not document['body']['content'][index + 1].get('paragraph', {}).get('bullet'):
-                            mdFile.new_line()
-                except IndexError:
-                    pass
-                '''for element in item.get('paragraph').get('elements'):
-                    content = element.get('textRun').get('content')
-                    bullet_list.append(content.rstrip('\n').strip())
-                    mdFile.new_list(bullet_list)'''
-            else:
-                for element in item.get('paragraph').get('elements'):
-                    # search for images
-                    if element.get('inlineObjectElement'):
-                        inline_object = document.get('inlineObjects'). \
-                            get(element.get('inlineObjectElement').get('inlineObjectId'))
-                        object_properties = inline_object.get('inlineObjectProperties').get('embeddedObject')
-                        image_path = object_properties.get('imageProperties').get('contentUri')
-                        urllib.request.urlretrieve(image_path,
-                                                   filename=f"docs/_static/{image_path.split('/')[-1]}.jpg")
-
-                        mdFile.new_line(mdFile.new_inline_image(text='image',
-                                                                path=f"../_static/{image_path.split('/')[-1]}.jpg"))
-
-                        # add an empty character to prevent image collision with text
-                        mdFile.write(' ')
-
-                    # search for text elements
-                    if element.get('textRun'):
-                        text_run = element.get('textRun')
-                        is_section_link = True if text_run.get("textStyle", {}).get('link', {}).get('bookmarkId') or \
-                            text_run.get("textStyle", {}).get('link', {}).get('headingId') else False
-
-                        content = text_run.get('content')
-                        if is_section_link:
-                            link_to = content.replace(" ", "-").lower()
-                            content = f"[{content}](#{link_to})"
-
-                        #  escape starting strings like "n." where n is any number to prevent breaking md format
-                        for match in re.finditer(r'^[-+]?[0-9]+\.', content):
-                            content = content[:match.start()+1] + '\\' + content[match.start()+1:]
-
-                        # find links in text and format them accordingly
-                        for match in re.finditer(WEB_URL_REGEX, content):
-                            wrapped_in_parenthesis = False
-                            try:
-                                # if string is already wrapped in parenthesis we do not need to add our own
-                                # for the markdown formatting
-                                if content[:match.start()-1] == '(' and content[match.start()+1:] == ')':
-                                    wrapped_in_parenthesis = True
-                            except IndexError:
-                                pass
-                            if wrapped_in_parenthesis:
-                                content = content[:match.start() - 1] + f"[{match.group(1)}]" + \
-                                          content[match.start() - 1:]
-                            else:
-                                # we must add the parenthesis around the matching url on our own
-                                # this SHOULD work not tested yet
-                                content = content[:match.start()] + f"[{match.group(1)}]" + \
-                                          f"({content[match.start():match.end()]})" + content[match.end():]
-                        # managing some edge cases for now
-                        # until a solution is found for every case
-
-                        if content.replace(' ', '') == '\n':  # using strip() removes \n as well
-                            mdFile.new_line()
-                            continue
-                        if content == ' ':
-                            mdFile.write(' ')
-                            continue
-
-                        try:
-                            is_bold = element.get('textRun').get('textStyle').get('bold')
-                            is_italic = element.get('textRun').get('textStyle').get('italic')
-                            is_strikethrough = element.get('textRun').get('textStyle').get('strikethrough')
-                        except AttributeError:
-                            is_italic = False
-                            is_bold = False
-                            is_strikethrough = False
-                        bold_italics_code = ''
-                        if is_bold:
-                            bold_italics_code = bold_italics_code + 'b'
-                        if is_italic:
-                            bold_italics_code = bold_italics_code + 'i'
-
-                        # find newlines in text
-                        add_new_line = False
-                        if '\n' in content:
-                            add_new_line = True
-
-                        # find if text starts or ends with space or tab
-                        starts_with_space = False
-                        ends_with_space = False
-
-                        if re.match(r'\s', content):
-                            starts_with_space = True
-                        if content.endswith(' '):
-                            ends_with_space = True
-
-                        # add the white space before any formatting to prevent breaking the format
-                        if starts_with_space:
-                            mdFile.write(' ')
-
-                        # if these conditions meet we should transform the text to a header
-                        # google docs is weird with its results so we have to check a lot of conditions
-                        _is_heading = is_heading(item.get('paragraph'))
-                        if _is_heading:
-                            mdFile.new_header(level=_is_heading, title=content.rstrip('\n').strip(),
-                                              add_table_of_contents='n')
-                        # else just write plain text
-                        else:
-                            stripped_content = content.rstrip('\n').strip()
-
-                            # recommonmark doesn't allow strikethroughs :(
-                            #if is_strikethrough:
-                            #    stripped_content = f"~~{stripped_content}~~"
-                            mdFile.write(stripped_content,
-                                         bold_italics_code=bold_italics_code)
-
-                        # add them after all formatting
-                        if ends_with_space:
-                            mdFile.write(' ')
-                        if add_new_line:
-                            # alternatively use mdFile.write('\n') to add a completely new line
-                            # mdFile.write('\\')
-                            mdFile.write('\n')
-                            mdFile.new_line()
-
-            # add a space between each element
-            spacing = item.get('paragraph').get('paragraphStyle').get('lineSpacing')
-            if spacing:
-                mdFile.write((int(spacing) // 100) * '\n')
-            else:
-                pass
-                #mdFile.new_line()
-                # mdFile.write('\n')
-    #mdFile.new_table_of_contents(table_title='Contents', depth=2)
+    mdFile.new_header(level=2, title='Hidden',
+                      add_table_of_contents='n')
+    for footnote in document['footnotes']:
+        mdFile.new_paragraph(footnote)
     mdFile.create_md_file()
-    print('The title of the document is: {}'.format(document.get('title')))
 
 
 if __name__ == '__main__':

@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // we do some magic here to make external links work
 
     let sectionMap = [];
-    let citationMap = [];
-    let citationCounter = 0;
     let references = document.getElementsByClassName('reference internal');
     let externalReferences = document.getElementsByClassName('reference external');
 
@@ -17,29 +15,43 @@ document.addEventListener('DOMContentLoaded', function() {
        sectionMap.push({href:element.href, text:element.innerText.toLowerCase()})
     }
 
-
     for(let i = 0; i < externalReferences.length; i++){
         let innerText = externalReferences[i].innerText.toLowerCase()
         let internalReference = sectionMap.find(section=>section.text == innerText);
         if(internalReference){
             externalReferences[i].href = internalReference.href;
         }
-
-        let foundCitation = citationMap.find(c=>c.citation==innerText);
-        let newCitation = null;
-        if(!foundCitation){
-            citationCounter++;
-            newCitation = {citation:innerText, number:citationCounter};
-            citationMap.push(newCitation);
-        }
-
-        let sup = document.createElement("sup");
-        let textNode = document.createTextNode(`[${foundCitation?foundCitation.number:newCitation.number}]`);
-        sup.appendChild(textNode);
-        sup.classList.add('citation');
-        externalReferences[i].appendChild(sup);
     }
 
+    // I have added a hidden element which contains all the footnote ids provided by google docs
+    // we search these and map the items to the "footnoteMap" array
+    let footnoteMap = [];
+    let hiddenElements = document.getElementById('hidden');
+    console.log(hiddenElements);
+    for(let i=0; i<hiddenElements.children.length; i++){
+        // First element will be the header title which we don't need
+        if(i==0) {
+            continue;
+        }
+        let reference = hiddenElements.children[i];
+        footnoteMap.push({index:i, id:reference.innerText});
+    }
+
+    // Then we use the footnoteMap array to add footnote indexing and enable linking
+    let referenceElements = document.getElementById('references');
+    for(let i=0; i<referenceElements.children.length; i++){
+        // First element will be the header title which we don't need
+        if(i==0) {
+            continue;
+        }
+        let reference = referenceElements.children[i];
+        let foundReference = footnoteMap.find(f=>f.index==i);
+        let sup = document.createElement("sup");
+        sup.id = foundReference.id;
+        let textNode = document.createTextNode(`${foundReference.index}`);
+        sup.appendChild(textNode);
+        reference.prepend(sup);
+    }
 
     // Temporary hack for broken search links
     // Some search result links look like this "chapters/chapter_6undefined?highlight=harmonization"

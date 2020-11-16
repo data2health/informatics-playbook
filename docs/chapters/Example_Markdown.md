@@ -305,7 +305,7 @@ NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for resear
 NIH and related agencies, together with CD2H, have leadership positions in the newly established HL7 FHIR Accelerator for research called Vulcan. The goal of this effort is to ensure the needs and requirements of translational research, specifically those of  the [CTSA](#ctsa) community, are accommodated and incorporated in [FHIR](#fhir) development, evolution, and maturation.
   
   
-![image](../_static/lnbDTYpK6eW6Yxvx3Mwmbndut4wwD1-Lt_qkQh201iUOSbzyzjiYfG2bYXbNlw1L5ce4r2ShQz01zXxYrn8I6rb54t-74AC2l_oTsL-hxrL6WBP3Opev7W3m_6-s4yIv2uhchM70jfs1sZgNUA.jpg)   
+![image](../_static/B3gQVqtMzb4c5CjuwprWUbURawqyNnTbzUfMMjonZu-rpbG9bzkQst3w5WZV9T2fDtmWK8W8cjQs47HfgBn8csC1aST1f3q0YlscE9PbvsToiQHTObQBArQ80UarmilYSqVTi_UVQS8Nwkm3uQ.jpg)   
 
 ### How does FHIR work?
 
@@ -313,7 +313,7 @@ NIH and related agencies, together with CD2H, have leadership positions in the n
 [FHIR](#fhir) has modular data models that can carry a flexible payload (data), and reusable “containers” that can be assembled into working systems. This model enables the exchange of well-defined structured data in small discrete units.
   
   
-![image](../_static/UR6OxsiTv8jq_Hy3HJKqt-LexYN4F0UZMWfhJ0xPxxK_TjMrGKUifuTd8xa6r7gMJ2fYMih0fA9XoFKqGR-5QiJ17L78IcNBiVs_7SoYjuX0BCpV4gAn8c8gwmg8os_zO4GZkbpY1tYOVE8CGw.jpg)   
+![image](../_static/f-QMCZgZKjaYvRkTFxVqkFakK5lDup2Rw-VpUbb_F90I0MnXYx8kIdcj6swtUATyHip5If2f35trtpA2WOgQ02Rjcv6v1BosPnPW8sUb8zr59dym7pJ5HD4CJHJctxRhqpD1I2m_pTImNOJhGQ.jpg)   
   
 
 
@@ -599,3 +599,101 @@ MeSH: Work consisting of lists of the technical terms or expressions used in a s
   
 
 TriNetX is a global health research network connecting healthcare organizations (including 35 [CTSA](#ctsa) Program hubs), biopharma and contract research organizations. The TriNetX platform enables cohort identification and hypothesis generation based on clinical data that can currently be sourced from a common data model [i2b2](#i2b2), OMOP, NAACCR, etc.), flat files, or via natural language processing (NLP) of narrative documents.  
+
+## References
+ Knosp, Boyd M., William K. Barnett, Nicholas R. Anderson, and Peter J. Embi. "Research It Maturity Models for Academic Health Centers: Early Development and Initial Evaluation." Journal of Clinical and Translational Science 2, no. 5 (2018): 289-94. [https://doi.org/10.1017/cts.2018.339](https://doi.org/10.1017/cts.2018.339)  
+
+ Fast Healthcare Interoperability Resources (FHIR®) Standard. Notice Number: NOT-OD-19-122.  (Release Date: July 30, 2019)
+  
+
+ Small Business (SBIR & STTR) Applications Directed at the Adoption of the Fast Healthcare Interoperability Resources (FHIR®) Standard.  Notice Number: NOT-OD-19-127.  Release Date: July 30, 2019
+  
+
+ Kahn, M. G., Batson, D., & Schilling, L. M. (2012). Data model considerations for clinical effectiveness researchers. *Medical care*, *50 Suppl*(0), S60–S67. [https://doi.org/10.1097/MLR.0b013e318259bff4](https://doi.org/10.1097/MLR.0b013e318259bff4)  
+
+ Murphy SN, Weber G, Mendis M, Gainer V, Chueh HC, Churchill S, et al. Serving the enterprise and beyond with informatics for integrating biology and the bedside (i2b2). J Am Med Inf Assoc. 2010;17: 124–130. pmid:20190053
+  
+
+ Visweswaran S, Becich MJ, D’Itri VS, Sendro ER, MacFadden D, Anderson NR, et al. Accrual to Clinical Trials (ACT): A Clinical and Translational Science Award Consortium Network. JAMIA Open. pmid:30474072
+  
+
+ Klann JG, Joss MAH, Embree K, Murphy SN (2019) Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model. PLOS ONE 14(2): e0212463. [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)  
+
+ "Harmonisation - DAPA Measurement Toolkit - Medical ...." [https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation](https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation). Accessed 27 Feb. 2020.
+  
+
+ Hilal Atasoy, Brad N. Greenwood, Jeffrey Scott McCullough.The Digitization of Patient Care: A Review of the Effects of Electronic Health Records on Health Care Quality and Utilization.  Annual Review of Public Health 2019 40:1, 487-500
+  
+
+ "van Panhuis, W.G., Paul, P., Emerson, C. et al. A systematic review of barriers to data sharing in public health. BMC Public Health 14, 1144 (2014). [https://doi.org/10.1186/1471-2458-14-1144](https://doi.org/10.1186/1471-2458-14-1144)  
+
+ Geneviève LD, Martani A, Mallet MC, Wangmo T, Elger BS (2019) Factors influencing harmonized health data collection, sharing and linkage in Denmark and Switzerland: A systematic review. PLoS ONE 14(12): e0226015.
+  
+
+ Jiang G, Solbrig HR, Iberson-Hurst D, Kush RD, Chute CG. A Collaborative Framework for Representation and Harmonization of Clinical Study Data Elements Using Semantic MediaWiki. Summit Transl Bioinform. 2010 Mar 1;2010:11-5. PMID: 21347136; PMCID: PMC3041544.
+  
+
+ Marta Benet et al. Integrating Clinical and Epidemiologic Data on Allergic Diseases Across Birth Cohorts: A Harmonization Study in the Mechanisms of the Development of Allergy Project, *American Journal of Epidemiology*, Volume 188, Issue 2, February 2019, Pages 408–417, [https://doi.org/10.1093/aje/kwy242](https://doi.org/10.1093/aje/kwy242)  
+
+ Kimball R, Ross M. The data warehouse toolkit: the complete guide to dimensional modeling [Internet]. John Wiley & Sons; 2011. Available: [https://books.google.com/books](https://books.google.com/books)?
+  
+
+ Hripcsak G, Duke JD, Shah NH, Reich CG, Huser V, Schuemie MJ, et al. Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers. Stud Health Technol Inform. 2015;216: 574–578. pmid:26262116  
+
+ Klann JG, Joss MAH, Embree K, Murphy SN, Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model, PLOS ONE, Feb 2019 [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)
+  
+
+ Nicholson, J., Ioannidis, J. Conform and be funded. Nature 492, 34–36 (2012). [https://doi.org/10.1038/492034a](https://doi.org/10.1038/492034a)  
+
+ Opinion: Expansion fever and soft money plague the biomedical research enterprise
+  
+
+Henry R. Bourne, PNAS August 28, 2018 115 (35) 8647-8651; [https://doi.org/10.1073/pnas.1813115115](https://doi.org/10.1073/pnas.1813115115);  
+
+ Rescuing US biomedical research from its systemic flaws, Bruce Alberts, Marc W. Kirschner, Shirley Tilghman, and Harold Varmus, PNAS April 22, 2014 111 (16) 5773-5777; first published April 14, 2014 [https://doi.org/10.1073/pnas.1404402111](https://doi.org/10.1073/pnas.1404402111)  
+
+ Knosp B, Craven CK, Dorr D, Campion T. Understanding enterprise data warehouses to support clinical and translational research. J Am Med Infom Assoc. Accepted for publication 2020 April 27. [Cited 2020 April 30]  
+
+
+## Hidden
+
+
+kix.vgagxbo4zq1o
+
+kix.jhk8xd4xpj5
+
+kix.ivnxrb4488bb
+
+kix.unntzb98ia8x
+
+kix.c35ahcuigvvu
+
+kix.6pgpj7a1qdf9
+
+kix.k5tcvtbx56g2
+
+kix.qoavunstds55
+
+kix.9brwper0q0kh
+
+kix.oszxd4uut1kq
+
+kix.zdysifo08sr1
+
+kix.inn5u2e3050u
+
+kix.vf3i9fva7zvn
+
+kix.uz69fbxekobw
+
+kix.o16v6vyuezk8
+
+kix.eae5me24e5cv
+
+kix.fdndbff4dc4d
+
+kix.b8y7gxvt5syu
+
+kix.jrs22bob27gc
+
+kix.9r1ayja43czo
