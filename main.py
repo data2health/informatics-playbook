@@ -15,6 +15,7 @@ SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
 # this regex is kinda long :D
 WEB_URL_REGEX = r"""(?i)\b((?:https?:(?:/{1,3}|[a-z0-9%])|[a-z0-9.\-]+[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)/)(?:[^\s()<>{}\[\]]+|\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\))+(?:\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])|(?:(?<!@)[a-z0-9]+(?:[.\-][a-z0-9]+)*[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)\b/?(?!@)))"""
 
+
 # TODO start parsing tables and strikethrough
 
 # '1L1vU0YWf1PjVMc7LL_nFTA0lApuC4hlVgjztXQ-MLSU'
@@ -25,15 +26,15 @@ WEB_URL_REGEX = r"""(?i)\b((?:https?:(?:/{1,3}|[a-z0-9%])|[a-z0-9.\-]+[.](?:com|
 def is_heading(paragraph):
     named_style_type = paragraph.get('paragraphStyle').get('namedStyleType')
     if 'HEADING' in named_style_type:
-        # m2r2 does not parses headers to paragraphs if there are different sized headers with the same content
-        # using this for now until I find an alternative
         return int(re.search(r'[-+]?[0-9]+', named_style_type)[0])
     return 0
 
 
-def get_formatting(mdFile, index, document, item):
+def get_formatting(mdFile, index, document, item, content_length, unify_content=False):
+    # TODO: Fix broken formatting when mixing links and headers
+    # TODO: Check the "OHDSI Network" and fix broken formatting (This case might need manual fixing after
+    #  the md is actually generated)
     if item.get('paragraph'):
-        bullet_list = []
         if item.get('paragraph').get('bullet'):
             bullet_point = ''
             # don't currently use this, until I understand how gdocs handles ordered lists
@@ -83,13 +84,25 @@ def get_formatting(mdFile, index, document, item):
                     # add an empty character to prevent image collision with text
                     mdFile.write(' ')
 
+                if element.get('footnoteReference'):
+                    footnoteReference = element.get('footnoteReference')
+                    mdFile.write(f"[{footnoteReference['footnoteNumber']}](#{footnoteReference['footnoteId']})")
+
                 # search for text elements
                 if element.get('textRun'):
                     text_run = element.get('textRun')
+
                     is_section_link = True if text_run.get("textStyle", {}).get('link', {}).get('bookmarkId') or \
                                               text_run.get("textStyle", {}).get('link', {}).get('headingId') else False
 
                     content = text_run.get('content')
+
+                    # this is used for the references table at the bottom
+                    # sometimes there are multiple "content" values which end with a newline
+                    # we should strip the newline at all the values except the last one or else
+                    # a reference will be skipped
+                    if unify_content and index != content_length - 1:
+                        content = content.rstrip('\n')
                     if is_section_link:
                         link_to = content.replace(" ", "-").lower()
                         content = f"[{content}](#{link_to})"
@@ -127,9 +140,9 @@ def get_formatting(mdFile, index, document, item):
                         continue
 
                     try:
-                        is_bold = element.get('textRun').get('textStyle').get('bold')
-                        is_italic = element.get('textRun').get('textStyle').get('italic')
-                        is_strikethrough = element.get('textRun').get('textStyle').get('strikethrough')
+                        is_bold = text_run.get('textStyle').get('bold')
+                        is_italic = text_run.get('textStyle').get('italic')
+                        is_strikethrough = text_run.get('textStyle').get('strikethrough')
                     except AttributeError:
                         is_italic = False
                         is_bold = False
@@ -178,8 +191,6 @@ def get_formatting(mdFile, index, document, item):
                     if ends_with_space:
                         mdFile.write(' ')
                     if add_new_line:
-                        # alternatively use mdFile.write('\n') to add a completely new line
-                        # mdFile.write('\\')
                         mdFile.write('\n')
                         mdFile.new_line()
 
@@ -194,7 +205,7 @@ def get_formatting(mdFile, index, document, item):
 
 def main():
     # The ID of a sample document.
-    DOCUMENT_ID = '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc' #'1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
+    DOCUMENT_ID = '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc'  # '1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
 
     try:
         result = re.search('d/(.*)/edit', sys.argv[1])
@@ -233,19 +244,17 @@ def main():
     # google docs api splits the document in a non-directional format
     # 'body', 'footnotes', 'footers', 'lists', 'inlineObjects' etc
     for (index, item) in enumerate(document['body']['content']):
-        get_formatting(mdFile, index, document, item)
+        get_formatting(mdFile, index, document, item, content_length=len(document['body']['content']))
 
     # then add and iterate all the footnotes
     mdFile.new_header(level=2, title='References',
                       add_table_of_contents='n')
     for key, value in document['footnotes'].items():
+        # Adding a shadow link to then fix reference ordering in javascript
+        footnoteId = document['footnotes'][key]['footnoteId']
+        mdFile.write(f"[]({footnoteId})")
         for (index, item) in enumerate(value['content']):
-            get_formatting(mdFile, index, document, item)
-
-    mdFile.new_header(level=2, title='Hidden',
-                      add_table_of_contents='n')
-    for footnote in document['footnotes']:
-        mdFile.new_paragraph(footnote)
+            get_formatting(mdFile, index, document, item, content_length=len(value['content']), unify_content=True)
     mdFile.create_md_file()
 
 

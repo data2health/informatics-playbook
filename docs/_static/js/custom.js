@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // I have added a hidden element which contains all the footnote ids provided by google docs
-    // we search these and map the items to the "footnoteMap" array
+    // footnotes in text are in a different order than the one google docs api provides us
+    // so the below unfortunately does not work, so we have to do some magic... again
+
+    let citations = [].slice.call(document.querySelectorAll('a')).filter(function(el){
+       return el.hash.match(/^#kix/i);
+    });
+
+    // populating the footnoteMap array based on the citations found above
     let footnoteMap = [];
-    let hiddenElements = document.getElementById('hidden');
-    console.log(hiddenElements);
-    for(let i=0; i<hiddenElements.children.length; i++){
-        // First element will be the header title which we don't need
-        if(i==0) {
-            continue;
-        }
-        let reference = hiddenElements.children[i];
-        footnoteMap.push({index:i, id:reference.innerText});
+    for(let i=0; i<citations.length; i++){
+        let reference = citations[i];
+        footnoteMap.push({index:i+1, id:reference.hash});
     }
 
     // Then we use the footnoteMap array to add footnote indexing and enable linking
@@ -46,11 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         let reference = referenceElements.children[i];
         let foundReference = footnoteMap.find(f=>f.index==i);
-        let sup = document.createElement("sup");
-        sup.id = foundReference.id;
-        let textNode = document.createTextNode(`${foundReference.index}`);
-        sup.appendChild(textNode);
-        reference.prepend(sup);
+        if(foundReference){
+            let sup = document.createElement("sup");
+            sup.id = foundReference.id.substring(1);
+            let textNode = document.createTextNode(`${foundReference.index} `);
+            sup.appendChild(textNode);
+            reference.prepend(sup);
+        }
     }
 
     // Temporary hack for broken search links

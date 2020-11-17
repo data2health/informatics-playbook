@@ -61,7 +61,7 @@ The National Center for Data to Health (CD2H) tasked the [SCM](#scm) of the Clin
   
 [Data Harmonization](#data-harmonization) is the process of integrating disparate data of varying types, sources, and formats. [Data Harmonization](#data-harmonization) for research use refers to the ability of an organization to connect with external data-driven clinical and translational research projects involving patient data across multiple institutions (Clinical Data Research Networks or [CDRN](#cdrn)s, such as [PCORnet](#pcornet), [ACT](#act), [OHDSI](#ohdsi), [TriNetX](#trinetx)). Coordinating this process involves not only the development and implementation of technology but also implementation of procedures and governance policies, and harnessing relevant expertise.
   
-It is worth noting that the terms *harmonization* and *standardization* are both used to attain the same goal of data homogeneity. However, while standardization is about conformity, harmonization implies consistency. According to the Cambridge Biomedical Research Centre (UK), “standardization refers to the implementation of uniform processes for prospective collection, storage and transformation of data.[...] Harmonization is a more flexible approach that is more realistic than standardisation in a collaborative context. Harmonization refers to the practices which improve the comparability of variables from separate studies, permitting the pooling of data collected in different ways, and reducing study heterogeneity”. We can see the standardization approaches in the development of [Common Data Models (CDMs)](#common-data-models-(cdms)) and harmonization becomes essential for retrospective collaborative research.
+It is worth noting that the terms *harmonization* and *standardization* are both used to attain the same goal of data homogeneity. However, while standardization is about conformity, harmonization implies consistency. According to the Cambridge Biomedical Research Centre (UK), “standardization refers to the implementation of uniform processes for prospective collection, storage and transformation of data.[...] Harmonization is a more flexible approach that is more realistic than standardisation in a collaborative context. Harmonization refers to the practices which improve the comparability of variables from separate studies, permitting the pooling of data collected in different ways, and reducing study heterogeneity”.[1](#kix.qoavunstds55) We can see the standardization approaches in the development of [Common Data Models (CDMs)](#common-data-models-(cdms)) and harmonization becomes essential for retrospective collaborative research.
   
 [CTSA](#ctsa)s have been building, participating in, and using [CDRN](#cdrn)s for several years with a variety of experiences and outcomes. The Clinical [Data Harmonization](#data-harmonization) Working Group believes these experiences contain lessons learned and intends to develop best practices for [Data Harmonization](#data-harmonization) from them. These best practices can guide organizations on emerging opportunities, such as new technologies and opportunities to join new networks. Helping develop, curate, and communicate/encourage action on this guidance is the purpose of the [SCM](#scm).
   
@@ -71,14 +71,14 @@ It is worth noting that the terms *harmonization* and *standardization* are both
   
 The quality, depth, and breadth of data and samples collected by healthcare organizations has provided increasing opportunities to advance knowledge and population health. Unfortunately, many healthcare institutions exist as silos with no ability to integrate patient data externally. Millions of inpatient and outpatient medical records containing structured data on clinical procedures, medications, diagnoses, demographics, lab results, and genomics, as well as unstructured data documented as free text in progress notes, cannot be used to their full potential. For example, rare diseases research or outcomes research, often require larger datasets than what is available at a single health care organization. Massive datasets offer more comprehensive analysis and the ability to probe specific research questions with more confidence in the results. To be able to make sense of vast information, [Data Harmonization](#data-harmonization) is needed to ask and answer important questions, and to provide evidence for policy changes in areas of standard of care, care delivery, coverage structure, and emerging population health trends.
   
-In the past decades, the field has significantly moved from simple healthcare data digitization to proactive and focused acquisition, aggregation, and standardization through the use of [Common Data Models](#common-data-models) ([CDM](#cdm)s). Currently, informatics teams frequently use harmonization and aggregation to improve the interoperability and compatibility of data among independent organizations that are willing to share and collaborate. [Data Harmonization](#data-harmonization) is a stepping stone to conducting reproducible, collaborative research and is crucial to promoting efficient and timely communication between different stakeholders in the healthcare data domain. If not appropriately addressed, the lack of harmonization becomes a bottleneck, both for research and for sustainable operations. Impactful global health trends may be missed due to the variety of barriers, most of which lay within technical domains, as well as harmonization and standardization domains. A significant percentage of healthcare spending is wasted as a consequence of data silos; therefore, the economic impact of data interoperability should be a significant factor in proposals urging for changes towards [Data Harmonization](#data-harmonization). A significant effort has been made in [data standardization](#data-standardization) and harmonization of research datasets through the work of Clinical Data Interchange Standards Consortium (CDISC). It is time for healthcare data used for research to undergo a similar transformation.
+In the past decades, the field has significantly moved from simple healthcare data digitization[2](#kix.9brwper0q0kh) to proactive and focused acquisition, aggregation, and standardization through the use of [Common Data Models](#common-data-models) ([CDM](#cdm)s). Currently, informatics teams frequently use harmonization and aggregation to improve the interoperability and compatibility of data among independent organizations that are willing to share and collaborate.[3](#kix.oszxd4uut1kq) [Data Harmonization](#data-harmonization) is a stepping stone to conducting reproducible, collaborative research and is crucial to promoting efficient and timely communication between different stakeholders in the healthcare data domain. If not appropriately addressed, the lack of harmonization becomes a bottleneck, both for research and for sustainable operations. Impactful global health trends may be missed due to the variety of barriers, most of which lay within technical domains, as well as harmonization and standardization domains. A significant percentage of healthcare spending is wasted as a consequence of data silos[4](#kix.zdysifo08sr1); therefore, the economic impact of data interoperability should be a significant factor in proposals urging for changes towards [Data Harmonization](#data-harmonization). A significant effort has been made in [data standardization](#data-standardization) and harmonization of research datasets through the work of Clinical Data Interchange Standards Consortium (CDISC).[5](#kix.inn5u2e3050u) It is time for healthcare data used for research to undergo a similar transformation.
   
 *SUMMARY:* *[Data Harmonization](#data-harmonization)* *has a direct impact on quality, reproducibility, and confidence of research that uses data contained in the EHR system. Effective data interoperability leads to improved efficiency of methods and processes, improved time from research project design, through trend identification to policy implementation, and results in cost savings due to increased efficiency and a decreased need for data wrangling. Emerging local, national, and global networks, such as* *[ACT](#act)**,* *[PCORnet](#pcornet)**,* *[OHDSI](#ohdsi)**,* *[TriNetX](#trinetx)* *and others that rely on* *[Common Data Models ](#common-data-models-)**and harmonized data sources, bring about opportunities for global-scale research and policy implementation. Analysis of massive harmonized datasets can provide better insight into population health and reduce local, national, and global healthcare spending waste.*  
 
 ## Risks of not moving forward
 
   
-What do research enterprises risk if they do not participate in [Data Harmonization](#data-harmonization)? A lack of harmonization restricts researchers to analyzing different data sources separately, which is counterintuitive to the reality of present-day collaborative research. Project-specific [Data Harmonization](#data-harmonization) is an exhaustive, time-consuming process. Reports indicated that research project harmonization can require up to 6 months to complete, and that about 30% of the data deemed impossible to harmonize and was excluded from the final dataset. Time spent on wrangling data and custom coding takes resources away from finding insights that drive discoveries forward and slows the process of achieving public benefit from them. This exhaustive process negatively impacts the time to and cost of discovery and, therefore, the cost of care. The cost increase eventually creates a barrier for access to care by disadvantaged segments of the population and smaller, less developed countries.
+What do research enterprises risk if they do not participate in [Data Harmonization](#data-harmonization)? A lack of harmonization restricts researchers to analyzing different data sources separately, which is counterintuitive to the reality of present-day collaborative research. Project-specific [Data Harmonization](#data-harmonization) is an exhaustive, time-consuming process[6](#kix.vf3i9fva7zvn). Reports indicated that research project harmonization can require up to 6 months to complete, and that about 30% of the data deemed impossible to harmonize and was excluded from the final dataset. Time spent on wrangling data and custom coding takes resources away from finding insights that drive discoveries forward and slows the process of achieving public benefit from them. This exhaustive process negatively impacts the time to and cost of discovery and, therefore, the cost of care. The cost increase eventually creates a barrier for access to care by disadvantaged segments of the population and smaller, less developed countries.
   
 Pending a comprehensive literature review, it is evident that the risks of not moving forward with [Data Harmonization](#data-harmonization) efforts include, but are not limited to: (1) the extensive use of resources (both human and financial) on data wrangling, rather than on research and implementation of findings into healthcare; (2) the delayed ability or inability to improve human health based upon the knowledge that is gleaned from larger, harmonized disparate datasets; and (3) the reduction of an institution’s competitiveness for grant funding and top faculty recruitment, which could cause decreased pharmaceutical engagement for high profile studies.
   
@@ -107,7 +107,7 @@ Click here ([http://j.mp/2GvfPum](http://j.mp/2GvfPum)) to go to a draft version
 After reviewing the results, read the section titled "Harmonized Data Maturation” to learn more about aspects of the maturity assessment.  
 
 # 3\. Harmonized Data Maturation
-  
+[7](#kix.vgagxbo4zq1o)  
 [Data Harmonization](#data-harmonization) is a journey, not a destination. To realize its values and benefits, organizations must make it an integral strategic component of daily practices and workflows. Here we discuss 8 maturity categories that are essential for harmonized data maturation and sustainability. As organizations increase their capabilities in each area, they increase their organizational maturity.
   
 
@@ -123,7 +123,7 @@ Maturity in this category means:
   
 **Defining Participation Reason.** Understanding the current state of the biomedical academic enterprise provides insight into the “why” of [Data Harmonization](#data-harmonization) and the challenge of sustaining harmonization efforts. There are extensive databases of ever-expanding clinical data due to the national uptake of electronic health records in hospitals and clinics of all sizes. Most institutions have also created data warehouses, sometimes several, for specific purposes (e.g., operations or research), out of which researchers can export  EHR and other data for long-term storage and access them for purposes other than clinical care.
   
-Computer science algorithms have been created to process these data for many types of research. Some methods collectively, although obtusely, referred to as “AI” include machine learning and data mining techniques, and are being applied to further develop vast data sets. Many researchers are working to demonstrate the value that these computational methods can provide to health care. Areas of interest include “development of drug development pipelines; phenome-wide association studies when linked with genotyped biospecimens; characterization of treatment pathways for large numbers of patients, multi-site trial recruitment, automated data collection, and delivery of real-word evidence at the point of care to actualize the learning healthcare system, e.g., developing predictive models for clinical decision support put into place within the EHR for a variety of conditions.” Pooling large amounts of clinical data may make major research strides possible. Technologically, we can handle the storage and processing power needed to do so, although there are costs to all institutions to ensure this.
+Computer science algorithms have been created to process these data for many types of research. Some methods collectively, although obtusely, referred to as “AI” include machine learning and data mining techniques, and are being applied to further develop vast data sets. Many researchers are working to demonstrate the value that these computational methods can provide to health care. Areas of interest include “development of drug development pipelines; phenome-wide association studies when linked with genotyped biospecimens; characterization of treatment pathways for large numbers of patients, multi-site trial recruitment, automated data collection, and delivery of real-word evidence at the point of care to actualize the learning healthcare system, e.g., developing predictive models for clinical decision support put into place within the EHR for a variety of conditions.”[8](#kix.9r1ayja43czo) Pooling large amounts of clinical data may make major research strides possible. Technologically, we can handle the storage and processing power needed to do so, although there are costs to all institutions to ensure this.
   
 An organization must support clinical [Data Harmonization](#data-harmonization) via implementation and ongoing maintenance of crosswalks of mapped data, which requires informatics expertise and guidance. These mappings or crosswalks connect different [Common Data Models](#common-data-models) ([CDM](#cdm)) to ensure that each data element from one [CDM](#cdm) matches with the correct data element from another [CDM](#cdm). These crosswalks provide interoperability and support reproducibility.
   
@@ -168,7 +168,7 @@ Maturity in this category means:
   
 An organization must define why it is participating in one or more Clinical Data Research Networks and associated [Common Data Models](#common-data-models). It must declare ongoing organizational and financial support to sustain the [Data Harmonization](#data-harmonization) necessary for participation. Organizations cannot sustain harmonization without alignment with their mission and ongoing declared and financial support. This is true for all infrastructure related to conducting research. EHR data provide a rich source of information, and various internal and external entities continue to request access in large numbers. However, the existence of data in the EHR does not mean it is automatically accessible or “shovel-ready” to use for secondary purposes. Making EHR data accessible and ready to use requires infrastructure and expertise. One of many data-related considerations in [Data Harmonization](#data-harmonization) is the need to prepare data for interoperable use across organizations via the implementation of [Common Data Models](#common-data-models), most often in Clinical Data Research Networks ([CDRN](#cdrn)s). A useful 2014 article, “Sustainability Considerations for Health Research and Analytic Data Infrastructures,” [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4371522/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4371522/)) discusses this topic and the reasons why leaders must address data infrastructure sustainability.
   
-Institutions must allocate funds for [Data Harmonization](#data-harmonization) efforts and incorporate them into capital and operating budgets. One of the ongoing entrenched challenges is the establishment and funding of a health information technology (HIT) infrastructure to support research. Of specific importance is establishing who is responsible for funding the [Data Harmonization](#data-harmonization) efforts. Deans of institutions favor NIH funding for research related activities; however, NIH does not focus on sustaining IT or HIT infrastructure or determining and supporting data standards. Stanford University’s John Ionnidis, MD, DSc, and others have spoken eloquently about funding challenges and misalignments in the scientific enterprise, and academic medical centers’ over-reliance on soft money.,, Enterprise IT departments often set capital budgets and strategic plans that encompass hardware, software, and tangible deliverables. However, these often do not cover the scientific expertise and personnel necessary to work on data modeling and [data mapping](#data-mapping). Although [CTSA](#ctsa) and PCORI awards can be used for specific projects and purposes regarding [Data Harmonization](#data-harmonization), they are not intended to replace allocated funds from within the institution for sustaining infrastructure and the human expertise that must accompany it. If institutions want to be competitive in research, and compete regarding the external use of their de-identified data for commercial purposes, then committing to [Data Harmonization](#data-harmonization) support is necessary. Benchmarking with other institutions is key for developing appropriate ongoing financial investment and support for [Data Harmonization](#data-harmonization).
+Institutions must allocate funds for [Data Harmonization](#data-harmonization) efforts and incorporate them into capital and operating budgets. One of the ongoing entrenched challenges is the establishment and funding of a health information technology (HIT) infrastructure to support research. Of specific importance is establishing who is responsible for funding the [Data Harmonization](#data-harmonization) efforts. Deans of institutions favor NIH funding for research related activities; however, NIH does not focus on sustaining IT or HIT infrastructure or determining and supporting data standards. Stanford University’s John Ionnidis, MD, DSc, and others have spoken eloquently about funding challenges and misalignments in the scientific enterprise, and academic medical centers’ over-reliance on soft money.[9](#kix.fdndbff4dc4d),[10](#kix.b8y7gxvt5syu),[11](#kix.jrs22bob27gc) Enterprise IT departments often set capital budgets and strategic plans that encompass hardware, software, and tangible deliverables. However, these often do not cover the scientific expertise and personnel necessary to work on data modeling and [data mapping](#data-mapping). Although [CTSA](#ctsa) and PCORI awards can be used for specific projects and purposes regarding [Data Harmonization](#data-harmonization), they are not intended to replace allocated funds from within the institution for sustaining infrastructure and the human expertise that must accompany it. If institutions want to be competitive in research, and compete regarding the external use of their de-identified data for commercial purposes, then committing to [Data Harmonization](#data-harmonization) support is necessary. Benchmarking with other institutions is key for developing appropriate ongoing financial investment and support for [Data Harmonization](#data-harmonization).
   
 
 ## Workforce
@@ -256,7 +256,7 @@ A [federated query](#federated-query) provides the ability for one coordinating 
 ## Common data models
 
   
-Widespread adoption of electronic health records (EHR) and emphasis on the reuse of clinical data through integration of clinical care, claims, environmental, and other data requires a robust approach to data modeling to satisfy the complexity and provide maximum usability for effective research. As summarized by Khan et al in the analysis of existing [data models](#data-models) “Data modeling is the process of determining which data elements will be stored and how they will be stored, including their relationships and constraints. The structure and definitions of a data model define what data can be stored, how values should be interpreted, and how easily data can be queried.” Significant efforts that have been made by the research community to address the issue of standardization and effective data modeling resulted in a few prominent, widely accepted [Common Data Models](#common-data-models) ([CDM](#cdm))—[PCORnet](#pcornet), [OMOP](#omop), [i2b2](#i2b2), which is well described in a work by Jeffrey G. Khan and colleagues about data model harmonization for the “All Of Us” Research Program. The section from the publication is shown below to help the audience clarify the landscape of the [Common Data Models](#common-data-models):
+Widespread adoption of electronic health records (EHR) and emphasis on the reuse of clinical data through integration of clinical care, claims, environmental, and other data requires a robust approach to data modeling to satisfy the complexity and provide maximum usability for effective research. As summarized by Khan et al in the analysis of existing [data models](#data-models) “Data modeling is the process of determining which data elements will be stored and how they will be stored, including their relationships and constraints. The structure and definitions of a data model define what data can be stored, how values should be interpreted, and how easily data can be queried.”[12](#kix.unntzb98ia8x) Significant efforts that have been made by the research community to address the issue of standardization and effective data modeling resulted in a few prominent, widely accepted [Common Data Models](#common-data-models) ([CDM](#cdm))—[PCORnet](#pcornet), [OMOP](#omop), [i2b2](#i2b2), which is well described in a work by Jeffrey G. Khan and colleagues about data model harmonization for the “All Of Us” Research Program.[13](#kix.k5tcvtbx56g2) The section from the publication is shown below to help the audience clarify the landscape of the [Common Data Models](#common-data-models):
   
 “PCORnet common data model (PCORnet [CDM](#cdm))  
 The [PCORnet](#pcornet)t [Common Data Model](#common-data-model) is supported by all networks in the Patient Centered Outcomes Research Institute, and thus has a wide base of existing support. Over 80 institutions have already transformed their data into this model. It was derived from the Mini-Sentinel [data model](#data-model), which has increasing uptake in claims data analysis.
@@ -264,11 +264,11 @@ The [PCORnet](#pcornet)t [Common Data Model](#common-data-model) is supported by
 [PCORne](#pcorne)t [CDM](#cdm) (v3.1) is a traditional relational database design, in which each of fifteen tables corresponds to a clinical domain (e.g., diagnoses, labs, medications, etc.). The tables have many columns including both the table key (patient identifier, encounter identifier, etc.) and additional details (e.g., medication frequency). New releases of the [data model](#data-model) have added new clinical elements or format–for example, new domains (e.g., lab values) and changes in data representation (e.g., smoking status).
   
 Informatics for integrating biology in the bedside ([i2b2](#i2b2))  
-[i2b2](#i2b2) was first developed over a decade ago through a National Institutes of Health (NIH) grant and continues to grow in popularity. It is currently used at over 200 sites world-wide, and it is used in several large-scale networks, including the NCATS’ national Accrual to Clinical Trials ([ACT](#act)) network.,. [i2b2](#i2b2) uses a star-schema format, pioneered by General Mills in the 1970s and widely used in retail data warehouses. The [i2b2](#i2b2) star-schema uses one large “fact” table containing individual observations. This is a narrow table with many rows per patient encounter. [Ontology ](#ontology-)tables (hierarchical arrangements of concepts) provide a window into the data; these are often developed by local implementers. Consequently, the [data model](#data-model) is only modified when core features are added to the platform.  
+[i2b2](#i2b2) was first developed over a decade ago through a National Institutes of Health (NIH) grant and continues to grow in popularity. It is currently used at over 200 sites world-wide, and it is used in several large-scale networks, including the NCATS’ national Accrual to Clinical Trials ([ACT](#act)) network.[14](#kix.c35ahcuigvvu),[15](#kix.6pgpj7a1qdf9). [i2b2](#i2b2) uses a star-schema format, pioneered by General Mills in the 1970s and widely used in retail data warehouses.[16](#kix.uz69fbxekobw) The [i2b2](#i2b2) star-schema uses one large “fact” table containing individual observations. This is a narrow table with many rows per patient encounter. [Ontology ](#ontology-)tables (hierarchical arrangements of concepts) provide a window into the data; these are often developed by local implementers. Consequently, the [data model](#data-model) is only modified when core features are added to the platform.  
 Observational Medical Outcomes Partnership ([OMOP](#omop))
   
 
-[OMOP](#omop) was developed to be a shared analytics model from the beginning, and it has been adopted by the Observational Health Data Sciences and Informatics ([OHDSI](#ohdsi), pronounced "Odyssey") Consortium, a diverse collaborative dedicated to research and quality improvement. The [OMOP](#omop) [CDM](#cdm) is increasingly utilized, presently at 90 sites worldwide, thanks to [OHDSI](#ohdsi)s large community and many analytical tools. [OMOP](#omop) is a hybrid model that provides domain tables in the vein of [PCORnet](#pcornet), as well as a “fact” table containing individual atomic observations similar to [i2b2](#i2b2). The [OMOP](#omop) schema is significantly more complicated than [PCORnet](#pcornet), and some domain tables are derived values for specific analytical purposes (e.g., drug_era and visit_cost). Unlike [PCORnet](#pcornet) (but similar to[i2b2](#i2b2)’s [ontology](#ontology) system), [OMOP](#omop) provides metadata tables providing information on [terminology](#terminology) and concept relationships.”  
+[OMOP](#omop) was developed to be a shared analytics model from the beginning, and it has been adopted by the Observational Health Data Sciences and Informatics ([OHDSI](#ohdsi), pronounced "Odyssey") Consortium, a diverse collaborative dedicated to research and quality improvement.[17](#kix.o16v6vyuezk8) The [OMOP](#omop) [CDM](#cdm) is increasingly utilized, presently at 90 sites worldwide, thanks to [OHDSI](#ohdsi)s large community and many analytical tools. [OMOP](#omop) is a hybrid model that provides domain tables in the vein of [PCORnet](#pcornet), as well as a “fact” table containing individual atomic observations similar to [i2b2](#i2b2). The [OMOP](#omop) schema is significantly more complicated than [PCORnet](#pcornet), and some domain tables are derived values for specific analytical purposes (e.g., drug_era and visit_cost). Unlike [PCORnet](#pcornet) (but similar to[i2b2](#i2b2)’s [ontology](#ontology) system), [OMOP](#omop) provides metadata tables providing information on [terminology](#terminology) and concept relationships.”[18](#kix.eae5me24e5cv)  
   
 While each [CDM](#cdm) has creatively executed solutions to support research, each also has its limitations. Organizations planning [Data Harmonization](#data-harmonization) efforts, implementing data warehouses, and choosing [CDM](#cdm)s ultimately need to make a decision based on the majority of the research needs, which has become increasingly difficult. More and more often, sites realize that in order to participate in multi-site research, they need to support all 3 data models to achieve data interoperability with a collaborator.
   
@@ -289,7 +289,7 @@ While each [CDM](#cdm) has creatively executed solutions to support research, ea
   
 The translational research community can benefit directly from the enormous investments these clinical communities using [FHIR](#fhir) make. The workforce and investments dwarf any that could be marshaled by the translational research community. Rather than reinvent research-specific data standards, it makes sense to leverage the structure, specification, detail, tooling, and infrastructure coming forward from these clinical communities. Pending Office of the National Coordinator for Health Information Technology (ONC) regulations will require that all EHRs support [FHIR](#fhir) API interfaces, profoundly simplifying data access and delivery in a [FHIR](#fhir)-conformant manner. This effectively obviates any need for complex extraction and translation in the creation of [FHIR](#fhir)-based repositories.
   
-NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for research from academia to industry. NIH encourages its researchers to explore the use of the Fast Healthcare Interoperability Resources ([FHIR](#fhir)®) standard to capture, integrate, and exchange clinical data for research purposes and to enhance capabilities to share research data,. This use includes:
+NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for research from academia to industry. NIH encourages its researchers to explore the use of the Fast Healthcare Interoperability Resources ([FHIR](#fhir)®) standard to capture, integrate, and exchange clinical data for research purposes and to enhance capabilities to share research data[19](#kix.ivnxrb4488bb),[20](#kix.jhk8xd4xpj5). This use includes:
   
 - Integration of patient- and population-level data from EHR systems
 - Access to and management of electronic health information
@@ -305,7 +305,7 @@ NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for resear
 NIH and related agencies, together with CD2H, have leadership positions in the newly established HL7 FHIR Accelerator for research called Vulcan. The goal of this effort is to ensure the needs and requirements of translational research, specifically those of  the [CTSA](#ctsa) community, are accommodated and incorporated in [FHIR](#fhir) development, evolution, and maturation.
   
   
-![image](../_static/B3gQVqtMzb4c5CjuwprWUbURawqyNnTbzUfMMjonZu-rpbG9bzkQst3w5WZV9T2fDtmWK8W8cjQs47HfgBn8csC1aST1f3q0YlscE9PbvsToiQHTObQBArQ80UarmilYSqVTi_UVQS8Nwkm3uQ.jpg)   
+![image](../_static/EkGFK7yz5nwJ4-CEMsCfKYCt74xeMozwX5GyF5YLPZ4xScVIqquhIqvmEFKZO9KhQZYu35-tgCH7s2yqI9EG7qe3QxAAIG-JRoKYuTyHoPK8HWp4ATsZlaAVrlfhtCORhI0TCbLnWsIw0Jy-LA.jpg)   
 
 ### How does FHIR work?
 
@@ -313,7 +313,7 @@ NIH and related agencies, together with CD2H, have leadership positions in the n
 [FHIR](#fhir) has modular data models that can carry a flexible payload (data), and reusable “containers” that can be assembled into working systems. This model enables the exchange of well-defined structured data in small discrete units.
   
   
-![image](../_static/f-QMCZgZKjaYvRkTFxVqkFakK5lDup2Rw-VpUbb_F90I0MnXYx8kIdcj6swtUATyHip5If2f35trtpA2WOgQ02Rjcv6v1BosPnPW8sUb8zr59dym7pJ5HD4CJHJctxRhqpD1I2m_pTImNOJhGQ.jpg)   
+![image](../_static/RZUlfPiyxoemvk4Y9w1a_rzQD8xxEuIrUFkeGMz4U0QX8fkqY3yQRp7IBtKo7NLCF4bhc8BQJ_zxESKE2YiPG7sftSt33-lWhT4SC2-TCavanJfzotOUTyl-8yZ43KWvHwUtA9I8WU816Y-KXw.jpg)   
   
 
 
@@ -601,99 +601,54 @@ MeSH: Work consisting of lists of the technical terms or expressions used in a s
 TriNetX is a global health research network connecting healthcare organizations (including 35 [CTSA](#ctsa) Program hubs), biopharma and contract research organizations. The TriNetX platform enables cohort identification and hypothesis generation based on clinical data that can currently be sourced from a common data model [i2b2](#i2b2), OMOP, NAACCR, etc.), flat files, or via natural language processing (NLP) of narrative documents.  
 
 ## References
- Knosp, Boyd M., William K. Barnett, Nicholas R. Anderson, and Peter J. Embi. "Research It Maturity Models for Academic Health Centers: Early Development and Initial Evaluation." Journal of Clinical and Translational Science 2, no. 5 (2018): 289-94. [https://doi.org/10.1017/cts.2018.339](https://doi.org/10.1017/cts.2018.339)  
+[](kix.vgagxbo4zq1o) Knosp, Boyd M., William K. Barnett, Nicholas R. Anderson, and Peter J. Embi. "Research It Maturity Models for Academic Health Centers: Early Development and Initial Evaluation." Journal of Clinical and Translational Science 2, no. 5 (2018): 289-94. [https://doi.org/10.1017/cts.2018.339](https://doi.org/10.1017/cts.2018.339)  
 
- Fast Healthcare Interoperability Resources (FHIR®) Standard. Notice Number: NOT-OD-19-122.  (Release Date: July 30, 2019)
+[](kix.jhk8xd4xpj5) Fast Healthcare Interoperability Resources (FHIR®) Standard. Notice Number: NOT-OD-19-122.  (Release Date: July 30, 2019)
   
 
- Small Business (SBIR & STTR) Applications Directed at the Adoption of the Fast Healthcare Interoperability Resources (FHIR®) Standard.  Notice Number: NOT-OD-19-127.  Release Date: July 30, 2019
+[](kix.ivnxrb4488bb) Small Business (SBIR & STTR) Applications Directed at the Adoption of the Fast Healthcare Interoperability Resources (FHIR®) Standard.  Notice Number: NOT-OD-19-127.  Release Date: July 30, 2019
   
 
- Kahn, M. G., Batson, D., & Schilling, L. M. (2012). Data model considerations for clinical effectiveness researchers. *Medical care*, *50 Suppl*(0), S60–S67. [https://doi.org/10.1097/MLR.0b013e318259bff4](https://doi.org/10.1097/MLR.0b013e318259bff4)  
+[](kix.unntzb98ia8x) Kahn, M. G., Batson, D., & Schilling, L. M. (2012). Data model considerations for clinical effectiveness researchers. *Medical care*, *50 Suppl*(0), S60–S67. [https://doi.org/10.1097/MLR.0b013e318259bff4](https://doi.org/10.1097/MLR.0b013e318259bff4)  
 
- Murphy SN, Weber G, Mendis M, Gainer V, Chueh HC, Churchill S, et al. Serving the enterprise and beyond with informatics for integrating biology and the bedside (i2b2). J Am Med Inf Assoc. 2010;17: 124–130. pmid:20190053
+[](kix.c35ahcuigvvu) Murphy SN, Weber G, Mendis M, Gainer V, Chueh HC, Churchill S, et al. Serving the enterprise and beyond with informatics for integrating biology and the bedside (i2b2). J Am Med Inf Assoc. 2010;17: 124–130. pmid:20190053
   
 
- Visweswaran S, Becich MJ, D’Itri VS, Sendro ER, MacFadden D, Anderson NR, et al. Accrual to Clinical Trials (ACT): A Clinical and Translational Science Award Consortium Network. JAMIA Open. pmid:30474072
+[](kix.6pgpj7a1qdf9) Visweswaran S, Becich MJ, D’Itri VS, Sendro ER, MacFadden D, Anderson NR, et al. Accrual to Clinical Trials (ACT): A Clinical and Translational Science Award Consortium Network. JAMIA Open. pmid:30474072
   
 
- Klann JG, Joss MAH, Embree K, Murphy SN (2019) Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model. PLOS ONE 14(2): e0212463. [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)  
+[](kix.k5tcvtbx56g2) Klann JG, Joss MAH, Embree K, Murphy SN (2019) Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model. PLOS ONE 14(2): e0212463. [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)  
 
- "Harmonisation - DAPA Measurement Toolkit - Medical ...." [https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation](https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation). Accessed 27 Feb. 2020.
+[](kix.qoavunstds55) "Harmonisation - DAPA Measurement Toolkit - Medical ...." [https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation](https://dapa-toolkit.mrc.ac.uk/concepts/harmonisation). Accessed 27 Feb. 2020.
   
 
- Hilal Atasoy, Brad N. Greenwood, Jeffrey Scott McCullough.The Digitization of Patient Care: A Review of the Effects of Electronic Health Records on Health Care Quality and Utilization.  Annual Review of Public Health 2019 40:1, 487-500
+[](kix.9brwper0q0kh) Hilal Atasoy, Brad N. Greenwood, Jeffrey Scott McCullough.The Digitization of Patient Care: A Review of the Effects of Electronic Health Records on Health Care Quality and Utilization.  Annual Review of Public Health 2019 40:1, 487-500
   
 
- "van Panhuis, W.G., Paul, P., Emerson, C. et al. A systematic review of barriers to data sharing in public health. BMC Public Health 14, 1144 (2014). [https://doi.org/10.1186/1471-2458-14-1144](https://doi.org/10.1186/1471-2458-14-1144)  
+[](kix.oszxd4uut1kq) "van Panhuis, W.G., Paul, P., Emerson, C. et al. A systematic review of barriers to data sharing in public health. BMC Public Health 14, 1144 (2014). [https://doi.org/10.1186/1471-2458-14-1144](https://doi.org/10.1186/1471-2458-14-1144)  
 
- Geneviève LD, Martani A, Mallet MC, Wangmo T, Elger BS (2019) Factors influencing harmonized health data collection, sharing and linkage in Denmark and Switzerland: A systematic review. PLoS ONE 14(12): e0226015.
+[](kix.zdysifo08sr1) Geneviève LD, Martani A, Mallet MC, Wangmo T, Elger BS (2019) Factors influencing harmonized health data collection, sharing and linkage in Denmark and Switzerland: A systematic review. PLoS ONE 14(12): e0226015.
   
 
- Jiang G, Solbrig HR, Iberson-Hurst D, Kush RD, Chute CG. A Collaborative Framework for Representation and Harmonization of Clinical Study Data Elements Using Semantic MediaWiki. Summit Transl Bioinform. 2010 Mar 1;2010:11-5. PMID: 21347136; PMCID: PMC3041544.
+[](kix.inn5u2e3050u) Jiang G, Solbrig HR, Iberson-Hurst D, Kush RD, Chute CG. A Collaborative Framework for Representation and Harmonization of Clinical Study Data Elements Using Semantic MediaWiki. Summit Transl Bioinform. 2010 Mar 1;2010:11-5. PMID: 21347136; PMCID: PMC3041544.
   
 
- Marta Benet et al. Integrating Clinical and Epidemiologic Data on Allergic Diseases Across Birth Cohorts: A Harmonization Study in the Mechanisms of the Development of Allergy Project, *American Journal of Epidemiology*, Volume 188, Issue 2, February 2019, Pages 408–417, [https://doi.org/10.1093/aje/kwy242](https://doi.org/10.1093/aje/kwy242)  
+[](kix.vf3i9fva7zvn) Marta Benet et al. Integrating Clinical and Epidemiologic Data on Allergic Diseases Across Birth Cohorts: A Harmonization Study in the Mechanisms of the Development of Allergy Project, *American Journal of Epidemiology*, Volume 188, Issue 2, February 2019, Pages 408–417, [https://doi.org/10.1093/aje/kwy242](https://doi.org/10.1093/aje/kwy242)  
 
- Kimball R, Ross M. The data warehouse toolkit: the complete guide to dimensional modeling [Internet]. John Wiley & Sons; 2011. Available: [https://books.google.com/books](https://books.google.com/books)?
+[](kix.uz69fbxekobw) Kimball R, Ross M. The data warehouse toolkit: the complete guide to dimensional modeling [Internet]. John Wiley & Sons; 2011. Available: [https://books.google.com/books](https://books.google.com/books)?
   
 
- Hripcsak G, Duke JD, Shah NH, Reich CG, Huser V, Schuemie MJ, et al. Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers. Stud Health Technol Inform. 2015;216: 574–578. pmid:26262116  
+[](kix.o16v6vyuezk8) Hripcsak G, Duke JD, Shah NH, Reich CG, Huser V, Schuemie MJ, et al. Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers. Stud Health Technol Inform. 2015;216: 574–578. pmid:26262116  
 
- Klann JG, Joss MAH, Embree K, Murphy SN, Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model, PLOS ONE, Feb 2019 [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)
+[](kix.eae5me24e5cv) Klann JG, Joss MAH, Embree K, Murphy SN, Data model harmonization for the All Of Us Research Program: Transforming i2b2 data into the OMOP common data model, PLOS ONE, Feb 2019 [https://doi.org/10.1371/journal.pone.0212463](https://doi.org/10.1371/journal.pone.0212463)
   
 
- Nicholson, J., Ioannidis, J. Conform and be funded. Nature 492, 34–36 (2012). [https://doi.org/10.1038/492034a](https://doi.org/10.1038/492034a)  
+[](kix.fdndbff4dc4d) Nicholson, J., Ioannidis, J. Conform and be funded. Nature 492, 34–36 (2012). [https://doi.org/10.1038/492034a](https://doi.org/10.1038/492034a)  
 
- Opinion: Expansion fever and soft money plague the biomedical research enterprise
-  
-
+[](kix.b8y7gxvt5syu) Opinion: Expansion fever and soft money plague the biomedical research enterprise
 Henry R. Bourne, PNAS August 28, 2018 115 (35) 8647-8651; [https://doi.org/10.1073/pnas.1813115115](https://doi.org/10.1073/pnas.1813115115);  
 
- Rescuing US biomedical research from its systemic flaws, Bruce Alberts, Marc W. Kirschner, Shirley Tilghman, and Harold Varmus, PNAS April 22, 2014 111 (16) 5773-5777; first published April 14, 2014 [https://doi.org/10.1073/pnas.1404402111](https://doi.org/10.1073/pnas.1404402111)  
+[](kix.jrs22bob27gc) Rescuing US biomedical research from its systemic flaws, Bruce Alberts, Marc W. Kirschner, Shirley Tilghman, and Harold Varmus, PNAS April 22, 2014 111 (16) 5773-5777; first published April 14, 2014 [https://doi.org/10.1073/pnas.1404402111](https://doi.org/10.1073/pnas.1404402111)  
 
- Knosp B, Craven CK, Dorr D, Campion T. Understanding enterprise data warehouses to support clinical and translational research. J Am Med Infom Assoc. Accepted for publication 2020 April 27. [Cited 2020 April 30]  
+[](kix.9r1ayja43czo) Knosp B, Craven CK, Dorr D, Campion T. Understanding enterprise data warehouses to support clinical and translational research. J Am Med Infom Assoc. Accepted for publication 2020 April 27. [Cited 2020 April 30]  
 
-
-## Hidden
-
-
-kix.vgagxbo4zq1o
-
-kix.jhk8xd4xpj5
-
-kix.ivnxrb4488bb
-
-kix.unntzb98ia8x
-
-kix.c35ahcuigvvu
-
-kix.6pgpj7a1qdf9
-
-kix.k5tcvtbx56g2
-
-kix.qoavunstds55
-
-kix.9brwper0q0kh
-
-kix.oszxd4uut1kq
-
-kix.zdysifo08sr1
-
-kix.inn5u2e3050u
-
-kix.vf3i9fva7zvn
-
-kix.uz69fbxekobw
-
-kix.o16v6vyuezk8
-
-kix.eae5me24e5cv
-
-kix.fdndbff4dc4d
-
-kix.b8y7gxvt5syu
-
-kix.jrs22bob27gc
-
-kix.9r1ayja43czo
