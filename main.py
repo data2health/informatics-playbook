@@ -3,6 +3,7 @@ import sys
 import pickle
 import os.path
 import urllib.request
+from collections import OrderedDict
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -30,8 +31,31 @@ def is_heading(paragraph):
     return 0
 
 
+def get_ordered_footnotes(document):
+    """
+
+    :param document:
+    :return: Return an order variable which contains a sorted list with "footnoteId" and "footnoteNumber" values
+    """
+    order = []
+    for item in document['body']['content']:
+        if item.get('paragraph'):
+            if item.get('paragraph').get('bullet'):
+                for element in item.get('paragraph').get('elements'):
+                    if element.get('footnoteReference', {}).get('footnoteNumber'):
+                        footnoteReference = element.get('footnoteReference')
+                        order.append({'id': footnoteReference['footnoteId'],
+                                      'index': footnoteReference['footnoteNumber']})
+            else:
+                for element in item.get('paragraph').get('elements'):
+                    if element.get('footnoteReference'):
+                        footnoteReference = element.get('footnoteReference')
+                        order.append({'id': footnoteReference['footnoteId'],
+                                      'index': footnoteReference['footnoteNumber']})
+    return order
+
+
 def get_formatting(mdFile, index, document, item, content_length, unify_content=False):
-    # TODO: Fix broken formatting when mixing links and headers
     # TODO: Check the "OHDSI Network" and fix broken formatting (This case might need manual fixing after
     #  the md is actually generated)
     if item.get('paragraph'):
@@ -41,8 +65,8 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
             is_ordered = False
             for element in item.get('paragraph').get('elements'):
                 if element.get('footnoteReference', {}).get('footnoteNumber'):
-                    # don't know why this exists, I just pass it to not break the script
-                    pass
+                    footnoteReference = element.get('footnoteReference')
+                    mdFile.write(f"[{footnoteReference['footnoteNumber']}](#{footnoteReference['footnoteId']})")
                 else:
                     content = element.get('textRun').get('content')
                     bullet_point = bullet_point + content
@@ -63,12 +87,15 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                         mdFile.new_line()
             except IndexError:
                 pass
-            '''for element in item.get('paragraph').get('elements'):
-                content = element.get('textRun').get('content')
-                bullet_list.append(content.rstrip('\n').strip())
-                mdFile.new_list(bullet_list)'''
+
         else:
+            if item.get('paragraph', {}).get('paragraphStyle', {}):
+                headingId = item.get('paragraph', {}).get('paragraphStyle', {}).get('headingId')
+                if headingId:
+                    mdFile.write(f"[]({headingId})")
+
             for element in item.get('paragraph').get('elements'):
+
                 # search for images
                 if element.get('inlineObjectElement'):
                     inline_object = document.get('inlineObjects'). \
@@ -105,6 +132,7 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                         content = content.rstrip('\n')
                     if is_section_link:
                         link_to = content.replace(" ", "-").lower()
+                        print(text_run.get("textStyle", {}).get('link', {}))
                         content = f"[{content}](#{link_to})"
 
                     #  escape starting strings like "n." where n is any number to prevent breaking md format
@@ -205,7 +233,7 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
 
 def main():
     # The ID of a sample document.
-    DOCUMENT_ID = '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc'  # '1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
+    DOCUMENT_ID = '1jLeSdDwJpzSn_q3I_gCvs8DcuWgMI0B34Kp_x4IWt_I'  # '1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
 
     try:
         result = re.search('d/(.*)/edit', sys.argv[1])
@@ -246,15 +274,35 @@ def main():
     for (index, item) in enumerate(document['body']['content']):
         get_formatting(mdFile, index, document, item, content_length=len(document['body']['content']))
 
-    # then add and iterate all the footnotes
-    mdFile.new_header(level=2, title='References',
-                      add_table_of_contents='n')
-    for key, value in document['footnotes'].items():
-        # Adding a shadow link to then fix reference ordering in javascript
-        footnoteId = document['footnotes'][key]['footnoteId']
-        mdFile.write(f"[]({footnoteId})")
-        for (index, item) in enumerate(value['content']):
-            get_formatting(mdFile, index, document, item, content_length=len(value['content']), unify_content=True)
+
+    if 'footnotes' in document:
+        # then add and iterate all the footnotes
+        mdFile.new_header(level=2, title='References',
+                          add_table_of_contents='n')
+
+        # The process below makes footnotes appear in order
+        # "get_ordered_footnotes" gives us the order of the citations as they are found in the document
+        order = get_ordered_footnotes(document)
+
+        # document['footnotes'] are in mixed order so we assign the values found in order to document['footnotes']
+        for key, value in document['footnotes'].items():
+            first_or_default = next((footnote for footnote in order if
+                                     footnote['id']==document['footnotes'][key]['footnoteId']), None)
+            if first_or_default:
+                document['footnotes'][key]['footnoteNumber'] = first_or_default['index']
+
+        # then we order by they 'footnoteNumber' we assigned above
+        document['footnotes'] = OrderedDict(sorted(document['footnotes'].items(),
+                                                   key=lambda k: int(k[1]['footnoteNumber'])))
+
+        # and everything is sorted :D
+        for key, value in document['footnotes'].items():
+            # Adding a shadow link to then fix reference ordering in javascript
+            footnoteId = document['footnotes'][key]['footnoteId']
+            print(document['footnotes'][key]['footnoteNumber'])
+            mdFile.write(f"[](#{footnoteId})")
+            for (index, item) in enumerate(value['content']):
+                get_formatting(mdFile, index, document, item, content_length=len(value['content']), unify_content=True)
     mdFile.create_md_file()
 
 

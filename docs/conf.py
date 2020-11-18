@@ -186,8 +186,6 @@ epub_exclude_files = ['search.html']
 todo_include_todos = True
 
 
-
-
 try:
     #import sphinx_rtd_theme
     #html_theme = 'sphinx_rtd_theme'

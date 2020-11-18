@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         footnoteMap.push({index:i+1, id:reference.hash});
     }
 
+
     // Then we use the footnoteMap array to add footnote indexing and enable linking
     let referenceElements = document.getElementById('references');
     for(let i=0; i<referenceElements.children.length; i++){
@@ -45,7 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
             continue;
         }
         let reference = referenceElements.children[i];
-        let foundReference = footnoteMap.find(f=>f.index==i);
+        // get all anchor elements below the reference that specify the reference id
+        let referenceAnchorNodes = [].slice.call(reference.
+        querySelectorAll('a')).filter(function(el){
+           return el.hash.match(/^#kix/i);
+        });
+        const id = referenceAnchorNodes[0].hash;
+
+        let foundReference = footnoteMap.find(f=>f.id==id);
         if(foundReference){
             let sup = document.createElement("sup");
             sup.id = foundReference.id.substring(1);
