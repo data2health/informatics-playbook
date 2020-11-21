@@ -13,11 +13,8 @@ import re
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/documents.readonly']
 
-# this regex is kinda long :D
-WEB_URL_REGEX = r"""(?i)\b((?:https?:(?:/{1,3}|[a-z0-9%])|[a-z0-9.\-]+[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)/)(?:[^\s()<>{}\[\]]+|\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\))+(?:\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])|(?:(?<!@)[a-z0-9]+(?:[.\-][a-z0-9]+)*[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)\b/?(?!@)))"""
 
-
-# TODO start parsing tables and strikethrough
+# TODO strikethrough, links with titles are broken
 
 # '1L1vU0YWf1PjVMc7LL_nFTA0lApuC4hlVgjztXQ-MLSU'
 # '16U5sLssOMuG8X8GF-qIo7VXW9BQJ_E0QIz6C5CzP7t0'
@@ -29,6 +26,32 @@ def is_heading(paragraph):
     if 'HEADING' in named_style_type:
         return int(re.search(r'[-+]?[0-9]+', named_style_type)[0])
     return 0
+
+
+def render_table(mdFile, table):
+    cols = table.get('columns')
+    rows = table.get('rows')
+    list_of_rows = []
+    for row in table.get('tableRows'):
+        for cell in row.get('tableCells'):
+            row_items = []
+            cell_content = None
+            for count, content in enumerate(cell.get('content')):
+                if content.get('paragraph'):
+                    for element in content.get('paragraph', {}).get('elements'):
+                        if element.get('textRun'):
+                            element_content = element.get('textRun').get('content')
+                            if '\n' in element_content and count!=len(cell.get('content')):
+                                #element_content = element_content.rstrip('\n')
+                                element_content = element_content.replace('\n', ' ')
+                            if not cell_content:
+                                cell_content = element_content
+                            else:
+                                cell_content += element_content
+            row_items.append(cell_content.rstrip('\n'))
+
+            list_of_rows.extend(row_items)
+    mdFile.new_table(columns=cols, rows=rows, text=list_of_rows, text_align='center')
 
 
 def get_ordered_footnotes(document):
@@ -58,6 +81,8 @@ def get_ordered_footnotes(document):
 def get_formatting(mdFile, index, document, item, content_length, unify_content=False):
     # TODO: Check the "OHDSI Network" and fix broken formatting (This case might need manual fixing after
     #  the md is actually generated)
+    if item.get('table'):
+        render_table(mdFile, item.get('table'))
     if item.get('paragraph'):
         if item.get('paragraph').get('bullet'):
             bullet_point = ''
@@ -103,10 +128,10 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                     object_properties = inline_object.get('inlineObjectProperties').get('embeddedObject')
                     image_path = object_properties.get('imageProperties').get('contentUri')
                     urllib.request.urlretrieve(image_path,
-                                               filename=f"docs/_static/{image_path.split('/')[-1]}.jpg")
+                                               filename=f"docs/_static/images/{image_path.split('/')[-1]}.jpg")
 
                     mdFile.new_line(mdFile.new_inline_image(text='image',
-                                                            path=f"../_static/{image_path.split('/')[-1]}.jpg"))
+                                                            path=f"../_static/images/{image_path.split('/')[-1]}.jpg"))
 
                     # add an empty character to prevent image collision with text
                     mdFile.write(' ')
@@ -118,10 +143,10 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                 # search for text elements
                 if element.get('textRun'):
                     text_run = element.get('textRun')
-
                     is_section_link = True if text_run.get("textStyle", {}).get('link', {}).get('bookmarkId') or \
                                               text_run.get("textStyle", {}).get('link', {}).get('headingId') else False
 
+                    is_regular_link = True if text_run.get("textStyle", {}).get('link', {}).get('url') else False
                     content = text_run.get('content')
 
                     # this is used for the references table at the bottom
@@ -132,31 +157,15 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                         content = content.rstrip('\n')
                     if is_section_link:
                         link_to = content.replace(" ", "-").lower()
-                        print(text_run.get("textStyle", {}).get('link', {}))
                         content = f"[{content}](#{link_to})"
 
+                    if is_regular_link:
+                        url = text_run.get("textStyle", {}).get('link', {}).get('url')
+                        content = f"[{content}]({url})"
                     #  escape starting strings like "n." where n is any number to prevent breaking md format
                     for match in re.finditer(r'^[-+]?[0-9]+\.', content):
                         content = content[:match.start() + 1] + '\\' + content[match.start() + 1:]
 
-                    # find links in text and format them accordingly
-                    for match in re.finditer(WEB_URL_REGEX, content):
-                        wrapped_in_parenthesis = False
-                        try:
-                            # if string is already wrapped in parenthesis we do not need to add our own
-                            # for the markdown formatting
-                            if content[:match.start() - 1] == '(' and content[match.start() + 1:] == ')':
-                                wrapped_in_parenthesis = True
-                        except IndexError:
-                            pass
-                        if wrapped_in_parenthesis:
-                            content = content[:match.start() - 1] + f"[{match.group(1)}]" + \
-                                      content[match.start() - 1:]
-                        else:
-                            # we must add the parenthesis around the matching url on our own
-                            # this SHOULD work not tested yet
-                            content = content[:match.start()] + f"[{match.group(1)}]" + \
-                                      f"({content[match.start():match.end()]})" + content[match.end():]
                     # managing some edge cases for now
                     # until a solution is found for every case
 
@@ -210,8 +219,8 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
                         stripped_content = content.rstrip('\n').strip()
 
                         # recommonmark doesn't allow strikethroughs :(
-                        # if is_strikethrough:
-                        #    stripped_content = f"~~{stripped_content}~~"
+                        if is_strikethrough:
+                            stripped_content = f"~~{stripped_content}~~"
                         mdFile.write(stripped_content,
                                      bold_italics_code=bold_italics_code)
 
@@ -233,10 +242,10 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
 
 def main():
     # The ID of a sample document.
-    DOCUMENT_ID = '1jLeSdDwJpzSn_q3I_gCvs8DcuWgMI0B34Kp_x4IWt_I'  # '1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ'
+    DOCUMENT_ID = '1XkBuOBcy4g69mRGiHzLAFff_qDwadPKogV3E-lnNcgc'
 
     try:
-        result = re.search('d/(.*)/edit', sys.argv[1])
+        result = re.search('/document/d/([a-zA-Z0-9-_]+)', sys.argv[1])
         if result.group(1):
             DOCUMENT_ID = result.group(1)
     except IndexError:
@@ -274,7 +283,6 @@ def main():
     for (index, item) in enumerate(document['body']['content']):
         get_formatting(mdFile, index, document, item, content_length=len(document['body']['content']))
 
-
     if 'footnotes' in document:
         # then add and iterate all the footnotes
         mdFile.new_header(level=2, title='References',
@@ -284,22 +292,24 @@ def main():
         # "get_ordered_footnotes" gives us the order of the citations as they are found in the document
         order = get_ordered_footnotes(document)
 
-        # document['footnotes'] are in mixed order so we assign the values found in order to document['footnotes']
-        for key, value in document['footnotes'].items():
-            first_or_default = next((footnote for footnote in order if
-                                     footnote['id']==document['footnotes'][key]['footnoteId']), None)
-            if first_or_default:
-                document['footnotes'][key]['footnoteNumber'] = first_or_default['index']
+        try:
+            # document['footnotes'] are in mixed order so we assign the values found in order to document['footnotes']
+            for key, value in document['footnotes'].items():
+                first_or_default = next((footnote for footnote in order if
+                                         footnote['id']==document['footnotes'][key]['footnoteId']), None)
+                if first_or_default:
+                    document['footnotes'][key]['footnoteNumber'] = first_or_default['index']
 
-        # then we order by they 'footnoteNumber' we assigned above
-        document['footnotes'] = OrderedDict(sorted(document['footnotes'].items(),
-                                                   key=lambda k: int(k[1]['footnoteNumber'])))
+            # then we order by they 'footnoteNumber' we assigned above
+            document['footnotes'] = OrderedDict(sorted(document['footnotes'].items(),
+                                                       key=lambda k: int(k[1]['footnoteNumber'])))
+        except KeyError:
+            pass
 
         # and everything is sorted :D
         for key, value in document['footnotes'].items():
             # Adding a shadow link to then fix reference ordering in javascript
             footnoteId = document['footnotes'][key]['footnoteId']
-            print(document['footnotes'][key]['footnoteNumber'])
             mdFile.write(f"[](#{footnoteId})")
             for (index, item) in enumerate(value['content']):
                 get_formatting(mdFile, index, document, item, content_length=len(value['content']), unify_content=True)

@@ -1,5 +1,5 @@
 // BIG HACKS BELOW ***DANGER***
-// sphinx docs are not very friendly tbh especially when imlpementing markdown
+// sphinx docs are not very friendly tbh especially when implementing markdown
 // I apologize for the gruesomeness below but what can you do ¯\_(ツ)_/¯
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if(internalReference){
             externalReferences[i].href = internalReference.href;
         }
+
+        // wrap all citations with <sup> elements
+        if(externalReferences[i].hash && externalReferences[i].hash.match(/^#kix/i)){
+            let sup = document.createElement("sup");
+            externalReferences[i].insertAdjacentElement('beforebegin', sup);
+            sup.insertAdjacentElement('afterbegin', externalReferences[i]);
+        }
     }
 
     // footnotes in text are in a different order than the one google docs api provides us
@@ -40,28 +47,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Then we use the footnoteMap array to add footnote indexing and enable linking
     let referenceElements = document.getElementById('references');
-    for(let i=0; i<referenceElements.children.length; i++){
-        // First element will be the header title which we don't need
-        if(i==0) {
-            continue;
-        }
-        let reference = referenceElements.children[i];
-        // get all anchor elements below the reference that specify the reference id
-        let referenceAnchorNodes = [].slice.call(reference.
-        querySelectorAll('a')).filter(function(el){
-           return el.hash.match(/^#kix/i);
-        });
-        const id = referenceAnchorNodes[0].hash;
+    if(referenceElements){
+        for(let i=0; i<referenceElements.children.length; i++){
+            // First element will be the header title which we don't need
+            if(i==0) {
+                continue;
+            }
+            let reference = referenceElements.children[i];
+            // get all anchor elements below the reference that specify the reference id
+            let referenceAnchorNodes = [].slice.call(reference.
+            querySelectorAll('a')).filter(function(el){
+               return el.hash.match(/^#kix/i);
+            });
+            const id = referenceAnchorNodes[0].hash;
 
-        let foundReference = footnoteMap.find(f=>f.id==id);
-        if(foundReference){
-            let sup = document.createElement("sup");
-            sup.id = foundReference.id.substring(1);
-            let textNode = document.createTextNode(`${foundReference.index} `);
-            sup.appendChild(textNode);
-            reference.prepend(sup);
+            let foundReference = footnoteMap.find(f=>f.id==id);
+            if(foundReference){
+                let sup = document.createElement("sup");
+                sup.id = foundReference.id.substring(1);
+                let textNode = document.createTextNode(`${foundReference.index} `);
+                sup.appendChild(textNode);
+                reference.prepend(sup);
+            }
         }
     }
+
+    // since sphinx's recommonmark does not handle strikethroughs, we handle it manually
+    // check all 'p' elements which contain ~~****~~ and convert them to <strike>
+    [].slice.call(document.querySelectorAll('p')).forEach(function(el){
+        let match = el.innerText.match(/[~~].*[~~]/)
+        if (match){
+            let before = document.createElement("span");
+            let after = document.createElement("span");
+            let strikethrough = document.createElement("strike")
+            let beforeTextNode = document.createTextNode(match.input.slice(0,match.index));
+            let afterTextNode = document.createTextNode(match.input.slice(match.index + match[0].length));
+            let strikethroughTextNode = document.createTextNode(match[0].split('~').join(''));
+            before.appendChild(beforeTextNode);
+            after.appendChild(afterTextNode);
+            strikethrough.appendChild(strikethroughTextNode);
+
+            el.insertAdjacentElement('beforebegin',before);
+            el.insertAdjacentElement('beforebegin',strikethrough);
+            el.insertAdjacentElement('afterend',after);
+
+            el.parentNode.removeChild(el);
+        }
+    });
+
+    // Find all youtube links and replace them with embeds
+    [].slice.call(document.querySelectorAll('a')).forEach(function(el){
+        // first check if its a youtube link
+        if(el.href.match('https://(www.)?youtube|youtu\.be')){
+            // then find the youtube vid id
+            let regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+            let match = el.href.match(regExp);
+            if(match){
+                let id = (match&&match[1].length==11)? match[1] : false;
+                let src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1"`;
+                let ifrm = document.createElement("iframe");
+                ifrm.setAttribute("src", src);
+                ifrm.style.width = "640px";
+                ifrm.style.height = "480px";
+                el.insertAdjacentElement('beforebegin', ifrm);
+                el.parentNode.removeChild(el);
+                //document.body.appendChild(ifrm);
+            }
+        }
+    });
+
+    // sphinx's recommonmark does not like consecutive italics and leaves '*' sometimes hanging in the html
+    // we use this to clean up most of the mess
+    [].slice.call(document.querySelectorAll('em')).forEach(function(el){
+        el.innerHTML = el.innerHTML.split('*').join('')
+    });
 
     // Temporary hack for broken search links
     // Some search result links look like this "chapters/chapter_6undefined?highlight=harmonization"
@@ -82,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }, 1000)
-
     }
 
     // search links are broken
