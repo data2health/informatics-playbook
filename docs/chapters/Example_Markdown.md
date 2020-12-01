@@ -1,13 +1,13 @@
 
-demonstration
-=============
+demonstration_new
+=================
 This document demonstrates which formats and text styling we provide as well as best practices, how-to’s, dos and don'ts and more.
   
   
 **Headings:** All 6 headings are available.
   
   
-![image](../_static/images/VmfnHC6FUKdJwZnVSBPiFmcZWW7gMmqiIUyLH7fs2B_lRuca6H7Xiw33t4bkbYqrfVVWWXrJmhbBmJqksKu8PBrJW8agoc67zjxQfAa3dOYdWB74O97sv8zOkgcC-ko0OldJ7pk4_6rxgJoJvg.jpg)   
+![image](../_static/images/_Mnec_TWYGxYUaAY0vC4VmIJmFskp8zxjf6EdNlhxb6wR3Sz0UHKjv6Ix7HVA7YzOopKCEI34O4ctVnSdX_zjmwgGhS2OAIiF-pFb9ms1FSXanQNwCi4AhzOcXmVevyhyZholgwBcfl1uBUpJw.jpg)   
 ***Example***
   
 [](h.19j90mcsmxr2)
@@ -20,7 +20,8 @@ This document demonstrates which formats and text styling we provide as well as 
   
 [](h.d9o7sc5muao3)
 ### Heading 3
-[](h.d9o7sc5muao3)  
+
+  
 [](h.ff4865a133x3)
 # Emphasis
 
@@ -28,7 +29,7 @@ This document demonstrates which formats and text styling we provide as well as 
 You can use bolds, italics and a mix of them. To add them select your text then click one of these buttons (Bolds, italics)
   
   
-![image](../_static/images/dA_7BoK1ynQXOiJ7dadmKrCEZ2dWKvWyNRS8ir7LO1BnsierdqJi7X4_y4ixNsEaiGQsb6k_z8rAuoR8VTOmlR1T6oirvrYqaunkMCngS0xA3URDyyHD32ii7PpG1Iu0zhhoNGeZeE4cIcNenQ.jpg)   
+![image](../_static/images/MTBzTuoEl-PJq8s6dure8HrlldllQGcEc_Fp9cBSXWRQfxJinpRaEOwSyB7mHn-EL8h52VQHjGngOKlMQJx9AXB7wFCak7hGeKWIWIep0WQS0lZ-o_2d_J_zpqTghhcwbiv_Cky-TvIlG76rAQ.jpg)   
 **Bold**
   
 *Italic*
@@ -43,7 +44,7 @@ You can use bolds, italics and a mix of them. To add them select your text then 
   
 Nest lists as much you like. NOTE: numbered lists are not supported yet but will be converted to bulleted lists. To add a deeper list create a new empty bullet point and press “tab”, this will move the list one level deeper. To undo this effect press “shift + tab” while your cursor is positioned at the start of the list item. Look [https://www.howtogeek.com/486410/how-to-create-multilevel-lists-in-google-docs/](https://www.howtogeek.com/486410/how-to-create-multilevel-lists-in-google-docs/)  
   
-![image](../_static/images/4w_SJddEMRMr5OGKtEGZN-JcGMNFQJPkl6_YdyyHtO0OH3dbksGto9Gjmw5SHwoNbJQ38D-nOpmQVaRxSJLOYvQiiP0joVtdar6H0lRDxakILigt5UDK6o71bcPY7YiOdxG0TaIbHVduQfePjA.jpg)   
+![image](../_static/images/ZLmnAMv349T7K9r1zigBe2XazxAVNgAbvWqsl0bQMXh36ckXJB9JaUM1mrSPpadjuxBwTV5fJipMv2xlrU0r0u7x9nC5ayiMqqBl6CHteYEL-suymz6GGQQTEoWXEYhHn1hazKV_fC_8OIfQMg.jpg)   
 ***Example***
   
 - List item 1
@@ -56,8 +57,10 @@ Nest lists as much you like. NOTE: numbered lists are not supported yet but will
 # Links
 
   
-Links will be automatically converted to blue clickable links.  
-Use “CTRL + k” on existing text to format them as links.  
+Links will be automatically converted to blue clickable links.
+  
+Use “CTRL + k” on existing text to format them as links.
+  
 Autoconverted link [https://github.com/newgene/reusable-data-best-practices](https://github.com/newgene/reusable-data-best-practices)  
 [Text link](https://github.com/newgene/reusable-data-best-practices)  
 [](h.so90bh52prrb)
@@ -66,11 +69,12 @@ Autoconverted link [https://github.com/newgene/reusable-data-best-practices](htt
   
 You can add images as you like but each image will take a row of each own.
   
-***Example***  
+***Example***
   
-![image](../_static/images/LERxAxhP5Dc6xr183F00LYcEvcFI7FOR6wO-Y6meap7B_OkC9AcDuAcdfUkZYHcWD6FBA6V9nqbDf3rArrIwJeA2G98W6QN4SRl0GzcGLVf5p6q13gRhoc42aaIyek6JyQPfmIVhhoyFrQsE5g.jpg)   
   
-![image](../_static/images/vO0xHDyPYrfz4p04WJ0NVglPoo02mkUv2mMoghexJYQMfRoTn0XWN402Ct_EueeEQBGRgH_ne0Fe-U2UJv1cV76R7L83isRu0Gh6I2zrSzOA4qJ2YTV_BjF5rcQ6zigUa_6qbmiiKV7Du6h2aQ.jpg)   
+![image](../_static/images/zHD-UOAeoGgeyu4CMhHUUvJWJLIzArJD3q71Zqvd_pdyBerZ-UWiYTIVj-tR5w4dTAYu9i08JK3R0Sd4qEnsidz4VCspdepDe01V8Ll2ap6fMrCfqX_gVTpkIp4wm25l7xOZHRmNpCI_Fw_7wA.jpg)   
+  
+![image](../_static/images/qRWI1c6jBgU9FdKWehZid6_RZcDd7GyIJE6-Ka2jJnO0IHMfJsJmWLRRbH4up_WjuFC4JgwBnARBxaD7Mhry2jJTpbNQ-dfwPOxbd-JijQv74xc9Z8IAOa6p42vRtQg-XHmhB-Kgy-S9y9hlOA.jpg)   
   
   
   
@@ -80,21 +84,22 @@ You can add images as you like but each image will take a row of each own.
   
 Bookmarks within the document are also available. To first create a bookmark highlight the text or header you want to link to and follow the below image. Look [https://www.cnet.com/how-to/how-to-point-people-to-a-particular-spot-in-a-google-doc/#:~:text=To%20add%20a%20bookmark%2C%20first,and%20a%20Remove%20Link%20option](https://www.cnet.com/how-to/how-to-point-people-to-a-particular-spot-in-a-google-doc/#:~:text=To%20add%20a%20bookmark%2C%20first,and%20a%20Remove%20Link%20option)  
   
-![image](../_static/images/Ae5b18dAvX_W6oOKDuIM9O7UO_7f5PCvQF95xVQUYA9sffvXA62RnITA7r-5Cdpp4eHE6vnjjVP2CHjl6jM4ScMNwMujtdEayMQsqufNHvp_G0XCASdOx3zw-rmEhBSmvbC1kBbzRA6vLIIQ2w.jpg)   
+![image](../_static/images/t-aAcdyJxnuLpgIQa8H4cFqijJThcv8OBtR2jEQ9f3OgoJGjdYnS6la_6kntiINpnwosAPc-OX8pSm02FGEh2XDzCanIanwIQclpnbYYHd7TopVuhIoYYHDI4VeHuiRxsEYTl6KhAPhS3PyGpQ.jpg)   
 Then to link text to the bookmark select the text you want press “ctrl + k” select “bookmarks” and then select the bookmark you created above and click “apply”.
   
   
-![image](../_static/images/3Rl8Qz7su7q8RiYRSbm-rvDkzrJxAvgo4mpmbmn_Sqv0MMsCuhPTIJF01VHxyCNCcbjjTfB6VYndLGCcqUR9sE-W0FUN7YkgraY7d0N3MMt0SrB4ajWASgKi3O_NcJs36QeHlSinxxEUhpwgTw.jpg)   
+![image](../_static/images/PGrs3saZxq1lLkmlw03olmLohKqUO_NpvmokUMS9tmq9z6KXwkhq4qpMOxQLkQgsnZNiJGd37rr-T5_KiTVlQRfilKd4igJOP4Q16odgn508HWJ_WVaaXk_OhaS5rHUabw5vY3o_gCTTqWzk3Q.jpg)   
   
-***Example***  
+***Example***
+  
 [Link to things to look for](#link-to-things-to-look-for)  
 [Pro-tips](#pro-tips)  
   
   
-**Footnotes:** [1](#kix.yqiegj2x8ffu)Footnotes are also available. All footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
+**Footnotes:** [1](#kix.atjpxwm3xt9b)Footnotes are also available. All footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
   
   
-![image](../_static/images/biR4CLW0QL5BQ9WrWvgAMs1v9RzpZMqF4iDR1aTn-rkcStUBYH6PkQVPTiquFjoAs46hNoseXjf1NwAgevy-YxkLPJ3PkdVZfCKRg925MVF73d94upal88gZWp1_3ZqYF8ThrfJduLDraIeRkA.jpg)   
+![image](../_static/images/WXyX2ZVm0Dtn5y8H5aGEAtjIe0AKlY5zUCOHD7WM1780-dHy5FNLOc1y1nQ0d1Sto4J-yrx7226jaWvZomwqNQfzHdw-ix9K5AJlpSTkXUeNyhWolhWlSiNco4ior5Kn40Nh16jnk6_dQfGlsw.jpg)   
   
 [](h.blqeovs8iwby)
 # Tables
@@ -104,8 +109,9 @@ Then to link text to the bookmark select the text you want press “ctrl + k” 
 **Tables:** Tables are also supported. 1st row will be bolded, use this to explain what your data is in each column.
   
   
-![image](../_static/images/DA_dvllcGgFgysd5DUOc614mOS8XRzVemsoCiZjH2gAbaKQ1jL7rqLEibjlJVuqrVGpBfsVyGxE5uos3hdMjm41eUbQ9IT5s3PVI8r1ECTHs_dTtxnCX8ES0RWatDiO7Pyn9vG7mwgQxLjR-lg.jpg)   
-***Example***  
+![image](../_static/images/zc2Z3V-cDa-sKRSJP8EiSnEb-eN5T_QgKjo4Xwz6oUOIpeYLWCKRaAngZ4P6-yFUA9See0Npw6pIR9Xr-3yGw9vVYRQhPlGEVC2MAxR9bL6KgiiU2Nn8LOMoeZtkffDXECW52_RyoBoAuf3zZQ.jpg)   
+***Example***
+  
   
 
 |1 |2 |3 |
@@ -114,7 +120,8 @@ Then to link text to the bookmark select the text you want press “ctrl + k” 
   
 [](h.gyomvl99x239)
 ## Things to look for:
-[](h.gyomvl99x239)  
+
+  
 - Try not to mix “Emphasis” or “Link” elements with other elements such as headers and titles because it might add additional unwanted new lines.
 - Try not to add too much formatting in your “Heading” elements like bolds, italics etc. Also try not to extend these to multiple lines.
 - “Headings” of level “4”, “5”, “6” are not supported.
@@ -130,18 +137,21 @@ Then to link text to the bookmark select the text you want press “ctrl + k” 
 This is fine
   
   
-![image](../_static/images/tL94uPDv4NypwfjGQs4eKLgCoKxtFaF5FiTUPJMqYRzie2Qq6d2EAleY5RIXKIDlQF9O_lxpCm05OmimtvNdpzfZAFmgnZeZgfP6MXs6rNLogkSIabXhWpcbCEQUSnOc-pLxptMv5kzBkf-Y1Q.jpg)   
+![image](../_static/images/I1l8GW0D3IjsVCcXGD6oIw8tBA4zOuvilKFkbdHYjpaJkF4FV91xmpidgO2Cad50-KaPwPRZC7ubnfx8g6Ag9Xkrho1YYsWnV0GwlTiB2Z5ta_8PyF4-5zVw7sOpOiTCWhwV8rcZtwbQbjFVHA.jpg)   
 This is not
   
   
-![image](../_static/images/6MJ5rSIWocWwtmE78yppHorOhO1yfD5avsVKUhUy7CmpIc7ZF_pwQzWy6OqTrQ6xp1eOB_vsw5YvR2B5B2YgVBnOAhYDqCCaoJ2qkWs_fKVLmsub8rY4U8z5-8PvAhbZgv0uztKwaE2KEpP8zw.jpg)   
+![image](../_static/images/if2a3bIxF6zIg4kT-oLPB_6X2aexdNEdmEHgFnVb10jJOmntcFAxvk2_0s19tDNaK5z2HiY4XNIyZG5MUxzmtn4zqVZBDJRRbx50XHAd8uC2WRAFWR9ER2oNtci4oCpw3LBKkmpLJ0XWSkIM1Q.jpg)   
 [](h.2g9x401awxf6)
 ## Pro-tips:
 
   
 - All headings will automatically be added to the table of contents.
 - Youtube links will be automatically embedded in the chapter. You just copy and paste the youtube link in the google doc, convert it to a blue link and we do the rest.
+  
+  
+
 ## References
-[](#kix.yqiegj2x8ffu) Footnote 1
+[](#kix.atjpxwm3xt9b) Footnote 1
   
 
