@@ -6,6 +6,7 @@
 Reusable Data Best Practices
 ============================
 Access the Informatics Playbook GitHub repository to suggest changes, add content, or make comments.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
