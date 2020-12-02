@@ -29,7 +29,7 @@ The categories of best practice include the following
 - Data practices
 - External relationships and outreach
 
-## Acknowledgements
+## Acknowledgments
 Co-leads: Boyd Knosp, University of Iowa (https://orcid.org/0000-0002-3834-3135); Catherine K. Craven, Icahn School of Medicine at Mount Sinai
 
 Christopher G. Chute, Johns Hopkins University (https://orchid.org/0000-0001-5437-2545); Jeanne Holden-Wiltse, University of Rochester CTSI (https://orcid.org/0000-0003-2694-7465); Laura Paglione, Spherical Cow Group (https://orcid.org/0000-0003-3188-6273); Svetlana Rojevsky, Tufts Clinical and Translational Science Institute (https://orcid.org/0000-0002-8353-9006); Juliane Schneider, Harvard Catalyst | Clinical and Translational Science Center (https://orcid.org/0000-0002-7664-3331); Adam Wilcox, University of Washington.
