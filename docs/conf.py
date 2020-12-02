@@ -12,11 +12,14 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.append('../')
 
-
+#sys.path.append(os.path.abspath('./demo/'))
+print(sys.path)
+import sphinx_rtd_theme2
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
@@ -44,7 +47,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',
     'sphinx_markdown_tables',
-    'sphinxjp.themes.basicstrap'
+    #'sphinxjp.themes.basicstrap',
+    'sphinx_rtd_theme2'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -108,7 +112,9 @@ html_additional_pages = {'index': 'index.html'}
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
+html_sidebars = {
+    "**": ["globaltoc.html"]
+}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -195,9 +201,8 @@ todo_include_todos = True
 
 
 try:
-    #import sphinx_rtd_theme
-    #html_theme = 'sphinx_rtd_theme'
-    html_theme = 'basicstrap'
+    #html_theme = 'basicstrap'
+    html_theme = 'sphinx_rtd_theme2'
     html_css_files = [
         'css/custom.css',
     ]
