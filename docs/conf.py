@@ -16,10 +16,8 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
-
-#sys.path.append(os.path.abspath('./demo/'))
-print(sys.path)
 import sphinx_rtd_theme2
+import basicstrap
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
@@ -48,7 +46,8 @@ extensions = [
     'recommonmark',
     'sphinx_markdown_tables',
     #'sphinxjp.themes.basicstrap',
-    'sphinx_rtd_theme2'
+    'sphinx_rtd_theme2',
+    'basicstrap'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -202,7 +201,7 @@ todo_include_todos = True
 
 try:
     #html_theme = 'basicstrap'
-    html_theme = 'sphinx_rtd_theme2'
+    html_theme = 'basicstrap'
     html_css_files = [
         'css/custom.css',
     ]

@@ -1,3 +1,80 @@
 #hidden{
     display: none;
 }
+
+.menu-link{
+    color: black !important;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.hero{
+    padding: 100px 10%;
+}
+
+.hero-intro{
+    width: 40%;
+    min-width: 70px;
+}
+
+.collaboration{
+    width: 40%;
+    min-width: 300px;
+    -webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
+	-o-flex: 1;
+	flex: 1;
+}
+
+.chapter-box{
+    cursor: pointer;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.chapter-box:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.flex{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+.flex-flow-rowwrap{
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    -o-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.intro-chapters{
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Collaboration illustration wraps here so we should change the hero intro with accordingly */
+@media all and (max-width: 650px){
+    .hero-intro{
+        width: 80%;
+        margin-bottom: 50px;
+    }
+}

@@ -1,6 +1,71 @@
 {% extends '!layout.html' %}
-
 {% block body %}
+{% endblock %}
+
+{% block header %}
+
+    <div style="display:flex; flex-direction: row;">
+        <a class="menu-link" href="{{ pathto('index') }}">Home</a>
+        {% set initialUrl="" %}
+        {% set theTocTree = toctree()
+        | replace("</a>", "")
+        | replace(" href=\"", "></a>")
+        | replace("</li>", "</li>;")
+        | striptags
+        | replace("\">", "%")
+        | replace("Contents:", "") %}
+        {% set theTocTree = theTocTree.split(";") %}
+
+        {% for element in theTocTree %}
+        {% set el = element.split("%") %}
+        {% set url = el[0] | trim | safe %}
+        {% set entry = el[1] | trim | safe %}
+            {% if loop.index==1 %}
+                {% set initialUrl=url %}
+                <a class="menu-link" href="{{ initialUrl }}">Begin reading</a>
+            {% endif %}
+        {% endfor %}
+        <a class="menu-link" href="{{ pathto('index') }}">Contribute</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="hero flex flex-flow-rowwrap">
+        <div class="hero-intro">
+            <h1 style="font-weight: bold">Reusable data practices</h1>
+            <p style="margin-top: 30px; line-height: 25px; color:#424242; font-size: 1.6rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae mi orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur elit lorem, posuere eget arcu sed, pulvinar eleifend dolor. Vestibulum semper nec nulla at aliquam. Morbi sit amet tellus eu tortor aliquet mattis ut porta massa.</p>
+        </div>
+        <img src="{{ pathto('_static/svg/collaboration.svg', 1) }}" class="collaboration"/>
+    </div>
+
+    <div class="flex" style="justify-content: center">
+        <div class="flex flex-flow-rowwrap intro-chapters" style="justify-content: space-around">
+            {% set initialUrl="" %}
+            {% set theTocTree = toctree()
+            | replace("</a>", "")
+            | replace(" href=\"", "></a>")
+            | replace("</li>", "</li>;")
+            | striptags
+            | replace("\">", "%")
+            | replace("Contents:", "") %}
+            {% set theTocTree = theTocTree.split(";") %}
+
+            {% for element in theTocTree %}
+            {% set el = element.split("%") %}
+            {% set url = el[0] | trim | safe %}
+            {% set entry = el[1] | trim | safe %}
+                {% if (loop.index==1 or loop.index==2 or loop.index==3) %}
+                    <a href="{{ url }}">
+                        <div class="chapter-box">
+                            <p style="font-weight: bold">{{ entry }}</p>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% block relbar %}
+    {% endblock %}
 {% endblock %}
 
 {% block navsidebar %}
@@ -11,18 +76,9 @@
 
 {% block navigation %}
 {% endblock %}
+
 {% block footer %}
-    {{ super() }}
-    {% if 'singlehtml' not in builder %}
-      {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
-                                  collapse=theme_collapse_navigation|tobool,
-                                  includehidden=theme_includehidden|tobool,
-                                  titles_only=theme_titles_only|tobool) %}
-    {% endif %}
-    {% if global_toc %}
-      {{ global_toc }}
-    {% else %}
-      <!-- Local TOC -->
-      <div class="local-toc">{{ toc }}</div>
-    {% endif %}
+    <div style="margin-top: 50px;">
+        {{ super() }}
+    </div>
 {% endblock %}
