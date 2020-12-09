@@ -143,6 +143,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000)
     }
 
-    // search links are broken
-    // maybe add a listener to the url and if url contains "?q" modify the url
+    const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length )
+    function hideOnClickOutside(element) {
+
+        const outsideClickListener = event => {
+            let customCollapse = document.getElementById('custom-collapse');
+            // TODO also menu button should be excluded here
+            if (!element.contains(event.target) && event.target != customCollapse &&
+                !customCollapse.contains(event.target) &&
+                !element.classList.contains('mobile-side-bar-hidden')) {
+                let contentContainer = document.getElementById('content-container');
+                contentContainer.classList.remove('blur-background');
+                element.classList.add('mobile-side-bar-hidden')
+                //
+                //removeClickListener()
+            }
+        }
+
+        /*const removeClickListener = () => {
+            document.removeEventListener('click', outsideClickListener)
+        }*/
+
+        document.addEventListener('click', outsideClickListener)
+    }
+
+    let sidebar = document.getElementById('mobile-side-bar');
+    hideOnClickOutside(sidebar);
+
+
 }, false);

@@ -1,0 +1,48 @@
+{% include 'mobilesidebar.html' %}
+<div class="menu-container flex">
+    <a class="menu-link" href="{{ pathto('index') }}">Home</a>
+    {% set initialUrl="" %}
+    {% set theTocTree = toctree()
+    | replace("</a>", "")
+    | replace(" href=\"", "></a>")
+    | replace("</li>", "</li>;")
+    | striptags
+    | replace("\">", "%")
+    | replace("Contents:", "") %}
+    {% set theTocTree = theTocTree.split(";") %}
+
+    {% for element in theTocTree %}
+    {% set el = element.split("%") %}
+    {% set url = el[0] | trim | safe %}
+    {% set entry = el[1] | trim | safe %}
+        {% if loop.index==1 %}
+            {% set initialUrl=url %}
+            <a class="menu-link" href="{{ initialUrl }}">Begin reading</a>
+        {% endif %}
+    {% endfor %}
+    <a class="menu-link" href="{{ pathto('contents') }}">Contents</a>
+    <a class="menu-link" href="https://github.com/newgene/reusable-data-best-practices/" style="flex: 1;">Contribute</a>
+
+    <div style="margin: 0 20px;" id="search-header-wrapper">
+        <input id="search" class="search-input" placeholder="Search" v-model="query"
+               v-on:keyup.enter="submit"
+               style="background: url({{ pathto('_static/svg/search.svg', 1) }}) no-repeat;"/>
+        <script>
+            const app = new Vue({
+                el: '#search',
+                data: {
+                    query: ''
+                },
+                delimiters: ['[[', ']]'],
+                methods:{
+                    submit: function (e){
+                        if(this.query) {
+                            window.location.href = "{{ pathto('search') }}" + "?q=" + this.query
+                        }
+                        console.log(this.query)
+                    }
+                }
+            });
+        </script>
+    </div>
+</div>

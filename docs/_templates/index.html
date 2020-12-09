@@ -2,44 +2,49 @@
 {% block body %}
 {% endblock %}
 
-{% block header %}
+{#
+    {% block header %}
+    {% include 'header.html' %}
+    {% endblock %}
 
-    <div style="display:flex; flex-direction: row;">
-        <a class="menu-link" href="{{ pathto('index') }}">Home</a>
-        {% set initialUrl="" %}
-        {% set theTocTree = toctree()
-        | replace("</a>", "")
-        | replace(" href=\"", "></a>")
-        | replace("</li>", "</li>;")
-        | striptags
-        | replace("\">", "%")
-        | replace("Contents:", "") %}
-        {% set theTocTree = theTocTree.split(";") %}
-
-        {% for element in theTocTree %}
-        {% set el = element.split("%") %}
-        {% set url = el[0] | trim | safe %}
-        {% set entry = el[1] | trim | safe %}
-            {% if loop.index==1 %}
-                {% set initialUrl=url %}
-                <a class="menu-link" href="{{ initialUrl }}">Begin reading</a>
-            {% endif %}
-        {% endfor %}
-        <a class="menu-link" href="{{ pathto('index') }}">Contribute</a>
-    </div>
-{% endblock %}
-
+    {% block basicstrapheader %}
+    {% endblock %}
+#}
 {% block content %}
     <div class="hero flex flex-flow-rowwrap">
         <div class="hero-intro">
             <h1 style="font-weight: bold">Reusable data practices</h1>
             <p style="margin-top: 30px; line-height: 25px; color:#424242; font-size: 1.6rem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae mi orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur elit lorem, posuere eget arcu sed, pulvinar eleifend dolor. Vestibulum semper nec nulla at aliquam. Morbi sit amet tellus eu tortor aliquet mattis ut porta massa.</p>
+            <div>
+                {% set initialUrl="" %}
+                {% set theTocTree = toctree()
+                | replace("</a>", "")
+                | replace(" href=\"", "></a>")
+                | replace("</li>", "</li>;")
+                | striptags
+                | replace("\">", "%")
+                | replace("Contents:", "") %}
+                {% set theTocTree = theTocTree.split(";") %}
+
+                {% for element in theTocTree %}
+                {% set el = element.split("%") %}
+                {% set url = el[0] | trim | safe %}
+                {% set entry = el[1] | trim | safe %}
+                    {% if loop.index==1 %}
+                        {% set initialUrl=url %}
+                        <a class="hero-button" href="{{ initialUrl }}">Browse</a>
+                    {% endif %}
+                {% endfor %}
+
+                <a class="hero-button" href="https://github.com/newgene/reusable-data-best-practices/">Contribute</a>
+                <a class="hero-button" href="{{ pathto('search') }}">Search</a>
+            </div>
         </div>
         <img src="{{ pathto('_static/svg/collaboration.svg', 1) }}" class="collaboration"/>
     </div>
-
-    <div class="flex" style="justify-content: center">
-        <div class="flex flex-flow-rowwrap intro-chapters" style="justify-content: space-around">
+    <div class="flex chapters-container featured-container">
+        <h1 style="font-weight: bold; color: white; margin-top: 0;">Featured</h1>
+        <div class="flex flex-flow-rowwrap intro-chapters">
             {% set initialUrl="" %}
             {% set theTocTree = toctree()
             | replace("</a>", "")
@@ -55,8 +60,8 @@
             {% set url = el[0] | trim | safe %}
             {% set entry = el[1] | trim | safe %}
                 {% if (loop.index==1 or loop.index==2 or loop.index==3) %}
-                    <a href="{{ url }}">
-                        <div class="chapter-box">
+                    <a href="{{ url }}" style="text-decoration: none !important;">
+                        <div class="chapter-box" style="background-color: #212121 !important; color: white;">
                             <p style="font-weight: bold">{{ entry }}</p>
                         </div>
                     </a>
@@ -78,6 +83,34 @@
 {% endblock %}
 
 {% block footer %}
+    <div class="flex chapters-container">
+        <h1 style="font-weight: bold">All chapters</h1>
+        <div class="flex flex-flow-rowwrap intro-chapters">
+            {% set initialUrl="" %}
+            {% set theTocTree = toctree()
+            | replace("</a>", "")
+            | replace(" href=\"", "></a>")
+            | replace("</li>", "</li>;")
+            | striptags
+            | replace("\">", "%")
+            | replace("Contents:", "") %}
+            {% set theTocTree = theTocTree.split(";") %}
+
+            {% for element in theTocTree %}
+            {% set el = element.split("%") %}
+            {% set url = el[0] | trim | safe %}
+            {% set entry = el[1] | trim | safe %}
+                <!--Exclude all urls which contain "#" and empty urls-->
+                {% if url and "#" not in url %}
+                    <a href="{{ url }}" style="text-decoration: none !important;">
+                        <div class="chapter-box">
+                            <p style="font-weight: bold">{{ entry }}</p>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
     <div style="margin-top: 50px;">
         {{ super() }}
     </div>

@@ -16,7 +16,6 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
-import sphinx_rtd_theme2
 import basicstrap
 # -- Project information -----------------------------------------------------
 
@@ -46,7 +45,6 @@ extensions = [
     'recommonmark',
     'sphinx_markdown_tables',
     #'sphinxjp.themes.basicstrap',
-    'sphinx_rtd_theme2',
     'basicstrap'
 ]
 
@@ -207,6 +205,7 @@ try:
     ]
     html_js_files = [
         'js/custom.js',
+        #'js/vueelements.js'
     ]
     html_theme_options = {
         'googlewebfont': True,

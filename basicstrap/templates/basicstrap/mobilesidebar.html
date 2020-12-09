@@ -1,0 +1,104 @@
+<div id="mobile-side-bar" class="mobile-side-bar mobile-side-bar-hidden">
+    <div>
+        <div class="drawer-top-links">
+            <a class="menu-link" href="{{ pathto('index') }}">Home</a>
+            {% set initialUrl="" %}
+            {% set theTocTree = toctree()
+            | replace("</a>", "")
+            | replace(" href=\"", "></a>")
+            | replace("</li>", "</li>;")
+            | striptags
+            | replace("\">", "%")
+            | replace("Contents:", "") %}
+            {% set theTocTree = theTocTree.split(";") %}
+
+            {% for element in theTocTree %}
+            {% set el = element.split("%") %}
+            {% set url = el[0] | trim | safe %}
+            {% set entry = el[1] | trim | safe %}
+                {% if loop.index==1 %}
+                    {% set initialUrl=url %}
+                    <a class="menu-link" href="{{ initialUrl }}">Begin reading</a>
+                {% endif %}
+            {% endfor %}
+            <a class="menu-link" href="{{ pathto('contents') }}">Contents</a>
+            <div>
+                <a class="menu-link" href="https://github.com/newgene/reusable-data-best-practices/" style="flex: 1;">Contribute</a>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg>
+           </div>
+        </div>
+        <h3>Current chapter</h3>
+        {{ toc }}
+        {%- if (not theme_noresponsive|tobool) and display_toc %}
+          <li class="dropdown visible-{{ class_device_xs }}">
+            <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">{{ _('Table Of Contents') }} <b class="caret"></b></a>
+            <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+            {{ toc }}
+            </ul>
+          </li>
+        {%- endif %}
+
+        {%- if theme_theme_preview|tobool %}
+        <li><a href="#" data-toggle="modal" data-target=".debug-modal">theme preview</a></li>
+        {%- endif %}
+
+        {% if not (theme_nosidebar|tobool) %}
+          {%- for rellink in rellinks|reverse %}
+              <!--Next and prev buttons are here-->
+              {% if rellink[3] != 'index' %}
+                 {% if rellink[3] == 'next' %}
+                     <h3>Next chapter</h3>
+                 {% endif %}
+                  {% if rellink[3] == 'previous' %}
+                     <h3>Previous chapter</h3>
+                 {% endif %}
+                <li><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }}</a></li>
+              {% endif %}
+
+          {%- endfor %}
+          {%- for parent in parents %}
+            <p>{{ parent.title }}</p>
+            <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a></li>
+          {%- endfor %}
+        {% else %}
+          <li><a class="uplink" href="{{ pathto(master_doc) }}">{{ _('Contents') }}</a></li>
+          {%- if prev %}
+          <li><a href="{{ prev.link|e }}"><i class="icon icon-double-angle-left"></i>&nbsp;{{ prev.title }}</a></li>
+          {%- endif %}
+          {%- if next %}
+          <li><a href="{{ next.link|e }}">{{ next.title }}&nbsp;<i class="icon icon-double-angle-right"></i></a></li>
+          {%- endif %}
+        {%- endif %}
+
+        {%- if not theme_noresponsive|tobool %}
+            {%- if show_source and has_source and sourcename %}
+            <li class="visible-{{ class_device_xs }}"><a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">{{ _('Show Source') }}</a></li>
+            {%- endif %}
+
+            <li class="visible-{{ class_device_xs }}">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="{{ pathto('search') }}" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="{{ _('Go') }}" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+        {%- endif %}
+
+        {% if (theme_nosidebar|tobool) and (theme_header_searchbox|tobool) %}
+        <li>
+          <form class="navbar-form navbar-right" action="{{ pathto('search') }}" method="get">
+           <div class="form-group" style="padding-right:20px;">
+            <input type="text" name="q" class="form-control" placeholder="Search" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="navbar" />
+           </div>
+          </form>
+        </li>
+        {% endif %}
+    </div>
+</div>
