@@ -14,9 +14,12 @@
 #
 import os
 import sys
+import datetime
+
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
 import basicstrap
+
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
@@ -27,7 +30,6 @@ author = 'CD2H Data Working Group'
 version = ''
 # The full version, including alpha/beta/rc tags
 release = ''
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -44,8 +46,8 @@ extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',
     'sphinx_markdown_tables',
-    #'sphinxjp.themes.basicstrap',
-    'basicstrap'
+    # 'sphinxjp.themes.basicstrap',
+    'basicstrap',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,7 +81,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -98,7 +99,6 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-
 html_additional_pages = {'index': 'index.html'}
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -114,11 +114,15 @@ html_sidebars = {
 }
 
 
+html_context = {
+    'author': 'My Name',
+    'date': datetime.date.today().strftime('%d/%m/%y'),
+}
+
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'ReusableDataBestPracticesdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -148,7 +152,6 @@ latex_documents = [
      'CD2H Data Working Group', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -157,7 +160,6 @@ man_pages = [
     (master_doc, 'reusabledatabestpractices', 'Reusable Data Best Practices Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -169,7 +171,6 @@ texinfo_documents = [
      author, 'ReusableDataBestPractices', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -188,7 +189,6 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-
 # -- Extension configuration -------------------------------------------------
 
 # -- Options for todo extension ----------------------------------------------
@@ -196,16 +196,15 @@ epub_exclude_files = ['search.html']
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-
 try:
-    #html_theme = 'basicstrap'
+    # html_theme = 'basicstrap'
     html_theme = 'basicstrap'
     html_css_files = [
         'css/custom.css',
     ]
     html_js_files = [
         'js/custom.js',
-        #'js/vueelements.js'
+        # 'js/vueelements.js'
     ]
     html_theme_options = {
         'googlewebfont': True,

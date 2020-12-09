@@ -1,3 +1,4 @@
+{{ title|striptags|e }}
 <div id="mobile-side-bar" class="mobile-side-bar mobile-side-bar-hidden">
     <div>
         <div class="drawer-top-links">
@@ -22,17 +23,39 @@
                 {% endif %}
             {% endfor %}
             <a class="menu-link" href="{{ pathto('contents') }}">Contents</a>
-            <div>
+            <div style="margin:10px 0;">
                 <a class="menu-link" href="https://github.com/newgene/reusable-data-best-practices/" style="flex: 1;">Contribute</a>
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg>
            </div>
         </div>
         <h3>Current chapter</h3>
-        {{ toc }}
+        {{ toctree_data  }}
+        {% for toc in toctree_data %}
+            <div class="sidebar-group">
+              <p class="caption">
+                <span class="caption-text"><a href="{{ toc.href }}">{{toc.title}}</a></span>
+              </p>
+              <ul class="{% if toc.current %}current{% endif %}">
+                {% for entry in toc.entries %}
+                  <li class="toctree-l1 {% if entry.current %}current{% endif %}"><a href="{{ pathto(entry.name) }}" class="reference internal {% if entry.current %}current{% endif %}">{{entry.title}}</a>
+
+                    {% if entry.children %}
+                      <ul>
+                        {% for entry2 in entry.children %}
+                          <li class="toctree-l2"><a href="{{entry2.href}}" class="reference internal">{{entry2.title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
         {%- if (not theme_noresponsive|tobool) and display_toc %}
           <li class="dropdown visible-{{ class_device_xs }}">
-            <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">{{ _('Table Of Contents') }} <b class="caret"></b></a>
-            <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+            <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">{{ _(' Of Contents') }} <b class="caret"></b></a>
+            <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">Table
             {{ toc }}
             </ul>
           </li>

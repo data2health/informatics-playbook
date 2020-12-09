@@ -49,9 +49,9 @@
     </ul>
 <ul class="nav navbar-nav {% if not theme_noresponsiverelbar|tobool %}pull-right hidden-{{ class_device_xs }} hidden-{{ class_device_sm }}{% else %}text-center{% endif %}">
       {% if not (theme_nosidebar|tobool) %}
-        {%- for rellink in rellinks|reverse %}
+        {#  {%- for rellink in rellinks|reverse %}
         <li><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a></li>
-        {%- endfor %}
+        {%- endfor %}#}
         {%- block rootrellink %}
         {%- endblock %}
         {%- for parent in parents %}
@@ -126,7 +126,7 @@
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 {%- for scriptfile in script_files %}
     {%- if scriptfile == '_static/jquery.js' %}
     <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
@@ -242,6 +242,8 @@
   </head>
   <body role="document">
 
+    {# Show the current document in the navigation bar.
+    <li class="nav-item">{{ title|striptags|e }}</li>#}
     {%- block header %}
     {% include 'mobilesidebar.html' %}
 
@@ -478,27 +480,29 @@
         {% endblock %}
 
         <div class="{% if (not theme_nosidebar|tobool) %}{{ bs_span_prefix }}{{ 12 - theme_sidebar_span|int }}{% else %}{{ bs_span_prefix }}12{% endif %}" id="content-wrapper">
-          <div class="document flex center-items" role="main">
+             <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; border-bottom: 1px solid #eaecef;">
+              <div style="flex:1;"></div>
+              {%- for rellink in rellinks|reverse %}
+                  <!--Next and prev buttons are here-->
+                  {% if rellink[3] != 'index' %}
+                     {% if rellink[3] == 'previous' %}
+                         <div style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
+                         <div style="order:1" class="divider"></div>
+                     {% endif %}
+                     {% if rellink[3] == 'next' %}
+                         <div style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>
+                     {% endif %}
+                  {% endif %}
+              {%- endfor %}
+            </div>
+            <div class="document flex center-items" role="main">
             {%- block document %}
             <div class="documentwrapper">
               {%- if render_sidebar %}
               <div class="bodywrapper">
                 {%- endif %}
                 <div class="body">
-                <div class="flex center-items">
-                  {%- for rellink in rellinks|reverse %}
-                      <!--Next and prev buttons are here-->
-                      {% if rellink[3] != 'index' %}
-                         {% if rellink[3] == 'previous' %}
-                             <div style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
-                             <div style="order:1" class="divider"></div>
-                         {% endif %}
-                         {% if rellink[3] == 'next' %}
-                             <div style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>
-                         {% endif %}
-                      {% endif %}
-                  {%- endfor %}
-                </div>
+
                 {% block body %} {% endblock %}
                 </div>
                 {%- if render_sidebar %}
@@ -524,6 +528,19 @@
       {% endblock %}
       <!-- footer -->
       {%- block footer %}
+      <div id="go-to-top" v-on:click="goToTop" role="button" class="go-to-top flex center-items">
+        <img src="{{ pathto('_static/svg/arrow.svg', 1) }}" class="arrow-svg"/>
+      </div>
+      <script>
+        const goToTopApp = new Vue({
+            el:'#go-to-top',
+            methods:{
+                goToTop: function(event){
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            }
+        })
+      </script>
       <footer role="contentinfo">
       {%- if show_copyright %}
         {%- if hasdoc('copyright') %}
