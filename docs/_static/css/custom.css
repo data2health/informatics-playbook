@@ -180,10 +180,55 @@ div.sidebar{
     transition: all 0.2s ease-out
 }
 
-.mobile-side-bar-hidden{
+.mobile-side-bar-hidden {
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
+}
+
+.toctree-l1.current a {
+    border-left: .5rem solid #86d4c8 !important;
+}
+
+.toctree-l1 a.current {
+    border-left-color: #3e99af !important;
+}
+
+.toctree-l2 a {
+    padding: .25rem 1rem .25rem 2.75rem !important;
+}
+
+.toctree-l1 a {
+    padding: .35rem 1rem .35rem 1.25rem;
+}
+
+.sidebar-group li{
+    list-style: none;
+}
+
+.toctree-l1 a, .sidebar .toctree-l2 a {
+    font-weight: 400;
+    display: inline-block;
+    color: #2c3e50;
+    line-height: 1.4;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: .5rem solid transparent;
+}
+
+.sidebar-group ul {
+    padding: 0 !important;
+}
+
+.sidebar-group{
+    margin: 0 -20px;
+}
+
+.caption{
+    margin: 16px;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .drawer-top-links{
@@ -208,6 +253,7 @@ div.sidebar{
 .documentwrapper{
     max-width: 840px;
     padding-top: 30px;
+    width: 100%;
 }
 
 .divider{
@@ -239,6 +285,22 @@ div.sidebar{
     width: 50%;
 }
 
+.navbar-brand{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.body{
+    min-width: 100px !important;
+}
+
 body{
     padding-top:50px !important;
 }
@@ -249,7 +311,11 @@ ul{
     padding-left: 30px !important;
 }
 a{
+    color: #3e99af;
     font-weight: bold;
+}
+*{
+    word-break: break-word;
 }
 /* Collaboration illustration wraps here so we should change the hero intro with accordingly */
 @media all and (max-width: 650px){
@@ -270,6 +336,11 @@ a{
     .mobile-side-bar{
         display: none;
     }
+
+    .sidebar-group{
+        max-height: 80vh;
+    }
+
 }
 
 @media all and (max-width: 767px){

@@ -15,6 +15,8 @@
 import os
 import sys
 import datetime
+from BeautifulSoup import BeautifulSoup
+from markdown import markdown
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')

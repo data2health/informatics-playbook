@@ -13,7 +13,6 @@ from sphinx.environment.collectors import EnvironmentCollector
 from sphinx import addnodes
 from sphinx.util.osutil import relative_uri
 from sphinxjp.themes.basicstrap import directives
-
 __version__ = '0.5.0'
 
 package_dir = path.abspath(path.dirname(__file__))
@@ -33,19 +32,26 @@ class SimpleTocTreeCollector(EnvironmentCollector):
     """
     def enable(self, app):
         super().enable(app)
-        print(app.env)
+        print(dir(app))
+        #print(app.env)
         # env is populated from cache, if not cache create/initalize attibute
-        if not hasattr(app.env, 'toc_dict'):
-            app.env.toc_dict = {}
+        #if not hasattr(app.env, 'toc_dict'):
+            #app.env.toc_dict = {}
 
     def clear_doc(self, app, env, docname):
+        if not hasattr(app.env, 'toc_dict'):
+            app.env.toc_dict = {}
         env.toc_dict.pop(docname, None)
 
     def merge_other(self, app, env, docnames, other):
+        if not hasattr(app.env, 'toc_dict'):
+            app.env.toc_dict = {}
         for docname in docnames:
             env.toc_dict[docname] = other.toc_dict[docname]
 
     def process_doc(self, app, doctree):
+        if not hasattr(app.env, 'toc_dict'):
+            app.env.toc_dict = {}
         docname = app.env.docname # sphinx mutates this, ouch!!!
 
         # print(f"================ Collector\n{docname}\n============\n")
@@ -88,14 +94,18 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
     :return: None
     """
     # print(f"---------- Context\n{pagename}\n-------------\n")
-
+    if not hasattr(app.env, 'toc_dict'):
+        app.env.toc_dict = {}
     # start from master_doc
-    master = app.env.get_doctree(app.env.config.master_doc)
 
+    master = app.env.get_doctree(app.env.config.master_doc)
+    '''rendered = app.builder.templates.render_string(
+        'chapters/chapter1', app.config.html_context
+    )'''
     # each toctree will create navigation section
     res = [] # list of top level toctrees in master_doc
     for tree in master.traverse(addnodes.toctree):
-
+        #print(tree)
         # special case for toctree that includes a single item
         # that contains a nested toctree.
         # In this case, just use the referenced toctree directly
@@ -169,7 +179,7 @@ def get_path():
 
 def setup(app):
     """entry-point for sphinx directive."""
-    #app.add_env_collector(SimpleTocTreeCollector)
-    #app.connect('html-page-context', add_toctree_data)
+    app.add_env_collector(SimpleTocTreeCollector)
+    app.connect('html-page-context', add_toctree_data)
     app.add_html_theme('basicstrap', get_path())
     directives.setup(app)

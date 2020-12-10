@@ -57,7 +57,6 @@
         {%- for parent in parents %}
         <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a></li>
         {%- endfor %}
-        <li><a href="#">top</a></li>
         {%- block relbaritems %} {% endblock %}
       {% else %}
         {%- if prev %}
@@ -88,9 +87,33 @@
 
     {%- if sidebars != None %}
     {#- new style sidebar: explicitly include/exclude templates #}
-    {%- for sidebartemplate in sidebars %}
-    {%- include sidebartemplate %}
-    {%- endfor %}
+    {% for toc in toctree_data %}
+        <div class="sidebar-group">
+          <p class="caption">
+            <span class="caption-text"><a href="{{ toc.href }}">{{toc.title}}</a></span>
+          </p>
+          <ul class="{% if toc.current %}current{% endif %}">
+            {% for entry in toc.entries %}
+              <li class="toctree-l1 {% if entry.current %}current{% endif %}"><a href="{{ pathto(entry.name) }}" class="reference internal {% if entry.current %}current{% endif %}">{{entry.title}}</a>
+
+                {% if entry.children %}
+                  <ul>
+                    {% for entry2 in entry.children %}
+                      <li class="toctree-l2"><a href="{{entry2.href}}" class="reference internal">{{entry2.title}}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+     {#
+        {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+        {%- endfor %}
+    #}
     {%- else %}
     {#- old style sidebars: using blocks -- should be deprecated #}
     {%- block sidebartoc %}
@@ -188,7 +211,7 @@
 
 {%- endmacro %}
 
-<html lang="{{ theme_lang }}">
+<html class="flex" lang="{{ theme_lang }}">
   <head>
     <meta charset="{{ encoding }}" />
     {{ metatags }}
@@ -240,7 +263,7 @@
     {%- endblock %}
     {%- block extrahead %} {% endblock %}
   </head>
-  <body role="document">
+  <body role="document" style="width: 100%;">
 
     {# Show the current document in the navigation bar.
     <li class="nav-item">{{ title|striptags|e }}</li>#}
@@ -469,7 +492,8 @@
     {% endblock %}
 
     <!-- container -->
-    <div id="content-container" class="{% if (not theme_content_fixed|tobool) %}container-fluid{% else %}container{% endif %}">
+    <div id="content-container" style="width: 100%;"
+         class="{% if (not theme_content_fixed|tobool) %}container-fluid{% else %}container{% endif %}">
 
       <!-- row -->
       <div class="{{ class_row }}">
@@ -486,11 +510,11 @@
                   <!--Next and prev buttons are here-->
                   {% if rellink[3] != 'index' %}
                      {% if rellink[3] == 'previous' %}
-                         <div style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
+                         <div class="ellipsis" style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
                          <div style="order:1" class="divider"></div>
                      {% endif %}
                      {% if rellink[3] == 'next' %}
-                         <div style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>
+                         <div class="ellipsis" style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>
                      {% endif %}
                   {% endif %}
               {%- endfor %}
