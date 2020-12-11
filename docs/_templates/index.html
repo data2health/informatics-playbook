@@ -63,6 +63,11 @@
                     <a href="{{ url }}" style="text-decoration: none !important;">
                         <div class="chapter-box" style="background-color: #212121 !important; color: white;">
                             <p style="font-weight: bold">{{ entry }}</p>
+                            {% for document_preview in document_previews %}
+                                {% if document_preview.document_url == url %}
+                                    <p class="chapter-box-preview">{{ document_preview.preview[0:70] }}...</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </a>
                 {% endif %}
@@ -105,6 +110,11 @@
                     <a href="{{ url }}" style="text-decoration: none !important;">
                         <div class="chapter-box">
                             <p style="font-weight: bold">{{ entry }}</p>
+                            {% for document_preview in document_previews %}
+                                {% if document_preview.document_url == url %}
+                                    <p class="chapter-box-preview">{{ document_preview.preview[0:70] }}...</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </a>
                 {% endif %}

@@ -86,7 +86,7 @@
     border: 5px solid transparent;
     box-sizing: border-box;
     height: 200px;
-    width: 200px;
+    width: 240px;
     border-radius: 10px;
     padding: 20px;
     -webkit-transition: all 0.2s ease;
@@ -102,6 +102,11 @@
     -o-transform: scale(1.05);
     transform: scale(1.05);
     border: 5px solid #2196F3;
+}
+
+.chapter-box-preview{
+    color: #a5a5a5;
+    font-size: 0.8em;
 }
 
 .featured-container{
@@ -186,19 +191,19 @@ div.sidebar{
     transform: translateX(-100%);
 }
 
-.toctree-l1.current a {
+.sidebar-group .toctree-l1.current a {
     border-left: .5rem solid #86d4c8 !important;
 }
 
-.toctree-l1 a.current {
+.sidebar-group .toctree-l1 a.current {
     border-left-color: #3e99af !important;
 }
 
-.toctree-l2 a {
+.sidebar-group .toctree-l2 a {
     padding: .25rem 1rem .25rem 2.75rem !important;
 }
 
-.toctree-l1 a {
+.sidebar-group .toctree-l1 a {
     padding: .35rem 1rem .35rem 1.25rem;
 }
 
@@ -206,7 +211,7 @@ div.sidebar{
     list-style: none;
 }
 
-.toctree-l1 a, .sidebar .toctree-l2 a {
+.sidebar-group .toctree-l1 a, .sidebar .toctree-l2 a {
     font-weight: 400;
     display: inline-block;
     color: #2c3e50;

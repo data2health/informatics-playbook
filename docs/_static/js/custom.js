@@ -3,7 +3,6 @@
 // I apologize for the gruesomeness below but what can you do ¯\_(ツ)_/¯
 
 document.addEventListener('DOMContentLoaded', function() {
-    axios.get('/reusable-data-best-practices/docs/_build/html/search.html?q=data').then(response=>console.log(response));
     // table of content links work fine, but external links are broken
     // we do some magic here to make external links work
 

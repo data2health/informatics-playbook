@@ -15,13 +15,12 @@
 import os
 import sys
 import datetime
-from BeautifulSoup import BeautifulSoup
-from markdown import markdown
+
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
 import basicstrap
-
+from utils.utils import markdown_to_text, unmark
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
@@ -115,10 +114,45 @@ html_sidebars = {
     "**": ["globaltoc.html"]
 }
 
+# Chapter preview gathering is done here
+# We read the md files from the /chapters folder
+# Then we read each file separately and convert the files to text after we do some formatting
+# and pass the data to the html_context
+
+directory = 'chapters'
+preview_dict = []
+for file in os.listdir(directory):
+    filename = os.fsdecode(file)
+    if filename.endswith(".md"):
+        with open(os.path.join(directory, filename), 'r', encoding="utf8") as _file:
+            lines = _file.readlines()
+            doc = ''
+            for line in lines:
+                # Ignore headings
+                if line.startswith('#') or line.startswith('##') or line.startswith('###'):
+                    pass
+                else:
+                    # We add the space at the end so two lines are not stuck together when
+                    # they are joined
+                    doc = doc + line + ' '
+
+            # We only need plain text on the preview without any formatting so we do some
+            # sanitizing here
+            data = doc.replace('\n', '').replace('*', '').replace('=', '').replace('\n', '').strip()
+            preview = {
+                'document_url': os.path.join(directory, filename).replace('.md', '').replace('\\', '/') + '.html',
+                'document_name': os.path.join(directory, filename),
+                'preview': markdown_to_text(data)
+            }
+            preview_dict.append(preview)
+        continue
+    else:
+        continue
 
 html_context = {
     'author': 'My Name',
     'date': datetime.date.today().strftime('%d/%m/%y'),
+    'document_previews': preview_dict
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
