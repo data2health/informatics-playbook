@@ -65,7 +65,7 @@
                             <p style="font-weight: bold">{{ entry }}</p>
                             {% for document_preview in document_previews %}
                                 {% if document_preview.document_url == url %}
-                                    <p class="chapter-box-preview">{{ document_preview.preview[0:70] }}...</p>
+                                    <p class="chapter-box-preview">{{ document_preview.preview[0:100] }}...</p>
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -112,7 +112,7 @@
                             <p style="font-weight: bold">{{ entry }}</p>
                             {% for document_preview in document_previews %}
                                 {% if document_preview.document_url == url %}
-                                    <p class="chapter-box-preview">{{ document_preview.preview[0:70] }}...</p>
+                                    <p class="chapter-box-preview">{{ document_preview.preview[0:100] }}...</p>
                                 {% endif %}
                             {% endfor %}
                         </div>

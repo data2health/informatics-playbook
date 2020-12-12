@@ -15,12 +15,13 @@
 import os
 import sys
 import datetime
-
+import json
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
 import basicstrap
 from utils.utils import markdown_to_text, unmark
+
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
@@ -126,8 +127,15 @@ for file in os.listdir(directory):
     if filename.endswith(".md"):
         with open(os.path.join(directory, filename), 'r', encoding="utf8") as _file:
             lines = _file.readlines()
+            title = ''
             doc = ''
-            for line in lines:
+            found_first_line = False
+            for index, line in enumerate(lines):
+                if not found_first_line:
+                    if line.strip():
+                        found_first_line = True
+                        title = line.replace('#', '').replace('*', '').replace('=', '').replace('\n', '').strip()
+                        print("title", title)
                 # Ignore headings
                 if line.startswith('#') or line.startswith('##') or line.startswith('###'):
                     pass
@@ -142,6 +150,7 @@ for file in os.listdir(directory):
             preview = {
                 'document_url': os.path.join(directory, filename).replace('.md', '').replace('\\', '/') + '.html',
                 'document_name': os.path.join(directory, filename),
+                'document_title': title,
                 'preview': markdown_to_text(data)
             }
             preview_dict.append(preview)
@@ -152,7 +161,8 @@ for file in os.listdir(directory):
 html_context = {
     'author': 'My Name',
     'date': datetime.date.today().strftime('%d/%m/%y'),
-    'document_previews': preview_dict
+    'document_previews': preview_dict,
+    'document_previews_json': json.dumps(preview_dict)
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
