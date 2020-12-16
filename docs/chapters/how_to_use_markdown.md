@@ -1,5 +1,5 @@
 
-demonstration
+How to use markdown
 =============
 This document demonstrates which formats and text styling we provide as well as best practices, how-to’s, dos and don'ts and more.
   
@@ -29,7 +29,7 @@ This document demonstrates which formats and text styling we provide as well as 
 **Emphasis:** You can use bolds, italics and a mix of them. To add them select your text then click one of these buttons (Bolds, italics)
   
   
-# Emphasis
+## Emphasis
 
   
 **Bold**
@@ -41,7 +41,7 @@ This document demonstrates which formats and text styling we provide as well as 
 ***Mixes (bold and italic)***  
   
   
-# Lists
+## Lists
 Nest lists as much you like. NOTE: numbered lists are not supported yet but will be converted to bulleted lists. To add a deeper list add a tab at the start of the line.
 
 ***Example***
@@ -54,12 +54,12 @@ Nest lists as much you like. NOTE: numbered lists are not supported yet but will
 - List item 3
   
   
-# Links
+## Links
 Links will be automatically converted to blue clickable links.  
 Autoconverted link [https://github.com/newgene/reusable-data-best-practices](https://github.com/newgene/reusable-data-best-practices)  
   
   
-# Images
+## Images
 You can add images as you like but each image will take a row of each own.
 
 ***Example***
@@ -71,7 +71,7 @@ You can add images as you like but each image will take a row of each own.
   
   
   
-# Bookmarks
+## Bookmarks
 Bookmarks within the document are also available. To bookmark your text add a link pointing to the corresponding element you want to bookmark. Look at the example below.
 
 ***Example***
@@ -85,7 +85,7 @@ To manually add a citation to a footnote in markdown first create a "References"
 The footnote link can be empty to not display anything. To see how it's done look at the citation at the start of this paragraph and the footnote at the end of the chapter below the "References" header.
   
   
-# Tables
+## Tables
 
 Tables are also supported. 1st row will be bolded, use this to explain what your data is in each column.
 
@@ -96,7 +96,7 @@ Tables are also supported. 1st row will be bolded, use this to explain what your
 |4 |5 |6 |
   
 [](h.gyomvl99x239)
-## Things to look for:
+### Things to look for:
   
 - Try not to mix “Emphasis” or “Link” elements with other elements such as headers and titles because it might add additional unwanted new lines.
 - Try not to add too much formatting in your “Heading” elements like bolds, italics etc. Also try not to extend these to multiple lines.

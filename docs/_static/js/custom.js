@@ -144,11 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length )
-    function hideOnClickOutside(element) {
 
+
+    function hideOnClickOutside(element) {
         const outsideClickListener = event => {
             let customCollapse = document.getElementById('custom-collapse');
-            // TODO also menu button should be excluded here
             if (!element.contains(event.target) && event.target != customCollapse &&
                 !customCollapse.contains(event.target) &&
                 !element.classList.contains('mobile-side-bar-hidden')) {
@@ -160,11 +160,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        const searchOutsideClickListener = event => {
+            try{
+                let searchContainer = document.getElementById('search-result-bubble');
+                let search = document.getElementById('search');
+                if (!event.target.contains(search)) {
+                    searchContainer.classList.add('search-result-bubble-hidden');
+                }
+            }catch (e){
+                console.error(e)
+            }
+        }
+
         /*const removeClickListener = () => {
             document.removeEventListener('click', outsideClickListener)
         }*/
 
         document.addEventListener('click', outsideClickListener)
+        document.addEventListener('click', searchOutsideClickListener)
     }
 
     let sidebar = document.getElementById('mobile-side-bar');

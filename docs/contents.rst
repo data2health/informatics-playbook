@@ -19,7 +19,6 @@ Reusable Data Best Practices
    chapters/chapter_7
    chapters/chapter_8
    chapters/how_to_use_markdown
-   chapters/Example_Markdown
 
 
 Indices and tables

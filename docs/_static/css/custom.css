@@ -28,13 +28,13 @@
     background-position: 8px 7px !important;
     padding: 5px;
     padding-left: 35px;
-    border-radius: 15px;
+    border-radius: 100px;
     border: 1px solid #bbbbbb;
     height: 32px;
 }
 
 .search-result-bubble{
-    height: 200px;
+    height: 300px;
     width: 200px;
     position: absolute;
     background-color: white;
@@ -401,5 +401,48 @@ a{
     }
     .menu-link{
         margin: 10px 0;
+    }
+}
+
+@media all and (min-width: 2000px){
+    .chapter-box{
+        width: 300px;
+        height: 300px;
+        font-size: 2rem;
+    }
+
+    .hero-intro{
+        font-size: 2rem;
+    }
+
+    .navbar-header{
+        font-size: 2rem;
+    }
+
+    .contentinfo{
+        font-size: 2rem;
+    }
+
+    .documentwrapper{
+        max-width: 1200px;
+    }
+
+    .search-input{
+        background-position: 8px 14px !important;
+        width: 300px;
+        box-sizing: content-box;
+    }
+
+    .search-result-bubble{
+        height: 300px;
+        width: 300px;
+    }
+
+    div.body{
+        max-width: 1200px;
+    }
+
+    body{
+        font-size: 2rem;
     }
 }
