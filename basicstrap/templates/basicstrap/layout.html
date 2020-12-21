@@ -274,9 +274,10 @@
     {%- endblock %}
     {%- block extrahead %} {% endblock %}
       <script type="text/javascript">
-        localStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));
-        localStorage.setItem("search_path", "{{ pathto('search') }}");
-        localStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
+        sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));
+        sessionStorage.setItem("search_path", "{{ pathto('search') }}");
+        sessionStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
+        sessionStorage.setItem("arrow_svg_path", "{{ pathto('_static/svg/arrow.svg', 1) }}")
       </script>
   </head>
   <body role="document"  style="width: 100%;">
@@ -294,29 +295,9 @@
         <div id="navbar-top" class="navbar {% if (theme_nav_fixed_top|tobool) %}navbar-fixed-top {% endif %}{% if (theme_header_inverse|tobool) %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation" aria-label="top navigation">
             <div class="{% if (not theme_nav_fixed|tobool) %}container-fluid{% else %}container{% endif %}">
                 <div class="navbar-header flex center-items" style="width: 100%">
-                    <button id="custom-collapse" type="button" v-on:click="click"
-                        class="navbar-toggle custom-navbar-toggle" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar icon-bar-line"></span>
-                        <span class="icon-bar icon-bar-line"></span>
-                        <span class="icon-bar icon-bar-line"></span>
-                    </button>
-                    <script type="application/javascript">
-                        const collapse = new Vue({
-                            el: '#custom-collapse',
-                            data: {},
-                            delimiters: ['[[', ']]'],
-                            methods:{
-                                click: function (e){
-                                    let mobilesidebar = document.getElementById("mobile-side-bar");
-                                    mobilesidebar.classList.toggle('mobile-side-bar-hidden');
-                                    let contentContainer = document.getElementById('content-container');
-                                    contentContainer.classList.toggle('blur-background');
-                                }
-                            }
-                        });
-                    </script>
+                    <div id="custom-collapse-container">
 
+                    </div>
                     <a class="navbar-brand" href="{{ pathto('index') }}" style="font-weight: bold; color: #0b3b61; flex:1;">
                         {{ shorttitle|e }}</a>
                     <div id="desktop-navigation-items" class="flex center-items">
@@ -479,7 +460,6 @@
                   </form>
               </li>
               {%- endif %}
-
             </ul>
           </div>
         </div>

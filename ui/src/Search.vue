@@ -3,7 +3,7 @@
     <div id="search-header-wrapper" class="search-header-wrapper">
       <input class="search-input" placeholder="Search" v-model="query"
       v-on:keyup.enter="submit" @keyup="doSomething"
-      style="background: url('_static/svg/search.svg') no-repeat;"/>
+      style="background: url() no-repeat;" />
       <div id="search-result-bubble" class="search-result-bubble search-result-bubble-hidden">
         <ul id="example-2" style="list-style: none; padding: 10px !important;
         height: 100%; overflow:auto;">
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+//style="background: url(this.searchPath) no-repeat;" 
+//remember to add update the icons svgs on mount
 export default {
   el: '#search-container',
   computed: {
@@ -27,8 +29,8 @@ export default {
     window: () => window,
   },
   data: function() {
-    let document_previews_value = localStorage.getItem('document_previews');
-    let search_path = localStorage.getItem('search_path');
+    let document_previews_value = sessionStorage.getItem('document_previews');
+    let search_path = sessionStorage.getItem('search_path');
     //let document_previews = document.getElementById('document_previews_value').getAttribute('value');
     console.log(JSON.parse(document_previews_value));
     return {
