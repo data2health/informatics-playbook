@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  el: '#app',
   name: 'HelloWorld',
   props: {
     msg: String

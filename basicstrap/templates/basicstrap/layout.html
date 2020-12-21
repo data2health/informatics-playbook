@@ -273,8 +273,16 @@
     {%- endif %}
     {%- endblock %}
     {%- block extrahead %} {% endblock %}
+      <script type="text/javascript">
+        localStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));
+        localStorage.setItem("search_path", "{{ pathto('search') }}");
+        localStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
+      </script>
   </head>
-  <body role="document" id="App" style="width: 100%;">
+  <body role="document"  style="width: 100%;">
+    <div type="hidden" id="document_previews_value" value='{{ document_previews_json }}'></div>
+    <div type="hidden" id="search_path" value="{{ pathto('search') }}"></div>
+    <div id="app" style="width: 100%;">
     {# Show the current document in the navigation bar.
     <li class="nav-item">{{ title|striptags|e }}</li>#}
     {%- block header %}
@@ -317,24 +325,8 @@
                             <a class="menu-link" href="https://github.com/newgene/reusable-data-best-practices" style="flex: 1; margin-right: 0;">Contribute</a>
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg>
                        </div>
-                        <div id="search">
-                            <div id="search-header-wrapper" class="search-header-wrapper">
-                                <input class="search-input" placeholder="Search" v-model="query"
-                                       v-on:keyup.enter="submit" @keyup="doSomething"
-                                       style="background: url({{ pathto('_static/svg/search.svg', 1) }}) no-repeat;"/>
-                                <div id="search-result-bubble" class="search-result-bubble search-result-bubble-hidden">
-                                    <ul id="example-2" style="list-style: none; padding: 10px !important;
-                                    height: 100%; overflow:auto;">
-                                      <li class="search-list-item" v-for="(item, index) in this.queryMatches">
-                                          <a v-bind:href="[[ item.searchUrl ]]">
-                                              <span class="search-matches-found">[[ item.count ]] matches found</span>
-                                              <span class="search-title">[[ item.documentTitle ]]</span>
-                                          </a>
-                                      </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="search-container"></div>
+
                     </div>
                 </div>
             </div>
@@ -571,64 +563,6 @@
             }
         })
       </script>
-      <script>
-        Vue.prototype.window = window;
-        const app = new Vue({
-            el: '#search',
-            data: {
-                query: '',
-                queryMatches: [],
-                document_previews_obs: {{ document_previews_json }},
-                document_previews: JSON.parse(JSON.stringify({{ document_previews_json }}))
-            },
-            privateState:{
-                matchCount:0,
-                searchBubbleShown:false,
-            },
-            delimiters: ['[[', ']]'],
-            methods:{
-                doSomething: function(e){
-                    console.log(this.query, this.document_previews_obs, this.document_previews)
-                    this.queryMatches.length = 0;
-                    this.document_previews.forEach(doc_preview=>{
-                        // const regex = `/${this.query}/g`;
-
-                        // for some reason match doesn't work so we just use .split instead
-                        // let count = (doc_preview.preview.match(regex) || []).length;
-                        let count = doc_preview.preview.split(this.query).length-1
-                        console.log(this.window.location);
-                        let searchUrl = this.window.location.pathname.includes('/chapters/') ?
-                            doc_preview.document_url.replace('chapters/', '') + '?highlight=' + this.query :
-                            doc_preview.document_url + '?highlight=' + this.query
-                        console.log(searchUrl);
-                        console.log(doc_preview)
-                        if(count!==0){
-                            this.queryMatches.push({documentName: doc_preview.document_name, count:count,
-                            documentTitle:doc_preview.document_title, documentUrl:doc_preview.document_url,
-                            searchUrl:searchUrl})
-                        }
-                    })
-                    let isMatchFound = false;
-                    if(this.queryMatches){
-                        isMatchFound = !this.queryMatches.every(m => m.count === 0) && this.query;
-                    }
-                    console.log(isMatchFound);
-                    if(isMatchFound){
-                        document.getElementById('search-result-bubble').classList.remove('search-result-bubble-hidden')
-                    }else{
-                        document.getElementById('search-result-bubble').classList.add('search-result-bubble-hidden')
-                    }
-                    console.log(this.queryMatches);
-                },
-                submit: function (e){
-                    if(this.query) {
-                        window.location.href = "{{ pathto('search') }}" + "?q=" + this.query
-                    }
-                    console.log(this.query)
-                }
-            }
-        });
-    </script>
       <footer role="contentinfo">
       {%- if show_copyright %}
         {%- if hasdoc('copyright') %}
@@ -653,6 +587,11 @@
     {%- if theme_theme_preview|tobool %}
     {%- include "_theme_preview.html" %}
     {%- endif %}
-
+    </div>
+    {% for file in vue_static %}
+        {% if file.type=='js' %}
+            <script type="text/javascript" src="{{ pathto(file.path, 1) }}"></script>
+        {% endif %}
+    {% endfor %}
   </body>
 </html>

@@ -446,3 +446,8 @@ a{
         font-size: 2rem;
     }
 }
+
+div[type="hidden"] {
+    display: none !important;
+    opacity: 0 !important;
+}

@@ -22,7 +22,7 @@ const createTodo = text => ({
 })
 
 export default {
-  el: '#app2',
+  el: '#app',
   components: {
     TodoItem
   },
