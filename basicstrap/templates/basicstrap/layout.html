@@ -161,6 +161,15 @@
 {%- endfor %}
 <script type="text/javascript" src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
+{% for file in vue_static %}
+    {% if file.type=='js' %}
+        <script type="text/javascript" src="{{ pathto(file.path, 1) }}"></script>
+    {% endif %}
+    {% if file.type=='css' %}
+        <link rel="stylesheet" href="{{ pathto(file.path, 1) }}" type="text/css">
+    {% endif %}
+{% endfor %}
 <script type="text/javascript">
 </script>
 {%- endmacro %}
@@ -265,8 +274,7 @@
     {%- endblock %}
     {%- block extrahead %} {% endblock %}
   </head>
-  <body role="document" style="width: 100%;">
-
+  <body role="document" id="App" style="width: 100%;">
     {# Show the current document in the navigation bar.
     <li class="nav-item">{{ title|striptags|e }}</li>#}
     {%- block header %}

@@ -135,7 +135,6 @@ for file in os.listdir(directory):
                     if line.strip():
                         found_first_line = True
                         title = line.replace('#', '').replace('*', '').replace('=', '').replace('\n', '').strip()
-                        print("title", title)
                 # Ignore headings
                 if line.startswith('#') or line.startswith('##') or line.startswith('###'):
                     pass
@@ -158,11 +157,36 @@ for file in os.listdir(directory):
     else:
         continue
 
+
+def get_static_type(filename):
+    if filename.endswith(".css"):
+        filetype = 'css'
+    elif filename.endswith(".js"):
+        filetype = 'js'
+    else:
+        filetype = 'img'
+    return filetype
+
+
+# get all vue static files to later include them in the layout.html
+directory = '../basicstrap/templates/basicstrap/static/vue'
+vue_static = []
+for item in os.listdir(directory):
+    print(item)
+    if os.path.isfile(directory + '/' + item):
+        filename = '_static/vue/' + item
+        vue_static.append({'type': get_static_type(filename), 'path': filename})
+    else:
+        for innerFile in os.listdir(directory + '/' + item):
+            filename = '_static/vue/' + item + '/' + innerFile
+            vue_static.append({'type': get_static_type(filename), 'path': filename})
+
 html_context = {
     'author': 'My Name',
     'date': datetime.date.today().strftime('%d/%m/%y'),
     'document_previews': preview_dict,
-    'document_previews_json': json.dumps(preview_dict)
+    'document_previews_json': json.dumps(preview_dict),
+    'vue_static': vue_static
 }
 
 # -- Options for HTMLHelp output ---------------------------------------------

@@ -7,7 +7,6 @@ createApp(App).mount('#app')
 
 new Vue({
     el: '#app',
-    data:{},
     methods:{
         toggleSidebar(){}
     }
