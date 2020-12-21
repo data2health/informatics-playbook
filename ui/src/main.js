@@ -2,6 +2,7 @@ import Vue from 'vue'
 //import App from './App.vue'
 //import App2 from './App2'
 import Search from "./Search";
+import GoToTop from './GoToTop';
 Vue.config.productionTip = false
 
 /*new Vue({
@@ -16,4 +17,8 @@ new Vue({
 new Vue({
   render: h => h(Search),
 }).$mount('#search-container')
+
+new Vue({
+  render: h => h(GoToTop),
+}).$mount('#go-to-top-container')
 

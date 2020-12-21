@@ -550,19 +550,9 @@
       {% endblock %}
       <!-- footer -->
       {%- block footer %}
-      <div id="go-to-top" v-on:click="goToTop" role="button" class="go-to-top flex center-items">
-        <img src="{{ pathto('_static/svg/arrow.svg', 1) }}" class="arrow-svg"/>
+      <div id="go-to-top-container">
+
       </div>
-      <script>
-        const goToTopApp = new Vue({
-            el:'#go-to-top',
-            methods:{
-                goToTop: function(event){
-                    window.scrollTo({top: 0, behavior: 'smooth'});
-                }
-            }
-        })
-      </script>
       <footer role="contentinfo">
       {%- if show_copyright %}
         {%- if hasdoc('copyright') %}
