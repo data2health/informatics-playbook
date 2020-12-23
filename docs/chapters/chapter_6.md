@@ -1,18 +1,17 @@
 # Chapter 6: Understanding Data Harmonization
 
-**Table of contents**
 
 
 [](h.m5uxrc45dzn1)
-# About this document
+## About this document
 
 
 [](h.b8lkb9jpfvho)
-## Version: 1.0
+### Version: 1.0
 
 
 [](h.2vmxhgp278pz)
-## Date: 4.23.20
+### Date: 4.23.20
 
 
 Drafted and Edited by:
@@ -29,33 +28,33 @@ Edited by: Lisa O’Keefe, Charisse Madlock-Brown, Andréa Volz
 
 
 [](h.d57alno8oh1v)
-## Purpose & Intended Audience
+### Purpose & Intended Audience
 
 
 This resource offers guidance to members of the [CTSA](#ctsa) informatics community including information about [Data Harmonization](#data-harmonization) that key stakeholders (leadership, researchers, clinicians, CIOs) can use at their institutions. This guidance can be useful to those who are new to [Data Harmonization](#data-harmonization), as well as to those who are experts and may need assistance conveying the importance of [Data Harmonization](#data-harmonization) to a lay audience.
 
 [](h.ar3hs5is5yat)
-## Role of the CD2H Sustainability & Change Management Task Team (SCM)
+### Role of the CD2H Sustainability & Change Management Task Team (SCM)
 [](h.ar3hs5is5yat)
 [CTSA](#ctsa) informatics researchers strive to harmonize or combine their clinical data so that it can be available for users to query and view it in a unified format. The CD2H Sustainability and Change Management Task Team ([SCM](#scm)) of the Clinical [Data Harmonization](#data-harmonization) Working Group aims to aggregate, develop, curate, and disseminate content and tools that help encourage and guide organizations’ understanding of and investments in [Data Harmonization](#data-harmonization) efforts. Many institutions are engaged in such efforts, but decision-makers do not always have a shared language for discussing these issues with ease or a full understanding of their facets. We aim to remedy that here.
 [](h.xnqd298r1x2z)
-## Why is this work important?
+### Why is this work important?
 
 
 Clinical data are among the most valuable artifacts within [CTSA](#ctsa) hubs. Appropriately leveraging these data for translational research purposes, while respecting privacy and honoring hub autonomy, will advance [CTSA](#ctsa) goals and demonstrate its power as a network. The Health Level 7 (HL7) [FHIR](#fhir) standard has the potential to enable hubs to develop a next-generation repository from application program interfaces (APIs) that are built into every electronic health record (EHR). For optimal harmonization, these APIs need to be integration-ready, whether used directly for federated queries or for transformation to any number of common standards.
 
 [](h.5byxnegwd4rp)
-## About the authors and contributors of this guide
+### About the authors and contributors of this guide
 
 
 The National Center for Data to Health (CD2H) tasked the [SCM](#scm) of the Clinical [Data Harmonization](#data-harmonization) Working Group with creating a maturity model for clinical [Data Harmonization](#data-harmonization), as well as a roadmap and resources to help organizations plan and execute their harmonization efforts. The [SCM](#scm) aims to create educational events and provide information about the goals and benefits of [Data Harmonization](#data-harmonization).
 
 [](h.82aeioaymw38)
-# 1\. Why are we talking about Data Harmonization?
+## 1\. Why are we talking about Data Harmonization?
 
 
 [](h.x3h5c7lz6q8q)
-## What is Data Harmonization?
+### What is Data Harmonization?
 
 
 [Data Harmonization](#data-harmonization) is the process of integrating disparate data of varying types, sources, and formats. [Data Harmonization](#data-harmonization) for research use refers to the ability of an organization to connect with external data-driven clinical and translational research projects involving patient data across multiple institutions (Clinical Data Research Networks or [CDRN](#cdrn)s, such as [PCORnet](#pcornet), [ACT](#act), [OHDSI](#ohdsi), [TriNetX](#trinetx)). Coordinating this process involves not only the development and implementation of technology but also implementation of procedures and governance policies, and harnessing relevant expertise.
@@ -65,7 +64,7 @@ It is worth noting that the terms *harmonization* and *standardization* are both
 [CTSA](#ctsa)s have been building, participating in, and using [CDRN](#cdrn)s for several years with a variety of experiences and outcomes. The Clinical [Data Harmonization](#data-harmonization) Working Group believes these experiences contain lessons learned and intends to develop best practices for [Data Harmonization](#data-harmonization) from them. These best practices can guide organizations on emerging opportunities, such as new technologies and opportunities to join new networks. Helping develop, curate, and communicate/encourage action on this guidance is the purpose of the [SCM](#scm).
 
 [](h.shrluhmoslp2)
-## Value Proposition of Data Harmonization
+### Value Proposition of Data Harmonization
 
 
 The quality, depth, and breadth of data and samples collected by healthcare organizations has provided increasing opportunities to advance knowledge and population health. Unfortunately, many healthcare institutions exist as silos with no ability to integrate patient data externally. Millions of inpatient and outpatient medical records containing structured data on clinical procedures, medications, diagnoses, demographics, lab results, and genomics, as well as unstructured data documented as free text in progress notes, cannot be used to their full potential. For example, rare diseases research or outcomes research, often require larger datasets than what is available at a single health care organization. Massive datasets offer more comprehensive analysis and the ability to probe specific research questions with more confidence in the results. To be able to make sense of vast information, [Data Harmonization](#data-harmonization) is needed to ask and answer important questions, and to provide evidence for policy changes in areas of standard of care, care delivery, coverage structure, and emerging population health trends.
@@ -74,7 +73,7 @@ In the past decades, the field has significantly moved from simple healthcare da
 
 *SUMMARY:* *[Data Harmonization](#data-harmonization)* *has a direct impact on quality, reproducibility, and confidence of research that uses data contained in the EHR system. Effective data interoperability leads to improved efficiency of methods and processes, improved time from research project design, through trend identification to policy implementation, and results in cost savings due to increased efficiency and a decreased need for data wrangling. Emerging local, national, and global networks, such as* *[ACT](#act)**,* *[PCORnet](#pcornet)**,* *[OHDSI](#ohdsi)**,* *[TriNetX](#trinetx)* *and others that rely on* *[Common Data Models ](#common-data-models-)**and harmonized data sources, bring about opportunities for global-scale research and policy implementation. Analysis of massive harmonized datasets can provide better insight into population health and reduce local, national, and global healthcare spending waste.*
 [](h.gblovo540yiw)
-## Risks of not moving forward
+### Risks of not moving forward
 
 
 What do research enterprises risk if they do not participate in [Data Harmonization](#data-harmonization)? A lack of harmonization restricts researchers to analyzing different data sources separately, which is counterintuitive to the reality of present-day collaborative research. Project-specific [Data Harmonization](#data-harmonization) is an exhaustive, time-consuming process[6](#kix.vf3i9fva7zvn). Reports indicated that research project harmonization can require up to 6 months to complete, and that about 30% of the data deemed impossible to harmonize and was excluded from the final dataset. Time spent on wrangling data and custom coding takes resources away from finding insights that drive discoveries forward and slows the process of achieving public benefit from them. This exhaustive process negatively impacts the time to and cost of discovery and, therefore, the cost of care. The cost increase eventually creates a barrier for access to care by disadvantaged segments of the population and smaller, less developed countries.
@@ -84,33 +83,31 @@ Pending a comprehensive literature review, it is evident that the risks of not m
 *SUMMARY: The risks of not moving forward with* *[Data Harmonization](#data-harmonization)* *lead to protracted research efforts, delays in translating research to improve population health, and creates barriers for access to care for the disadvantaged.*
 
 [](h.aa5gtgmkzwhl)
-## Assessing the impact of Data Harmonization
+### Assessing the impact of Data Harmonization
 
 
 To fully understand the impact of the [Data Harmonization](#data-harmonization) efforts on areas of research operations, one needs to define, implement, and consistently collect metrics to assess the return on investment (ROI) of those initiatives. If a research enterprise chooses to embark on [Data Harmonization](#data-harmonization) activities, how do we measure the ROI and impact? What are the potential metrics of success? How is success characterized?
 
 As we will demonstrate below, [Data Harmonization](#data-harmonization) is a part of the measure of organizational maturity, and achieving a high score on the maturity index means the organization is implementing strategies identified as impactful for the overall success. Regularly assessing organizations on the maturity index for the [Data Harmonization](#data-harmonization) domain can provide insights into the success of the effort. Additionally, informatics teams can implement processes and research-impact related measures alongside the maturity index. These key performance indicators (KPIs) could include, but are not limited to, the following examples; *(1) the decrease in time required for* *[Data Harmonization](#data-harmonization)* *steps; (2) the percent increase of data available for research after the harmonization process (i.e. decrease in discarded data because of the inability to harmonize); (3) the increased number of multi-site research and collaborations; (4) the increased number of publications, findings, and policy implementations; (5) intellectual property filings that can be attributed to organizations choosing to invest into* *[Data Harmonization](#data-harmonization)* *efforts either directly or toward initiatives leading up to it.*
 [](h.i2q78fmla0wn)
-# 2\. Is your organization ready for Data Harmonization?
+## 2\. Is your organization ready for Data Harmonization?
 
 
 **Maturity** refers to the organizational capacity to deliver a service while considering multiple factors including culture, policy, and organization. The [Data Harmonization](#data-harmonization) maturity index is a questionnaire that assesses an organization's capacity to connect with external data-driven clinical and translational research projects (often referred to as Clinical Data Research Networks or [CDRN](#cdrn)s) involving patient data.
 
 [](h.hpvigmlmtyco)
-## Fill out
-[](h.hpvigmlmtyco)
-## the Data Harmonization Maturity Index for Assessment
+### Fill out the Data Harmonization Maturity Index for Assessment
 [](h.hpvigmlmtyco)
 Click [here](http://j.mp/2GvfPum) (http://j.mp/2GvfPum) to go to a draft version of the [Data Harmonization](#data-harmonization) Index. This index is under development; however, even in draft form, it can provide insights into an organization's maturity regarding mission, governance, sustainability, workforce, infrastructure, relationship with the clinical enterprise, data practices, and external relationships. It also provides topics for an institution to discuss regarding its capacity to participate in [Data Harmonization](#data-harmonization) efforts.
 
 After reviewing the results, read the section titled "Harmonized Data Maturation” to learn more about aspects of the maturity assessment.
 [](h.m0surxemk2l)
-# 3\. Harmonized Data Maturation
+## 3\. Harmonized Data Maturation
 [](h.m0surxemk2l)[7](#kix.vgagxbo4zq1o)[](h.m0surxemk2l)
 [Data Harmonization](#data-harmonization) is a journey, not a destination. To realize its values and benefits, organizations must make it an integral strategic component of daily practices and workflows. Here we discuss 8 maturity categories that are essential for harmonized data maturation and sustainability. As organizations increase their capabilities in each area, they increase their organizational maturity.
 
 [](h.peh6c3n875ro)
-## Data Harmonization Mission
+### Data Harmonization Mission
 
 
 Maturity in this category means:
@@ -139,7 +136,7 @@ Because each [CDM](#cdm) requires ongoing additions to concepts, data types, oth
 While few argue against the merits of [CDM](#cdm)s, demonstrable differences in content and structure among them are becoming burdensome for many [CTSA](#ctsa) to manage. The emergence of [FHIR](#fhir) as a clinical standard may mitigate these concerns through a model of low-cost, low-effort creation of [FHIR](#fhir)-based repositories from APIs that will soon be native to all EHRs, per pending regulation arising from the 21st Century Cures Act. These [FHIR](#fhir) repositories, by design, would embrace a canonical [data model](#data-model) framed on the US Core [FHIR](#fhir) Implementation Guide. Given a canonical data hub, distributing algorithmic transformations, created and maintained by consensus, would allow [CTSA](#ctsa) hubs to derive data marts and projections conforming to popular [CDM](#cdm)s.  Further, [federated queries](#federated-queries) across these hubs may obviate the need for research-specific [CDM](#cdm)s, though that remains speculative in the face of the current maturity level in [FHIR](#fhir). Data exchange harmonized with [FHIR](#fhir) can facilitate streamlined integration of data sources for improved population health research.
 
 [](h.z6b0dc5ctyyf)
-## Governance
+### Governance
 
 
 Maturity in this category means:
@@ -152,7 +149,7 @@ Maturity in this category means:
 An organization must have a governance infrastructure group that makes decisions about data, including [Data Harmonization](#data-harmonization) and research network participation. An organization must have a governance group to make decisions about data and participation, including external data sharing agreements, and participation in [CDRN](#cdrn)s, and [Common Data Models](#common-data-models) ([CDM](#cdm)s). The organization’s Institutional Review Board (IRB) must be proficient in reviewing protocols that use [CDRN](#cdrn)s. The organization must have legal processes in place to effectively enter into external data sharing agreements. Organizational processes must enable decision-making at appropriate levels.
 
 [](h.lpn1hyegamls)
-## Sustainability
+### Sustainability
 
 
 Maturity in this category means:
@@ -165,7 +162,7 @@ An organization must define why it is participating in one or more Clinical Data
 Institutions must allocate funds for [Data Harmonization](#data-harmonization) efforts and incorporate them into capital and operating budgets. One of the ongoing entrenched challenges is the establishment and funding of a health information technology (HIT) infrastructure to support research. Of specific importance is establishing who is responsible for funding the [Data Harmonization](#data-harmonization) efforts. Deans of institutions favor NIH funding for research related activities; however, NIH does not focus on sustaining IT or HIT infrastructure or determining and supporting data standards. Stanford University’s John Ionnidis, MD, DSc, and others have spoken eloquently about funding challenges and misalignments in the scientific enterprise, and academic medical centers’ over-reliance on soft money.[9](#kix.fdndbff4dc4d),[10](#kix.b8y7gxvt5syu),[11](#kix.jrs22bob27gc) Enterprise IT departments often set capital budgets and strategic plans that encompass hardware, software, and tangible deliverables. However, these often do not cover the scientific expertise and personnel necessary to work on data modeling and [data mapping](#data-mapping). Although [CTSA](#ctsa) and PCORI awards can be used for specific projects and purposes regarding [Data Harmonization](#data-harmonization), they are not intended to replace allocated funds from within the institution for sustaining infrastructure and the human expertise that must accompany it. If institutions want to be competitive in research, and compete regarding the external use of their de-identified data for commercial purposes, then committing to [Data Harmonization](#data-harmonization) support is necessary. Benchmarking with other institutions is key for developing appropriate ongoing financial investment and support for [Data Harmonization](#data-harmonization).
 
 [](h.qly7pyx0ez31)
-## Workforce
+### Workforce
 
 
 Maturity in the category means:
@@ -184,7 +181,7 @@ Benchmarking with other organizations is critical in determining adequate and op
 A final, but not insignificant, workforce consideration is the need for experts to provide strong support and training to aid end-users and ensure responsible use of these harmonized data. Whether those people come from the [Data Harmonization](#data-harmonization) team or not, they must train and support end-users of data by ensuring they share the right type and amount of details regarding [CDM](#cdm)s and [CDRN](#cdrn). End-user training should also include discussions of participation and access issues, and ultimately, increase end-user data literacy.
 
 [](h.o69iulb53hw7)
-## Infrastructure
+### Infrastructure
 
 
 Maturity in this category means:
@@ -195,7 +192,7 @@ Maturity in this category means:
 To fully support [Data Harmonization ](#data-harmonization-)with enterprise IT infrastructure, an organization's IT Department needs to act explicitly towards that end. Enterprise IT must take into account the actual hardware, networking, storage, server, and other software requirements of the institution’s [Data Harmonization](#data-harmonization) work and personnel, and ensure that these needs are planned for and met in ongoing planning and budgeting processes.
 
 [](h.fslg58vdul1m)
-## Relationship with the clinical enterprise
+### Relationship with the clinical enterprise
 
 
 Maturity in this category means:
@@ -208,7 +205,7 @@ Maturity in this category means:
 This category is related to the research value of the clinical enterprise, such that there is a relationship between the clinical enterprise and [Data Harmonization](#data-harmonization) efforts. The clinical data operation will be aware of the secondary use of clinical data to drive medical research. Most organizations have established this concept, but depth of understanding of data issues and [Data Harmonization](#data-harmonization) varies widely, and “data literacy”—what that means and how to develop it—among clinical data users and researchers, will need ongoing attention. In a mature organization pursuing [Data Harmonization](#data-harmonization), the clinical IT EHR reporting team is aware of [Data Harmonization](#data-harmonization) efforts and can speak cogently about them.
 
 [](h.p9ctw1errxw6)
-## Data practices
+### Data practices
 
 
 Maturity in this category means:
@@ -222,7 +219,7 @@ Maturity in this category means:
 For sustainability, best practices for data must be followed and include [Data Harmonization](#data-harmonization) activities that are consistent with enterprise data practices. The organization must follow good service management methods for [Data Harmonization](#data-harmonization) efforts, as well as FAIR (Findable, Accessible, Interoperable, Reusable) Principles for managing data shared with [CDRN](#cdrn)s. The organization will track data provenance for data shared with [CDRN](#cdrn)s. The organization’s [Data Harmonization](#data-harmonization) team will have established an aggregated database that feeds [Data Harmonization](#data-harmonization) efforts.
 
 [](h.91ap2bny8urs)
-## External relationships and outreach
+### External relationships and outreach
 
 
 Maturity in this category means:
@@ -233,19 +230,19 @@ Maturity in this category means:
 
 The purpose of [Data Harmonization](#data-harmonization) is the interoperability and exchange of data, particularly for research; therefore, developing, participating in, and maintaining external relationships and outreach for data exchange is an inherent sustainability goal. Organizations must develop strategies for establishing external collaborations, and demonstrate experience with working on multi-institutional research collaborations, including at least one clinical data research network.
 [](h.o662zj7jaek4)
-# 4\. Data Harmonization Technologies
+## 4\. Data Harmonization Technologies
 
 
 All [CTSA](#ctsa) hubs understand the basic advantage of a [federated query](#federated-query) and its underlying requirement for a [common data model.](#common-data-model.) Most hubs participate in multiple efforts for standardizing data into multiple [Common Data Models](#common-data-models), which become increasingly less scalable. Meanwhile, the clinical community has been grappling with the interoperability problem, and are seeking a common framework for clinical data rendering and exchange. There has been dramatic progress in clinical data standards over the past 5 years, which provides an opportunity to leverage emergent and dominant clinical data standards.
 
 [](h.a9hpax40ptc)
-## Federated Query
+### Federated Query
 
 
 A [federated query](#federated-query) provides the ability for one coordinating group to publish an executable algorithm, typically case and control cohorts with comparison analytics that can be independently executed by consortium members. The [CTSA](#ctsa) hubs function in this role. The [federated query](#federated-query) approach ensures that no patient-level data leaves an organization, thereby preserving confidentiality and obviating disclosure.  Other more sophisticated models specify a matrix of tabulations, covariates, or features; a benchmark in the sequence to calculate parameter estimate and variance; and a merger of the matrices for more robust meta-analyses. Since the system only returns cell aggregate sub-totals in the matrix, patient-level data is not exposed.
 
 [](h.s3soh3lxz9sj)
-## Common data models
+### Common data models
 
 
 Widespread adoption of electronic health records (EHR) and emphasis on the reuse of clinical data through integration of clinical care, claims, environmental, and other data requires a robust approach to data modeling to satisfy the complexity and provide maximum usability for effective research. As summarized by Khan et al in the analysis of existing [data models](#data-models) “Data modeling is the process of determining which data elements will be stored and how they will be stored, including their relationships and constraints. The structure and definitions of a data model define what data can be stored, how values should be interpreted, and how easily data can be queried.”[12](#kix.unntzb98ia8x) Significant efforts that have been made by the research community to address the issue of standardization and effective data modeling resulted in a few prominent, widely accepted [Common Data Models](#common-data-models) ([CDM](#cdm))—[PCORnet](#pcornet), [OMOP](#omop), [i2b2](#i2b2), which is well described in a work by Jeffrey G. Khan and colleagues about data model harmonization for the “All Of Us” Research Program.[13](#kix.k5tcvtbx56g2) The section from the publication is shown below to help the audience clarify the landscape of the [Common Data Models](#common-data-models):
@@ -266,7 +263,7 @@ While each [CDM](#cdm) has creatively executed solutions to support research, ea
 
 
 [](h.p1ni8x94p8xu)
-## Interoperability: Clinical data rendering and exchange
+### Interoperability: Clinical data rendering and exchange
 
 
 **Fast Healthcare Interoperability Resources** ([FHIR](#fhir), pronounced “fire”) is a vital standard related to interoperability created by the Health Level 7 (HL7) International health-care standards organization. This standard consists of data formats and elements (“resources”) and an application programming interface (API) for exchanging electronic health records (EHRs.) [FHIR](#fhir)’s greatest strength is that it comes natively out of EHRs through APIs that are regulatorially required.
@@ -274,7 +271,7 @@ While each [CDM](#cdm) has creatively executed solutions to support research, ea
 [FHIR](#fhir) is an open, collaborative community working harmoniously with healthcare, academia, governments, EHR vendors, payers, and patient groups to define a shared specification for health data exchange. It builds upon previous work, while retaining the flexibility to make specification easily usable and understandable. Many practical demonstrations have proven FHIR’s effectiveness at interoperability in open connect-a-thons (an event to prove the efficacy of the standard).
 
 [](h.og90q391grq2)
-### Why does FHIR matter?
+#### Why does FHIR matter?
 
 
 [FHIR](#fhir) is unique among health information technology standards for enjoying nearly universally positive responses among health systems, academics, government(s), payers, pharma, and most EHR vendors.  Many communities have created [FHIR](#fhir) Accelerators to enrich the rapid progress and maturation around the standard. Most compellingly, [FHIR](#fhir) is embraced and adopted by the system developers for whom [FHIR](#fhir) was designed. This translates into a proliferation of [FHIR](#fhir) throughout the clinical community.
@@ -297,19 +294,19 @@ NIH is investing in [FHIR](#fhir), not only for EHR exchange but also for resear
 NIH and related agencies, together with CD2H, have leadership positions in the newly established [HL7 FHIR Accelerator](https://www.hl7.org/about/fhir-accelerator/) for research called Vulcan. The goal of this effort is to ensure the needs and requirements of translational research, specifically those of  the [CTSA](#ctsa) community, are accommodated and incorporated in [FHIR](#fhir) development, evolution, and maturation.
 
 
-![image](../_static/img/Jq4EBWwg2TBKFqbo-0FX2evPdCS3cQlUhVQdjjGJnLlBaosFPLnROvUxfkVrcThuIB7OU90JEmO4X6WjqLcflnkwKX-_iZGTnjxCvMv19AP59AD6iPDMvJx2cp6ZBIW_OEBpbGWliAlGlLJD4Q.jpg)
+![image](../_static/img/chapter_6_fhir_1.jpg)
 [](h.b30hk75564u)
-### How does FHIR work?
+#### How does FHIR work?
 
 
 [FHIR](#fhir) has modular data models that can carry a flexible payload (data), and reusable “containers” that can be assembled into working systems. This model enables the exchange of well-defined structured data in small discrete units.
 
 
-![image](../_static/img/J_EdiKggO36C_qB4795OS4oseoHolm4262Sg60CEs7guXQtCjeq-gR6xckxx23Sf_kto1Wk6-pvGpN9BJdQce7cUGAAlHQDEOfvPPKXb3v_V0pMT37HgKidIW-62LxtRJwGpnuG7NSvIBVORrA.jpg)
+![image](../_static/img/chapter_6_fhir_2.jpg)
 
 
 [](h.ghrp98wd6vp1)
-## Getting started with Data Harmonization technologies
+### Getting started with Data Harmonization technologies
 
 
 There are several questions to consider when approaching tools and technologies for [Data Harmonization](#data-harmonization):
@@ -337,7 +334,7 @@ Note: All considerations should be discussed with the organization’s EHR Admin
     - Data Trust/Governance Chair - for use of data and standardization, which most organizations have
 
 [](h.ta6nb1nls88g)
-# 5\. Appendix: Terminology
+## 5\. Appendix: Terminology
 
 
 [A](#a) B [C](#c)  [D](#d) E [F](#f) G  H  I  J  K  L  M  N [O](#o)  [P](#p) Q  R  S [T](#t) U  V  W  X  Y  Z
