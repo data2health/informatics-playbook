@@ -11,7 +11,7 @@ from mdutils.mdutils import MdUtils
 import re
 
 '''
-To get the credentials.json file go here "https://developers.google.com/docs/api/quickstart/js" click on 
+To get the credentials.json file go here "https://developers.google.com/docs/api/quickstart/js" click on
 "Create API key" and follow the instructions
 '''
 
@@ -181,10 +181,10 @@ def get_element_formatting(mdFile, index, document, item, content_length, elemen
         object_properties = inline_object.get('inlineObjectProperties').get('embeddedObject')
         image_path = object_properties.get('imageProperties').get('contentUri')
         urllib.request.urlretrieve(image_path,
-                                   filename=f"docs/_static/images/{image_path.split('/')[-1]}.jpg")
+                                   filename=f"../docs/_static/img/{image_path.split('/')[-1]}.jpg")
 
         mdFile.new_line(mdFile.new_inline_image(text='image',
-                                                path=f"../_static/images/{image_path.split('/')[-1]}.jpg"))
+                                                path=f"../_static/img/{image_path.split('/')[-1]}.jpg"))
 
         # add an empty character to prevent image collision with text
         mdFile.write(' ')
@@ -327,6 +327,7 @@ def main():
     :return: Call this with an optional arg which corresponds to the google doc id
     """
     # The ID of a sample document.
+    # https://docs.google.com/document/d/1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0
     DOCUMENT_ID = '1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0'
 
     try:
@@ -360,7 +361,7 @@ def main():
     # Retrieve the documents contents from the Docs service.
     document = service.documents().get(documentId=DOCUMENT_ID).execute()
     document.get('inlineObjects')
-    mdFile = MdUtils(file_name='docs/chapters/Example_Markdown', title=document.get('title'))
+    mdFile = MdUtils(file_name='../docs/chapters/Example_Markdown', title=document.get('title'))
 
     # iterate all basic formatting first
     # google docs api splits the document in a non-directional format
