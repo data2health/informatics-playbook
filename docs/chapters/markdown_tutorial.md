@@ -7,23 +7,24 @@ This document demonstrates which formats and text styling we provide as well as 
 
 All 6 headings are available, but you should only use `Heading 1` for the chapter title, and use `Heading 2`, `Heading 3`, ... for section, subsections, ... .
 
-```
-# Heading 1 for Chapter title
+* Example:
 
-## Heading 2 for Section
+  ```
+  # Heading 1 for Chapter title
 
-### Heading 3 for Subsection
+  ## Heading 2 for Section
 
-#### Heading 4 for Subsubsection
+  ### Heading 3 for Subsection
 
-##### Heading 5
+  #### Heading 4 for Subsubsection
 
-###### Heading 6
-```
+  ##### Heading 5
 
-It should render like this:
+  ###### Heading 6
+  ```
+  It should render like this:
 
-![markdown sections](../_static/img/markdown_sections.jpg)
+  ![markdown sections](../_static/img/markdown_sections.jpg)
 
 
 
@@ -31,70 +32,242 @@ It should render like this:
 
 You can use bolds, italics and a mix of them. To add them select your text then click one of these buttons (Bolds, italics)
 
-**Bold**
+* Example:
 
-*Italic*
+  ```
+  **Bold**
 
-~~Strikethroughs~~
+  *Italic*
 
-***Mixes (bold and italic)***
+  ~~Strikethroughs~~
+
+  ***Mixes (bold and italic)***
+  ```
+
+  It should render like this:
+
+  **Bold**
+
+  *Italic*
+
+  ~~Strikethroughs~~
+
+  ***Mixes (bold and italic)***
 
 
 ## Lists
 
 Nest lists as much you like. NOTE: numbered lists are not supported yet but will be converted to bulleted lists. To add a deeper list add a tab at the start of the line.
 
-***Example***
+* **Unordered example**:
 
-- List item 1
-- List item 2
-  - Nested item 1
-  - Nested Item 2
-    - Nested item 3
-- List item 3
+  ```
+  * Item 1
+  * Item 2
+    * Item 2a
+    * Item 2b
+  ```
+  It should render like this:
+
+  * Item 1
+  * Item 2
+    * Item 2a
+    * Item 2b
+
+* **Ordered example**:
+  ```
+  1. Item 1
+  1. Item 2
+  1. Item 3
+     1. Item 3a
+     1. Item 3b
+   ```
+  It should render like this:
+
+  1. Item 1
+  1. Item 2
+  1. Item 3
+     1. Item 3a
+     1. Item 3b
 
 
 ## Links
-Links will be automatically converted to blue clickable links.
-Autoconverted link [https://github.com/newgene/reusable-data-best-practices](https://github.com/newgene/reusable-data-best-practices)
+The embeded links will be automatically converted to clickable links. You can also use the markdown syntax `[link text](link url)` to create a link to any URL, including the link to any section or subsection.
+
+* Example:
+
+  ```
+  https://cd2h.org/
+  [CD2H website](https://cd2h.org/)
+  Links to [the "Code block" section](#code-block)
+  ```
+  It should render like this:
+
+  https://cd2h.org/
+
+  [CD2H website](https://cd2h.org/)
+
+  Links to [the "Code block" section](#code-block)
 
 
-## Images
-You can add images as you like but each image will take a row of each own.
+## Figures
+You can add figures as you like but each figure will take a row of each own.
 
-***Example***
+* Example
+  ```
+  ![demo figure 1](../_static/img/chapter_6_fhir_1.jpg)
 
-![demo image 1](../_static/img/chapter_6_fhir_1.jpg)
+  ![demo figure 2](../_static/img/chapter_6_fhir_2.jpg)
+  ```
+  It should render like this:
 
-![demo image 2](../_static/img/chapter_6_fhir_2.jpg)
+  ![demo figure 1](../_static/img/chapter_6_fhir_1.jpg)
 
-
-
-
-## Bookmarks
-Bookmarks within the document are also available. To bookmark your text add a link pointing to the corresponding element you want to bookmark. Look at the example below.
-
-***Example***
-
-[Link to things to look for](#link-to-things-to-look-for)
-
-[Pro-tips](#pro-tips)
+  ![demo figure 2](../_static/img/chapter_6_fhir_2.jpg)
 
 
-**Footnotes:** [1](#kix.yqiegj2x8ffu)Footnotes are also available. All footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
-To manually add a citation to a footnote in markdown first create a "References" header at the bottom of the chapter. Add there all the footnotes you want. Then add your citation in the text. To link a citation and a footnote together add the same link to the start of each line (both the citation and the footnote).
-The footnote link can be empty to not display anything. To see how it's done look at the citation at the start of this paragraph and the footnote at the end of the chapter below the "References" header.
+## Code block
+
+You can embed a block of code in the text, with the optional syntax-highlighting as well. ``` ``two backticks`` ```
+
+* Example
+  ````
+  ```
+  function fancyAlert(arg) {
+    if(arg) {
+      $.facebox({div:'#foo'})
+    }
+  }
+  ```
+  ````
+  It should render like:
+  ```
+  function fancyAlert(arg) {
+    if(arg) {
+      $.facebox({div:'#foo'})
+    }
+  }
+  ```
+
+  Optionally, you can enable the syntax-highlighting:
+
+  ````
+  ```javascript
+  function fancyAlert(arg) {
+    if(arg) {
+      $.facebox({div:'#foo'})
+    }
+  }
+  ```
+  ````
+  It should render like:
+  ```javascript
+  function fancyAlert(arg) {
+    if(arg) {
+      $.facebox({div:'#foo'})
+    }
+  }
+  ```
+  You can replace `javascript` with other language types like `python`, `bash`, etc.
+
+## Inline code
+You can also embed an inline code in a paragraph.
+
+* Example
+  ```
+  You can call this Python function `do_analysis` to get the result.
+  ```
+  It should render like this:
+
+  You can call this Python function `do_analysis` to get the result.
 
 
 ## Tables
 
 Tables are also supported. 1st row will be bolded, use this to explain what your data is in each column.
 
-***Example***
+* Example
+  ```
+  First Header | Second Header
+  ------------ | -------------
+  Content from cell 1 | Content from cell 2
+  Content in the first column | Content in the second column
+  Content in the first column | Content in the second column
+  ```
+  It should render like this:
 
-|1 |2 |3 |
-| :---: | :---: | :---: |
-|4 |5 |6 |
+  First Header | Second Header
+  ------------ | -------------
+  Content from cell 1 | Content from cell 2
+  Content in the first column | Content in the second column
+  Content in the first column | Content in the second column
+
+
+## Math formula
+You can include math formula using double dollar signs.
+
+* Example
+  ```
+  $$\omega = d\phi / dt$$
+
+  $$I = \int \rho R^{2} dV$$
+  ```
+  It should render like this:
+
+  $$\omega = d\phi / dt$$
+  $$I = \int \rho R^{2} dV$$
+
+
+## Special text box
+You can add some special text box to emphasize some content.
+
+* Example
+  ~~~
+  ```eval_rst
+  .. note::
+
+    This is a special note.
+  ```
+
+  ```eval_rst
+  .. warning::
+
+    This is a warning message.
+  ```
+
+  ```eval_rst
+  .. hint::
+
+    Here you can provide a hint message.
+  ```
+  ~~~
+  It should render like this:
+
+  ```eval_rst
+  .. note::
+
+    This is a special note.
+  ```
+
+  ```eval_rst
+  .. warning::
+
+    This is a warning message.
+  ```
+
+  ```eval_rst
+  .. hint::
+
+    Here you can provide a hint message.
+  ```
+
+
+## Footnotes
+
+ [1](#kix.yqiegj2x8ffu)Footnotes are also available. All footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
+To manually add a citation to a footnote in markdown first create a "References" header at the bottom of the chapter. Add there all the footnotes you want. Then add your citation in the text. To link a citation and a footnote together add the same link to the start of each line (both the citation and the footnote).
+The footnote link can be empty to not display anything. To see how it's done look at the citation at the start of this paragraph and the footnote at the end of the chapter below the "References" header.
+
 
 [](h.gyomvl99x239)
 ### Things to look for:
