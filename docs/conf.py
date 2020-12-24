@@ -17,15 +17,17 @@ import sys
 import datetime
 import json
 
+from recommonmark.parser import CommonMarkParser
+from recommonmark.transform import AutoStructify
+
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append('../')
-import basicstrap
-from utils.utils import markdown_to_text, unmark
+from utils.utils import markdown_to_text
 
 # -- Project information -----------------------------------------------------
 
 project = 'Reusable Data Best Practices'
-copyright = '2019, CD2H Data Working Group'
+copyright = '2020, CD2H Data Working Group'
 author = 'CD2H Data Working Group'
 
 # The short X.Y version
@@ -60,7 +62,7 @@ templates_path = ['_templates']
 #
 # source_suffix = ['.rst', '.md']
 source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
+    '.md': CommonMarkParser,
 }
 
 source_suffix = ['.rst', '.md']
@@ -182,7 +184,7 @@ for item in os.listdir(directory):
             vue_static.append({'type': get_static_type(filename), 'path': filename})
 
 html_context = {
-    'author': 'My Name',
+    'author': author,
     'date': datetime.date.today().strftime('%d/%m/%y'),
     'document_previews': preview_dict,
     'document_previews_json': json.dumps(preview_dict),
@@ -267,7 +269,6 @@ epub_exclude_files = ['search.html']
 todo_include_todos = True
 
 try:
-    # html_theme = 'basicstrap'
     html_theme = 'basicstrap'
     html_css_files = [
         'css/custom.css',
@@ -283,8 +284,22 @@ try:
     }
 
 except ImportError:
-    print('Warning: "sphinx_rtd_theme" is not installed, fall back to default theme.')
+    print('Warning: "basicstrap" is not installed, fall back to default theme.')
 
 
 def setup(app):
-    app.add_stylesheet('_static/css/custom.css')
+    # app.add_stylesheet('_static/css/custom.css')
+
+    # Enable recommonmark's AutoStructify component
+    # Ref: https://recommonmark.readthedocs.io/en/latest/auto_structify.html
+    github_doc_root = "https://github.com/data2health/reusable-data-best-practices/tree/master/doc"
+    app.add_config_value('recommonmark_config', {
+        'url_resolver': lambda url: github_doc_root + url,
+        'enable_auto_toc_tree': True,
+        'auto_toc_tree_section': 'Contents',
+        'enable_eval_rst': True,
+        'enable_match': True,
+        'enable_inline_match': True
+    }, True)
+
+    app.add_transform(AutoStructify)
