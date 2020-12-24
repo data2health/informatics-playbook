@@ -12,7 +12,7 @@ from docutils import nodes
 from sphinx.environment.collectors import EnvironmentCollector
 from sphinx import addnodes
 from sphinx.util.osutil import relative_uri
-from sphinxjp.themes.basicstrap import directives
+from .directives import setup as _setup
 __version__ = '0.5.0'
 
 package_dir = path.abspath(path.dirname(__file__))
@@ -182,4 +182,4 @@ def setup(app):
     app.add_env_collector(SimpleTocTreeCollector)
     app.connect('html-page-context', add_toctree_data)
     app.add_html_theme('basicstrap', get_path())
-    directives.setup(app)
+    _setup(app)
