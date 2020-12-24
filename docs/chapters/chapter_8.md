@@ -24,7 +24,7 @@ The Contributor Attribution Model is currently under development [here](https://
 * CD2H [#Attribution Slack Channel](https://app.slack.com/client/T4SPTQGE7) - Project specific channel on Slack’s Instant messaging platform.  
 * [Github issues](https://github.com/data2health/architecting_attribution/issues) - Interested parties can comment on open issues or contribute their own tickets related to Attribution here. 
 * [Bi-weekly Attribution community meeting](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit) - Meeting takes place every other Thursday at 1p CT.  See [rolling meeting notes](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit).
-See the policy developed for the National COVID Cohort Collaborative (N3C) project: Attribution and Publication Principles for N3C published on Zenodo 10.5281/zenodo.3992394. 
+* See the policy developed for the National COVID Cohort Collaborative (N3C) project: Attribution and Publication Principles for N3C published on Zenodo - doi 10.5281/zenodo.3992394. 
 
 ## Takeaway List
 
