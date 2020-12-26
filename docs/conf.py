@@ -50,6 +50,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',
     'sphinx_markdown_tables',
+    'sphinxcontrib.yt',
     # 'sphinxjp.themes.basicstrap',
     'basicstrap',
 ]
@@ -298,8 +299,8 @@ def setup(app):
         'enable_auto_toc_tree': True,
         'auto_toc_tree_section': 'Contents',
         'enable_eval_rst': True,
-        'enable_match': True,
-        'enable_inline_match': True
+        'enable_math': True,
+        'enable_inline_math': True
     }, True)
 
     app.add_transform(AutoStructify)

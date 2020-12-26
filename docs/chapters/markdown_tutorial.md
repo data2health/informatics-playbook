@@ -109,6 +109,25 @@ The embeded links will be automatically converted to clickable links. You can al
 
   Links to [the "Code block" section](#code-block)
 
+## Tables
+
+Tables are also supported. 1st row will be bolded, use this to explain what your data is in each column.
+
+* Example
+  ```
+  First Header | Second Header
+  ------------ | -------------
+  Content from cell 1 | Content from cell 2
+  Content in the first column | Content in the second column
+  Content in the first column | Content in the second column
+  ```
+  It should render like this:
+
+  First Header | Second Header
+  ------------ | -------------
+  Content from cell 1 | Content from cell 2
+  Content in the first column | Content in the second column
+  Content in the first column | Content in the second column
 
 ## Figures
 You can add figures as you like but each figure will take a row of each own.
@@ -126,6 +145,27 @@ You can add figures as you like but each figure will take a row of each own.
   ![demo figure 2](../_static/img/chapter_6_fhir_2.jpg)
 
 
+
+## Videos
+To include a video, you can upload it to Youtube first and then add its YouTube URL like this:
+
+* Example
+  ~~~
+  ```eval_rst
+  .. youtube:: https://www.youtube.com/watch?v=0JPjw1_iRKY
+  ```
+  ~~~
+  or just the Youtube id:
+  ~~~
+  ```eval_rst
+  .. youtube:: 0JPjw1_iRKY
+  ```
+  ~~~
+  It should render like this
+  ```eval_rst
+  .. youtube:: https://www.youtube.com/watch?v=0JPjw1_iRKY
+  ```
+
 ## Code block
 
 You can embed a block of code in the text, with the optional syntax-highlighting as well. ``` ``two backticks`` ```
@@ -140,7 +180,7 @@ You can embed a block of code in the text, with the optional syntax-highlighting
   }
   ```
   ````
-  It should render like:
+  It should render like this:
   ```
   function fancyAlert(arg) {
     if(arg) {
@@ -160,7 +200,7 @@ You can embed a block of code in the text, with the optional syntax-highlighting
   }
   ```
   ````
-  It should render like:
+  It should render like this:
   ```javascript
   function fancyAlert(arg) {
     if(arg) {
@@ -182,27 +222,6 @@ You can also embed an inline code in a paragraph.
   You can call this Python function `do_analysis` to get the result.
 
 
-## Tables
-
-Tables are also supported. 1st row will be bolded, use this to explain what your data is in each column.
-
-* Example
-  ```
-  First Header | Second Header
-  ------------ | -------------
-  Content from cell 1 | Content from cell 2
-  Content in the first column | Content in the second column
-  Content in the first column | Content in the second column
-  ```
-  It should render like this:
-
-  First Header | Second Header
-  ------------ | -------------
-  Content from cell 1 | Content from cell 2
-  Content in the first column | Content in the second column
-  Content in the first column | Content in the second column
-
-
 ## Math formula
 You can include math formula using double dollar signs.
 
@@ -215,8 +234,12 @@ You can include math formula using double dollar signs.
   It should render like this:
 
   $$\omega = d\phi / dt$$
+
   $$I = \int \rho R^{2} dV$$
 
+  ```eval_rst
+  .. math::
+  ```
 
 ## Special text box
 You can add some special text box to emphasize some content.
