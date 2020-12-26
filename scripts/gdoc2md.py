@@ -9,6 +9,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from mdutils.mdutils import MdUtils
 import re
+import argparse
 
 '''
 To get the credentials.json file go here "https://developers.google.com/docs/api/quickstart/js" click on
@@ -157,9 +158,10 @@ def get_ordered_footnotes(document):
     return order
 
 
-def get_element_formatting(mdFile, index, document, item, content_length, element, unify_content=False):
+def get_element_formatting(mdFile, index, document, item, content_length, element, static_path, unify_content=False):
     """
 
+    :param static_path: The static path the images will be sent to (defaults to '../docs/_static/img/')
     :param mdFile: The mdFile we will be writing to
     :param index: The index of the current element
     :param document: The google doc
@@ -181,10 +183,10 @@ def get_element_formatting(mdFile, index, document, item, content_length, elemen
         object_properties = inline_object.get('inlineObjectProperties').get('embeddedObject')
         image_path = object_properties.get('imageProperties').get('contentUri')
         urllib.request.urlretrieve(image_path,
-                                   filename=f"../docs/_static/img/{image_path.split('/')[-1]}.jpg")
+                                   filename=f"${static_path}{image_path.split('/')[-1]}.jpg")
 
         mdFile.new_line(mdFile.new_inline_image(text='image',
-                                                path=f"../_static/img/{image_path.split('/')[-1]}.jpg"))
+                                                path=f"${static_path}{image_path.split('/')[-1]}.jpg"))
 
         # add an empty character to prevent image collision with text
         mdFile.write(' ')
@@ -265,8 +267,9 @@ def get_element_formatting(mdFile, index, document, item, content_length, elemen
             mdFile.new_line()
 
 
-def get_formatting(mdFile, index, document, item, content_length, unify_content=False):
+def get_formatting(mdFile, index, document, item, content_length, static_path, unify_content=False):
     """
+    :param static_path: The static path the images will be sent to (defaults to '../docs/_static/img/')
     :param mdFile: The mdFile we will be writing to
     :param index: The index of the current element
     :param document: The google doc
@@ -311,7 +314,8 @@ def get_formatting(mdFile, index, document, item, content_length, unify_content=
 
         else:
             for element in item.get('paragraph').get('elements'):
-                get_element_formatting(mdFile, index, document, item, content_length, element, unify_content)
+                get_element_formatting(mdFile, index, document, item, content_length,
+                                       element, static_path, unify_content)
 
         # add a space between each element
         spacing = item.get('paragraph').get('paragraphStyle').get('lineSpacing')
@@ -330,13 +334,31 @@ def main():
     # https://docs.google.com/document/d/1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0
     DOCUMENT_ID = '1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0'
 
+    my_parser = argparse.ArgumentParser(description="Converts google docs directly to markdown."
+                                                    "You can export the output to a folder rendered by sphinx")
+
+    my_parser.add_argument('--id', action='store', type=str, help='You can use a google doc id directly')
+    my_parser.add_argument('--url', action='store', type=str, help="Enter the google doc url. (Open the google doc "
+                                                                   "at your browser and copy the url e.g. "
+                                                                   "https://docs.google.com/document/d/"
+                                                                   "1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ/edit)")
+    # TODO add credentials.json instructions
+    my_parser.add_argument('--output', action='store', type=str, default='../docs/chapters/Example_Markdown',
+                           help="Specify the output file")
+
+    my_parser.add_argument('--static_path', action='store', type=str, default='../docs/_static/img/',
+                           help="Specify the static folder. Images will be stored there")
+
+    args = my_parser.parse_args()
+
     try:
-        result = re.search('/document/d/([a-zA-Z0-9-_]+)', sys.argv[1])
+        result = re.search('/document/d/([a-zA-Z0-9-_]+)', args.url)
         if result.group(1):
             DOCUMENT_ID = result.group(1)
-    except IndexError:
-        pass
+    except (IndexError, TypeError) as e:
+        DOCUMENT_ID = args.id
 
+    #return
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -361,13 +383,14 @@ def main():
     # Retrieve the documents contents from the Docs service.
     document = service.documents().get(documentId=DOCUMENT_ID).execute()
     document.get('inlineObjects')
-    mdFile = MdUtils(file_name='../docs/chapters/Example_Markdown', title=document.get('title'))
+    mdFile = MdUtils(file_name=args.output, title=document.get('title'))
 
     # iterate all basic formatting first
     # google docs api splits the document in a non-directional format
     # 'body', 'footnotes', 'footers', 'lists', 'inlineObjects' etc
     for (index, item) in enumerate(document['body']['content']):
-        get_formatting(mdFile, index, document, item, content_length=len(document['body']['content']))
+        get_formatting(mdFile, index, document, item, content_length=len(document['body']['content']),
+                       static_path=args.static_path)
 
     if 'footnotes' in document:
         # then add and iterate all the footnotes
@@ -398,7 +421,8 @@ def main():
             footnoteId = document['footnotes'][key]['footnoteId']
             mdFile.write(f"[](#{footnoteId})")
             for (index, item) in enumerate(value['content']):
-                get_formatting(mdFile, index, document, item, content_length=len(value['content']), unify_content=True)
+                get_formatting(mdFile, index, document, item, content_length=len(value['content']),
+                               static_path=args.static_path, unify_content=True)
     mdFile.create_md_file()
 
 

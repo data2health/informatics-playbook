@@ -3,7 +3,7 @@
     <div id="search-header-wrapper" class="search-header-wrapper">
       <input class="search-input" placeholder="Search" v-model="query"
       v-on:keyup.enter="submit" @keyup="doSomething"
-      style="background: url() no-repeat;" />
+      :style="{ background: 'url(' + this.searchSvgPath + ') no-repeat' }" />
       <div id="search-result-bubble" class="search-result-bubble search-result-bubble-hidden">
         <ul id="example-2" style="list-style: none; padding: 10px !important;
         height: 100%; overflow:auto;">
@@ -31,13 +31,15 @@ export default {
   data: function() {
     let document_previews_value = sessionStorage.getItem('document_previews');
     let search_path = sessionStorage.getItem('search_path');
+    let search_svg_path = sessionStorage.getItem('search_svg_path');
     //let document_previews = document.getElementById('document_previews_value').getAttribute('value');
-    console.log(JSON.parse(document_previews_value));
+    //console.log(JSON.parse(document_previews_value));
     return {
         query: '',
         queryMatches: [],
         documentPreviews: JSON.parse(document_previews_value),
-        searchPath:search_path
+        searchPath: search_path,
+        searchSvgPath: search_svg_path,
     };
   },
   privateState:{

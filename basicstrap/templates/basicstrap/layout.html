@@ -87,11 +87,15 @@
 
     {%- if sidebars != None %}
     {#- new style sidebar: explicitly include/exclude templates #}
+
     {% for toc in toctree_data %}
         <div class="sidebar-group">
           <p class="caption">
             <span class="caption-text"><a href="{{ toc.href }}">{{toc.title}}</a></span>
           </p>
+            <div style="margin:16px;">
+                <div id="search-container" ></div>
+            </div>
           <ul class="{% if toc.current %}current{% endif %}">
             {% for entry in toc.entries %}
               <li class="toctree-l1 {% if entry.current %}current{% endif %}"><a href="{{ pathto(entry.name) }}" class="reference internal {% if entry.current %}current{% endif %}">{{entry.title}}</a>
@@ -281,8 +285,6 @@
       </script>
   </head>
   <body role="document"  style="width: 100%;">
-    <div type="hidden" id="document_previews_value" value='{{ document_previews_json }}'></div>
-    <div type="hidden" id="search_path" value="{{ pathto('search') }}"></div>
     <div id="app" style="width: 100%;">
     {# Show the current document in the navigation bar.
     <li class="nav-item">{{ title|striptags|e }}</li>#}
@@ -306,100 +308,13 @@
                             <a class="menu-link" href="https://github.com/newgene/reusable-data-best-practices" style="flex: 1; margin-right: 0;">Contribute</a>
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg>
                        </div>
-                    <div id="search-container"></div>
+                    <div id="search-container2"></div>
 
                     </div>
                 </div>
             </div>
         </div>
-    <!--Basicstrap old fixed top bar is here-->
-    {#<div id="navbar-top" class="navbar {% if (theme_nav_fixed_top|tobool) %}navbar-fixed-top {% endif %}{% if (theme_header_inverse|tobool) %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation" aria-label="top navigation">
-      <div class="{% if (not theme_nav_fixed|tobool) %}container-fluid{% else %}container{% endif %}">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-
-            {%- if (not theme_noresponsive|tobool) and display_toc %}
-              <li class="dropdown visible-{{ class_device_xs }}">
-                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">{{ _('Table Of Contents') }} <b class="caret"></b></a>
-                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
-                {{ toc }}
-                </ul>
-              </li>
-            {%- endif %}
-
-            {%- if theme_theme_preview|tobool %}
-            <li><a href="#" data-toggle="modal" data-target=".debug-modal">theme preview</a></li>
-            {%- endif %}
-
-            {% if not (theme_nosidebar|tobool) %}
-              {%- for rellink in rellinks|reverse %}
-                  {% if rellink[3] != 'index' %}
-                    <li><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[3] }} </a></li>
-                  {% endif %}
-              {%- endfor %}
-              {%- for parent in parents %}
-                <p>{{ parent.title }}</p>
-                <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a></li>
-              {%- endfor %}
-            {% else %}
-              <li><a class="uplink" href="{{ pathto(master_doc) }}">{{ _('Contents') }}</a></li>
-              {%- if prev %}
-              <li><a href="{{ prev.link|e }}"><i class="icon icon-double-angle-left"></i>&nbsp;{{ prev.title }}</a></li>
-              {%- endif %}
-              {%- if next %}
-              <li><a href="{{ next.link|e }}">{{ next.title }}&nbsp;<i class="icon icon-double-angle-right"></i></a></li>
-              {%- endif %}
-            {%- endif %}
-
-            {%- if not theme_noresponsive|tobool %}
-            {%- if show_source and has_source and sourcename %}
-            <li class="visible-{{ class_device_xs }}"><a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">{{ _('Show Source') }}</a></li>
-            {%- endif %}
-
-            <li class="visible-{{ class_device_xs }}">
-                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="{{ pathto('search') }}" method="get">
-                  <div class="input-append input-group">
-                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
-                    <span class="input-group-btn">
-                    <input type="submit" class="btn" value="{{ _('Go') }}" />
-                    </span>
-                  </div>
-                  <input type="hidden" name="check_keywords" value="yes" />
-                  <input type="hidden" name="area" value="default" />
-                </form>
-            </li>
-            {%- endif %}
-
-            {% if (theme_nosidebar|tobool) and (theme_header_searchbox|tobool) %}
-            <li>
-              <form class="navbar-form navbar-right" action="{{ pathto('search') }}" method="get">
-               <div class="form-group" style="padding-right:20px;">
-                <input type="text" name="q" class="form-control" placeholder="Search" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="navbar" />
-               </div>
-              </form>
-            </li>
-            {% endif %}
-
-          </ul>
-
-        </div>
-      </div>
-    </div>
-    #}
-
     {%- else %}
-
     <div id="navbar-top" class="navbar {% if (theme_nav_fixed_top|tobool) %}navbar-fixed-top {% endif %}{% if (theme_header_inverse|tobool) %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation" aria-label="top navigation">
       <div class="navbar-inner">
         <div class="{% if (not theme_nav_fixed|tobool) %}container-fluid{% else %}container{% endif %}">
@@ -482,21 +397,7 @@
         {% endblock %}
 
         <div class="{% if (not theme_nosidebar|tobool) %}{{ bs_span_prefix }}{{ 12 - theme_sidebar_span|int }}{% else %}{{ bs_span_prefix }}12{% endif %}" id="content-wrapper">
-             <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; border-bottom: 1px solid #eaecef;">
-              <div style="flex:1;"></div>
-              {%- for rellink in rellinks|reverse %}
-                  <!--Next and prev buttons are here-->
-                  {% if rellink[3] != 'index' %}
-                     {% if rellink[3] == 'next' %}
-                         <div class="ellipsis" style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
-                         <div style="order:1" class="divider"></div>
-                     {% endif %}
-                     {% if rellink[3] == 'previous' %}
-                         <div class="ellipsis" style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>
-                     {% endif %}
-                  {% endif %}
-              {%- endfor %}
-            </div>
+
             <div class="document flex center-items" role="main">
             {%- block document %}
             <div class="documentwrapper">
@@ -513,6 +414,48 @@
             </div>
             {%- endblock %}
           </div>
+            <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; justify-content: space-between">
+              {%- for rellink in rellinks|reverse %}
+                  <!--Next and prev buttons are here-->
+                  {% if rellink[3] != 'index' %}
+                     {% if rellink[3] == 'next' %}
+                         <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
+                             <div class="flex" style="flex-flow: column; align-items: flex-end; width: 100%;">
+                                <span style="color:#4e4e4e; font-size: 1.2rem;">Next</span>
+                                <div class="ellipsis" style="order:2; width: 100%;"><span href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }}</span></div>
+                             </div>
+                            <div>
+                                <svg fill="#4e4e4e" style="height: 10px; width: 10px; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                                    <g>
+                                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                         </a>
+                         {#
+                             <div class="ellipsis" style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
+                             <div style="order:1" class="divider"></div>
+                          #}
+                     {% endif %}
+                     {% if rellink[3] == 'previous' %}
+                         <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
+                             <div>
+                                <svg fill="#4e4e4e" style="height: 10px; width: 10px; margin-right: 10px; transform: rotate(180deg)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                                    <g>
+                                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                             <div class="flex" style="flex-flow: column; align-items: flex-start; width: 100%;">
+                                <span style="color:#4e4e4e; font-size: 1.2rem;">Previous</span>
+                                <div class="ellipsis" style="order:2; width: 100%;"><span>{{ rellink[1]|striptags|e }}</span></div>
+                             </div>
+                         </a>
+                         {#<div class="ellipsis" style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>#}
+                     {% endif %}
+                  {% endif %}
+              {%- endfor %}
+            </div>
         </div>
 
         {%- block sidebar2 %}
@@ -523,31 +466,35 @@
       </div><!-- /row -->
 
       <!-- row -->
-      {%- block relbar  %}
-      <div class="{{ class_row }} footer-relbar">
-        {%- block relbar2 %}{{ relbar() }}{% endblock %}
-      </div><!-- /row -->
-      {% endblock %}
+      {#
+          {%- block relbar  %}
+          <div class="{{ class_row }} footer-relbar">
+            {%- block relbar2 %}{{ relbar() }}{% endblock %}
+          </div><!-- /row -->
+          {% endblock %}
+      #}
       <!-- footer -->
       {%- block footer %}
       <div id="go-to-top-container">
 
       </div>
+          {#
       <footer role="contentinfo">
-      {%- if show_copyright %}
-        {%- if hasdoc('copyright') %}
-          {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-        {%- else %}
-          {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-        {%- endif %}
-      {%- endif %}
-      {%- if last_updated %}
-        {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-      {%- endif %}
-      {%- if show_sphinx %}
-        {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-      {%- endif %}
-      </footer>
+          {%- if show_copyright %}
+            {%- if hasdoc('copyright') %}
+              {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+            {%- else %}
+              {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+            {%- endif %}
+          {%- endif %}
+          {%- if last_updated %}
+            {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+          {%- endif %}
+          {%- if show_sphinx %}
+            {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+          {%- endif %}
+          </footer>
+      #}
       {%- endblock %}
       <!-- /footer -->
 

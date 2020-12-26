@@ -181,13 +181,16 @@
 
 .navbar-default{
     background-color: #ffffff !important;
-    border-color: #eaecef !important;
+    border-color: transparent !important;
+    box-shadow:
+      0 0.8px 1.5px rgba(0, 0, 0, 0.015),
+      0 6px 12px rgba(0, 0, 0, 0.03)
+    ;
 }
 
-div.sidebar{
-    background-color: white;
-    padding: 0  20px;
-    border-right: 1px solid #eaecef;
+div.sidebar {
+    padding: 0 20px;
+    border-right: 1px solid transparent;
 }
 
 .icon-bar-line{
@@ -202,8 +205,10 @@ div.sidebar{
 
 #sidebar-wrapper{
     position: sticky;
-    top: 50px;
+    top: 0;
     padding: 0 !important;
+    height: 100vh;
+    background-color: #469db214;
 }
 
 .mobile-side-bar{
@@ -322,7 +327,7 @@ div.sidebar{
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 20px;
+    margin: 60px;
     border-radius: 100%;
     background-color: #2196F3;
 }
@@ -343,22 +348,49 @@ div.sidebar{
     text-overflow: ellipsis;
 }
 
+/* Overrides some of bootstraps styling */
+
+.section > .sidebar{
+
+}
+table.highlighttable td.code{
+    overflow: auto;
+}
+
+.highlighttable .code{
+    max-width: initial;
+}
+
+div.literal-block-wrapper{
+    width: fit-content;
+}
+
 div.body{
     min-width: 100px !important;
 }
 
 body{
-    padding-top:50px !important;
+    /*padding-top:50px !important;*
+     */
+    padding: 0 !important;
 }
 h2,h3,h4,h5,h6{
-    border-color: #eaecef !important;
+    border-color: transparent !important;
 }
+h1, h2{
+    border-color: #eaecef !important;
+    font-weight: bold !important;
+}
+
 ul{
     padding-left: 30px !important;
 }
 a{
     color: #3e99af;
     font-weight: bold;
+}
+img{
+    padding: 10px;
 }
 *{
     word-break: break-word;
@@ -375,16 +407,21 @@ a{
     #sidebar-wrapper{
         position: relative;
         top: 0;
+        height: auto;
     }
 }
 
 @media all and (min-width: 768px){
+    .navbar-default{
+        display: none;
+    }
+
     .mobile-side-bar{
         display: none;
     }
 
     .sidebar-group{
-        max-height: 80vh;
+        max-height: 100vh;
     }
 
 }
