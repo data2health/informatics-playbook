@@ -11,7 +11,6 @@
 </template>
 
 <script>
-//TODO check if the above arrow svg works
 export default {
   name: "GoToTop",
   el:'#go-to-top-container',

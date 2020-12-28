@@ -33,6 +33,18 @@
     height: 32px;
 }
 
+.search-input-full{
+    background-position: 8px 7px !important;
+    padding: 5px;
+    padding-left: 35px;
+    border-radius: 100px;
+    border: 0;
+    border-top: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
+    height: 32px;
+    width: 100%;
+}
+
 .search-result-bubble{
     height: 300px;
     width: 200px;
@@ -89,6 +101,25 @@
     margin: 10px;
     display: inline-block;
     cursor: pointer;
+}
+
+.sidebar-button{
+    background-color: #455458;
+    border: 0;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sidebar-header{
+    margin: 5px 17px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #656565;
 }
 
 .collaboration{
@@ -336,7 +367,24 @@ div.sidebar {
     text-overflow: ellipsis;
 }
 
+.document{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+}
+
 /* Overrides some of bootstraps styling */
+
+.progress-bar{
+    width: 0%;
+    position:-webkit-sticky;
+    position:sticky;
+    top: 0;
+    -ms-grid-row-align: flex-start;
+    -ms-grid-column-align: flex-start;
+    place-self: flex-start;
+}
 
 .section > .sidebar{
     float: right;
