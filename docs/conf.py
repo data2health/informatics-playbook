@@ -50,7 +50,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'recommonmark',
     'sphinx_markdown_tables',
-    'sphinxcontrib.yt',
+    'sphinxext.adaptive_youtube',
     # 'sphinxjp.themes.basicstrap',
     'basicstrap',
 ]

@@ -2,7 +2,8 @@ Sphinx==3.4.0
 sphinx-autobuild==2020.9.1
 recommonmark==0.7.1
 sphinx-markdown-tables==0.0.15
-sphinxcontrib.yt==0.2.2
+# sphinxcontrib.yt==0.2.2
+sphinxext.adaptive-youtube==0.0.2
 # sphinx-rtd-theme==0.5.0
 # sphinxjp.themes.basicstrap==0.5.0
 
