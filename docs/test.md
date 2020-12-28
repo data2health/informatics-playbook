@@ -3,8 +3,6 @@
 
 ### Things to be fixed
 
-#### 1. sidebar
-
 ``` sidebar:: Line numbers and highlights
 
      emphasis-lines:
@@ -16,8 +14,6 @@
      name:
        may be referenced with `:ref:` later.
 ```
-
-#### 2. code-block with advanced settings
 
 ``` code-block:: python
      :linenos:

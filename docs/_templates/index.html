@@ -74,6 +74,38 @@
             {% endfor %}
         </div>
     </div>
+    <div class="flex chapters-container">
+        <h1 style="font-weight: bold; color: black;">Chapters</h1>
+        <div class="flex flex-flow-rowwrap intro-chapters">
+            {% set initialUrl="" %}
+            {% set theTocTree = toctree()
+            | replace("</a>", "")
+            | replace(" href=\"", "></a>")
+            | replace("</li>", "</li>;")
+            | striptags
+            | replace("\">", "%")
+            | replace("Contents:", "") %}
+            {% set theTocTree = theTocTree.split(";") %}
+
+            {% for element in theTocTree %}
+            {% set el = element.split("%") %}
+            {% set url = el[0] | trim | safe %}
+            {% set entry = el[1] | trim | safe %}
+                {% if url %}
+                    <a href="{{ url }}" style="text-decoration: none !important;">
+                        <div class="chapter-box" >
+                            <p style="font-weight: bold">{{ entry }}</p>
+                            {% for document_preview in document_previews %}
+                                {% if document_preview.document_url == url %}
+                                    <p class="chapter-box-preview">{{ document_preview.preview[0:100] }}...</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
     {% block relbar %}
     {% endblock %}
 {% endblock %}

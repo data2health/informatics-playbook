@@ -287,7 +287,7 @@ You can add some special text box to emphasize some content.
 
 ## Footnotes
 
- [1](#kix.yqiegj2x8ffu)Footnotes are also available. All footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
+ [1](#kix.yqiegj2x8ffu)Footnotes are also available. All [2](#kix.asd)footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
 To manually add a citation to a footnote in markdown first create a "References" header at the bottom of the chapter. Add there all the footnotes you want. Then add your citation in the text. To link a citation and a footnote together add the same link to the start of each line (both the citation and the footnote).
 The footnote link can be empty to not display anything. To see how it's done look at the citation at the start of this paragraph and the footnote at the end of the chapter below the "References" header.
 
@@ -311,4 +311,5 @@ The footnote link can be empty to not display anything. To see how it's done loo
 ## References
 [](#kix.yqiegj2x8ffu) Footnote 1
 
+[](#kix.asd) Footnote2
 

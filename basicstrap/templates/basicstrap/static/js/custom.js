@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // since sphinx's recommonmark does not handle strikethroughs, we handle it manually
     // check all 'p' elements which contain ~~****~~ and convert them to <strike>
     [].slice.call(document.querySelectorAll('p')).forEach(function(el){
-        let match = el.innerText.match(/[~~].*[~~]/)
+        let match = el.innerText.match(/[~~].*[~~]/);
         if (match){
             let before = document.createElement("span");
             let after = document.createElement("span");
-            let strikethrough = document.createElement("strike")
+            let strikethrough = document.createElement("strike");
             let beforeTextNode = document.createTextNode(match.input.slice(0,match.index));
             let afterTextNode = document.createTextNode(match.input.slice(match.index + match[0].length));
             let strikethroughTextNode = document.createTextNode(match[0].split('~').join(''));
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // sphinx's recommonmark does not like consecutive italics and leaves '*' sometimes hanging in the html
     // we use this to clean up most of the mess
     [].slice.call(document.querySelectorAll('em')).forEach(function(el){
-        el.innerHTML = el.innerHTML.split('*').join('')
+        el.innerHTML = el.innerHTML.split('*').join('');
     });
 
     // Temporary hack for broken search links

@@ -272,11 +272,8 @@ todo_include_todos = True
 try:
     html_theme = 'basicstrap'
     html_css_files = [
-        'css/custom.css',
     ]
     html_js_files = [
-        'js/custom.js',
-        # 'js/vueelements.js'
     ]
     html_theme_options = {
         'googlewebfont': True,

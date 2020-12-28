@@ -319,18 +319,6 @@ div.sidebar {
     filter:blur(1px);
 }
 
-.go-to-top{
-    height: 50px;
-    width: 50px;
-    -webkit-box-shadow: 0 0.2px 0.4px rgba(0, 0, 0, 0.02), 0 0.6px 0.9px rgba(0, 0, 0, 0.028), 0 1.1px 1.8px rgba(0, 0, 0, 0.035), 0 2px 3.1px rgba(0, 0, 0, 0.042), 0 3.8px 5.8px rgba(0, 0, 0, 0.05), 0 9px 14px rgba(0, 0, 0, 0.07);
-    box-shadow: 0 0.2px 0.4px rgba(0, 0, 0, 0.02), 0 0.6px 0.9px rgba(0, 0, 0, 0.028), 0 1.1px 1.8px rgba(0, 0, 0, 0.035), 0 2px 3.1px rgba(0, 0, 0, 0.042), 0 3.8px 5.8px rgba(0, 0, 0, 0.05), 0 9px 14px rgba(0, 0, 0, 0.07);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 60px;
-    border-radius: 100%;
-    background-color: #2196F3;
-}
 
 .arrow-svg{
     width: 50%;
@@ -351,18 +339,44 @@ div.sidebar {
 /* Overrides some of bootstraps styling */
 
 .section > .sidebar{
-
+    float: right;
+    width: 40%;
+    display: block;
+    margin: 0 0 24px 24px;
+    padding: 24px;
+    background: #f3f6f6;
+    border: solid 1px #e1e4e5;
 }
+
+div.literal-block-wrapper{
+    display: grid;
+    min-width: 50%;
+    max-width: 100%;
+    width: auto !important;
+    overflow: auto;
+}
+
+div.code-block-caption + div{
+    width: 100%;
+}
+
+.highlighttable{
+    width: 100%;
+}
+
 table.highlighttable td.code{
     overflow: auto;
 }
 
-.highlighttable .code{
-    max-width: initial;
+.highlighttable .linenos{
+    width: 4%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
-div.literal-block-wrapper{
-    width: fit-content;
+.highlighttable .code{
+    max-width: initial;
 }
 
 div.body{
@@ -386,7 +400,7 @@ ul{
     padding-left: 30px !important;
 }
 a{
-    color: #3e99af;
+    color: #3e99af !important;
     font-weight: bold;
 }
 img{
@@ -429,6 +443,12 @@ img{
 @media all and (max-width: 767px){
     .search-header-wrapper{
         display: none;
+    }
+    .section > .sidebar{
+        width: 100%;
+    }
+    .documentwrapper{
+        padding-top: 70px;
     }
     #desktop-navigation-items{
         display: none;
