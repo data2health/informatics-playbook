@@ -32,8 +32,7 @@ export default {
     let document_previews_value = sessionStorage.getItem('document_previews');
     let search_path = sessionStorage.getItem('search_path');
     let search_svg_path = sessionStorage.getItem('search_svg_path');
-    //let document_previews = document.getElementById('document_previews_value').getAttribute('value');
-    //console.log(JSON.parse(document_previews_value));
+
     return {
         query: '',
         queryMatches: [],

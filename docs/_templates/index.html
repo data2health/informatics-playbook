@@ -76,6 +76,7 @@
     </div>
     <div class="flex chapters-container">
         <h1 style="font-weight: bold; color: black;">Chapters</h1>
+        <div id="dynamic-chapter-search-container"></div>
         <div class="flex flex-flow-rowwrap intro-chapters">
             {% set initialUrl="" %}
             {% set theTocTree = toctree()
@@ -92,7 +93,7 @@
             {% set url = el[0] | trim | safe %}
             {% set entry = el[1] | trim | safe %}
                 {% if url %}
-                    <a href="{{ url }}" style="text-decoration: none !important;">
+                    <a id="{{ url }}" href="{{ url }}" class="chapter-box-container" style="text-decoration: none !important;">
                         <div class="chapter-box" >
                             <p style="font-weight: bold">{{ entry }}</p>
                             {% for document_preview in document_previews %}
