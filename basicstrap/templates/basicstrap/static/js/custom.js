@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     searchContainer.classList.add('search-result-bubble-hidden');
                 }
             }catch (e){
-                console.error(e)
+                //console.error(e)
             }
         }
 
@@ -182,6 +182,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let sidebar = document.getElementById('mobile-side-bar');
     hideOnClickOutside(sidebar);
-
-
 }, false);

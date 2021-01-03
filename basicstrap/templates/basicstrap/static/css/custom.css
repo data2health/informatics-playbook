@@ -226,6 +226,7 @@
 div.sidebar {
     padding: 0 20px;
     border-right: 1px solid transparent;
+    height: 100%;
 }
 
 .icon-bar-line{

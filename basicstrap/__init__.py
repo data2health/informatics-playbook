@@ -57,12 +57,21 @@ class SimpleTocTreeCollector(EnvironmentCollector):
         # print(f"================ Collector\n{docname}\n============\n")
         # get 1 level document toc (sections)
         section_nodes = [s for s in doctree if isinstance(s, nodes.section)]
+        #print(section_nodes)
         # if first level is a single section,
         # ignore it and use second level of sections
         if len(section_nodes) == 1:
             section2_nodes = [s for s in section_nodes[0]
                               if isinstance(s, nodes.section)]
-            if section2_nodes: # do not replace with level-2 sections if None
+            section3_nodes = None
+            if len(section2_nodes) > 0:
+                section3_nodes = [s for s in section2_nodes[0]
+                                  if isinstance(s, nodes.section)]
+                print(section3_nodes)
+
+            if section3_nodes: # do not replace with level-2 sections if None
+                section_nodes = section3_nodes
+            elif section2_nodes:
                 section_nodes = section2_nodes
 
         sections = []

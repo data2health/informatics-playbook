@@ -175,7 +175,6 @@ def get_static_type(filename):
 directory = '../basicstrap/templates/basicstrap/static/vue'
 vue_static = []
 for item in os.listdir(directory):
-    print(item)
     if os.path.isfile(directory + '/' + item):
         filename = '_static/vue/' + item
         vue_static.append({'type': get_static_type(filename), 'path': filename})
