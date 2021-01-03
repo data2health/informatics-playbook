@@ -5,6 +5,7 @@ import GoToTop from './GoToTop';
 import ScrollProgression from "./ScrollProgression";
 import EstimatedReadTime from "./EstimatedReadTime";
 import DynamicChapterSearch from "./DynamicChapterSearch";
+import Preferences from "./Preferences";
 Vue.config.productionTip = false
 
 new Vue({
@@ -30,3 +31,7 @@ new Vue({
 new Vue({
   render: h => h(DynamicChapterSearch),
 }).$mount('#dynamic-chapter-search-container')
+
+new Vue({
+  render: h => h(Preferences),
+}).$mount('#preferences-container')

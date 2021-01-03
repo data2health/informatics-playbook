@@ -106,11 +106,19 @@
           <ul class="{% if toc.current %}current{% endif %}">
             {% for entry in toc.entries %}
               <li class="toctree-l1 {% if entry.current %}current{% endif %}"><a href="{{ pathto(entry.name) }}" class="reference internal {% if entry.current %}current{% endif %}">{{entry.title}}</a>
-
                 {% if entry.children %}
                   <ul>
                     {% for entry2 in entry.children %}
-                      <li class="toctree-l2"><a href="{{entry2.href}}" class="reference internal">{{entry2.title}}</a></li>
+                      <li class="toctree-l2"><a href="{{entry2.href}}" class="reference internal">{{entry2.title}}</a>
+
+                          {% if entry2.children %}
+                          <ul>
+                            {% for entry3 in entry2.children %}
+                                <li class="toctree-l3"><a href="{{entry3.href}}" class="reference internal">{{entry3.title}}</a>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
                     {% endfor %}
                   </ul>
                 {% endif %}
@@ -414,7 +422,14 @@
             </div>
             <div class="documentwrapper">
               {%- if render_sidebar %}
-              <div id="estimated-read-time-container"></div>
+                <div class="flex">
+                    <div>
+                        <div id="estimated-read-time-container"></div>
+                    </div>
+                    <div style="flex: 1;"></div>
+                    <div id="preferences-container"></div>
+                </div>
+
               <div class="bodywrapper">
                 {%- endif %}
                 <div class="body">

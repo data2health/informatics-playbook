@@ -67,13 +67,13 @@ class SimpleTocTreeCollector(EnvironmentCollector):
             if len(section2_nodes) > 0:
                 section3_nodes = [s for s in section2_nodes[0]
                                   if isinstance(s, nodes.section)]
-                print(section3_nodes)
 
-            if section3_nodes: # do not replace with level-2 sections if None
+            if section3_nodes:
                 section_nodes = section3_nodes
-            elif section2_nodes:
+            elif section2_nodes: # do not replace with level-2 sections if None
                 section_nodes = section2_nodes
 
+        #print(section_nodes)
         sections = []
         for node in section_nodes:
             sections.append({
@@ -130,6 +130,7 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
         current0 = False # same page might have multiple tocs
 
         # add toc tree items, expand one more level if toctree is current page
+        # TODO fix level 3 headers here
         entries = []
         for title, name in tree['entries']:
             if not title:

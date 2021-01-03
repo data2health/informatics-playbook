@@ -247,6 +247,10 @@ div.sidebar {
     background-color: #469db214;
 }
 
+#content-container{
+    font-size: 1.4rem;
+}
+
 .mobile-side-bar{
     display: block;
     padding: 20px;
