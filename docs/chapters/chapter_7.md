@@ -75,7 +75,7 @@ Name | site | ORCID
 * Lars Holm Nielsen | CERN |
 * Kai Wörner | Universität Hamburg | 0000-0001-8939-4437
 * Kristi Holmes | Northwestern University | 0000-0001-8420-5254
-* Andrea Volz | Oregon Healh & Science University | 0000-0002-1438-5664
+* Andréa Volz | Oregon Health & Science University | 0000-0002-1438-5664
 
 ## Acknowledgments
 
