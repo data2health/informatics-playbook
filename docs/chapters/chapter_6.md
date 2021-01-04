@@ -1,6 +1,6 @@
 # Chapter 6: Understanding Data Harmonization
 
-## Purpose & Intended audience
+## Purpose & intended audience
 
 This resource offers guidance to members of the CTSA informatics community including information about Data Harmonization that key stakeholders (leadership, researchers, clinicians, CIOs) can use at their institutions. This guidance can be useful to those who are new to Data Harmonization, as well as to those who are experts and may need assistance conveying the importance of Data Harmonization to a lay audience.
 
