@@ -28,7 +28,7 @@ With no shortage of [data repositories](https://journals.plos.org/plosone/s/data
 * Reuse
 * Integrity and Authenticity
 * Quality Assurance
-* Privacy of Sensitive Data (e.g. humnan subjects)
+* Privacy of Sensitive Data (e.g. human subjects)
 * Preservation
 * Sustainability and Governance
 * Other Characteristics
@@ -75,6 +75,7 @@ Name | site | ORCID
 * Lars Holm Nielsen | CERN |
 * Kai Wörner | Universität Hamburg | 0000-0001-8939-4437
 * Kristi Holmes | Northwestern University | 0000-0001-8420-5254
+* Andrea Volz | Oregon Healh & Science University | 0000-0002-1438-5664
 
 ## Acknowledgments
 
