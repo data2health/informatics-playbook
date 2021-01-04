@@ -1,4 +1,4 @@
-# Chapter 7: Repository architecture and culture to support research at the hub/local level 
+# Chapter 7: Repository architecture and culture to support research at the local CTSA hub level 
 
 ## Intended Audience
 
