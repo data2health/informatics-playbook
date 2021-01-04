@@ -21,21 +21,19 @@ In the United States, open science and [FAIR](https://www.force11.org/group/fair
 
  ***“Sharing scientific data helps validate research results, enables researchers to combine data types to strengthen analyses, facilitates reuse of hard to generate data or data from limited sources, and accelerates ideas for future research inquiries.”***
 
-With no shortage of [data repositories](https://journals.plos.org/plosone/s/data-availability#loc-recommended-repositories), researchers require guidance on where their data can best be deposited to maximize access, ensure compliance with journal and funder data sharing requirements, and ensure security and long-term preservation. COAR has released a list of eleven [Behaviours and Technical Recommendations of the COAR Next Generation Repositories Working Group](https://www.coar-repositories.org/files/NGR-Final-Formatted-Report-cc.pdf/), and these behaviors further reflect the needs of researchers when depositing, sharing, and storing data:
+With no shortage of [data repositories](https://journals.plos.org/plosone/s/data-availability#loc-recommended-repositories), researchers require guidance on where their data can best be deposited to maximize access, ensure compliance with journal and funder data sharing requirements, and ensure security and long-term preservation. COAR has released a [Best Practices Framework for Repositories](https://www.coar-repositories.org/coar-community-framework-for-good-practices-in-repositories/), and these behaviors further reflect the needs of researchers when depositing, sharing, and storing data:
 
-* Exposing Identifiers
-* Discovery Through Navigation
-* Interacting with Resources (Annotation, Commentary, and Review)
-* Resource Transfer
-* Batch Discovery
-* Collecting and Exposing Activities
-* Identification of Users
-* Authentication of Users
-* Exposing Standardized Usage Metrics
-* Declaring Licenses at the Resource Level
-* Preserving Resources
+* Discovery
+* Access
+* Reuse
+* Integrity and Authenticity
+* Quality Assurance
+* Privacy of Sensitive Data (e.g. humnan subjects)
+* Preservation
+* Sustainability and Governance
+* Other Characteristics
 
-These desired behaviors of next generation repositories reflect researchers’ needs to make their research inclusive, participatory, and reproducible. These functions can be enabled through increased interaction with and interoperability of resources, support for commentary and annotation, support for discovery through navigation, user identification, verification, profiles, and alerts, and integration with other systems for managing research output and measuring research impact, such as CRIS systems.
+These desired behaviors of next generation repositories reflect researchers’ needs to make their research inclusive, participatory, and reproducible. These functions can be enabled through increased interaction with and interoperability of resources; support for commentary and annotation; support for discovery through navigation, user identification, verification, profiles, and alerts; and integration with other systems for managing research output and measuring research impact such as the [Current Research Information System (CRIS) systems](https://nifa.usda.gov/tool/cris).
 
 ## Takeaway List
 
