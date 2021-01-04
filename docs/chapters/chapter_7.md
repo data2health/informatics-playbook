@@ -21,7 +21,7 @@ In the United States, open science and [FAIR](https://www.force11.org/group/fair
 
  ***“Sharing scientific data helps validate research results, enables researchers to combine data types to strengthen analyses, facilitates reuse of hard to generate data or data from limited sources, and accelerates ideas for future research inquiries.”***
 
-With no shortage of [data repositories](https://journals.plos.org/plosone/s/data-availability#loc-recommended-repositories), researchers require guidance on where their data can best be deposited to maximize access, ensure compliance with journal and funder data sharing requirements, and ensure security and long-term preservation. COAR has released a [Best Practices Framework for Repositories](https://www.coar-repositories.org/coar-community-framework-for-good-practices-in-repositories/), and these behaviors further reflect the needs of researchers when depositing, sharing, and storing data:
+With no shortage of [data repositories](https://journals.plos.org/plosone/s/data-availability#loc-recommended-repositories), researchers require guidance on where their data can best be deposited to maximize access, ensure compliance with journal and funder data sharing requirements, and ensure security and long-term preservation. COAR has released a [Best Practices Framework for Repositories](https://www.coar-repositories.org/coar-community-framework-for-good-practices-in-repositories/) with behaviors that further reflect the needs of researchers when depositing, sharing, and storing data:
 
 * Discovery
 * Access
