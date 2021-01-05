@@ -334,20 +334,32 @@ def main():
     # https://docs.google.com/document/d/1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0
     DOCUMENT_ID = '1tS1nIgpFi9LKM3LgJodtQvMuN_z4uqdq1JZkjqRIq_0'
 
-    my_parser = argparse.ArgumentParser(description="Converts google docs directly to markdown."
-                                                    "You can export the output to a folder rendered by sphinx")
+    my_parser = argparse.ArgumentParser(description='''Converts google docs directly to markdown.
+                                                    You can export the output to a folder rendered by sphinx.
+                                                    In order for this script to be able to run you need to get your credentials.json 
+                                                    file. To get the credentials.json file go here 
+                                                    "https://developers.google.com/docs/api/quickstart/js" click on 
+                                                    "Create API key" and follow the instructions. Then place the credentias.json file
+                                                    in the "scripts folder" where gdoc2md.py is contained.'''
+                                                )
 
-    my_parser.add_argument('--id', action='store', type=str, help='You can use a google doc id directly')
-    my_parser.add_argument('--url', action='store', type=str, help="Enter the google doc url. (Open the google doc "
-                                                                   "at your browser and copy the url e.g. "
-                                                                   "https://docs.google.com/document/d/"
-                                                                   "1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ/edit)")
+    my_parser._action_groups.pop()
+
+    required = my_parser.add_argument_group('required arguments (you can use either of the two arguments)')
+    optional = my_parser.add_argument_group('optional arguments')
+
+    required.add_argument('--id', action='store', type=str, help='You can use a google doc id directly, or use the --url argument')
+    required.add_argument('--url', action='store', type=str, help="Enter the google doc url. (Open the google doc "
+                                                                    "at your browser and copy the url e.g. "
+                                                                    "https://docs.google.com/document/d/"
+                                                                    "1GPjtEAFUQVrB7oOcQaejA287ZnSaqkHKykvQ4Hl_DhQ/edit)"
+                                                                    ". You can either use the --id argument")
     # TODO add credentials.json instructions
-    my_parser.add_argument('--output', action='store', type=str, default='../docs/chapters/Example_Markdown',
-                           help="Specify the output file")
+    optional.add_argument('--output', action='store', type=str, default='../docs/chapters/Example_Markdown',
+                           help="Specify the output file. Defaults to ../docs/chapters/Example_Markdown")
 
-    my_parser.add_argument('--static_path', action='store', type=str, default='../docs/_static/img/',
-                           help="Specify the static folder. Images will be stored there")
+    optional.add_argument('--static_path', action='store', type=str, default='../docs/_static/img/',
+                           help="Specify the static folder. Images will be stored there. Defaults to ../docs/_static/img/")
 
     args = my_parser.parse_args()
 
@@ -367,21 +379,33 @@ def main():
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
-            creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
-            pickle.dump(creds, token)
+    try:
+        if not creds or not creds.valid:
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            else:
+                flow = InstalledAppFlow.from_client_secrets_file(
+                    'credentials.json', SCOPES)
+                creds = flow.run_local_server(port=0)
+            # Save the credentials for the next run
+            with open('token.pickle', 'wb') as token:
+                pickle.dump(creds, token)
+    except FileNotFoundError:
+        print('''credentials.json was not found, run "python gdoc2md.py -h" for instructions on how to get your credentials. 
+        Exiting...''')
+        return
 
     service = build('docs', 'v1', credentials=creds)
 
     # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    try:
+
+        document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    except TypeError:
+        print('''A document id or url is required for this script to run. 
+            Please use either the "--id" or the "--url" paramaters.''')
+        return
+
     document.get('inlineObjects')
     mdFile = MdUtils(file_name=args.output, title=document.get('title'))
 

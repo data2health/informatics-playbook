@@ -31,6 +31,7 @@
     border-radius: 100px;
     border: 1px solid #bbbbbb;
     height: 32px;
+    outline: none;
 }
 
 .search-input-full{
@@ -157,7 +158,8 @@
     background-color: white;
     border: 5px solid transparent;
     box-sizing: border-box;
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     width: 240px;
     border-radius: 10px;
     padding: 20px;
@@ -453,6 +455,31 @@ h1, h2{
     font-weight: bold !important;
 }
 
+/* Scale headers with the global font size */
+h1{
+    font-size: 4.3rem !important;
+}
+
+h2{
+    font-size: 3.5rem !important;
+}
+
+h3{
+    font-size: 2.6rem !important;
+}
+
+h4{
+    font-size: 2.2rem !important;
+}
+
+h5{
+    font-size: 2rem !important;
+}
+
+h6{
+    font-size: 1.8rem !important;
+}
+
 ul{
     padding-left: 30px !important;
 }
@@ -515,6 +542,13 @@ img{
     }
     .menu-link{
         margin: 10px 0;
+    }
+}
+
+/* Make font larger for phones */
+@media all and (max-width: 480px){
+    html{
+        font-size: 13px !important;
     }
 }
 

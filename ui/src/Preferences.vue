@@ -59,19 +59,25 @@ export default {
     getGlobalFontSize: function (){
       let html = document.documentElement;
       let fontSize = window.getComputedStyle(html).fontSize;
-      return parseInt(fontSize.replace('px', ''))
+      // we only want the number so we remove the rest
+      fontSize = fontSize.replace('!important', '').replace(/\s+/, '').replace('px', '')
+      console.log(fontSize);
+      return parseInt(fontSize)
     },
     increaseFontSize: function (){
       let fontSize = this.getGlobalFontSize();
       let html = document.documentElement;
       fontSize = fontSize + 1;
-      html.style.fontSize = `${fontSize}px`;
+      html.setAttribute('style', `font-size:${fontSize}px !important`);
+      //html.style.fontSize = `${fontSize}px`;
     },
     decreaseFontSize: function (){
       let fontSize = this.getGlobalFontSize();
       let html = document.documentElement;
       fontSize = fontSize - 1;
-      html.style.fontSize = `${fontSize}px`;
+      html.setAttribute('style', `font-size:${fontSize}px !important`);
+
+      //html.style.fontSize = `${fontSize}px`;
     },
   }
 }

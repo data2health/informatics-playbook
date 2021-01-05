@@ -421,15 +421,57 @@
 
             </div>
             <div class="documentwrapper">
-              {%- if render_sidebar %}
-                <div class="flex">
-                    <div>
-                        <div id="estimated-read-time-container"></div>
-                    </div>
-                    <div style="flex: 1;"></div>
-                    <div id="preferences-container"></div>
-                </div>
+            {%- if render_sidebar %}
+              <div class="flex">
+                  <div>
+                      <div id="estimated-read-time-container"></div>
+                  </div>
+                  <div style="flex: 1;"></div>
+                  <div id="preferences-container"></div>
+              </div>
 
+            <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; justify-content: space-between;">
+              {%- for rellink in rellinks|reverse %}
+                  <!--Next and prev buttons are here-->
+                  {% if rellink[3] != 'index' %}
+                     {% if rellink[3] == 'next' %}
+                         <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
+                             <div class="flex" style="flex-flow: column; align-items: flex-end; width: 100%;">
+                                <span style="color:#4e4e4e; font-size: 1.2rem;">Next</span>
+                                <div class="ellipsis" style="order:2; width: 100%; text-align: right;"><span href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }}</span></div>
+                             </div>
+                            <div>
+                                <svg fill="#4e4e4e" style="height: 10px; width: 10px; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                                    <g>
+                                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                         </a>
+                         {#
+                             <div class="ellipsis" style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
+                             <div style="order:1" class="divider"></div>
+                          #}
+                     {% endif %}
+                     {% if rellink[3] == 'previous' %}
+                         <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
+                             <div>
+                                <svg fill="#4e4e4e" style="height: 10px; width: 10px; margin-right: 10px; transform: rotate(180deg)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+                                    <g>
+                                        <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                             <div class="flex" style="flex-flow: column; align-items: flex-start; width: 100%;">
+                                <span style="color:#4e4e4e; font-size: 1.2rem;">Previous</span>
+                                <div class="ellipsis" style="order:2; width: 100%; text-align: left;"><span>{{ rellink[1]|striptags|e }}</span></div>
+                             </div>
+                         </a>
+                         {#<div class="ellipsis" style="order:0;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>← {{ rellink[1]|striptags|e }}</a></div>#}
+                     {% endif %}
+                  {% endif %}
+              {%- endfor %}
+              </div>
               <div class="bodywrapper">
                 {%- endif %}
                 <div class="body">
