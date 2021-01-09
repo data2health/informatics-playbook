@@ -11,6 +11,8 @@
     {% endblock %}
 #}
 {% block content %}
+    <div id="header-container">
+    </div>
     <div class="hero flex flex-flow-rowwrap">
         <div class="hero-intro">
             <h1 style="font-weight: bold">Reusable data practices</h1>
@@ -121,7 +123,8 @@
 {% endblock %}
 
 {% block footer %}
-    <div style="margin-top: 50px;">
-        {{ super() }}
+    {# super() renders the arrow at the bottom right of the page #}
+    {{ super() }}
+    <div id="footer-container">
     </div>
 {% endblock %}

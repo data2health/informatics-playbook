@@ -10,21 +10,26 @@
       <div class="menu-item-wrapper">
         <div class="menu-item" v-for="(font, index) in fonts" :key="font.message"
            v-on:click="()=>handleFontChange(font)"
-           v-bind:style="{ borderBottom: index===fonts.length-1?'none':'1px solid #d6d6d6', }">
+           v-bind:style="{ borderBottom: index===fonts.length-1?'none':'1px solid #d6d6d6' }">
           <span class="menu-text" style="font-family: system-ui, serif;">
             {{ font }}
           </span>
+          <div v-if="font==selectedFont" class="tick-container">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; height:40%;" xml:space="preserve">
+              <path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0    c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7    C514.5,101.703,514.499,85.494,504.502,75.496z"/>
+            </svg>
+          </div>
         </div>
       </div>
       <span class="menu-title">
         Size
       </span>
       <div class="menu-item-wrapper-row">
-        <div class="flex center-items" style="width: 50%; border-right: 1px solid #d6d6d6;"
+        <div class="flex center-items" style="width: 50%; border-right: 1px solid #d6d6d6; cursor:pointer;"
         v-on:click="decreaseFontSize">
           a
         </div>
-        <div class="flex center-items" style="width: 50%;"
+        <div class="flex center-items" style="width: 50%; cursor:pointer;"
         v-on:click="increaseFontSize">
           A
         </div>
@@ -41,9 +46,13 @@ export default {
     console: () => console,
     window: () => window,
   },
+  created () {
+    this.setInitialPreferences();
+  },
   data(){
     return {
       fonts:["system-ui", `'Roboto'`, 'sans-serif'],
+      selectedFont: `'Roboto'`,
       iconFontSize: require('./assets/icon-font-size.svg'),
       menuOpen: false,
     }
@@ -55,6 +64,19 @@ export default {
     handleFontChange: function (font){
       let body = document.body;
       body.style.fontFamily = font;
+      localStorage.setItem('fontFamilyPreference', font);
+      this.selectedFont = font;
+    },
+    setInitialPreferences: function (){
+      let body = document.body;
+      if(localStorage.getItem('fontFamilyPreference')){
+        body.style.fontFamily = localStorage.getItem('fontFamilyPreference');
+        this.selectedFont = localStorage.getItem('fontFamilyPreference');
+      }
+      if(localStorage.getItem('fontSize')){
+        let html = document.documentElement;
+        html.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
+      }
     },
     getGlobalFontSize: function (){
       let html = document.documentElement;
@@ -69,15 +91,14 @@ export default {
       let html = document.documentElement;
       fontSize = fontSize + 1;
       html.setAttribute('style', `font-size:${fontSize}px !important`);
-      //html.style.fontSize = `${fontSize}px`;
+      localStorage.setItem('fontSize', fontSize)
     },
     decreaseFontSize: function (){
       let fontSize = this.getGlobalFontSize();
       let html = document.documentElement;
       fontSize = fontSize - 1;
       html.setAttribute('style', `font-size:${fontSize}px !important`);
-
-      //html.style.fontSize = `${fontSize}px`;
+      localStorage.setItem('fontSize', fontSize)
     },
   }
 }
@@ -105,6 +126,7 @@ export default {
 }
 
 .menu-item{
+  display: flex;
   cursor: pointer;
   width: 100%;
   height: 30px;
@@ -114,6 +136,7 @@ export default {
 .menu-text{
   display: flex;
   align-items: center;
+  flex: 1;
   height: 100%;
   padding: 0 10px;
 }
@@ -142,4 +165,11 @@ export default {
   border-radius: 5px;
 }
 
+.tick-container{
+  height: 100%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -6,6 +6,9 @@ import ScrollProgression from "./ScrollProgression";
 import EstimatedReadTime from "./EstimatedReadTime";
 import DynamicChapterSearch from "./DynamicChapterSearch";
 import Preferences from "./Preferences";
+import Header from './Header';
+import Footer from './Footer';
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -35,3 +38,11 @@ new Vue({
 new Vue({
   render: h => h(Preferences),
 }).$mount('#preferences-container')
+
+new Vue({
+  render: h => h(Header),
+}).$mount('#header-container')
+
+new Vue({
+  render: h => h(Footer),
+}).$mount('#footer-container')

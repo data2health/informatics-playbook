@@ -173,12 +173,12 @@
 <script src="{{ pathto('_static/theme.js', 1)}}" defer></script> #}
 {%- for scriptfile in script_files %}
     {%- if scriptfile == '_static/jquery.js' %}
-    <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
+    <script type="text/javascript" async src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
     {%- else %}
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endif %}
 {%- endfor %}
-<script type="text/javascript" src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
+<script type="text/javascript" async src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/custom.js', 1) }}"></script>
@@ -196,25 +196,25 @@
 
 {%- macro css() %}
 {%- if (theme_googlewebfont|tobool) %}
-<link rel="stylesheet" href="{{ pathto(theme_googlewebfont_url, 1) }}" media="screen and (min-width:481px)" type="text/css" />
+<link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto(theme_googlewebfont_url, 1) }}" media="screen and (min-width:481px)" type="text/css" />
 {%- endif %}
 
-<link rel="stylesheet" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
-<link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
+<link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
+<link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
 
 {%- if (theme_inner_theme|tobool) %}
-<link rel="stylesheet" id="current-theme" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/' + theme_inner_theme_name + '.css', 1) }}" type="text/css" />
-<link rel="stylesheet" id="current-adjust-theme" href="{{ pathto('_static/css/adjust_theme/' + theme_inner_theme_name + '.css', 1) }}" type="text/css" />
+<link rel="stylesheet" id="current-theme" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/' + theme_inner_theme_name + '.css', 1) }}" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/adjust_theme/' + theme_inner_theme_name + '.css', 1) }}" type="text/css" />
 {%- else %}
-<link rel="stylesheet" id="current-theme" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/bootstrap.min.css', 1) }}" type="text/css" />
-<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+<link rel="stylesheet" id="current-theme" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/bootstrap.min.css', 1) }}" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css" />
 {%- endif %}
 
 {%- if theme_bootstrap_version == "3" and theme_noflatdesign|tobool %}
-<link rel="stylesheet" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/bootstrap-theme.min.css', 1) }}" type="text/css" />
+<link rel="stylesheet" preload href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/bootstrap-theme.min.css', 1) }}" type="text/css" />
 {%- endif %}
 
-<link rel="stylesheet" href="{{ pathto('_static/css/font-awesome.min.css', 1) }}">
+<link rel="stylesheet" preload href="{{ pathto('_static/css/font-awesome.min.css', 1) }}">
 {% if (theme_nav_fixed_top|tobool) %}
 <style type="text/css">
   body {
@@ -250,10 +250,7 @@
     {%- block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {%- endblock %}
-
-    {%- if theme_noresponsive|tobool and theme_bootstrap_version == "3" %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%- endif %}
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -421,6 +418,8 @@
 
             </div>
             <div class="documentwrapper">
+            <div id="header-container">
+            </div>
             {%- if render_sidebar %}
               <div class="flex">
                   <div>
@@ -526,6 +525,8 @@
                   {% endif %}
               {%- endfor %}
             </div>
+            <div id="footer-container">
+            </div>
         </div>
 
         {%- block sidebar2 %}
@@ -548,23 +549,7 @@
       <div id="go-to-top-container">
 
       </div>
-          {#
-      <footer role="contentinfo">
-          {%- if show_copyright %}
-            {%- if hasdoc('copyright') %}
-              {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-            {%- else %}
-              {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-            {%- endif %}
-          {%- endif %}
-          {%- if last_updated %}
-            {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-          {%- endif %}
-          {%- if show_sphinx %}
-            {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-          {%- endif %}
-          </footer>
-      #}
+      
       {%- endblock %}
       <!-- /footer -->
 

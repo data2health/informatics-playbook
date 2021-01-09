@@ -231,6 +231,28 @@ div.sidebar {
     height: 100%;
 }
 
+/* width */
+div.sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+div.sidebar::-webkit-scrollbar-track {
+    background: #f0f7f9;
+    border-radius: 10px;
+}
+
+/* Handle */
+div.sidebar::-webkit-scrollbar-thumb {
+    background: #3e99af61;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+div.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #3e99af;
+}
+
 .icon-bar-line{
     background-color: #9c9c9c;
 }
@@ -251,6 +273,25 @@ div.sidebar {
 
 #content-container{
     font-size: 1.4rem;
+    padding: 0;
+}
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.col-md-9 > div {
+    padding: 15px !important;
+}
+
+.col-md-9 {
+    padding: 0 !important;
+}
+
+/*Add a header padding only on landing page*/
+.row > .header{
+    padding: 0 20px;
 }
 
 .mobile-side-bar{
@@ -407,6 +448,16 @@ div.sidebar {
     border: solid 1px #e1e4e5;
 }
 
+.sidebar-title{
+    display: block;
+    font-weight: bold;
+    background: #e1e4e5;
+    padding: 6px 12px;
+    margin: -24px;
+    margin-bottom: 24px;
+    font-size: 100%;
+}
+
 div.literal-block-wrapper{
     display: grid;
     min-width: 50%;
@@ -422,6 +473,18 @@ div.code-block-caption + div{
 .highlighttable{
     width: 100%;
 }
+
+.highlighttable .linenos pre{
+    word-break: normal;
+    font-size: 12px;
+    white-space: pre;
+    padding: 11px 12px;
+    display: block;
+    overflow: auto;
+    margin: 0 -10px;
+    background-color: whitesmoke;
+}
+
 
 table.highlighttable td.code{
     overflow: auto;
