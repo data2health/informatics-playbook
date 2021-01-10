@@ -210,6 +210,7 @@ You can embed a block of code in the text, with the optional syntax-highlighting
   ```
   You can replace `javascript` with other language types like `python`, `bash`, etc.
 
+
 ## Inline code
 You can also embed an inline code in a paragraph.
 
@@ -285,31 +286,43 @@ You can add some special text box to emphasize some content.
   ```
 
 
-## Footnotes
+## Citations
 
- [1](#kix.yqiegj2x8ffu)Footnotes are also available. All [2](#kix.asd)footnotes will be gathered and added at the bottom of the document under a “References” header. Footnote numbers will be automatically converted to links that point to the corresponding footnote.
-To manually add a citation to a footnote in markdown first create a "References" header at the bottom of the chapter. Add there all the footnotes you want. Then add your citation in the text. To link a citation and a footnote together add the same link to the start of each line (both the citation and the footnote).
-The footnote link can be empty to not display anything. To see how it's done look at the citation at the start of this paragraph and the footnote at the end of the chapter below the "References" header.
+To add a citation in the text, you can add a link where the citation is referenced:
+ 
+ ```
+ Data modeling is the process of determining which data elements will be stored and how they will be stored, including their relationships and constraints. The structure and definitions of a data model define what data can be stored, how values should be interpreted, and how easily data can be queried [1](#kix.unntzb98ia8x).
+ ```
+
+And then add the actual citation text in the "**References**" section, usually the last section of the chapter:
+
+ ```
+ ## References
+ 
+ [](#kix.unntzb98ia8x) Kahn, M. G., Batson, D., & Schilling, L. M. (2012). Data model considerations for clinical effectiveness researchers. *Medical care*, *50 Suppl*(0), S60–S67. [https://doi.org/10.1097/MLR.0b013e318259bff4](https://doi.org/10.1097/MLR.0b013e318259bff4)
+ ```
+ 
+ The inline citation link are associted to the corresponding reference item based on the same link, e.g. `#kix.unntzb98ia8x` in this example. This example should renders like this:
+ 
+ >Data modeling is the process of determining which data elements will be stored and how they will be stored, including their relationships and constraints. The structure and definitions of a data model define what data can be stored, how values should be interpreted, and how easily data can be queried [1](#kix.unntzb98ia8x).
+ 
+ And you can cite the same reference multiple times in the text, as long as you use the same link. For example, this is the first citation [2](#kix.9r1ayja43czo) and we can cite it again here [2](#kix.9r1ayja43czo).
 
 
-[](h.gyomvl99x239)
-### Things to look for:
+### A few extra notes
 
 - Try not to mix “Emphasis” or “Link” elements with other elements such as headers and titles because it might add additional unwanted new lines.
 - Try not to add too much formatting in your “Heading” elements like bolds, italics etc. Also try not to extend these to multiple lines.
 - Images will span full width of the document.
 - Direct videos are not available, but you can paste a youtube link and it will be embedded in the final result automatically.
 - Don’t use “Heading” elements for anything other than headers. Each heading will be added to the table of contents so long text should be avoided.
-- Tables inside cells are not supported
-
-[](h.2g9x401awxf6)
-## Pro-tips:
-
-
+- Tables inside cells are not supported.
 - All headings will automatically be added to the table of contents.
 
 ## References
-[](#kix.yqiegj2x8ffu) Footnote 1
 
-[](#kix.asd) Footnote2
+[](#kix.unntzb98ia8x) Kahn, M. G., Batson, D., & Schilling, L. M. (2012). Data model considerations for clinical effectiveness researchers. *Medical care*, *50 Suppl*(0), S60–S67. [https://doi.org/10.1097/MLR.0b013e318259bff4](https://doi.org/10.1097/MLR.0b013e318259bff4)
+
+[](#kix.9r1ayja43czo) Knosp B, Craven CK, Dorr D, Campion T. Understanding enterprise data warehouses to support clinical and translational research. J Am Med Infom Assoc. Accepted for publication 2020 April 27. [Cited 2020 April 30]
+
 
