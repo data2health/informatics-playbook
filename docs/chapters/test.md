@@ -20,13 +20,14 @@
 
 ``` code-block:: python
      :linenos:
-     :emphasize-lines: 3,5
+     :emphasize-lines: 2,5
      :caption: An example code-block with everything turned on.
      :name: Full code-block example
 
      # Comment line
-     import System
-     System.run_emphasis_line
+     a, b = 0, 1
      # Long lines in code blocks create a auto horizontal scrollbar
-     System.exit!
+     while b < 10:
+         print(b)
+         a, b = a, a + b
 ```
