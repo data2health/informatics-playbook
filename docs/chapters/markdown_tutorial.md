@@ -309,7 +309,7 @@ And then add the actual citation text in the "**References**" section, usually t
  And you can cite the same reference multiple times in the text, as long as you use the same link. For example, this is the first citation [2](#kix.9r1ayja43czo) and we can cite it again here [2](#kix.9r1ayja43czo).
 
 
-### A few extra notes
+## A few extra notes
 
 - Try not to mix “Emphasis” or “Link” elements with other elements such as headers and titles because it might add additional unwanted new lines.
 - Try not to add too much formatting in your “Heading” elements like bolds, italics etc. Also try not to extend these to multiple lines.
@@ -318,6 +318,7 @@ And then add the actual citation text in the "**References**" section, usually t
 - Don’t use “Heading” elements for anything other than headers. Each heading will be added to the table of contents so long text should be avoided.
 - Tables inside cells are not supported.
 - All headings will automatically be added to the table of contents.
+
 
 ## References
 
