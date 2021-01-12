@@ -6,13 +6,13 @@ Individuals include scholars working in academic and non-academic institutions, 
 
 ## Current Version
 
-This draft is part of the Reusable Data Best Practices Guidebook] as a new chapter. Feedback is still be actively solicited and welcomed, given the “living” nature of this communication mode.
+This draft is part of the Reusable Data Best Practices Playbook as a new chapter. Feedback is still be actively solicited and welcomed, given the “living” nature of this communication mode.
 
 ## Why is this important?
 
-It is very difficult to know who is contributing to research and what those contributions are. There has been a fundamental shift to recognize both the interdisciplinary, team-based approach to science as well as the hundreds and thousands of more fine-grained contributions of varying types and intensities that are necessary to move science forward. Unfortunately, little infrastructure exists to identify, aggregate, present, and (ultimately) assess the impact of these contributions. These significant problems are technical as well as social and require an approach that assimilates cultural and social aspects of these problems in an open and community-driven manner. Ongoing efforts include the development of a [contribution role ontology](https://github.com/data2health/contributor-role-ontology) (built on CRedIT through the [CRedIT](https://github.com/data2health/credit-ontology) ontology) to support modeling of the significant ways in which the translational workforce contributes to research.
+It is very difficult to know who is contributing to research and what those contributions are. There has been a fundamental shift to recognize both the interdisciplinary, team-based approach to science, as well as the hundreds and thousands of more fine-grained contributions of varying types and intensities that are necessary to move science forward. Unfortunately, little infrastructure exists to identify, aggregate, present, and (ultimately) assess the impact of these contributions. These significant problems are technical as well as social and require an approach that assimilates cultural and social aspects of these problems in an open and community-driven manner. Ongoing efforts include the development of a [contribution role ontology](https://github.com/data2health/contributor-role-ontology) (built on CRedIT through the [CRedIT](https://github.com/data2health/credit-ontology) ontology) to support modeling of the significant ways in which the translational workforce contributes to research.
 
-Tracking and attribution of diverse contributions across the workforce support credit for work, better understanding of what skills and activities are needed, and incentivize participation in research. Moreover,  this work helps to support and enhance a collaborative informatics community by fostering and promoting the development of an academic attribution and reimbursement framework for informatics products and processes. These processes could also help facilitate contribution role to be used for academic promotion and recognition.
+Tracking and providing attribution for diverse contributions across the workforce support giving credit for work, allowing for a better understanding of what skills and activities are needed, and incentivizing participation in research. Moreover, this work helps to support and enhance a collaborative informatics community by fostering and promoting the development of an academic attribution and reimbursement framework for informatics products and processes. These processes could also help facilitate a contribution role that can be used for academic promotion and recognition.
 
 ## Status
 
@@ -23,38 +23,39 @@ The Contributor Attribution Model is currently under development [here](https://
 * [Architecting Attribution Engagement Page](https://github.com/data2health/architecting_attribution/blob/master/engagement.md) - Provides details on areas where the team is looking for help, how to contribute. This page also shares information about events and provides a call to participants to contribute ideas here, too.  
 * CD2H [#Attribution Slack Channel](https://app.slack.com/client/T4SPTQGE7) - Project specific channel on Slack’s Instant messaging platform.  
 * [Github issues](https://github.com/data2health/architecting_attribution/issues) - Interested parties can comment on open issues or contribute their own tickets related to Attribution here. 
-* [Bi-weekly Attribution community meeting](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit) - Meeting takes place every other Thursday at 1p CT.  See [rolling meeting notes](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit). 
+* [Bi-weekly Attribution community meeting](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit) - Meeting takes place every other Thursday at 1p CT.  See [rolling meeting notes](https://docs.google.com/document/d/1roCSKBUCwGYPez_Yp0SLdnkuc71POrq57wh4LDllJnA/edit).
+* See the policy developed for the National COVID Cohort Collaborative (N3C) project: Attribution and Publication Principles for N3C published on Zenodo - doi 10.5281/zenodo.3992394. 
 
 ## Takeaway List
 
 **For individuals:**
-1. Identify contributors and track any short or long term roles on the project. 
-2. Establish the people’s roles in advance.
+1. Identify contributors and track any short- or long-term roles on the project. 
+2. Establish contributors' roles in advance.
 3. With respect to authorship, be transparent and clear about expectations and credit.
 4. Use persistent identifiers! 
 5. Collect information about contributors as the project is launched and new people join a project. 
 
-**For Groups:**
+**For groups:**
 
 6. Incorporate CRediT/Contributor Role Ontology (CRO)/Contribution Attribution Model (CAM) into local workflows. 
 7. Provide opportunities for faculty and scholars to communicate their contributor roles on non-paper outputs.
-8. Offer clear guidance in promotion and tenure documentation to faculty on how to incorporate contributor roles into their packet. 
+8. Offer clear guidance on promotion and in faculty tenure documentation on how to incorporate contributor roles into their packet. 
 9. Likewise, publishers and funders should provide clear guidance as to how author contributions should be described for maximum effectiveness.
 10. Provide feedback to the CRediT/CRO/CAM to request any missing roles that are not represented in the ontology/data model.
 
 ## Deep Dives
 
 **For Individuals:** 
-1. **Identify contributors and track any short or long term roles on the project.** This can be tracked on a project website or a collaborative online document (like a Google doc or a GitHub repository). Project websites can provide a nice way to provide acknowledgement to project collaborators, especially for those who may not be an author on a resulting paper.
-2. **Establish the people’s roles in advance.**  Define clear expectations of roles and outputs for the project.
+1. **Identify contributors and track any short- or long-term roles on the project.** This can be tracked on a project website or a collaborative online document (like a Google doc or a GitHub repository). Project websites offer a way to provide acknowledgment to project collaborators, especially for those who may not be an author on a resulting paper.
+2. **Establish contributor’s roles in advance.**  Define clear expectations of roles and outputs for the project.
 3. **With respect to authorship, be transparent and clear about expectations and author order.** The ‘Guidelines on Authorship’ from the University of Cambridge state “authorship criteria should be agreed by all investigators at an early stage of the research.” [ref] Project leadership should provide friendly low-pressure opportunities for group and confidential discussions. 
-4. **Use persistent identifiers!** Please refer to the Best Practices Guidebook chapter on PID (link) for a more comprehensive discussion on the topic, but quick takeaways include ORCID (www.orcid.org) for people and the preferred PID for a given topical domain or research community. 
-5. **Collect information about contributors as the project is launched and new people join a project.** This makes it easier to follow good practices and credit contributions in advance of paper submission or deposit of digital files into a repository.  Suggested attributes to collect include: affiliation (ROR), preferred name, ORCID, grant numbers.
+4. **Use persistent identifiers!** Please refer to the Best Practices Playbook chapter on PID (link) for a more comprehensive discussion on the topic, as well as quick takeaways including ORCID (www.orcid.org) for people and the preferred PID for a given topical domain or research community. 
+5. **Collect information about contributors as the project is launched and new people join a project.** This makes it easier to follow good practices and credit contributions in advance of paper submission or deposit of digital files into a repository. Suggested attributes to collect include: affiliation with the Reserch Organization Registry (ROR), preferred name, ORCID ID, grant numbers.
 
 **For Groups:**
 
 6. **Incorporate CRediT/Contributor Role Ontology (CRO) (https://data2health.github.io/contributor-role-ontology/) Contribution Attribution Model (CAM) (https://contributor-attribution-model.readthedocs.io/en/latest/) into local workflows.** This can be done collaboratively with stakeholders (e.g., thought leaders, system owners, community partners) and should offer opportunities for education about contributor roles, the importance of attribution, as well as provide an opportunity for feedback from stakeholders.
-7. **Provide opportunities for faculty and scholars to communicate their contributor roles on non-paper outputs and provide context with their contributor roles on these items.** These include study materials, training and educational content, surveys, etc and the specific roles they played in generating these research outputs, See the Contribution Attribution Model (CAM) (https://contributor-attribution-model.readthedocs.io/en/latest/) for more detail.
+7. **Provide opportunities for faculty and scholars to communicate their contributor roles on non-paper outputs and provide context with their contributor roles on these items.** These include study materials, training and educational content, surveys, etc and the specific roles they played in generating these research outputs. See the Contribution Attribution Model (CAM) (https://contributor-attribution-model.readthedocs.io/en/latest/) for more detail.
 8. **Offer clear guidance in promotion and tenure documentation to faculty on how to incorporate contributor roles into their packet.** If non-traditional scholarly outputs are recognized, these should be mentioned. This should be accompanied by real-life examples. 
 9. **Likewise, publishers and funders should provide clear guidance as to how author contributions should be described for maximum effectiveness.** Many publishers currently use the CRediT taxonomy for describing author roles. We recommend extending this to include the roles in the Contributor Role Ontology.
 10. **After using attribution tools and best practices described here, scholars and organizational representatives should provide feedback to the CRediT/CRO/CAM to request any missing roles that are not represented in the ontology/data model.** This can be done via our GitHub issue tracker here: https://github.com/data2health/contributor-role-ontology/issues.
@@ -66,7 +67,7 @@ The Contributor Attribution Model is currently under development [here](https://
 * Lisa O'Keefe, Northwestern University, 0000-0003-1211-7583, CRO:0000065 project management role
 * Kristi Holmes, Northwestern University, 0000-0001-8420-5254, CREDIT_00000013 writing original draft role
 
-## Acknowledgements
+## Acknowledgments
 
 * [CRediT](https://casrai.org/credit/) - Contributor Roles Taxonomy. 
 CASRAI. 
