@@ -1,6 +1,6 @@
 # Chapter 6: Understanding Data Harmonization
 
-## Purpose & Intended audience
+## Purpose & intended audience
 
 This resource offers guidance to members of the CTSA informatics community including information about Data Harmonization that key stakeholders (leadership, researchers, clinicians, CIOs) can use at their institutions. This guidance can be useful to those who are new to Data Harmonization, as well as to those who are experts and may need assistance conveying the importance of Data Harmonization to a lay audience.
 
@@ -29,12 +29,15 @@ The categories of best practice include the following
 - Data practices
 - External relationships and outreach
 
-## Acknowledgements
+## Acknowledgments
 Co-leads: Boyd Knosp, University of Iowa (https://orcid.org/0000-0002-3834-3135); Catherine K. Craven, Icahn School of Medicine at Mount Sinai
 
 Christopher G. Chute, Johns Hopkins University (https://orchid.org/0000-0001-5437-2545); Jeanne Holden-Wiltse, University of Rochester CTSI (https://orcid.org/0000-0003-2694-7465); Laura Paglione, Spherical Cow Group (https://orcid.org/0000-0003-3188-6273); Svetlana Rojevsky, Tufts Clinical and Translational Science Institute (https://orcid.org/0000-0002-8353-9006); Juliane Schneider, Harvard Catalyst | Clinical and Translational Science Center (https://orcid.org/0000-0002-7664-3331); Adam Wilcox, University of Washington.
 
-Edited by: Lisa O’Keefe, Charisse Madlock-Brown, Andréa Volz
+Edited by: 
+* Lisa O'Keefe | Northwestern University | 0000-0003-1211-7583 | CRO:0000065 
+* Charisse Madlock-Brown | University of Tennessee Health Science Center | 000-0002-3647-1045
+* Andréa Volz | Oregon Health & Science University | 0000-0002-1438-5664
 
 
 ## Funding:

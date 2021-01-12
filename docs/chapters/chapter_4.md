@@ -4,11 +4,11 @@
 Managers of Translational Informatics Projects
 
 ## Why is this important
-Translational Informatics projects are increasingly cross-institutional and even international; managing them comes with lots of shared pain points. This guidance will help anyone who is organizing or managing cross-functional distributed teams that develop code or that analyze data across the translational divide. Specifically, we will introduce several the practical tools and techniques for managers to facilitate these kinds of endeavors. Exercises in the companion tutorial will familiarize participants with helpful tools and techniques, and to help them make informed decisions about which tools might work best for their particular contexts. We conclude with a session wherein all participants are welcome to share additional pain points and related experience.
+Translational Informatics projects are increasingly cross-institutional and even international; however, managing them comes with many shared pain points. This guidance will help anyone who is organizing or managing cross-functional distributed teams that develop code or that analyze data across the translational divide. Specifically, we will introduce several practical tools and techniques for managers to facilitate these kinds of endeavors. Exercises in the companion tutorial will familiarize participants with helpful tools and techniques, and help them make informed decisions about which tools might work best for their particular contexts. We conclude with a session wherein all participants are welcome to share additional pain points and related experience.
 
 ## Takeaways
 
-#### Pick the project management technique that is appropriate for your project (agile, waterfall, kanban, etc)
+#### Pick the project management technique that is appropriate for your project (Agile, Waterfall Model, Kanban, etc)
 #### Understand the implications of that management technique for the full lifecycle of your project
 #### Get familiar with your (diverse) stakeholders
 #### Have a process for team onboarding (Some guidance here for using forms)
@@ -22,5 +22,5 @@ Translational Informatics projects are increasingly cross-institutional and even
 #### Don't be afraid to course correct
 
 
-## Acknowledgements
+## Acknowledgments
 Thanks to Justin Ramsdill for the [Agile introduction](https://docs.google.com/presentation/d/1WbOkxvHcecftLYahxpeNJHbvNdQEbOPbIHf1pDPCwgU/edit#slide=id.p1) (also linked from the MTIP tutorial site).
