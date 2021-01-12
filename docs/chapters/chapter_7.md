@@ -1,4 +1,4 @@
-# Chapter 7: Repository architecture and culture to support research at the local CTSA hub level 
+# Chapter 7: Repository architecture and culture to support research at the local CTSA hub level
 
 ## Intended Audience
 
@@ -37,19 +37,19 @@ These desired behaviors of next generation repositories reflect researchers’ n
 
 ## Takeaway List
 
-The architecture of a research repository that is able to support emerging research needs meets all the specifications of the next generation repository as outlined above, and is modular and scalable, allowing for improvements in the future based on evolving user needs. InvenioRDM is an exemplar next generation repository, and its modular architecture and strong use of standards helps ensure the ability of the platform to support best practices in research data management. Each record in InvenioRDM is minted a DOI, a permanent identifier exposed through [DataCite](https://datacite.org/) that is available for citation and compliance with data sharing requirements. Robust metadata, an open API, and the powerful Elasticsearch full-text search engine ensures that deposited data is findable, accessible, interoperable, and reusable (FAIR), and also allows for discovery through navigation and batch discovery of resources. As part of the “Reusable” element of FAIR data, licenses are declared with records in InvenioRDM to make the terms of reuse immediately clear. These features of the InvenioRDM architecture support data sharing, innovation, knowledge dissemination, and interdisciplinary collaboration. 
+The architecture of a research repository that is able to support emerging research needs meets all the specifications of the next generation repository as outlined above, and is modular and scalable, allowing for improvements in the future based on evolving user needs. InvenioRDM is an exemplar next generation repository, and its modular architecture and strong use of standards helps ensure the ability of the platform to support best practices in research data management. Each record in InvenioRDM is minted a DOI, a permanent identifier exposed through [DataCite](https://datacite.org/) that is available for citation and compliance with data sharing requirements. Robust metadata, an open API, and the powerful Elasticsearch full-text search engine ensures that deposited data is findable, accessible, interoperable, and reusable (FAIR), and also allows for discovery through navigation and batch discovery of resources. As part of the “Reusable” element of FAIR data, licenses are declared with records in InvenioRDM to make the terms of reuse immediately clear. These features of the InvenioRDM architecture support data sharing, innovation, knowledge dissemination, and interdisciplinary collaboration.
 
 Users’ needs are at the heart of the repository architecture of InvenioRDM, and to that end we are implementing specified controls and permissions that allow for identification and authentication of users, including support for [ORCiD](https://orcid.org/) identifiers. InvenioRDM has an open API that makes it easy to share data with external resources, such as CRIS systems. InvenioRDM will provide users with the ability to create Collections, Communities, and shared private records, and will include social features. For ease of use, resource transfer is set up to allow a user to download resources in the same format in which they were uploaded. Industry standard usage statistics are collected for all record pages, including altmetrics, and tracking adheres to General Data Privacy Regulation (GDPR). Finally, the InvenioRDM architecture adheres to the Open Archival Information System (OAIS) standard and allows e.g. the retention of previous versions of records and a robust back-end database employing checksums and fixity checks to ensure long-term preservation of deposited digital files.
 
 To support local RDM, institutions can foster a culture of research data management training, support, and best practices. Resources such as this playbook and guidance provided through informational sessions on responsible conduct of research and data management, data consultations, and support for using a repository solution like InvenioRDM, provided in a systematic way by data-focused professionals, will help researchers manage data throughout the research data lifecycle, from project conception through data collection, processing and analysis, dissemination, and preservation. It is important to emphasize that a repository like InvenioRDM can play a key role in each stage of the data lifecycle by serving as a place to find datasets for preliminary or feasibility studies, a place for researchers to find collaborators for the life of a project, and a place to safely disseminate and preserve data.
 
-To reap the greatest benefits from the next generation repository features of InvenioRDM, create robust records that make the most of their many features, consider these **Top 5 Rules for Depositing Research Object Records**: 
+To reap the greatest benefits from the next generation repository features of InvenioRDM, create robust records that make the most of their many features, consider these **Top 5 Rules for Depositing Research Object Records**:
 
 1. Make your deposit open access if possible
-2. Use the appropriate license, see [Reusable Data Best Practices Chapter 1](reusable-data-best-practices.readthedocs.io/en/latest/chapters/chapter_1.html#)
-3. Add [meaningful metadata](https://blog.datacite.org/metadig-recommendations-for-fair-datacite-metadata/) to records 
+2. Use the appropriate license, see [Reusable Data Best Practices Chapter 1](../chapters/chapter_1.html)
+3. Add [meaningful metadata](https://blog.datacite.org/metadig-recommendations-for-fair-datacite-metadata/) to records
 4. Attribute credit where credit is due (attribution chapter link)
-5. Make sure you do not include any personal identifiable information (PII) in the record  
+5. Make sure you do not include any personal identifiable information (PII) in the record
 
 ## Status and Feedback Mechanisms
 
@@ -68,7 +68,7 @@ InvenioRDM enables organizations to securely house research products and make th
 Name | site | ORCID
 * Sara Gonzales | Northwestern University | 0000-0002-1193-2298
 * Lisa O'Keefe | Northwestern University | 0000-0003-1211-7583
-* Guillaume Viger | Northwestern University | 
+* Guillaume Viger | Northwestern University |
 * Matt Carson | Northwestern University | 0000-0003-4105-9220
 * Tom Morrell | Caltech Library | 0000-0001-9266-5146
 * Carlos Fernando Gamboa | Brookhaven National Laboratory
@@ -85,7 +85,7 @@ Name | site | ORCID
 * [Data Futures](https://www.data-futures.org/)
 * [Helmoltz Zentrum Dresden Rossendorf (HZDR)](https://www.hzdr.de/db/Cms?pNid=0)
 * [National Center for Data to Health (CD2H)](https://ctsa.ncats.nih.gov/cd2h/)
-* Northwestern University Feinberg School of Medicine and [Galter Health Sciences Library](https://galter.northwestern.edu/), DIWG & DIWG Metadata Subcommittee 
+* Northwestern University Feinberg School of Medicine and [Galter Health Sciences Library](https://galter.northwestern.edu/), DIWG & DIWG Metadata Subcommittee
 * [OpenAIRE](https://www.openaire.eu/)
 * [TIND](https://tind.io/)
 * [Tübitak Ulakbim](https://www.tubitak.gov.tr/en)
@@ -95,7 +95,7 @@ Name | site | ORCID
 
 ## Funding:
 
-This work was supported in part by the CERN Knowledge Transfer Fund, the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306), and through the many contributions of the project partners listed at the [InvenioRDM project website](https://inveniosoftware.org/products/rdm/). 
+This work was supported in part by the CERN Knowledge Transfer Fund, the National Institutes of Health’s National Center for Advancing Translational Sciences CTSA Program Center for Data to Health (Grant U24TR002306), and through the many contributions of the project partners listed at the [InvenioRDM project website](https://inveniosoftware.org/products/rdm/).
 
 
 
