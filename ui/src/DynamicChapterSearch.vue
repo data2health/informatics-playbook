@@ -21,6 +21,7 @@ export default {
   data: function() {
     let document_previews_value = sessionStorage.getItem('document_previews');
     let search_svg_path = sessionStorage.getItem('search_svg_path');
+    let search_path = sessionStorage.getItem('search_path');
 
     return {
         query: '',
@@ -28,6 +29,7 @@ export default {
         matchCount: 0,
         documentPreviews: JSON.parse(document_previews_value),
         searchSvgPath: search_svg_path,
+        searchPath: search_path,
     };
   },
   privateState:{
@@ -39,7 +41,9 @@ export default {
       this.queryMatches.length = 0;
       this.matchCount = 0;
       this.documentPreviews.forEach(doc_preview => {
-        let count = doc_preview.preview.split(this.query).length - 1;
+        let count = doc_preview.preview.toLowerCase().split(this.query).length - 1;
+        count = count + doc_preview.document_title.toLowerCase().split(this.query).length - 1
+        console.log(doc_preview);
         let searchUrl = window.location.pathname.includes('/chapters/') ?
             doc_preview.document_url.replace('chapters/', '') + '?highlight=' + this.query :
             doc_preview.document_url + '?highlight=' + this.query
@@ -62,7 +66,6 @@ export default {
 
         if(match.count===0){
           chapterBoxElement.style.opacity = 0.3;
-          console.log(chapterBoxElement, match)
         }else{
           chapterBoxElement.style.opacity = 1;
         }

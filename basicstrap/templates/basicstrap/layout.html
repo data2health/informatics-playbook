@@ -173,12 +173,12 @@
 <script src="{{ pathto('_static/theme.js', 1)}}" defer></script> #}
 {%- for scriptfile in script_files %}
     {%- if scriptfile == '_static/jquery.js' %}
-    <script type="text/javascript" async src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
     {%- else %}
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endif %}
 {%- endfor %}
-<script type="text/javascript" async src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/js/jquery.cookie.min.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/basicstrap.js', 1) }}"></script>
 <script type="text/javascript" src="{{ pathto('_static/js/custom.js', 1) }}"></script>

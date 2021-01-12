@@ -32,7 +32,7 @@ export default {
       position: fixed;
       bottom: 0;
       right: 0;
-      margin: 60px;
+      margin: 25px;
       border-radius: 100%;
       background-color: #3e99af
   }

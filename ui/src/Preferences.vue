@@ -22,6 +22,16 @@
         </div>
       </div>
       <span class="menu-title">
+        <div class="menu-item-wrapper-row" style="border: none; justify-content: flex-start;">
+          <div role="button" class="menu-item-backgroundcolor" style="background-color:white; border:1px solid #d6d6d6;"
+          v-on:click="()=>changeBackgroundColor('white')">
+          </div>
+          <div role="button" class="menu-item-backgroundcolor" style="background-color:black; border:1px solid #d6d6d6;"
+          v-on:click="()=>changeBackgroundColor('black')">
+          </div>
+        </div>
+      </span>
+      <span class="menu-title">
         Font size
       </span>
       <div class="menu-item-wrapper-row">
@@ -56,6 +66,8 @@
           </svg>        
         </div>
       </div>
+      <button v-on:click="resetToDefault" class="menu-title menu-item-wrapper-row"
+      style="background-color: white;">Reset to default</button>
     </div>
   </div>
 </template>
@@ -84,20 +96,21 @@ export default {
       this.menuOpen = !this.menuOpen;
     },
     handleFontChange: function (font){
-      let body = document.body;
-      body.style.fontFamily = font;
+      let element = document.getElementsByClassName('bodywrapper')[0];
+      element.style.fontFamily = font;
       localStorage.setItem('fontFamilyPreference', font);
       this.selectedFont = font;
     },
     setInitialPreferences: function (){
-      let body = document.body;
+      //let body = document.body;
       if(localStorage.getItem('fontFamilyPreference')){
-        body.style.fontFamily = localStorage.getItem('fontFamilyPreference');
+        let element = document.getElementsByClassName('bodywrapper')[0];
+        element.style.fontFamily = localStorage.getItem('fontFamilyPreference');
         this.selectedFont = localStorage.getItem('fontFamilyPreference');
       }
       if(localStorage.getItem('fontSize')){
-        let html = document.documentElement;
-        html.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
+        let element = document.getElementsByClassName('bodywrapper')[0];
+        element.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
       }
       if(localStorage.getItem('maxWidth')){
         let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
@@ -108,6 +121,12 @@ export default {
       let html = document.documentElement;
       let fontSize = window.getComputedStyle(html).fontSize;
       // we only want the number so we remove the rest
+      fontSize = fontSize.replace('!important', '').replace(/\s+/, '').replace('px', '')
+      return parseInt(fontSize)
+    },
+    getBodyFontSize: function (){
+      let element = document.getElementsByClassName('bodywrapper')[0];
+      let fontSize = window.getComputedStyle(element).fontSize;
       fontSize = fontSize.replace('!important', '').replace(/\s+/, '').replace('px', '')
       return parseInt(fontSize)
     },
@@ -142,19 +161,39 @@ export default {
       localStorage.setItem('maxWidth', maxWidth)
     },
     increaseFontSize: function (){
-      let fontSize = this.getGlobalFontSize();
-      let html = document.documentElement;
-      fontSize = Math.min(fontSize + 1, 15);
-      html.setAttribute('style', `font-size:${fontSize}px !important`);
+      let fontSize = this.getBodyFontSize();
+      let element = document.getElementsByClassName('bodywrapper')[0];      
+      fontSize = Math.min(fontSize + 1, 20);
+      element.setAttribute('style', `font-size:${fontSize}px !important`);
       localStorage.setItem('fontSize', fontSize)
     },
     decreaseFontSize: function (){
-      let fontSize = this.getGlobalFontSize();
-      let html = document.documentElement;
-      fontSize = Math.max(fontSize - 1, 8);
-      html.setAttribute('style', `font-size:${fontSize}px !important`);
+      let fontSize = this.getBodyFontSize();
+      let element = document.getElementsByClassName('bodywrapper')[0];      
+      fontSize = Math.max(fontSize - 1, 12);
+      element.setAttribute('style', `font-size:${fontSize}px !important`);
       localStorage.setItem('fontSize', fontSize)
     },
+    changeBackgroundColor: function (color){
+      let body = document.body;
+      body.className = "";
+      if(color=='black'){
+        body.classList.add('black-container');
+      }else if(color=='white'){
+        body.classList.add('white-container');
+      }
+    },
+    resetToDefault: function (){
+      // take values from classes (default values) instead of inline style
+      let element = document.getElementsByClassName('bodywrapper')[0];
+      let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
+      element.style.fontFamily = null;
+      element.style.fontSize = null;
+      documentWrapper.style.maxWidth = null;
+
+      // also reset localstorage saved values
+      localStorage.clear();
+    }
   }
 }
 </script>
@@ -178,6 +217,7 @@ export default {
     0 2.1px 3px rgba(0, 0, 0, 0.033),
     0 7px 10px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
+  color: black;
 }
 
 .menu-item{
@@ -186,6 +226,17 @@ export default {
   width: 100%;
   height: 30px;
   border-bottom: 1px solid #d6d6d6;
+}
+
+.menu-item-backgroundcolor{
+  display: flex;
+  cursor: pointer;
+  width: 24%;
+  height: 30px;
+  border-bottom: 1px solid #d6d6d6;
+  margin: 0 5px;
+  border-radius: 5px;
+  margin-left: 0;
 }
 
 .menu-text{
@@ -226,5 +277,22 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+</style>
+
+<style>
+.black-container{
+  background-color: #1c1b1d;
+  color: rgb(206, 206, 206);
+}
+
+.black-container svg{
+  fill: white;
+}
+
+.white-container{
+  background-color: white;
 }
 </style>
