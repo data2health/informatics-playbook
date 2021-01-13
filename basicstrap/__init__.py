@@ -12,7 +12,9 @@ from docutils import nodes
 from sphinx.environment.collectors import EnvironmentCollector
 from sphinx import addnodes
 from sphinx.util.osutil import relative_uri
+import json
 from .directives import setup as _setup
+
 __version__ = '0.5.0'
 
 package_dir = path.abspath(path.dirname(__file__))
@@ -180,7 +182,7 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
             'entries': entries,
         })
     context['toctree_data'] = res
-
+    context['toctree_data_json'] = json.dumps(res)
 
 def get_path():
     """entry-point for theme."""

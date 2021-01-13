@@ -292,10 +292,14 @@
     {%- endblock %}
     {%- block extrahead %} {% endblock %}
       <script type="text/javascript">
-        sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));
+        sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));        
         sessionStorage.setItem("search_path", "{{ pathto('search') }}");
         sessionStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
         sessionStorage.setItem("arrow_svg_path", "{{ pathto('_static/svg/arrow.svg', 1) }}")
+        console.log("{{pathto}}");
+        window.pathto = {{pathto}}
+        sessionStorage.setItem("toctree_data_json", JSON.stringify({{ toctree_data_json }}))
+
       </script>
   </head>
   <body role="document"  style="width: 100%;">
