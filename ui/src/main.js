@@ -6,6 +6,7 @@ import ScrollProgression from "./ScrollProgression";
 import EstimatedReadTime from "./EstimatedReadTime";
 import DynamicChapterSearch from "./DynamicChapterSearch";
 import Preferences from "./Preferences";
+import TocTree from './TocTree';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -38,6 +39,10 @@ new Vue({
 new Vue({
   render: h => h(Preferences),
 }).$mount('#preferences-container')
+
+new Vue({
+  render: h => h(TocTree),
+}).$mount('#toctree-container')
 
 new Vue({
   render: h => h(Header),
