@@ -1,28 +1,31 @@
 <template>
-  <div class="sidebar-group">
-    <p class="caption">
-      <span class="caption-text"><a :href="pathto('index')">Reusable data best practices</a></span>
-    </p>
-    <div style="margin:16px;">
-        <div id="search-container" ></div>
+  <div>
+    
+    <div class="sidebar-group" id="toctree">
+      <p class="caption">
+        <span class="caption-text"><a :href="pathto('index')">Reusable data best practices</a></span>
+      </p>
+      <div style="margin:16px;">
+          <div id="search-container" ></div>
+      </div>
+        <div class="flex" style="flex-direction: column;">
+          <p class="sidebar-header">Contribute</p>
+          <a class="sidebar-button" href="https://github.com/newgene/reusable-data-best-practices/">
+              Contribute to our github page
+          </a>
+      </div>
+      <p class="sidebar-header">Chapters</p>
+      <ul v-bind:class="{ current: toc.current }">
+        <li v-for="entry in toc.entries" :key="entry.name" class="toctree-l1" v-bind:class="{current: entry.current}">
+          <a :href="pathto(entry.name)" class="reference internal" v-bind:class="{current: entry.current}">{{ entry.title }}</a>
+          <ul v-if="entry.children">
+            <li v-for="entry2 in entry.children" :key="entry2.name" class="toctree-l2">
+              <a :href="pathto(entry2.href)" class="reference internal">{{ entry2.title }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
-      <div class="flex" style="flex-direction: column;">
-        <p class="sidebar-header">Contribute</p>
-        <a class="sidebar-button" href="https://github.com/newgene/reusable-data-best-practices/">
-            Contribute to our github page
-        </a>
-    </div>
-    <p class="sidebar-header">Chapters</p>
-    <ul v-bind:class="{ current: toc.current }">
-      <li v-for="entry in toc.entries" :key="entry.name" class="toctree-l1" v-bind:class="{current: entry.current}">
-        <a :href="pathto(entry.name)" class="reference internal" v-bind:class="{current: entry.current}">{{ entry.title }}</a>
-        <ul v-if="entry.children">
-          <li v-for="entry2 in entry.children" :key="entry2.name" class="toctree-l2">
-            <a :href="pathto(entry2.href)" class="reference internal">{{ entry2.title }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -33,6 +36,7 @@ export default {
     let toctree_data = JSON.parse(sessionStorage.getItem('toctree_data_json'))
     return {
       toc: toctree_data[0],
+      
     }
   },
   methods: {
@@ -57,11 +61,12 @@ export default {
         return index + `${to}.html`;
       }
       return pathname + `${to}.html`;
-    }
+    },
+    
   },
 }
 </script>
 
 <style scoped>
-  
+
 </style>

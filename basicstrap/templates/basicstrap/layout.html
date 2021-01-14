@@ -75,6 +75,7 @@
 
 {%- macro sidebar() %}
 {%- if render_sidebar %}
+<div id="toctree-collapse-container"></div>
 <div class="{{ bs_span_prefix }}{{ theme_sidebar_span }} hidden-{{ class_device_xs }}" id="sidebar-wrapper">
   <div class="sidebar hidden-{{ class_device_xs }}" role="navigation" aria-label="main navigation">
     {%- block sidebarlogo %}

@@ -229,6 +229,7 @@ div.sidebar {
     padding: 0 20px;
     border-right: 1px solid transparent;
     height: 100%;
+    margin-top: 40px;
 }
 
 /* width */
@@ -357,6 +358,10 @@ div.sidebar::-webkit-scrollbar-thumb:hover {
 
 .sidebar-group{
     margin: 0 -20px;
+}
+
+.sidebar-group-hidden{
+    display: none;
 }
 
 .caption{
@@ -569,6 +574,9 @@ img{
         position: relative;
         top: 0;
         height: auto;
+    }
+    div.sidebar{
+        margin-top: 0;
     }
 }
 

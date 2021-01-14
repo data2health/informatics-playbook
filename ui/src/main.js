@@ -7,6 +7,7 @@ import EstimatedReadTime from "./EstimatedReadTime";
 import DynamicChapterSearch from "./DynamicChapterSearch";
 import Preferences from "./Preferences";
 import TocTree from './TocTree';
+import TocTreeCollapse from './TocTreeCollapse';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -43,6 +44,10 @@ new Vue({
 new Vue({
   render: h => h(TocTree),
 }).$mount('#toctree-container')
+
+new Vue({
+  render: h => h(TocTreeCollapse),
+}).$mount('#toctree-collapse-container')
 
 new Vue({
   render: h => h(Header),
