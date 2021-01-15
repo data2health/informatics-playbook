@@ -425,19 +425,17 @@
             <div id="scroll-progression-container" style="width: 100%">
 
             </div>
-            <div class="documentwrapper">
-            <div id="header-container">
-            </div>
-            {%- if render_sidebar %}
-              <div class="flex">
-                  <div>
-                      <div id="estimated-read-time-container"></div>
-                  </div>
-                  <div style="flex: 1;"></div>
-                  <div id="preferences-container"></div>
+            <div style="width:100%;">
+              <div id="header-container">
               </div>
-
-            <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; justify-content: space-between;">
+              <div class="flex">
+              <div>
+                    <div id="estimated-read-time-container"></div>
+                </div>
+                <div style="flex: 1;"></div>
+                <div id="preferences-container"></div>
+              </div>
+              <div class="flex center-items" style="padding-top: 30px; padding-bottom: 15px; justify-content: space-between;">
               {%- for rellink in rellinks|reverse %}
                   <!--Next and prev buttons are here-->
                   {% if rellink[3] != 'index' %}
@@ -479,6 +477,13 @@
                   {% endif %}
               {%- endfor %}
               </div>
+            </div>
+            <div class="documentwrapper">
+            
+            {%- if render_sidebar %}
+            
+
+            
               <div class="bodywrapper">
                 {%- endif %}
                 <div class="body">

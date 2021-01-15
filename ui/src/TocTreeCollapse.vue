@@ -19,11 +19,13 @@ export default {
       let toctreeElement = document.getElementById('sidebar-wrapper');
       let contentWrapper = document.getElementById('content-wrapper');
       if(this.isOpen){
-        toctreeElement.classList.remove('sidebar-group-hidden')
-        contentWrapper.style.width = null;
+        toctreeElement.classList.remove('sidebar-group-hidden');
+        contentWrapper.classList.remove('content-wrapper-full');
+        //contentWrapper.style.width = null;
       }else{
-        toctreeElement.classList.add('sidebar-group-hidden')
-        contentWrapper.style.width = '100%';
+        toctreeElement.classList.add('sidebar-group-hidden');
+        contentWrapper.classList.add('content-wrapper-full');
+        //contentWrapper.style.width = '100%';
         
       }
     }
@@ -45,6 +47,7 @@ export default {
   border-radius: 50%;
   margin-left: 13px;
   z-index: 1000;
+  outline: none;
 }
 
 @media all and (max-width: 991px){

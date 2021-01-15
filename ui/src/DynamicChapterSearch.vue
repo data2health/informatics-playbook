@@ -56,7 +56,6 @@ export default {
 
       this.queryMatches.forEach(match=>{
         let chapterBoxElement = document.getElementById(match.documentUrl);
-
         // there is an initial flash with the count when the query is "" which basically counts
         // all the characters in the documents
         // this is not really needed, just prevents the flashing
