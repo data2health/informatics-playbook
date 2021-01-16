@@ -201,6 +201,8 @@
 {%- if (theme_googlewebfont|tobool) %}
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto(theme_googlewebfont_url, 1) }}" media="screen and (min-width:481px)" type="text/css" />
 {%- endif %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
@@ -426,12 +428,11 @@
 
             </div>
             <div style="width:100%;">
-              <div id="header-container">
-              </div>
               <div class="flex">
               <div>
                     <div id="estimated-read-time-container"></div>
                 </div>
+                <a target="#" style="margin: 0 10px; cursor:pointer; color: black !important" class="header-item flex center-items">About</a>
                 <div style="flex: 1;"></div>
                 <div id="preferences-container"></div>
               </div>

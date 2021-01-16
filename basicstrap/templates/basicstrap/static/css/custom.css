@@ -384,6 +384,15 @@ div.sidebar::-webkit-scrollbar-thumb:hover {
     transform: translateX(-100%) !important;
 }
 
+.sidebar-group-hidden-no-transition{
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+    -webkit-transform: translateX(-100%) !important;
+    -ms-transform: translateX(-100%) !important;
+    transform: translateX(-100%) !important;
+}
+
 .caption{
     margin: 16px;
     font-weight: bold;

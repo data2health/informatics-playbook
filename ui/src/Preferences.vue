@@ -85,7 +85,7 @@ export default {
   },
   data(){
     return {
-      fonts:["system-ui", `'Roboto'`, 'sans-serif'],
+      fonts:["Helvetica", `'Roboto'`, 'Quicksand'],
       selectedFont: `'Roboto'`,
       iconFontSize: require('./assets/icon-font-size.svg'),
       menuOpen: false,
