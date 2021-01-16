@@ -39,7 +39,7 @@ export default {
   methods: {
     doSomething: function () {
       this.queryMatches.length = 0;
-      let quer = []
+      let queryMatches = []
       this.matchCount = 0;
       this.documentPreviews.forEach(doc_preview => {
         let count = doc_preview.preview.toLowerCase().split(this.query).length - 1;
@@ -47,48 +47,33 @@ export default {
         let searchUrl = window.location.pathname.includes('/chapters/') ?
             doc_preview.document_url.replace('chapters/', '') + '?highlight=' + this.query :
             doc_preview.document_url + '?highlight=' + this.query
-        quer.push({
+        queryMatches.push({
           documentName: doc_preview.document_name, count: count,
           documentTitle: doc_preview.document_title, documentUrl: doc_preview.document_url,
           searchUrl: searchUrl
         })
       })
 
-      console.log(quer);
-      for(let i = 0; i < quer.length; i++){
-        let match = quer[i];
-        console.log(match.documentUrl)
-        let chapterBoxElement = document.getElementById(match.documentUrl);
-        // there is an initial flash with the count when the query is "" which basically counts
-        // all the characters in the documents
-        // this is not really needed, just prevents the flashing
-        if(this.query!==""){
-          this.matchCount += match.count;
-        }
+      queryMatches.forEach(match=>{
+        try{
+          let chapterBoxElement = document.getElementById(match.documentUrl);
+          // there is an initial flash with the count when the query is "" which basically counts
+          // all the characters in the documents
+          // this is not really needed, just prevents the flashing
+          if(this.query!==""){
+            this.matchCount += match.count;
+          }
 
-        if(match.count===0){
-          chapterBoxElement.style.opacity = 0.3;
-        }else{
-          chapterBoxElement.style.opacity = 1;
+          if(match.count===0){
+            chapterBoxElement.style.opacity = 0.3;
+          }else{
+            chapterBoxElement.style.opacity = 1;
+          }
+        }catch(e){
+          console.error(e);
         }
-      }
-
-      /*quer.forEach(match=>{
-        console.log(match.documentUrl)
-        let chapterBoxElement = document.getElementById(match.documentUrl);
-        // there is an initial flash with the count when the query is "" which basically counts
-        // all the characters in the documents
-        // this is not really needed, just prevents the flashing
-        if(this.query!==""){
-          this.matchCount += match.count;
-        }
-
-        if(match.count===0){
-          chapterBoxElement.style.opacity = 0.3;
-        }else{
-          chapterBoxElement.style.opacity = 1;
-        }
-      })*/
+        
+      })
     },
     submit: function () {
       if (this.query) {
