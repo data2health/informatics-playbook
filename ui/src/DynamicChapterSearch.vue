@@ -39,6 +39,7 @@ export default {
   methods: {
     doSomething: function () {
       this.queryMatches.length = 0;
+      let quer = []
       this.matchCount = 0;
       this.documentPreviews.forEach(doc_preview => {
         let count = doc_preview.preview.toLowerCase().split(this.query).length - 1;
@@ -46,15 +47,15 @@ export default {
         let searchUrl = window.location.pathname.includes('/chapters/') ?
             doc_preview.document_url.replace('chapters/', '') + '?highlight=' + this.query :
             doc_preview.document_url + '?highlight=' + this.query
-        this.queryMatches.push({
+        quer.push({
           documentName: doc_preview.document_name, count: count,
           documentTitle: doc_preview.document_title, documentUrl: doc_preview.document_url,
           searchUrl: searchUrl
         })
       })
 
-      console.log(this.queryMatches);
-      this.queryMatches.forEach(match=>{
+      console.log(quer);
+      quer.forEach(match=>{
         console.log(match.documentUrl)
         let chapterBoxElement = document.getElementById(match.documentUrl);
         // there is an initial flash with the count when the query is "" which basically counts
