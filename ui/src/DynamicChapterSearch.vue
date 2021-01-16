@@ -43,7 +43,6 @@ export default {
       this.documentPreviews.forEach(doc_preview => {
         let count = doc_preview.preview.toLowerCase().split(this.query).length - 1;
         count = count + doc_preview.document_title.toLowerCase().split(this.query).length - 1
-        console.log(doc_preview);
         let searchUrl = window.location.pathname.includes('/chapters/') ?
             doc_preview.document_url.replace('chapters/', '') + '?highlight=' + this.query :
             doc_preview.document_url + '?highlight=' + this.query
@@ -54,10 +53,9 @@ export default {
         })
       })
 
+      console.log(this.queryMatches);
       this.queryMatches.forEach(match=>{
-        console.log("match",match);
         let chapterBoxElement = document.getElementById(match.documentUrl);
-        console.log(chapterBoxElement, match.documentUrl);
         // there is an initial flash with the count when the query is "" which basically counts
         // all the characters in the documents
         // this is not really needed, just prevents the flashing
