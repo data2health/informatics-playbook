@@ -276,7 +276,7 @@ try:
     ]
     html_theme_options = {
         'googlewebfont': True,
-        'googlewebfont_url': 'http://fonts.googleapis.com/css?family=Roboto',
+        'googlewebfont_url': 'https://fonts.googleapis.com/css?family=Roboto',
         'googlewebfont_style': "font-family: 'Roboto', sans-serif",
     }
 
