@@ -202,6 +202,7 @@
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto(theme_googlewebfont_url, 1) }}" media="screen and (min-width:481px)" type="text/css" />
 {%- endif %}
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
@@ -299,13 +300,11 @@
       <meta id="my-data" data-name="{{pathto|string}}">
 
       <script type="text/javascript">
-        console.log("{{ pagename }}");
         sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));        
         sessionStorage.setItem("search_path", "{{ pathto('search') }}");
         sessionStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
         sessionStorage.setItem("arrow_svg_path", "{{ pathto('_static/svg/arrow.svg', 1) }}")
         sessionStorage.setItem("toctree_data_json", JSON.stringify({{ toctree_data_json }}))
-
       </script>
   </head>
   <body role="document"  style="width: 100%;">

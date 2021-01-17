@@ -4,7 +4,8 @@
       <input class="dynamic-search-input" placeholder="Search chapters" v-model="query"
       v-on:keyup.enter="submit" @keyup="doSomething"/>
       <div v-if="this.query !== ''">
-        <p><b>{{ this.matchCount }}</b> matches found</p>
+        <p><b>{{ this.matchCount }}</b> matches found in <b>{{ this.chapterMatchCount }}</b> 
+        {{ this.chapterMatchCount==1?'chapter': 'chapters' }}</p>
       </div>
     </div>
   </div>
@@ -27,6 +28,7 @@ export default {
         query: '',
         queryMatches: [],
         matchCount: 0,
+        chapterMatchCount: 0,
         documentPreviews: JSON.parse(document_previews_value),
         searchSvgPath: search_svg_path,
         searchPath: search_path,
@@ -38,9 +40,13 @@ export default {
   },
   methods: {
     doSomething: function () {
+      // reset values
       this.queryMatches.length = 0;
       let queryMatches = []
       this.matchCount = 0;
+      this.chapterMatchCount = 0;
+
+      // start searching for results
       this.documentPreviews.forEach(doc_preview => {
         let count = doc_preview.preview.toLowerCase().split(this.query).length - 1;
         count = count + doc_preview.document_title.toLowerCase().split(this.query).length - 1
@@ -68,6 +74,7 @@ export default {
             chapterBoxElement.style.opacity = 0.3;
           }else{
             chapterBoxElement.style.opacity = 1;
+            this.chapterMatchCount = this.chapterMatchCount + 1;
           }
         }catch(e){
           console.error(e);

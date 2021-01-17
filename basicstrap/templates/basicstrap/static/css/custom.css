@@ -230,6 +230,7 @@ div.sidebar {
     border-right: 1px solid transparent;
     height: 100%;
     margin-top: 40px;
+    padding-bottom: 70px;
 }
 
 /* width */
@@ -555,26 +556,32 @@ h1, h2{
 /* Scale headers with the global font size */
 h1{
     font-size: 2.3em !important;
+    font-family: inherit !important;
 }
 
 h2{
     font-size: 1.5em !important;
+    font-family: inherit !important;
 }
 
 h3{
     font-size: 1.2em !important;
+    font-family: inherit !important;
 }
 
 h4{
     font-size: 1em !important;
+    font-family: inherit !important;
 }
 
 h5{
     font-size: 0.9em !important;
+    font-family: inherit !important;
 }
 
 h6{
     font-size: 0.8em !important;
+    font-family: inherit !important;
 }
 
 ul{

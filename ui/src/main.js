@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import vClickOutside from 'v-click-outside'
 import CustomCollapse from './CustomCollapse';
 import Search from "./Search";
 import GoToTop from './GoToTop';
@@ -10,6 +11,8 @@ import TocTree from './TocTree';
 import TocTreeCollapse from './TocTreeCollapse';
 import Header from './Header';
 import Footer from './Footer';
+
+Vue.use(vClickOutside);
 
 Vue.config.productionTip = false
 
