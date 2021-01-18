@@ -633,6 +633,10 @@ img{
 }
 
 @media all and (max-width: 767px){
+    #content-wrapper{
+        margin-top: 70px;
+    }
+
     .search-header-wrapper{
         display: none;
     }
@@ -656,7 +660,7 @@ img{
 /* Make font larger for phones */
 @media all and (max-width: 480px){
     html{
-        font-size: 13px !important;
+        font-size: 11px !important;
     }
 }
 

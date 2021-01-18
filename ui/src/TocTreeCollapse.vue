@@ -23,10 +23,25 @@ export default {
     console: () => console,
     window: () => window,
   },
+   unmounted() {
+    window.removeEventListener("resize", this.onResize);
+  },
   created () {
+    let width = window.innerWidth;
+    if(width < 993){
+      this.isOpen = true;
+    }
     this.setInitialState(true);
+    window.addEventListener("resize", this.onResize);
   },
   methods: {
+    onResize: function(){
+      let width = window.innerWidth;
+      if(width < 993){
+        this.isOpen = true;
+        this.setOpen();
+      }
+    },
     setOpen(created){
       let toctreeElement = document.getElementById('sidebar-wrapper');
       let contentWrapper = document.getElementById('content-wrapper');
@@ -56,7 +71,7 @@ export default {
     setInitialState (){
       let state = localStorage.getItem('toctreeCollapseState')
       // state is saved a boolean string
-      if(state=='true'){
+      if(state=='true' || window.innerWidth < 993){
         this.isOpen = true;
       }else{
         this.isOpen = false;
