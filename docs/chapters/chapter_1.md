@@ -1,4 +1,4 @@
-# Chapter 1: Research Data Licensing
+# Chapter 1: Licensing for Research Data 
 
 ## Intended audience
 
