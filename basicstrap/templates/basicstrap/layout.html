@@ -418,20 +418,20 @@
         {%- block sidebar1 %}
         {% if (not theme_rightsidebar|tobool) %} {{ sidebar() }} {% endif %}
         {% endblock %}
+        <div id="scroll-progression-container" style="width: 100%; z-index: 100;">
 
+        </div>
         <div class="{% if (not theme_nosidebar|tobool) %}{{ bs_span_prefix }}{{ 12 - theme_sidebar_span|int }}{% else %}{{ bs_span_prefix }}12{% endif %}" id="content-wrapper">
-
+            
             <div class="document flex center-items" role="main">
             {%- block document %}
-            <div id="scroll-progression-container" style="width: 100%">
-
-            </div>
+            
             <div style="width:100%;">
               <div class="flex">
               <div>
                     <div id="estimated-read-time-container"></div>
                 </div>
-                <a target="#" style="margin: 0 10px; cursor:pointer; color: black !important" class="header-item flex center-items">About</a>
+                <a target="#" style="margin: 0 10px; cursor:pointer;" class="header-item flex center-items">About</a>
                 <div style="flex: 1;"></div>
                 <div id="preferences-container"></div>
               </div>

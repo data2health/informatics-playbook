@@ -548,6 +548,7 @@ body{
 h2,h3,h4,h5,h6{
     border-color: transparent !important;
 }
+
 h1, h2{
     border-color: #eaecef !important;
     font-weight: bold !important;
@@ -593,6 +594,10 @@ a{
 }
 img{
     padding: 10px;
+}
+
+blockquote{
+    border-left: 5px solid #4ca0b0 !important;
 }
 *{
     word-break: break-word;

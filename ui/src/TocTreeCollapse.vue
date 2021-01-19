@@ -1,6 +1,6 @@
 <template>
   <button type="button" v-on:click="onClick"
-    class="collapse-sidebar">
+    class="collapse-sidebar" @mouseover="onMouseOver">
     <!--<svg xmlns="http://www.w3.org/2000/svg" style="height:100%;width:100%;" height="384pt" viewBox="0 -53 384 384" width="384pt"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>-->
     <svg class="svgCollapseButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve"
     v-bind:class="{svgOpenSidebar: this.isOpen}">
@@ -17,6 +17,15 @@ export default {
   data: function (){
     return{
       isOpen: true,
+
+      // two states [free, docked]
+      // docked should be static [open] through clicking, defaults to none
+      // free is dynamic [open, closed] through mouseover on the side of the page, defaults to closed
+      // toggling state should be done through clicking the current top left button (needs to change icon)
+      // clicking the button sets the state to static [open] where its permanently open
+      // clicking it again sets the state to dynamic [open, closed] where it toggles between [open, closed]
+      // when the user hovers his mouse over the side of the page (but not the button)
+      state: 'docked',
     }
   },
   computed: {
@@ -35,6 +44,9 @@ export default {
     window.addEventListener("resize", this.onResize);
   },
   methods: {
+    onMouseOver: function(){
+      console.log("over")
+    },
     onResize: function(){
       let width = window.innerWidth;
       if(width < 993){

@@ -26,6 +26,12 @@
           <div role="button" class="menu-item-backgroundcolor" style="background-color:white; border:1px solid #d6d6d6;"
           v-on:click="()=>changeBackgroundColor('white')">
           </div>
+          <div role="button" class="menu-item-backgroundcolor" style="background-color:#f8f2e3; border:1px solid #d6d6d6;"
+          v-on:click="()=>changeBackgroundColor('light')">
+          </div>
+          <div role="button" class="menu-item-backgroundcolor" style="background-color:#1c1b1ded; border:1px solid #d6d6d6;"
+          v-on:click="()=>changeBackgroundColor('light-dark')">
+          </div>
           <div role="button" class="menu-item-backgroundcolor" style="background-color:black; border:1px solid #d6d6d6;"
           v-on:click="()=>changeBackgroundColor('black')">
           </div>
@@ -106,6 +112,15 @@ export default {
     },
     setInitialPreferences: function (){
       //let body = document.body;
+      if(localStorage.getItem('theme') == 'dark'){
+        this.changeBackgroundColor('black');
+      }else if(localStorage.getItem('theme') == 'white'){
+        this.changeBackgroundColor('white');
+      }else if(localStorage.getItem('theme') == 'light'){
+        this.changeBackgroundColor('light')
+      }else{
+        this.changeBackgroundColor('light-dark');
+      }
       if(localStorage.getItem('fontFamilyPreference')){
         let element = document.getElementsByClassName('bodywrapper')[0];
         element.style.fontFamily = localStorage.getItem('fontFamilyPreference');
@@ -182,8 +197,16 @@ export default {
       body.className = "";
       if(color=='black'){
         body.classList.add('black-container');
+        localStorage.setItem('theme', 'dark')
       }else if(color=='white'){
         body.classList.add('white-container');
+        localStorage.setItem('theme', 'white')
+      }else if(color=='light'){
+        body.classList.add('light-container');
+        localStorage.setItem('theme', 'light')
+      }else if(color=='light-dark'){
+        body.classList.add('light-dark-container');
+        localStorage.setItem('theme', 'light-dark')
       }
     },
     resetToDefault: function (){
@@ -295,7 +318,57 @@ export default {
   fill: white;
 }
 
+.light-dark-container svg{
+  fill: white;
+}
+
+.light-dark-container{
+  background-color: #1c1b1ded;
+  color: rgb(206, 206, 206);
+}
+
+.black-container h2, h3, h4, h5, h6{
+  border-bottom: 0;
+}
+
+.black-container pre{ 
+  background-color: #212121;
+  border: none;
+  color: #cecece;
+}
+
+.light-dark-container pre{
+  background-color: #212121;
+  border: none;
+  color: #cecece;
+}
+
+.light-dark-container h2, h3, h4, h5, h6{
+  border-bottom: 0;
+}
+
+.light-container h2, h3, h4, h5, h6{
+  border-bottom: 0;
+}
+
+.black-container .menu-bubble svg{
+  fill: black;
+}
+
+.black-container .collapse-sidebar svg{
+  fill: black;
+}
+
+.light-dark-container .collapse-sidebar svg{
+  fill: black;
+}
+
 .white-container{
   background-color: white;
 }
+
+.light-container{
+  background-color: #f8f2e3;
+}
+
 </style>
