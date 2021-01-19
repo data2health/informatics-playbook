@@ -1,4 +1,4 @@
-# Chapter 2: Identifier best practices
+# Chapter 2: Best practices for Using Identifiers
 
 ## Intended audience
 
