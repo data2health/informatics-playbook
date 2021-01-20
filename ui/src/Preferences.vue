@@ -4,9 +4,6 @@
       <svg style="height: 20px; width: 20px; cursor:pointer;" xmlns="http://www.w3.org/2000/svg" height="517pt" viewBox="0 -45 517.33333 517" width="517pt"><path d="m240 384.167969h-21.332031v-341.335938h128v21.335938c0 11.796875 9.535156 21.332031 21.332031 21.332031s21.332031-9.535156 21.332031-21.332031v-42.667969c0-11.796875-9.535156-21.332031-21.332031-21.332031h-346.667969c-11.796875 0-21.332031 9.535156-21.332031 21.332031v42.667969c0 11.796875 9.535156 21.332031 21.332031 21.332031s21.335938-9.535156 21.335938-21.332031v-21.335938h133.332031v341.335938h-21.332031c-11.796875 0-21.335938 9.535156-21.335938 21.332031s9.539063 21.332031 21.335938 21.332031h85.332031c11.796875 0 21.332031-9.535156 21.332031-21.332031s-9.535156-21.332031-21.332031-21.332031zm0 0"/><path d="m496 192.167969h-170.667969c-11.796875 0-21.332031 9.535156-21.332031 21.332031v37.332031c0 11.796875 9.535156 21.335938 21.332031 21.335938s21.335938-9.539063 21.335938-21.335938v-16h42.664062v149.335938h-10.664062c-11.796875 0-21.335938 9.535156-21.335938 21.332031s9.539063 21.332031 21.335938 21.332031h64c11.796875 0 21.332031-9.535156 21.332031-21.332031s-9.535156-21.332031-21.332031-21.332031h-10.667969v-149.335938h42.667969v10.667969c0 11.796875 9.535156 21.332031 21.332031 21.332031s21.332031-9.535156 21.332031-21.332031v-32c0-11.796875-9.535156-21.332031-21.332031-21.332031zm0 0"/></svg>
     </div>
       <div class="menu-bubble" v-if="menuOpen" v-click-outside="outsideClick">
-      <span class="menu-title">
-        Font
-      </span>
       <div class="menu-item-wrapper">
         <div class="menu-item" v-for="(font, index) in fonts" :key="font.message"
            v-on:click="()=>handleFontChange(font)"
@@ -37,9 +34,6 @@
           </div>
         </div>
       </span>
-      <span class="menu-title">
-        Font size
-      </span>
       <div class="menu-item-wrapper-row">
         <div class="flex center-items" style="width: 50%; border-right: 1px solid #d6d6d6; cursor:pointer;"
         v-on:click="decreaseFontSize">
@@ -50,10 +44,7 @@
           A
         </div>
       </div>
-      <span class="menu-title">
-        Size
-      </span>
-      <div class="menu-item-wrapper-row">
+      <div class="menu-item-wrapper-row doc-size-container">
         <div class="flex center-items" style="width: 50%; border-right: 1px solid #d6d6d6; cursor:pointer;" v-on:click="decreaseDocumentSize">
           <svg style="height: 22px; width: 22px;" xmlns="http://www.w3.org/2000/svg" id="Layer" enable-background="new 0 0 64 64" height="512" viewBox="0 0 64 64" width="512"><path d="m52.586 8.586-14.586 14.586v-5.172c0-1.104-.896-2-2-2s-2 .896-2 2v10c0 1.104.896 2 2 2h10c1.104 0 2-.896 2-2s-.896-2-2-2h-5.172l14.586-14.586c.781-.781.781-2.047 0-2.828s-2.047-.781-2.828 0z"/><path d="m10 56c.512 0 1.023-.195 1.414-.586l14.586-14.586v5.172c0 1.104.896 2 2 2s2-.896 2-2v-10c0-1.104-.896-2-2-2h-10c-1.104 0-2 .896-2 2s.896 2 2 2h5.172l-14.586 14.586c-.781.781-.781 2.047 0 2.828.391.391.902.586 1.414.586z"/></svg>
         </div>
@@ -91,7 +82,7 @@ export default {
   },
   data(){
     return {
-      fonts:["Helvetica", `'Roboto'`, 'Quicksand', `'Open Sans'`],
+      fonts:[`'Roboto'`, "Helvetica", 'Quicksand', `'Open Sans'`],
       selectedFont: `'Roboto'`,
       iconFontSize: require('./assets/icon-font-size.svg'),
       menuOpen: false,
@@ -114,12 +105,12 @@ export default {
       //let body = document.body;
       if(localStorage.getItem('theme') == 'dark'){
         this.changeBackgroundColor('black');
-      }else if(localStorage.getItem('theme') == 'white'){
-        this.changeBackgroundColor('white');
+      }else if(localStorage.getItem('theme')=='light-dark'){
+        this.changeBackgroundColor('light-dark');
       }else if(localStorage.getItem('theme') == 'light'){
         this.changeBackgroundColor('light')
       }else{
-        this.changeBackgroundColor('light-dark');
+        this.changeBackgroundColor('white');
       }
       if(localStorage.getItem('fontFamilyPreference')){
         let element = document.getElementsByClassName('bodywrapper')[0];
@@ -213,10 +204,13 @@ export default {
       // take values from classes (default values) instead of inline style
       let element = document.getElementsByClassName('bodywrapper')[0];
       let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
+      let body = document.body;
       element.style.fontFamily = null;
       element.style.fontSize = null;
+      this.selectedFont = this.fonts[0];
       documentWrapper.style.maxWidth = null;
-
+      body.className = "";
+      body.classList.add('white-container');
       // also reset localstorage saved values
       localStorage.clear();
     }
@@ -231,7 +225,7 @@ export default {
 
 .menu-bubble{
   position: absolute;
-  width: 150px;
+  width: 170px;
   height: auto;
   background-color: white;
   top: 30px;
@@ -295,6 +289,7 @@ export default {
   align-items: center;
   flex-flow: row;
   border-radius: 5px;
+  margin: 10px 0;
 }
 
 .tick-container{
@@ -304,8 +299,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
-
 </style>
 
 <style>
@@ -359,6 +352,10 @@ export default {
   fill: black;
 }
 
+.light-dark-container .menu-bubble svg{
+  fill: black;
+}
+
 .light-dark-container .collapse-sidebar svg{
   fill: black;
 }
@@ -371,4 +368,7 @@ export default {
   background-color: #f8f2e3;
 }
 
+.doc-size-container svg{
+  transform: rotate(45deg);
+}
 </style>
