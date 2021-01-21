@@ -60,7 +60,7 @@
               <path d="M228.606,283.394c-7.811-7.81-20.474-7.811-28.284,0L40,443.716v-99.503c0-11.046-8.954-20-20-20s-20,8.954-20,20V492    c0,10.866,8.853,20,20,20h147.788c11.046,0,20-8.954,20-20c0-11.046-8.954-20-20-20H68.284l160.322-160.322    C236.417,303.867,236.417,291.204,228.606,283.394z"/>
             </g>
           </g>
-          </svg>        
+          </svg>
         </div>
       </div>
       <button v-on:click="resetToDefault" class="menu-title menu-item-wrapper-row"
@@ -82,7 +82,7 @@ export default {
   },
   data(){
     return {
-      fonts:[`'Roboto'`, "Helvetica", 'Quicksand', `'Open Sans'`],
+      fonts:["Roboto","Quicksand","Taviraj","Gentium Basic","Proza Libre"],
       selectedFont: `'Roboto'`,
       iconFontSize: require('./assets/icon-font-size.svg'),
       menuOpen: false,
@@ -144,11 +144,11 @@ export default {
       let maxWidth = window.getComputedStyle(documentWrapper).maxWidth.replace('!important', '').replace(/\s+/, '').replace('px', '');
       return parseInt(maxWidth);
     },
-    increaseDocumentSize: function (){ 
+    increaseDocumentSize: function (){
       let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
       let maxWidth = this.getDocumentSize();
-      
-      
+
+
       // on large screens set max bounding to 1200
       // on smaller screens set to 840
       if(window.innerWidth > 2000){
@@ -156,7 +156,7 @@ export default {
       }else{
         maxWidth = Math.min(maxWidth + 100, 840);
       }
-      
+
       documentWrapper.setAttribute('style', `max-width: ${maxWidth}px`)
       localStorage.setItem('maxWidth', maxWidth)
     },
@@ -171,14 +171,14 @@ export default {
     },
     increaseFontSize: function (){
       let fontSize = this.getBodyFontSize();
-      let element = document.getElementsByClassName('bodywrapper')[0];      
-      fontSize = Math.min(fontSize + 1, 20);
+      let element = document.getElementsByClassName('bodywrapper')[0];
+      fontSize = Math.min(fontSize + 1, 30);
       element.style.fontSize = `${fontSize}px`;
       localStorage.setItem('fontSize', fontSize)
     },
     decreaseFontSize: function (){
       let fontSize = this.getBodyFontSize();
-      let element = document.getElementsByClassName('bodywrapper')[0];      
+      let element = document.getElementsByClassName('bodywrapper')[0];
       fontSize = Math.max(fontSize - 1, 12);
       element.style.fontSize = `${fontSize}px`;
       localStorage.setItem('fontSize', fontSize)
@@ -324,7 +324,7 @@ export default {
   border-bottom: 0;
 }
 
-.black-container pre{ 
+.black-container pre{
   background-color: #212121;
   border: none;
   color: #cecece;

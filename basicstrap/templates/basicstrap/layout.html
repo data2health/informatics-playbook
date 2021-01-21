@@ -202,8 +202,10 @@
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto(theme_googlewebfont_url, 1) }}" media="screen and (min-width:481px)" type="text/css" />
 {%- endif %}
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Taviraj&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
@@ -300,7 +302,7 @@
       <meta id="my-data" data-name="{{pathto|string}}">
 
       <script type="text/javascript">
-        sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));        
+        sessionStorage.setItem("document_previews", JSON.stringify({{ document_previews_json }}));
         sessionStorage.setItem("search_path", "{{ pathto('search') }}");
         sessionStorage.setItem("search_svg_path", "{{ pathto('_static/svg/search.svg', 1) }}")
         sessionStorage.setItem("arrow_svg_path", "{{ pathto('_static/svg/arrow.svg', 1) }}")
@@ -422,10 +424,10 @@
 
         </div>
         <div class="{% if (not theme_nosidebar|tobool) %}{{ bs_span_prefix }}{{ 12 - theme_sidebar_span|int }}{% else %}{{ bs_span_prefix }}12{% endif %}" id="content-wrapper">
-            
+
             <div class="document flex center-items" role="main">
             {%- block document %}
-            
+
             <div style="width:100%;">
               <div class="flex">
               <div>
@@ -479,11 +481,11 @@
               </div>
             </div>
             <div class="documentwrapper">
-            
-            {%- if render_sidebar %}
-            
 
-            
+            {%- if render_sidebar %}
+
+
+
               <div class="bodywrapper">
                 {%- endif %}
                 <div class="body">
@@ -562,7 +564,7 @@
       <div id="go-to-top-container">
 
       </div>
-      
+
       {%- endblock %}
       <!-- /footer -->
 
