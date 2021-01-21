@@ -188,6 +188,7 @@ export default {
       body.className = "";
       if(color=='black'){
         body.classList.add('black-container');
+        body.classList.add('dark');
         localStorage.setItem('theme', 'dark')
       }else if(color=='white'){
         body.classList.add('white-container');
@@ -197,6 +198,7 @@ export default {
         localStorage.setItem('theme', 'light')
       }else if(color=='light-dark'){
         body.classList.add('light-dark-container');
+        body.classList.add('dark');
         localStorage.setItem('theme', 'light-dark')
       }
     },
@@ -225,7 +227,7 @@ export default {
 
 .menu-bubble{
   position: absolute;
-  width: 170px;
+  width: 200px;
   height: auto;
   background-color: white;
   top: 30px;
@@ -289,7 +291,8 @@ export default {
   align-items: center;
   flex-flow: row;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px auto;
+  height: 30px;
 }
 
 .tick-container{
@@ -307,11 +310,7 @@ export default {
   color: rgb(206, 206, 206);
 }
 
-.black-container svg{
-  fill: white;
-}
-
-.light-dark-container svg{
+.dark svg{
   fill: white;
 }
 
@@ -320,44 +319,63 @@ export default {
   color: rgb(206, 206, 206);
 }
 
-.black-container h2, h3, h4, h5, h6{
-  border-bottom: 0;
-}
-
-.black-container pre{
+.dark pre{
   background-color: #212121;
   border: none;
   color: #cecece;
 }
 
-.light-dark-container pre{
-  background-color: #212121;
-  border: none;
-  color: #cecece;
-}
-
-.light-dark-container h2, h3, h4, h5, h6{
+.dark h2, h3, h4, h5, h6{
   border-bottom: 0;
 }
 
-.light-container h2, h3, h4, h5, h6{
+.dark h2, h3, h4, h5, h6{
   border-bottom: 0;
 }
 
-.black-container .menu-bubble svg{
+.dark .chapter-header{
+  color: white;
+}
+
+.dark .hero-text{
+  color: white;
+}
+
+.dark .menu-bubble svg{
   fill: black;
 }
 
-.black-container .collapse-sidebar svg{
+.dark .collapse-sidebar svg{
   fill: black;
 }
 
-.light-dark-container .menu-bubble svg{
-  fill: black;
+.dark .chapter-box{
+  background-color: #1f2529;
+  box-shadow: none;
 }
 
-.light-dark-container .collapse-sidebar svg{
-  fill: black;
+.dark .dynamic-search-input{
+  background-color: #1f2529;
+}
+
+.dark .header-item{
+  color: white !important;
+}
+
+.white-container .header-item{
+  color: #1f1f1f !important;
+}
+
+.light-container .header-item{
+  color: #1f1f1f !important;
+}
+
+.light-dark-container .chapter-box{
+  background-color: #212121 !important;
+}
+
+.light-dark-container .dynamic-search-input{
+  background-color: #212121 !important;
 }
 
 .white-container{

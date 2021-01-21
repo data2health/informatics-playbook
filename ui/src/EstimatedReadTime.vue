@@ -1,6 +1,6 @@
 <template>
   <div class="estimated-read-time">
-    {{ this.estimatedReadTime }} minutes read
+    {{this.wordCount}} words, {{ this.estimatedReadTime }} minutes read
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   data: function (){
     return{
       estimatedReadTime:0,
+      wordCount: 0,
     }
   },
   methods: {
@@ -24,6 +25,7 @@ export default {
         const wordsPerMinute = 200; // Average case.
         let result;
         let textLength = content.innerText.split(" ").length; // Split by words
+        this.wordCount = textLength.toLocaleString();
         if(textLength > 0){
           let value = Math.ceil(textLength / wordsPerMinute);
           result = value;

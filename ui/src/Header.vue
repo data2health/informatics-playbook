@@ -23,7 +23,6 @@ export default {
 
 .header-item{
   /*padding: 0px 20px;*/
-  color: #1f1f1f !important;
   cursor: pointer;
   text-decoration: none;
 }
