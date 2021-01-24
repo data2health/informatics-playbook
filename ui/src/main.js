@@ -16,6 +16,7 @@ Vue.use(vClickOutside);
 
 Vue.config.productionTip = false
 
+console.log(process.env.NODE_ENV);
 new Vue({
   render: h => h(Search),
 }).$mount('#search-container')

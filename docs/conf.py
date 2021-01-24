@@ -104,7 +104,7 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_additional_pages = {'index': 'index.html'}
+html_additional_pages = {'index': 'index.html', 'about': 'about.html'}
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

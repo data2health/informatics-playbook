@@ -49,7 +49,7 @@
           <svg style="height: 22px; width: 22px;" xmlns="http://www.w3.org/2000/svg" id="Layer" enable-background="new 0 0 64 64" height="512" viewBox="0 0 64 64" width="512"><path d="m52.586 8.586-14.586 14.586v-5.172c0-1.104-.896-2-2-2s-2 .896-2 2v10c0 1.104.896 2 2 2h10c1.104 0 2-.896 2-2s-.896-2-2-2h-5.172l14.586-14.586c.781-.781.781-2.047 0-2.828s-2.047-.781-2.828 0z"/><path d="m10 56c.512 0 1.023-.195 1.414-.586l14.586-14.586v5.172c0 1.104.896 2 2 2s2-.896 2-2v-10c0-1.104-.896-2-2-2h-10c-1.104 0-2 .896-2 2s.896 2 2 2h5.172l-14.586 14.586c-.781.781-.781 2.047 0 2.828.391.391.902.586 1.414.586z"/></svg>
         </div>
         <div class="flex center-items" style="width: 50%; cursor:pointer;"  v-on:click="increaseDocumentSize">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; height:15px; width:25px;" xml:space="preserve">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; height:15px; width:25px;" xml:space="preserve">
           <g>
             <g>
               <path d="M492,0H344.212c-11.046,0-20,8.954-20,20s8.954,20,20,20h99.503L283.394,200.322c-7.811,7.811-7.811,20.474,0,28.284    c7.81,7.81,20.473,7.811,28.284,0L472,68.284v99.503c0,11.046,8.954,20,20,20c11.046,0,20-8.954,20-20V20    C512,9.115,503.154,0,492,0z"/>
@@ -93,7 +93,8 @@ export default {
       this.menuOpen = false;
     },
     handleMenuClick: function () {
-      this.menuOpen = !this.menuOpen;
+      //this.menuOpen = !this.menuOpen;
+      this.menuOpen = true;
     },
     handleFontChange: function (font){
       let element = document.getElementsByClassName('bodywrapper')[0];
@@ -103,6 +104,11 @@ export default {
     },
     setInitialPreferences: function (){
       //let body = document.body;
+
+      // we only want to set the preferences on the chapter pages
+      if(!window.location.pathname.includes('chapter')){
+        return;
+      }
       if(localStorage.getItem('theme') == 'dark'){
         this.changeBackgroundColor('black');
       }else if(localStorage.getItem('theme')=='light-dark'){
