@@ -77,6 +77,7 @@ export default {
 @media all and (min-width: 2000px){
   .footer{
     padding: 30px 30%;
+    font-size: 2rem;
   }
 }
 </style>

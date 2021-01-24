@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import vClickOutside from 'v-click-outside'
+import AboutPage from './AboutPage';
 import CustomCollapse from './CustomCollapse';
 import Search from "./Search";
 import GoToTop from './GoToTop';
@@ -14,9 +15,13 @@ import Footer from './Footer';
 
 Vue.use(vClickOutside);
 
-Vue.config.productionTip = false
+//Vue.config.productionTip = false
 
 console.log(process.env.NODE_ENV);
+new Vue({
+  render: h => h(AboutPage),
+}).$mount('#about-page-container')
+
 new Vue({
   render: h => h(Search),
 }).$mount('#search-container')
