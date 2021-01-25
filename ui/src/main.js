@@ -12,6 +12,8 @@ import TocTree from './TocTree';
 import TocTreeCollapse from './TocTreeCollapse';
 import Header from './Header';
 import Footer from './Footer';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 Vue.use(vClickOutside);
 
@@ -19,6 +21,9 @@ Vue.use(vClickOutside);
 
 console.log(process.env.NODE_ENV);
 new Vue({
+  created (){
+    AOS.init()
+  },
   render: h => h(AboutPage),
 }).$mount('#about-page-container')
 

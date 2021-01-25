@@ -62,7 +62,6 @@ export default {
       }
       return pathname + `${to}.html`;
     },
-    
   },
 }
 </script>
