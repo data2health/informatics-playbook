@@ -24,7 +24,6 @@
 <script>
 export default {
   name: 'Footer',
-  el: '#footer-container',
   created () {
     this.getCurrentYear = this.getCurrentYear()
   },

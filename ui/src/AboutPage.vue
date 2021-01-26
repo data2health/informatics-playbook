@@ -54,7 +54,6 @@
 <script>
 export default {
   name: "AboutPage",
-  el: "#about-page-container",
   methods: {
     
   }
@@ -122,6 +121,7 @@ export default {
   box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.02), 0 0.6px 0.5px rgba(0, 0, 0, 0.028), 0 1.1px 0.9px rgba(0, 0, 0, 0.035), 0 2px 1.6px rgba(0, 0, 0, 0.042), 0 3.8px 2.9px rgba(0, 0, 0, 0.05), 0 9px 7px rgba(0, 0, 0, 0.07);
   margin-top: 40px;
   outline: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .about-action-button:hover{

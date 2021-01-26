@@ -15,11 +15,10 @@ import Footer from './Footer';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+Vue.config.productionTip = false
+
 Vue.use(vClickOutside);
 
-//Vue.config.productionTip = false
-
-console.log(process.env.NODE_ENV);
 new Vue({
   created (){
     AOS.init()

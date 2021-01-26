@@ -13,7 +13,6 @@
 <script>
 export default {
   name: "GoToTop",
-  el:'#go-to-top-container',
   methods:{
     goToTop: function(){
       window.scrollTo({top:0 ,behavior:'smooth'})

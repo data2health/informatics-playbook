@@ -9,7 +9,6 @@
 <script>
 export default {
   name: "ScrollProgression",
-  el:'#scroll-progression-container',
   created () {
     window.addEventListener('scroll', this.handleScroll);
   },

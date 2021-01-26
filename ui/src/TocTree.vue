@@ -31,7 +31,6 @@
 
 <script>
 export default {
-  el: '#toctree-container',
   data: function (){
     let toctree_data = JSON.parse(sessionStorage.getItem('toctree_data_json'))
     return {

@@ -14,7 +14,6 @@
 <script>
 export default {
   name: "DynamicChapterSearch",
-  el: '#dynamic-chapter-search-container',
   computed: {
     console: () => console,
     window: () => window,
@@ -70,12 +69,15 @@ export default {
             this.matchCount += match.count;
           }
 
-          if(match.count===0){
-            chapterBoxElement.style.opacity = 0.3;
-          }else{
-            chapterBoxElement.style.opacity = 1;
-            this.chapterMatchCount = this.chapterMatchCount + 1;
+          if(chapterBoxElement){
+            if(match.count===0){
+              chapterBoxElement.style.opacity = 0.3;
+            }else{
+              chapterBoxElement.style.opacity = 1;
+              this.chapterMatchCount = this.chapterMatchCount + 1;
+            }
           }
+          
         }catch(e){
           console.error(e);
         }

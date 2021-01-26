@@ -72,7 +72,6 @@
 <script>
 export default {
   name: "Preferences",
-  el: "#preferences-container",
   computed: {
     console: () => console,
     window: () => window,
@@ -125,11 +124,17 @@ export default {
       }
       if(localStorage.getItem('fontSize')){
         let element = document.getElementsByClassName('bodywrapper')[0];
-        element.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
+
+        if(element){
+          element.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
+        }
       }
       if(localStorage.getItem('maxWidth')){
         let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
-        documentWrapper.setAttribute('style', `max-width: ${localStorage.getItem('maxWidth')}px`)
+
+        if(documentWrapper){
+          documentWrapper.setAttribute('style', `max-width: ${localStorage.getItem('maxWidth')}px`)
+        }
       }
     },
     getGlobalFontSize: function (){
@@ -163,7 +168,11 @@ export default {
         maxWidth = Math.min(maxWidth + 100, 840);
       }
 
-      documentWrapper.setAttribute('style', `max-width: ${maxWidth}px`)
+      try{
+        documentWrapper.setAttribute('style', `max-width: ${maxWidth}px`)
+      }catch(e){
+        // console.error(e)
+      }
       localStorage.setItem('maxWidth', maxWidth)
     },
     decreaseDocumentSize: function (){
@@ -172,7 +181,12 @@ export default {
 
       // setting min bound to 400
       maxWidth = Math.max(maxWidth - 100, 400);
-      documentWrapper.setAttribute('style', `max-width: ${maxWidth}px`)
+      
+      try{
+        documentWrapper.setAttribute('style', `max-width: ${maxWidth}px`)
+      }catch(e){
+        // console.error(e)
+      }
       localStorage.setItem('maxWidth', maxWidth)
     },
     increaseFontSize: function (){
@@ -190,23 +204,28 @@ export default {
       localStorage.setItem('fontSize', fontSize)
     },
     changeBackgroundColor: function (color){
-      let body = document.body;
-      body.className = "";
-      if(color=='black'){
-        body.classList.add('black-container');
-        body.classList.add('dark');
-        localStorage.setItem('theme', 'dark')
-      }else if(color=='white'){
-        body.classList.add('white-container');
-        localStorage.setItem('theme', 'white')
-      }else if(color=='light'){
-        body.classList.add('light-container');
-        localStorage.setItem('theme', 'light')
-      }else if(color=='light-dark'){
-        body.classList.add('light-dark-container');
-        body.classList.add('dark');
-        localStorage.setItem('theme', 'light-dark')
+      try{
+        let body = document.body;
+        body.className = "";
+        if(color=='black'){
+          body.classList.add('black-container');
+          body.classList.add('dark');
+          localStorage.setItem('theme', 'dark')
+        }else if(color=='white'){
+          body.classList.add('white-container');
+          localStorage.setItem('theme', 'white')
+        }else if(color=='light'){
+          body.classList.add('light-container');
+          localStorage.setItem('theme', 'light')
+        }else if(color=='light-dark'){
+          body.classList.add('light-dark-container');
+          body.classList.add('dark');
+          localStorage.setItem('theme', 'light-dark')
+        }
+      }catch(e){
+        // console.error(e)
       }
+      
     },
     resetToDefault: function (){
       // take values from classes (default values) instead of inline style

@@ -7,7 +7,6 @@
 <script>
 export default {
   name: "EstimatedReadTime",
-  el:'#estimated-read-time-container',
   created () {
     this.estimatedReadTime = this.getEstimatedReadTime()
   },

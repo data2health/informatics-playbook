@@ -9,7 +9,6 @@
 <script>
 export default {
   name: 'Header',
-  el: '#header-container',
   methods: {
     pathto (to){
       let pathname = window.location.pathname;

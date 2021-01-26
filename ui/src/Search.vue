@@ -23,7 +23,6 @@
 //style="background: url(this.searchPath) no-repeat;" 
 //remember to add update the icons svgs on mount
 export default {
-  el: '#search-container',
   computed: {
     console: () => console,
     window: () => window,

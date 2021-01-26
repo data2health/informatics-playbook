@@ -11,7 +11,6 @@
 <script>
 export default {
   name: "CustomCollapse",
-  el: "#custom-collapse-container",
   methods:{
     click: function(){
       let mobileSidebar = document.getElementById('mobile-side-bar');

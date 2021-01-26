@@ -16,7 +16,6 @@
 
 <script>
 export default {
-  el: '#toctree-collapse-container',
   data: function (){
     return{
       isOpen: true,
@@ -72,28 +71,33 @@ export default {
     setOpen(created){
       let toctreeElement = document.getElementById('sidebar-wrapper');
       let contentWrapper = document.getElementById('content-wrapper');
-      if(this.isOpen){
+      try{
+        if(this.isOpen){
         toctreeElement.classList.remove('sidebar-group-hidden');
         contentWrapper.classList.remove('content-wrapper-full');
         //contentWrapper.style.width = null;
-      }else{
-        if(created){
-          toctreeElement.style.transition = 'none';
-          toctreeElement.classList.add('sidebar-group-hidden');
-          // something is wrong here the timeout should not be needed but the css is broken
-          // for now providing a lazy fix
-          // wait some time for 'sidebar-group-hidden' transition to stop
-          setTimeout(()=>{
-            toctreeElement.style.transition = null;
-          },500)
-          contentWrapper.classList.add('content-wrapper-full');
         }else{
-          toctreeElement.classList.add('sidebar-group-hidden');
-          contentWrapper.classList.add('content-wrapper-full');
-          //contentWrapper.style.width = '100%';
+          if(created){
+            toctreeElement.style.transition = 'none';
+            toctreeElement.classList.add('sidebar-group-hidden');
+            // something is wrong here the timeout should not be needed but the css is broken
+            // for now providing a lazy fix
+            // wait some time for 'sidebar-group-hidden' transition to stop
+            setTimeout(()=>{
+              toctreeElement.style.transition = null;
+            },500)
+            contentWrapper.classList.add('content-wrapper-full');
+          }else{
+            toctreeElement.classList.add('sidebar-group-hidden');
+            contentWrapper.classList.add('content-wrapper-full');
+            //contentWrapper.style.width = '100%';
 
+          }
         }
+      }catch(e){
+        // console.error(e)
       }
+      
     },
     setInitialState (){
       let state = localStorage.getItem('toctreeCollapseState')
