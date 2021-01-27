@@ -77,6 +77,9 @@ class SimpleTocTreeCollector(EnvironmentCollector):
 
         #print(section_nodes)
         sections = []
+
+        # we should mark each section with its corresponding level
+        # Example 'title': title, 'level': enum[0,1,2]
         for node in section_nodes:
             sections.append({
                 'title': node[0].astext(),
@@ -144,6 +147,12 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
                 current0 = True
                 # if current, add another level
                 children = app.env.toc_dict[name]['sections']
+
+            print(app.env.toc_dict[name])
+            
+            if len(children) > 0:
+                for child in children:
+                    print(child)
             # add page_toc for current page
             entries.append({
                 'name': name,
@@ -151,6 +160,7 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
                 'current': current1,
                 'children': children,
             })
+            
 
         toc_docname = tree['parent'] # docname where this toc appears
         title = tree['caption']
