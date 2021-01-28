@@ -34,7 +34,6 @@ class SimpleTocTreeCollector(EnvironmentCollector):
     """
     def enable(self, app):
         super().enable(app)
-        print(dir(app))
         #print(app.env)
         # env is populated from cache, if not cache create/initalize attibute
         #if not hasattr(app.env, 'toc_dict'):
@@ -63,9 +62,13 @@ class SimpleTocTreeCollector(EnvironmentCollector):
         # if first level is a single section,
         # ignore it and use second level of sections
         if len(section_nodes) == 1:
+            print(section_nodes)
             section2_nodes = [s for s in section_nodes[0]
                               if isinstance(s, nodes.section)]
-            section3_nodes = None
+            print(section2_nodes)
+            for node in section2_nodes:
+                section3_nodes = [s for s in node[0]]
+                #print(section3_nodes)
             if len(section2_nodes) > 0:
                 section3_nodes = [s for s in section2_nodes[0]
                                   if isinstance(s, nodes.section)]
@@ -80,7 +83,10 @@ class SimpleTocTreeCollector(EnvironmentCollector):
 
         # we should mark each section with its corresponding level
         # Example 'title': title, 'level': enum[0,1,2]
+        # Probably have to find the nodes.section element and add the level depending on the
+        # header level
         for node in section_nodes:
+            #print(node.section)
             sections.append({
                 'title': node[0].astext(),
                 'href': '#{}'.format(node['ids'][0]),
@@ -147,12 +153,11 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
                 current0 = True
                 # if current, add another level
                 children = app.env.toc_dict[name]['sections']
-
-            print(app.env.toc_dict[name])
+                print(app.env.toc_dict[name])
             
             if len(children) > 0:
                 for child in children:
-                    print(child)
+                    pass#print(child)
             # add page_toc for current page
             entries.append({
                 'name': name,
