@@ -62,21 +62,26 @@ class SimpleTocTreeCollector(EnvironmentCollector):
         # if first level is a single section,
         # ignore it and use second level of sections
         if len(section_nodes) == 1:
-            print(section_nodes)
+            #print(section_nodes)
             section2_nodes = [s for s in section_nodes[0]
                               if isinstance(s, nodes.section)]
-            print(section2_nodes)
+
+            section3_nodes = [s for s in section2_nodes[0]
+                              if isinstance(s, nodes.section)]
+
+            for node in section_nodes:
+                node.level = 0
             for node in section2_nodes:
-                section3_nodes = [s for s in node[0]]
-                #print(section3_nodes)
+                node.level = 1
+            for node in section3_nodes:
+                node.level = 2
+
             if len(section2_nodes) > 0:
                 section3_nodes = [s for s in section2_nodes[0]
                                   if isinstance(s, nodes.section)]
 
             if section3_nodes:
                 section_nodes = section3_nodes
-            elif section2_nodes: # do not replace with level-2 sections if None
-                section_nodes = section2_nodes
 
         #print(section_nodes)
         sections = []
@@ -86,7 +91,7 @@ class SimpleTocTreeCollector(EnvironmentCollector):
         # Probably have to find the nodes.section element and add the level depending on the
         # header level
         for node in section_nodes:
-            #print(node.section)
+            #print(node, '\n\n\n\n')
             sections.append({
                 'title': node[0].astext(),
                 'href': '#{}'.format(node['ids'][0]),
