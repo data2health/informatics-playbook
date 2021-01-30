@@ -34,7 +34,6 @@ class SimpleTocTreeCollector(EnvironmentCollector):
     """
     def enable(self, app):
         super().enable(app)
-        #print(app.env)
         # env is populated from cache, if not cache create/initalize attibute
         #if not hasattr(app.env, 'toc_dict'):
             #app.env.toc_dict = {}
@@ -57,33 +56,29 @@ class SimpleTocTreeCollector(EnvironmentCollector):
 
         # print(f"================ Collector\n{docname}\n============\n")
         # get 1 level document toc (sections)
-        section_nodes = [s for s in doctree if isinstance(s, nodes.section)]
-        #print(section_nodes)
+        # section_nodes = [s for s in doctree if isinstance(s, nodes.section)]
+
+        section_nodes = []
+
+        for node in doctree:
+            if isinstance(node, nodes.section):
+                node.level = 0
+                section_nodes.append(node)
         # if first level is a single section,
         # ignore it and use second level of sections
         if len(section_nodes) == 1:
-            #print(section_nodes)
-            section2_nodes = [s for s in section_nodes[0]
-                              if isinstance(s, nodes.section)]
-
-            section3_nodes = [s for s in section2_nodes[0]
-                              if isinstance(s, nodes.section)]
-
-            for node in section_nodes:
-                node.level = 0
-            for node in section2_nodes:
+            final_nodes = []
+            for node in section_nodes[0]:
                 node.level = 1
-            for node in section3_nodes:
-                node.level = 2
+                if isinstance(node, nodes.section):
+                    final_nodes.append(node)
+                    for innernode in node:
+                        innernode.level = 2
+                        if isinstance(innernode, nodes.section):
+                            final_nodes.append(innernode)
 
-            if len(section2_nodes) > 0:
-                section3_nodes = [s for s in section2_nodes[0]
-                                  if isinstance(s, nodes.section)]
+            section_nodes = final_nodes
 
-            if section3_nodes:
-                section_nodes = section3_nodes
-
-        #print(section_nodes)
         sections = []
 
         # we should mark each section with its corresponding level
@@ -91,10 +86,10 @@ class SimpleTocTreeCollector(EnvironmentCollector):
         # Probably have to find the nodes.section element and add the level depending on the
         # header level
         for node in section_nodes:
-            #print(node, '\n\n\n\n')
             sections.append({
                 'title': node[0].astext(),
                 'href': '#{}'.format(node['ids'][0]),
+                'level': node.level
             })
 
         app.env.toc_dict[docname] = {
@@ -130,7 +125,6 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
     # each toctree will create navigation section
     res = [] # list of top level toctrees in master_doc
     for tree in master.traverse(addnodes.toctree):
-        #print(tree)
         # special case for toctree that includes a single item
         # that contains a nested toctree.
         # In this case, just use the referenced toctree directly
@@ -139,7 +133,6 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
             toctrees = app.env.toc_dict[entry_docname]['toctrees']
 
             if toctrees:
-                # FIXME
                 assert len(toctrees) == 1, "Press: Not supported more then one toctree on nested toctree"
                 tree = toctrees[0]
 
@@ -158,15 +151,12 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
                 current0 = True
                 # if current, add another level
                 children = app.env.toc_dict[name]['sections']
-                print(app.env.toc_dict[name])
             
-            if len(children) > 0:
-                for child in children:
-                    pass#print(child)
             # add page_toc for current page
             entries.append({
                 'name': name,
                 'title': title,
+                'level': 0,
                 'current': current1,
                 'children': children,
             })
@@ -174,6 +164,7 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
 
         toc_docname = tree['parent'] # docname where this toc appears
         title = tree['caption']
+        level = tree['level'] if 'level' in tree else 0
 
         # Anchor element is the section containing the toc,
         # as the toc itself does not contain ID.
@@ -198,6 +189,7 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
             'docname': toc_docname,
             'href': toc_href,
             'title': title,
+            'level': 0,
             'current': current0,
             'entries': entries,
         })

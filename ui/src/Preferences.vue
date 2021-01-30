@@ -387,6 +387,56 @@ export default {
   color: white !important;
 }
 
+.dark .section > .sidebar{
+  background-color: #131313;
+  border: 0;
+}
+
+.dark .sidebar-title{
+  background: #1b1b1b;
+}
+
+.dark .highlight .hll{
+  background-color: #131313;
+}
+
+.dark .highlighttable .linenos pre{
+  background-color: #212121;
+}
+
+.dark table, th, td{
+  background-color: #212121;
+  color: #cecece;
+  border: none;
+}
+
+.dark table.docutils th, table.docutils td{
+  border-top: 1px solid #383838;
+}
+
+.dark .navbar-default .navbar-toggle{
+  border-color: #1c1b1d;
+}
+
+.dark .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: #1c1b1d;
+}
+
+.dark .sidebar-header{
+  color: #cecece;
+}
+
+.dark .navbar-fixed-top{
+  background-color: #131313 !important;
+}
+
+.dark .mobile-side-bar{
+  background-color: #1b1b1b;
+}
+
+.dark .menu-link {
+  color: white !important;
+}
 .white-container .header-item{
   color: #1f1f1f !important;
 }

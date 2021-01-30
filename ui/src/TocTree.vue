@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="sidebar-group" id="toctree">
       <p class="caption">
         <span class="caption-text"><a :href="pathto('index')">Reusable data best practices</a></span>
@@ -19,8 +18,9 @@
         <li v-for="entry in toc.entries" :key="entry.name" class="toctree-l1" v-bind:class="{current: entry.current}">
           <a :href="pathto(entry.name)" class="reference internal" v-bind:class="{current: entry.current}">{{ entry.title }}</a>
           <ul v-if="entry.children">
-            <li v-for="entry2 in entry.children" :key="entry2.name" class="toctree-l2">
-              <a :href="pathto(entry2.href)" class="reference internal">{{ entry2.title }}</a>
+            <li v-for="entry2 in entry.children" :key="entry2.name" class="toctree-l2" >
+              <a :href="pathto(entry2.href)" class="reference internal"
+              v-bind:style="{paddingLeft: `${30 * entry2.level}px !important`}">{{ entry2.title }}</a>
             </li>
           </ul>
         </li>
