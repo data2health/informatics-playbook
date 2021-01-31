@@ -284,6 +284,9 @@ except ImportError:
     print('Warning: "basicstrap" is not installed, fall back to default theme.')
 
 
+# set the level of depth for the sidebar
+# for now only depth = 2 and depth = 3 makes sense
+depth = 3
 def setup(app):
     # app.add_stylesheet('_static/css/custom.css')
 

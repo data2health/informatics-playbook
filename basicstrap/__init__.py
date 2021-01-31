@@ -12,8 +12,8 @@ from docutils import nodes
 from sphinx.environment.collectors import EnvironmentCollector
 from sphinx import addnodes
 from sphinx.util.osutil import relative_uri
-import json
 from .directives import setup as _setup
+import json
 
 __version__ = '0.5.0'
 
@@ -52,6 +52,12 @@ class SimpleTocTreeCollector(EnvironmentCollector):
     def process_doc(self, app, doctree):
         if not hasattr(app.env, 'toc_dict'):
             app.env.toc_dict = {}
+        try:
+            from docs.conf import depth
+        except Exception as e:
+            # set default depth as 2
+            depth = 2
+        
         docname = app.env.docname # sphinx mutates this, ouch!!!
 
         # print(f"================ Collector\n{docname}\n============\n")
@@ -72,10 +78,12 @@ class SimpleTocTreeCollector(EnvironmentCollector):
                 node.level = 1
                 if isinstance(node, nodes.section):
                     final_nodes.append(node)
-                    for innernode in node:
-                        innernode.level = 2
-                        if isinstance(innernode, nodes.section):
-                            final_nodes.append(innernode)
+                    # only add this if depth level is >= 3
+                    if depth>=3:
+                        for innernode in node:
+                            innernode.level = 2
+                            if isinstance(innernode, nodes.section):
+                                final_nodes.append(innernode)
 
             section_nodes = final_nodes
 

@@ -431,7 +431,7 @@
               <div>
                     <div id="estimated-read-time-container"></div>
                 </div>
-                <a target="#" style="margin: 0 10px; cursor:pointer;" class="header-item flex center-items">About</a>
+                <a href="{{ pathto('about') }}" style="margin: 0 10px; cursor:pointer;" class="header-item flex center-items">About</a>
                 <div style="flex: 1;"></div>
                 <div id="preferences-container"></div>
               </div>
@@ -442,7 +442,7 @@
                      {% if rellink[3] == 'next' %}
                          <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
                              <div class="flex" style="flex-flow: column; align-items: flex-end; width: 100%;">
-                                <span style="color:#4e4e4e; font-size: 1.2rem;">Next</span>
+                                <span class="navigation-link">Next</span>
                                 <div class="ellipsis" style="order:2; width: 100%; text-align: right;"><span href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }}</span></div>
                              </div>
                             <div>
@@ -457,6 +457,7 @@
                              <div class="ellipsis" style="order:2;"><a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }} →</a></div>
                              <div style="order:1" class="divider"></div>
                           #}
+                      
                      {% endif %}
                      {% if rellink[3] == 'previous' %}
                          <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
@@ -468,7 +469,7 @@
                                 </svg>
                             </div>
                              <div class="flex" style="flex-flow: column; align-items: flex-start; width: 100%;">
-                                <span style="color:#4e4e4e; font-size: 1.2rem;">Previous</span>
+                                <span class="navigation-link">Previous</span>
                                 <div class="ellipsis" style="order:2; width: 100%; text-align: left;"><span>{{ rellink[1]|striptags|e }}</span></div>
                              </div>
                          </a>
@@ -503,7 +504,7 @@
                      {% if rellink[3] == 'next' %}
                          <a class="flex center-items" style="flex-flow: row; width: 33%;" href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>
                              <div class="flex" style="flex-flow: column; align-items: flex-end; width: 100%;">
-                                <span style="color:#4e4e4e; font-size: 1.2rem;">Next</span>
+                                <span class="navigation-link">Next</span>
                                 <div class="ellipsis" style="order:2; width: 100%; text-align: right;"><span href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{ rellink[1]|striptags|e }}</span></div>
                              </div>
                             <div>
@@ -529,7 +530,7 @@
                                 </svg>
                             </div>
                              <div class="flex" style="flex-flow: column; align-items: flex-start; width: 100%;">
-                                <span style="color:#4e4e4e; font-size: 1.2rem;">Previous</span>
+                                <span class="navigation-link">Previous</span>
                                 <div class="ellipsis" style="order:2; width: 100%; text-align: left;"><span>{{ rellink[1]|striptags|e }}</span></div>
                              </div>
                          </a>

@@ -437,6 +437,15 @@ export default {
 .dark .menu-link {
   color: white !important;
 }
+
+.dark .navigation-link{
+  color: #b5b5b5;
+}
+
+.dark input{
+  background-color: #131313;
+  border-color: black;
+}
 .white-container .header-item{
   color: #1f1f1f !important;
 }
