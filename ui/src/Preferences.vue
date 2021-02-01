@@ -117,17 +117,18 @@ export default {
       }else{
         this.changeBackgroundColor('white');
       }
-      if(localStorage.getItem('fontFamilyPreference')){
-        let element = document.getElementsByClassName('bodywrapper')[0];
-        element.style.fontFamily = localStorage.getItem('fontFamilyPreference');
-        this.selectedFont = localStorage.getItem('fontFamilyPreference');
-      }
+      
       if(localStorage.getItem('fontSize')){
         let element = document.getElementsByClassName('bodywrapper')[0];
 
         if(element){
           element.setAttribute('style', `font-size:${localStorage.getItem('fontSize')}px !important`);
         }
+      }
+      if(localStorage.getItem('fontFamilyPreference')){
+        let element = document.getElementsByClassName('bodywrapper')[0];
+        element.style.fontFamily = localStorage.getItem('fontFamilyPreference');
+        this.selectedFont = localStorage.getItem('fontFamilyPreference');
       }
       if(localStorage.getItem('maxWidth')){
         let documentWrapper = document.getElementsByClassName('documentwrapper')[0];
@@ -404,13 +405,13 @@ export default {
   background-color: #212121;
 }
 
-.dark table, th, td{
+.dark table, .dark th, .dark td{
   background-color: #212121;
   color: #cecece;
   border: none;
 }
 
-.dark table.docutils th, table.docutils td{
+.dark table.docutils th, .dark table.docutils td{
   border-top: 1px solid #383838;
 }
 
@@ -418,7 +419,7 @@ export default {
   border-color: #1c1b1d;
 }
 
-.dark .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+.dark .navbar-default .navbar-toggle:focus, .dark .navbar-default .navbar-toggle:hover{
   background-color: #1c1b1d;
 }
 
