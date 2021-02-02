@@ -173,8 +173,8 @@ def get_element_formatting(mdFile, index, document, item, content_length, elemen
     """
     if item.get('paragraph', {}).get('paragraphStyle', {}):
         headingId = item.get('paragraph', {}).get('paragraphStyle', {}).get('headingId')
-        if headingId:
-            mdFile.write(f"[]({headingId})")
+        '''if headingId:
+            mdFile.write(f"[]({headingId})")'''
 
     # search for images
     if element.get('inlineObjectElement'):
@@ -184,7 +184,6 @@ def get_element_formatting(mdFile, index, document, item, content_length, elemen
         image_path = object_properties.get('imageProperties').get('contentUri')
         urllib.request.urlretrieve(image_path,
                                    filename=f"${static_path}{image_path.split('/')[-1]}.jpg")
-
         mdFile.new_line(mdFile.new_inline_image(text='image',
                                                 path=f"${static_path}{image_path.split('/')[-1]}.jpg"))
 
