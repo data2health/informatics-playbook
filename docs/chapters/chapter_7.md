@@ -1,4 +1,4 @@
-# Chapter 7: Repository architecture and culture to support research at the local CTSA hub level
+# Chapter 7: Repository Architecture for Data Discovery
 
 ## Intended Audience
 
