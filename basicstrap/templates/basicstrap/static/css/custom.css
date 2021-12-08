@@ -233,6 +233,14 @@
     justify-content: center;
 }
 
+.hero-box{
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
 .navbar-default{
     background-color: #ffffff !important;
     border-color: transparent !important;

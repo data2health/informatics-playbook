@@ -15,31 +15,112 @@
     </div>
     <div class="hero flex flex-flow-rowwrap">
         <div class="hero-intro">
-            <h1 style="font-weight: bold">Reusable data practices</h1>
-            <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae mi orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur elit lorem, posuere eget arcu sed, pulvinar eleifend dolor. Vestibulum semper nec nulla at aliquam. Morbi sit amet tellus eu tortor aliquet mattis ut porta massa.</p>
-            <div>
-                {% set initialUrl="" %}
-                {% set theTocTree = toctree()
-                | replace("</a>", "")
-                | replace(" href=\"", "></a>")
-                | replace("</li>", "</li>;")
-                | striptags
-                | replace("\">", "%")
-                | replace("Contents:", "") %}
-                {% set theTocTree = theTocTree.split(";") %}
+            <h1 style="font-weight: bold">Informatics Playbook</h1>
+            <p class="hero-text">A collaborative, living playbook for health informatics best practices. Each chapter is created by the community and continuously updated as the best practices evolve. It is a space for the community to <b><u>read</u></b> the existing best-practices playbook, <b><u>create</u></b> a new chapter or <b><u>contribute</u></b> to existing chapters.</p>
+            <div class="flex flex-flow-rowwrap">
+                <div class="flex hero-box">
+                    <div class="flex" style="justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-book-reader" style="font-size: 30px; color: #00bcd4; margin-right: 15px;"></i>
+                        <div class="flex" style="justify-content: center; align-items: center; font-size: 18px; font-weight: bold;">
+                            <p style="margin: 0px;">Read</p></div>
+                    </div>
+                    <div class="flex" style="flex-direction: column;">
+                        {% set initialUrl="" %}
+                        {% set theTocTree = toctree()
+                        | replace("</a>", "")
+                        | replace(" href=\"", "></a>")
+                        | replace("</li>", "</li>;")
+                        | striptags
+                        | replace("\">", "%")
+                        | replace("Contents:", "") %}
+                        {% set theTocTree = theTocTree.split(";") %}
 
-                {% for element in theTocTree %}
-                {% set el = element.split("%") %}
-                {% set url = el[0] | trim | safe %}
-                {% set entry = el[1] | trim | safe %}
-                    {% if loop.index==1 %}
-                        {% set initialUrl=url %}
-                        <a class="hero-button" href="{{ initialUrl }}">Browse</a>
-                    {% endif %}
-                {% endfor %}
+                        {% for element in theTocTree %}
+                        {% set el = element.split("%") %}
+                        {% set url = el[0] | trim | safe %}
+                        {% set entry = el[1] | trim | safe %}
+                            {% if loop.index==1 %}
+                                {% set initialUrl=url %}
+                                <a href="{{ initialUrl }}">Browse all chapters</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% set initialUrl="" %}
+                        {% set theTocTree = toctree()
+                        | replace("</a>", "")
+                        | replace(" href=\"", "></a>")
+                        | replace("</li>", "</li>;")
+                        | striptags
+                        | replace("\">", "%")
+                        | replace("Contents:", "") %}
+                        {% set theTocTree = theTocTree.split(";") %}
 
-                <a class="hero-button" href="https://github.com/newgene/reusable-data-best-practices/">Contribute</a>
-                <a class="hero-button" href="{{ pathto('search') }}">Search</a>
+                        {% for element in theTocTree %}
+                        {% set el = element.split("%") %}
+                        {% set url = el[0] | trim | safe %}
+                        {% set entry = el[1] | trim | safe %}
+                            {% if loop.index==1 %}
+                                {% set initialUrl=url %}
+                                <a href="{{ initialUrl }}">Read from the Chapter 1</a>
+                            {% endif %}
+                        {% endfor %}
+                        <a href="{{ pathto('search') }}">Search for contents</a>
+                    </div>
+                </div>
+                <div class="flex hero-box">
+                    <div class="flex" style="justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-edit" style="font-size: 30px; color: #2196f3; margin-right: 15px;"></i>
+                        <div class="flex" style="justify-content: center; align-items: center; font-size: 18px; font-weight: bold;">
+                            <p style="margin: 0px;">Read</p></div>
+                    </div>
+                    <div class="flex" style="flex-direction: column;">
+                        {% set initialUrl="" %}
+                        {% set theTocTree = toctree()
+                        | replace("</a>", "")
+                        | replace(" href=\"", "></a>")
+                        | replace("</li>", "</li>;")
+                        | striptags
+                        | replace("\">", "%")
+                        | replace("Contents:", "") %}
+                        {% set theTocTree = theTocTree.split(";") %}
+
+                        {% for element in theTocTree %}
+                        {% set el = element.split("%") %}
+                        {% set url = el[0] | trim | safe %}
+                        {% set entry = el[1] | trim | safe %}
+                            {% if loop.index==1 %}
+                                {% set initialUrl=url %}
+                                <a href="{{ initialUrl }}">Create a new chapter</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% set initialUrl="" %}
+                        {% set theTocTree = toctree()
+                        | replace("</a>", "")
+                        | replace(" href=\"", "></a>")
+                        | replace("</li>", "</li>;")
+                        | striptags
+                        | replace("\">", "%")
+                        | replace("Contents:", "") %}
+                        {% set theTocTree = theTocTree.split(";") %}
+
+                        {% for element in theTocTree %}
+                        {% set el = element.split("%") %}
+                        {% set url = el[0] | trim | safe %}
+                        {% set entry = el[1] | trim | safe %}
+                            {% if loop.index==1 %}
+                                {% set initialUrl=url %}
+                                <a href="{{ initialUrl }}">Contribute to chapters</a>
+                            {% endif %}
+                        {% endfor %}
+                        <a href="{{ pathto('search') }}">Raise an issue on contents</a>
+                    </div>
+                </div>
+                <div class="flex" style="margin-top: 20px; justify-content: center; align-items: center;">
+                    <i class="fab fa-github" style="font-size: 30px; color: #171717; margin-right: 15px;"></i>
+                    <a style="color: #171717 !important; text-decoration: underline;">Access the Github repository directly</a>
+                </div>
+
+<!--                <a class="hero-button" href="https://github.com/newgene/reusable-data-best-practices/">Contribute</a>-->
+<!--                <a class="hero-button" href="{{ pathto('search') }}">Search</a>-->
             </div>
         </div>
         <img src="{{ pathto('_static/svg/collaboration.svg', 1) }}" class="collaboration"/>

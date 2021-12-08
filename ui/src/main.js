@@ -11,7 +11,7 @@ import Preferences from "./Preferences";
 import TocTree from './TocTree';
 import TocTreeCollapse from './TocTreeCollapse';
 import Header from './Header';
-import Footer from './Footer';
+//import Footer from './Footer';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -66,6 +66,6 @@ new Vue({
   render: h => h(Header),
 }).$mount('#header-container')
 
-new Vue({
-  render: h => h(Footer),
-}).$mount('#footer-container')
+//new Vue({
+//  render: h => h(Footer),
+//}).$mount('#footer-container')
