@@ -26,7 +26,7 @@ from utils.utils import markdown_to_text
 
 # -- Project information -----------------------------------------------------
 
-project = 'Reusable Data Best Practices'
+project = 'Informatics playbook'
 copyright = '2020, CD2H Data Working Group'
 author = 'CD2H Data Working Group'
 
@@ -220,7 +220,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ReusableDataBestPractices.tex', 'Reusable Data Best Practices Documentation',
+    (master_doc, 'ReusableDataBestPractices.tex', 'Informatics playbook Documentation',
      'CD2H Data Working Group', 'manual'),
 ]
 
@@ -229,7 +229,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'reusabledatabestpractices', 'Reusable Data Best Practices Documentation',
+    (master_doc, 'reusabledatabestpractices', 'Informatics playbook Documentation',
      [author], 1)
 ]
 
@@ -239,7 +239,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ReusableDataBestPractices', 'Reusable Data Best Practices Documentation',
+    (master_doc, 'ReusableDataBestPractices', 'Informatics playbook Documentation',
      author, 'ReusableDataBestPractices', 'One line description of project.',
      'Miscellaneous'),
 ]

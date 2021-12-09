@@ -235,7 +235,7 @@
 
 .hero-box{
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid #cfcfcf;
     max-width: 300px;
     padding: 10px;
     margin-right: 10px;

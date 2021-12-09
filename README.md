@@ -1,5 +1,5 @@
-# reusable-data-best-practices
-A collaborative guidebook for reusable data best practices
+# informatics playbook
+A collaborative guidebook for informatics playbook
 
 The live version is rendered at:
 

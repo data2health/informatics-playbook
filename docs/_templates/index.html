@@ -89,7 +89,7 @@
                         {% set entry = el[1] | trim | safe %}
                             {% if loop.index==1 %}
                                 {% set initialUrl=url %}
-                                <a href="{{ initialUrl }}">Create a new chapter</a>
+                                <a href="https://github.com/data2health/informatics-playbook">Create a new chapter</a>
                             {% endif %}
                         {% endfor %}
                         {% set initialUrl="" %}
@@ -108,18 +108,18 @@
                         {% set entry = el[1] | trim | safe %}
                             {% if loop.index==1 %}
                                 {% set initialUrl=url %}
-                                <a href="{{ initialUrl }}">Contribute to chapters</a>
+                                <a href="https://github.com/data2health/informatics-playbook">Contribute to chapters</a>
                             {% endif %}
                         {% endfor %}
-                        <a href="{{ pathto('search') }}">Raise an issue on contents</a>
+                        <a href="https://github.com/data2health/informatics-playbook">Raise an issue on contents</a>
                     </div>
                 </div>
                 <div class="flex" style="margin-top: 20px; justify-content: center; align-items: center;">
                     <i class="fab fa-github" style="font-size: 30px; color: #171717; margin-right: 15px;"></i>
-                    <a style="color: #171717 !important; text-decoration: underline;">Access the Github repository directly</a>
+                    <a href="https://github.com/data2health/informatics-playbook" style="color: #171717 !important; text-decoration: underline;">Access the Github repository directly</a>
                 </div>
 
-<!--                <a class="hero-button" href="https://github.com/newgene/reusable-data-best-practices/">Contribute</a>-->
+<!--                <a class="hero-button" href="https://github.com/data2health/informatics-playbook/">Contribute</a>-->
 <!--                <a class="hero-button" href="{{ pathto('search') }}">Search</a>-->
             </div>
         </div>
