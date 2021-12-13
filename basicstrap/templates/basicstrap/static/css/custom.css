@@ -237,6 +237,8 @@
     flex-direction: column;
     border: 1px solid #cfcfcf;
     max-width: 300px;
+    flex: 1;
+    min-width: 200px;
     padding: 30px;
     margin-right: 30px;
     margin-top: 10px;
@@ -629,10 +631,15 @@ blockquote{
     word-break: break-word;
 }
 /* Collaboration illustration wraps here so we should change the hero intro with accordingly */
-@media all and (max-width: 650px){
+
+@media all and (max-width: 695px){
     .hero-intro{
-        width: 80%;
+        width: 100%;
         margin-bottom: 50px;
+    }
+
+    .hero-box{
+        width: 100%;
     }
 }
 
