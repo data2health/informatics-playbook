@@ -2,7 +2,7 @@
   <div class="header">
     <a :href="pathto('index')" class="header-item">Home</a>      
     <div style="flex:1;"></div>
-    <a :href="pathto('about')" class="header-item">About</a>
+    <!-- <a :href="pathto('about')" class="header-item">About</a> -->
   </div>
 </template>
 

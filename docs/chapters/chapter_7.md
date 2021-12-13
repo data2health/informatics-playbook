@@ -46,7 +46,7 @@ To support local RDM, institutions can foster a culture of research data managem
 To reap the greatest benefits from the next generation repository features of InvenioRDM, create robust records that make the most of their many features, consider these **Top 5 Rules for Depositing Research Object Records**:
 
 1. Make your deposit open access if possible
-2. Use the appropriate license, see [Reusable Data Best Practices Chapter 1](../chapters/chapter_1.html)
+2. Use the appropriate license, see [Informatics playbook Chapter 1](../chapters/chapter_1.html)
 3. Add [meaningful metadata](https://blog.datacite.org/metadig-recommendations-for-fair-datacite-metadata/) to records
 4. Attribute credit where credit is due (attribution chapter link)
 5. Make sure you do not include any personal identifiable information (PII) in the record

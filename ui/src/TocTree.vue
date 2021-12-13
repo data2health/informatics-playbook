@@ -2,14 +2,14 @@
   <div>
     <div class="sidebar-group" id="toctree">
       <p class="caption">
-        <span class="caption-text"><a :href="pathto('index')">Reusable data best practices</a></span>
+        <span class="caption-text"><a :href="pathto('index')">Informatics playbook</a></span>
       </p>
       <div style="margin:16px;">
           <div id="search-container" ></div>
       </div>
         <div class="flex" style="flex-direction: column;">
           <p class="sidebar-header">Contribute</p>
-          <a class="sidebar-button" href="https://github.com/newgene/reusable-data-best-practices/">
+          <a class="sidebar-button" href="https://github.com/data2health/informatics-playbook/">
               Contribute to our github page
           </a>
       </div>

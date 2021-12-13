@@ -16,7 +16,7 @@
       </div>
     </div>
     <div style="margin-top: 30px;">
-      <small>&copy; Copyright {{currentYear}}, Reusable data best practices</small>
+      <small>&copy; Copyright {{currentYear}}, Informatics playbook</small>
     </div>
   </footer>
 </template>

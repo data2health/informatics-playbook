@@ -6,7 +6,7 @@ Individuals include scholars working in academic and non-academic institutions, 
 
 ## Current Version
 
-This draft is part of the Reusable Data Best Practices Playbook as a new chapter. Feedback is still be actively solicited and welcomed, given the “living” nature of this communication mode.
+This draft is part of the Informatics playbook Playbook as a new chapter. Feedback is still be actively solicited and welcomed, given the “living” nature of this communication mode.
 
 ## Why is this important?
 

@@ -88,7 +88,7 @@
 }
 
 .hero-intro{
-    width: 40%;
+    width: 45%;
     min-width: 70px;
 }
 
@@ -231,6 +231,15 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+}
+
+.hero-box{
+    flex-direction: column;
+    border: 1px solid #cfcfcf;
+    max-width: 300px;
+    padding: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 .navbar-default{
