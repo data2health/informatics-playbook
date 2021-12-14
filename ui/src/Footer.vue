@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer-items-wrapper">
+    <!--<div class="footer-items-wrapper">
       <div class="footer-item">
         <h3 class="footer-title">
           Sponsor
@@ -14,9 +14,9 @@
           Col 2
         </h3>
       </div>
-    </div>
+    </div>-->
     <div style="margin-top: 30px;">
-      <small>&copy; Copyright {{currentYear}}, Informatics playbook</small>
+      <small>&copy; Copyright {{currentYear}}, Informatics Playbook, a <a href="https://cd2h.org">CD2H</a> project.</small>
     </div>
   </footer>
 </template>
