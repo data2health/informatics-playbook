@@ -242,6 +242,7 @@
     padding: 30px;
     margin-right: 30px;
     margin-top: 10px;
+    min-height: 200px;
 }
 
 .navbar-default{
