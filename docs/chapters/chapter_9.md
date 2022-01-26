@@ -1,4 +1,4 @@
-# Best practices of annotating clinical texts for information extraction tasks
+# Charpter 9: Best practices of annotating clinical texts for information extraction tasks
   
   
   
