@@ -98,7 +98,7 @@ A common information annotation project life cycle includes the following steps
 
   
 
-## Tips and Caveats
+### Tips and Caveats
 
   
 - All the digital contents (e.g. guideline drafts, schema, ETL scripts, IAA calculation scripts) should be version-
@@ -106,7 +106,7 @@ controlled.
   
   
 
-## Communities
+### Communities
 
   
   
@@ -119,7 +119,7 @@ data-sharing- N3C NLP Subgroup:  Home · OHNLP/N3C-NLP-Documentation Wiki (githu
 
   
 
-## Contributors to this playbook chapter
+### Contributors to this playbook chapter
 
   
 Name|Site|ORCID
@@ -142,22 +142,25 @@ This National Center for Data to Health (CD2H) playbook chapter is created on be
   
 
 
-## Funding
+### Funding
 
-  
 Research reported in this playbook chapter was supported by the National Center for Advancing Translational Sciences (NCATS) of the National Institutes of Health under award number U01TR002062. The content is solely the responsibility of the authors and does not necessarily represent the official views of the 
 National Institutes of Health.
   
   
 
-## Resources
+### Resources
+  
+More about clinical information extraction research:  [awesome-clinical-nlp - OHNLP](https://github.com/OHNLP/awesome-clinical-nlp)
 
+Open-sourced text annotation tools:
+  - Brat:  brat rapid annotation tool [[link](https://brat.nlplab.org/)]
+  - Anafora:  https://github.com/weitechen/anafora  
+  - MAE:  Multi-document Annotation Environment [[link](http://keighrim.github.io/mae-annotation/)]
+  - MedTator:  A Serverless Text Annotation Tool for Corpus Development [[link](https://github.com/OHNLP/MedTator)]
+  - PubTator Central: PubTator Central (PTC) is a Web-based system providing automatic annotations of biomedical concepts such as genes and mutations in PubMed abstracts and PMC full-text articles.  [[link]( https://www.ncbi.nlm.nih.gov/research/pubtator/)]
   
-- More about clinical information extraction research:  OHNLP/awesome-clinical-nlp (github.com)- Popular open-sourced text annotation tools
-  - Brat:  brat rapid annotation tool (nlplab.org)  - Anafora:  https://github.com/weitechen/anafora  - MAE:  Multi-document Annotation Environment | MAE (keighrim.github.io)  - MedTator:  OHNLP/MedTator: A Serverless Text Annotation Tool for Corpus Development (github.com)  - PubTator Central - NCBI - NLM - NIH:  https://www.ncbi.nlm.nih.gov/research/pubtator/  
-  
-  
-  
+
 
 ## References
 
@@ -167,4 +170,10 @@ National Institutes of Health.
 - Liu S, Wen A, Wang L, et al. An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C). arXiv; 2021. 
 - Shen F, Liu S, Fu S, Wang Y, Henry S, Uzuner O, Liu H. Family History Extraction From Synthetic Clinical Narratives Using Natural Language Processing: Overview and Evaluation of a Challenge Data Set and Solutions for the 2019 National NLP Clinical Challenges (n2c2)/Open Health Natural Language Processing (OHNLP) Competition. JMIR Med Inform. 2021 Jan 27;9(1):e24008. doi: 10.2196/24008. PMID: 33502329; PMCID: PMC7875692. 
 - Mowery, D.L., Velupillai, S., South, B.R., Christensen, L.M., Martínez, D., Kelly, L., Goeuriot, L., Elhadad, N., Pradhan, S., Savova, G.K., & Chapman, W.W. (2013). Task 1: ShARe/CLEF eHealth Evaluation Lab 2013. CLEF.    
+- Wei CH, Allot A, Leaman R, Lu Z. PubTator central: automated concept annotation for biomedical full text articles. Nucleic Acids Res. 2019 Jul 2;47(W1):W587-W593. doi: [10.1093/nar/gkz389](https://doi.org/10.1093/nar/gkz389). PMID: 31114887; PMCID: PMC6602571. 
+- Wei-Te Chen, Will Styler. 2013. Anafora: A Web-based General Purpose Annotation Tool, In Proceedings of the NAACL-HLT, Companion Volume: Demonstrations, Atlanta, GA, USA, pp. 433-438.
+- Kyeongmin Rim. MAE2: Portable Annotation Tool for General Natural Language Use. In Proceedings of the 12th Joint ACL-ISO Workshop on Interoperable Semantic Annotation, Portorož, Slovenia, May 28, 2016.
+- He H, Fu S, Wang L, Liu S, Wen A, Liu H. MedTator: a serverless annotation tool for corpus development. Bioinformatics. 2022 Jan 4:btab880. doi: 10.1093/bioinformatics/btab880. PMID: 34983060.
+
+
   
