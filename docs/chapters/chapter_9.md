@@ -96,6 +96,13 @@ A common information annotation project life cycle includes the following steps
 
 ## Takeaways
 
+
+### Open-sourced text annotation tools
+  - Brat:  brat rapid annotation tool [[link](https://brat.nlplab.org/)]
+  - Anafora:  https://github.com/weitechen/anafora  
+  - MAE:  Multi-document Annotation Environment [[link](http://keighrim.github.io/mae-annotation/)]
+  - MedTator:  A Serverless Text Annotation Tool for Corpus Development [[link](https://github.com/OHNLP/MedTator)]
+  - PubTator Central: PubTator Central (PTC) is a Web-based system providing automatic annotations of biomedical concepts such as genes and mutations in PubMed abstracts and PMC full-text articles.  [[link]( https://www.ncbi.nlm.nih.gov/research/pubtator/)]
   
 
 ### Tips and Caveats
@@ -152,14 +159,6 @@ National Institutes of Health.
 ### Resources
   
 More about clinical information extraction research:  [awesome-clinical-nlp - OHNLP](https://github.com/OHNLP/awesome-clinical-nlp)
-
-Open-sourced text annotation tools:
-  - Brat:  brat rapid annotation tool [[link](https://brat.nlplab.org/)]
-  - Anafora:  https://github.com/weitechen/anafora  
-  - MAE:  Multi-document Annotation Environment [[link](http://keighrim.github.io/mae-annotation/)]
-  - MedTator:  A Serverless Text Annotation Tool for Corpus Development [[link](https://github.com/OHNLP/MedTator)]
-  - PubTator Central: PubTator Central (PTC) is a Web-based system providing automatic annotations of biomedical concepts such as genes and mutations in PubMed abstracts and PMC full-text articles.  [[link]( https://www.ncbi.nlm.nih.gov/research/pubtator/)]
-  
 
 
 ## References
