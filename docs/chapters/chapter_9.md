@@ -96,6 +96,11 @@ A common information annotation project life cycle includes the following steps
 
 ## Takeaways
 
+## Example Annotation Guidelines
+Chronic Pain: [download](https://jmir.org/api/download?alt_name=medinform_v8i11e18659_app1.pdf&filename=c4ede3025c08f13d71cf142ece36d9b8.pdf) 
+
+Delirium: [download](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/biomedgerontology/PAP/10.1093_gerona_glaa275/2/glaa275_suppl_supplementary_materials_1.docx?Expires=1633381711&Signature=w3Na2GoHq1kfoxl-wCdwBI69l8UI5vH04cank9r0SZS-UFPcuM9b570z0y0h~wXdJWifVZk1t8KBSpJ2G5K~VucBUqczjwgBlt23QZh3jTZVj5LegTl1h9EmDjEJDssF-WZ0hxni63fbX0U5-iDdIa7OTAd9TAOQKnMlDjdbxdALk73dqcbDj11ZPwFo16b1AEA~dOCmq4EeE3xcROZMjs6kgUWiHOr37HI38UdLVmmWh5z8d4yEM3VyIU3EvKHUisXjlddbT--cjGSss1rFTTrk6Zf4sX-2nglQQTcALVHVIZSybc46Q1QCx387wddVRP3KuI4JqqxVJIaGrdYdNQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)  
+
 
 ### Open-sourced text annotation tools
   - Brat:  brat rapid annotation tool [[link](https://brat.nlplab.org/)]
@@ -103,7 +108,21 @@ A common information annotation project life cycle includes the following steps
   - MAE:  Multi-document Annotation Environment [[link](http://keighrim.github.io/mae-annotation/)]
   - MedTator:  A Serverless Text Annotation Tool for Corpus Development [[link](https://github.com/OHNLP/MedTator)]
   - PubTator Central: PubTator Central (PTC) is a Web-based system providing automatic annotations of biomedical concepts such as genes and mutations in PubMed abstracts and PMC full-text articles.  [[link]( https://www.ncbi.nlm.nih.gov/research/pubtator/)]
-  
+
+## TRUST: clinical Text Retrieval and Use towards Scientific rigor and Transparent process.
+
+
+### Protocol Development
+![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/1-Protocol-Development-3.png)
+
+### Data Collection
+![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/2-Data-Collection-3.png)
+
+### Cohort Screening
+![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/3.-Cohort-screening-2.png)
+
+### Corpus Annotation
+![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/5.-Corpus-annotation.png)
 
 ### Tips and Caveats
 
@@ -173,6 +192,11 @@ More about clinical information extraction research:  [awesome-clinical-nlp - OH
 - Wei-Te Chen, Will Styler. 2013. Anafora: A Web-based General Purpose Annotation Tool, In Proceedings of the NAACL-HLT, Companion Volume: Demonstrations, Atlanta, GA, USA, pp. 433-438.
 - Kyeongmin Rim. MAE2: Portable Annotation Tool for General Natural Language Use. In Proceedings of the 12th Joint ACL-ISO Workshop on Interoperable Semantic Annotation, Portorož, Slovenia, May 28, 2016.
 - He H, Fu S, Wang L, Liu S, Wen A, Liu H. MedTator: a serverless annotation tool for corpus development. Bioinformatics. 2022 Jan 4:btab880. doi: 10.1093/bioinformatics/btab880. PMID: 34983060.
+- Carlson LA, Jeffery MM, Fu S, He H, McCoy RG, Wang Y, Hooten WM, St Sauver J, Liu H, Fan J. Characterizing Chronic Pain Episodes in Clinical Text at Two Health Care Systems: Comprehensive Annotation and Corpus Analysis. JMIR medical informatics. 2020;8(11):e18659.
+- Fu S, Leung LY, Raulli AO, Kallmes DF, Kinsman KA, Nelson KB, Clark MS, Luetmer PH, Kingsbury PR, Kent DM, Liu H. Assessment of the impact of EHR heterogeneity for clinical research through a case study of silent brain infarction. BMC medical informatics and decision making. 2020 Dec;20(1):1-2.
+
+
+
 
 
   
