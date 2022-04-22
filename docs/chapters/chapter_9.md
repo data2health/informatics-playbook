@@ -113,16 +113,16 @@ Delirium: [download](https://oup.silverchair-cdn.com/oup/backfile/Content_public
 
 
 ### Protocol Development
-![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/1-Protocol-Development-3.png)
+![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_1-Protocol-Development-3.png)
 
 ### Data Collection
-![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/2-Data-Collection-3.png)
+![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_2-data-collection.png)
 
 ### Cohort Screening
-![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/3.-Cohort-screening-2.png)
+![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_3-cohort-screening.png)
 
 ### Corpus Annotation
-![](https://github.com/OHNLP/annotation-best-practices/blob/main/TRUST%20process/5.-Corpus-annotation.png)
+![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_5-corpus-annotation.png)
 
 ### Tips and Caveats
 
