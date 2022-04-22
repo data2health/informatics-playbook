@@ -102,12 +102,19 @@ Chronic Pain: [download](https://jmir.org/api/download?alt_name=medinform_v8i11e
 Delirium: [download](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/biomedgerontology/PAP/10.1093_gerona_glaa275/2/glaa275_suppl_supplementary_materials_1.docx?Expires=1633381711&Signature=w3Na2GoHq1kfoxl-wCdwBI69l8UI5vH04cank9r0SZS-UFPcuM9b570z0y0h~wXdJWifVZk1t8KBSpJ2G5K~VucBUqczjwgBlt23QZh3jTZVj5LegTl1h9EmDjEJDssF-WZ0hxni63fbX0U5-iDdIa7OTAd9TAOQKnMlDjdbxdALk73dqcbDj11ZPwFo16b1AEA~dOCmq4EeE3xcROZMjs6kgUWiHOr37HI38UdLVmmWh5z8d4yEM3VyIU3EvKHUisXjlddbT--cjGSss1rFTTrk6Zf4sX-2nglQQTcALVHVIZSybc46Q1QCx387wddVRP3KuI4JqqxVJIaGrdYdNQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA)  
 
 
-### Open-sourced text annotation tools
+## Open-sourced text annotation tools
   - Brat:  brat rapid annotation tool [[link](https://brat.nlplab.org/)]
   - Anafora:  https://github.com/weitechen/anafora  
   - MAE:  Multi-document Annotation Environment [[link](http://keighrim.github.io/mae-annotation/)]
   - MedTator:  A Serverless Text Annotation Tool for Corpus Development [[link](https://github.com/OHNLP/MedTator)]
   - PubTator Central: PubTator Central (PTC) is a Web-based system providing automatic annotations of biomedical concepts such as genes and mutations in PubMed abstracts and PMC full-text articles.  [[link]( https://www.ncbi.nlm.nih.gov/research/pubtator/)]
+
+## Annotation toolkits
+The following files should be opened by Microsoft Word.
+- [Standard Operating Procedure - Annotation - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/1Procedure_StandardAnnotation_R1.doc)
+- [Instructions of Annotation Guideline Creation - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/2Instructions_AnnotationGuideCreation_R1.doc)
+- [Annotation Guideline Template - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/3Template_AnnotationGuide_R1.docx.docx)
+- [Checklist - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/4Checklist.docx)
 
 ## TRUST: clinical Text Retrieval and Use towards Scientific rigor and Transparent process.
 
