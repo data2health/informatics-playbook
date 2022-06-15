@@ -112,25 +112,25 @@ A common information annotation project life cycle includes the following steps
 
 ## Annotation toolkits
 The following files should be opened by Microsoft Word.
-- [Standard Operating Procedure - Annotation - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/1Procedure_StandardAnnotation_R1.doc)
-- [Instructions of Annotation Guideline Creation - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/2Instructions_AnnotationGuideCreation_R1.doc)
-- [Annotation Guideline Template - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/3Template_AnnotationGuide_R1.docx.docx)
-- [Checklist - docx](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/doc/4Checklist.docx)
+- [Standard Operating Procedure - Annotation - docx](../_static/doc/1Procedure_StandardAnnotation_R1.doc)
+- [Instructions of Annotation Guideline Creation - docx](../_static/doc/2Instructions_AnnotationGuideCreation_R1.doc)
+- [Annotation Guideline Template - docx](../_static/doc/3Template_AnnotationGuide_R1.docx.docx)
+- [Checklist - docx](../_static/doc/4Checklist.docx)
 
 ## TRUST: clinical Text Retrieval and Use towards Scientific rigor and Transparent process.
 
 
 ### Protocol Development
-![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_1-Protocol-Development-3.png)
+![](../_static/img/chapter_9_1-Protocol-Development-3.png)
 
 ### Data Collection
-![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_2-data-collection.png)
+![](../_static/img/chapter_9_2-data-collection.png)
 
 ### Cohort Screening
-![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_3-cohort-screening.png)
+![](../_static/img/chapter_9_3-cohort-screening.png)
 
 ### Corpus Annotation
-![](https://github.com/data2health/informatics-playbook/blob/main/docs/_static/img/chapter_9_5-corpus-annotation.png)
+![](../_static/img/chapter_9_5-corpus-annotation.png)
 
 ### Tips and Caveats
 
