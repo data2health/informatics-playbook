@@ -87,7 +87,7 @@ A common information annotation project life cycle includes the following steps
 |3 |Technical planning and execution |ETL process design ETL feasibility test Annotation system identified Schema design and drafting Annotation system setup and testing |PM, TL, IT |
 |4 |Sample annotation |Retrieve the corpora from Step 1, sampling texts to be annotated according to the draft annotation guideline using the annotation system setup   |PM, TL, ANN, Adjudicators, DA |
 |5 |Address issues |Address issues raised up by  Updating guideline Updating timeline Updating schema Adjusting system configurations |PI, PM, TL |
-|7 |Task finalized |Iterating Step 3 to Step 5 until no more issues are raised up in Step 4 on the sample data To confirm the finalization of  Annotation guideline Timeline Schema System configurations |PI, PM, TL, ANN, Adjudicators |
+|6 |Task finalized |Iterating Step 3 to Step 5 until no more issues are raised up in Step 4 on the sample data To confirm the finalization of  Annotation guideline Timeline Schema System configurations |PI, PM, TL, ANN, Adjudicators |
 |7 |Annotation execution |Complete all the corpora retrieved PM and DA monitor the quality of the annotation   |PM, DA, ANN, Adjudicators |
 |8 |Annotation completion |Conclude project Report metrics  |PI, PM, TL, DA |
   
@@ -142,10 +142,13 @@ controlled.
 
 ### Communities
 
-  
-  
-- BioNLP- ClinicalNLP:  2019,  2020  - Resources- Health NLP- BioCreative/OHNLP 2018- iEC Text Analytics Working Group:  https://clic-ctsa.org/groups/text-analytics-toward-semantic-interoperability-and-
-data-sharing- N3C NLP Subgroup:  Home · OHNLP/N3C-NLP-Documentation Wiki (github.com)  
+- [BioNLP](https://aclweb.org/aclwiki/SIGBIOMED)  
+- ClinicalNLP: [2019](https://clinical-nlp.github.io/2019/), [2020](https://clinical-nlp.github.io/2020/)
+  - [Resources](https://clinical-nlp.github.io/2019/resources.html)
+- Health NLP [2018](https://ohnlp.github.io/HealthNLP2018/healthnlp2018), [2019](https://ohnlp.github.io/HealthNLP2019/healthnlp2019), [2020](https://ohnlp.github.io/HealthNLP2020/healthnlp2020)
+- [BioCreative/OHNLP 2018](https://sites.google.com/view/ohnlp2018/home)
+- [n2c2 NLP Research Data Sets](https://portal.dbmi.hms.harvard.edu/projects/n2c2-nlp/)
+  - "Unstructured notes from the Research Patient Data Repository at Partners Healthcare."
   
   
 
