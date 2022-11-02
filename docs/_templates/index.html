@@ -143,7 +143,7 @@
             {% set el = element.split("%") %}
             {% set url = el[0] | trim | safe %}
             {% set entry = el[1] | trim | safe %}
-                {% if (loop.index==1 or loop.index==2 or loop.index==3) %}
+                {% if (loop.index==1 or loop.index==9 or loop.index==10) %}
                     <a href="{{ url }}" style="text-decoration: none !important;">
                         <div class="chapter-box" style="background-color: #212121 !important; color: white;">
                             <p style="font-weight: bold">{{ entry }}</p>
