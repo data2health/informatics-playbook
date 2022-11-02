@@ -6,6 +6,7 @@ sphinx-markdown-tables==0.0.15
 sphinxext.adaptive-youtube==0.0.2
 # sphinx-rtd-theme==0.5.0
 # sphinxjp.themes.basicstrap==0.5.0
+Jinja2==3.0.3
 
 # dependencies for utils
 beautifulsoup4==4.9.3

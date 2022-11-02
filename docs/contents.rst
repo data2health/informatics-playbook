@@ -20,6 +20,7 @@ Access the Informatics Playbook GitHub repository to suggest changes, add conten
    chapters/chapter_7
    chapters/chapter_8
    chapters/chapter_9
+   chapters/chapter_10
    chapters/markdown_tutorial
 
 
