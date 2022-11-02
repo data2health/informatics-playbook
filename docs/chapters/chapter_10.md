@@ -116,6 +116,13 @@ Existing free-to-use and license-based platforms offer a range of features and l
 
 ```eval_rst
 .. note::
+
+  This is a special note.
+```
+  
+```eval_rst
+.. note::
+
 Understanding eConsent Platform Needs
   * eConsent Needs Assessment Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool can be used by research teams and organization stakeholders  to assess their eConsent platform needs and requirements, exploring each of the needs-based considerations described in this chapter.
   * Readings  
@@ -132,6 +139,7 @@ The **eConsent Evaluation Tool** provides a set of harmonized criteria for objec
 
 ```eval_rst
 .. note::
+
 Evaluating eConsent platforms
  * eConsent Evaluation Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool provides a set of criteria for research teams to harmonize their evaluation of eConsent platform characteristics and feature availability, facilitating ease of comparison and potential selection of eConsent platforms.
 ```
