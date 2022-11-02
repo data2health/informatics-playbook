@@ -1,21 +1,21 @@
 
-# Chapter [10]: Selecting an eConsent Platform
+# Chapter 10: Selecting an eConsent Platform
+
+## Authors
 
 Ashley Clayton, MS | Sage Bionetworks | [https://orcid.org/0000-0002-4570-2706](https://orcid.org/0000-0002-4570-2706)
 
 Christine Suver, PhD, PMP | Sage Bionetworks | [https://orcid.org/0000-0002-2986-385X](https://orcid.org/0000-0002-2986-385X)
 
-Anita Walden, [DEG] | University of Colorado | [https://orcid.org/0000-0002-3327-7423](https://orcid.org/0000-0002-3327-7423)
+Anita Walden, PhD| University of Colorado | [https://orcid.org/0000-0002-3327-7423](https://orcid.org/0000-0002-3327-7423)
 
 Chunlei Wu, PhD | The Scripps Research Institute | [https://orcid.org/0000-0002-2629-6124](https://orcid.org/0000-0002-2629-6124)  
 
 Marie Rape, RN, BSN | University of North Carolina at Chapel Hill | [https://orcid.org/0000-0002-0608-7093](https://orcid.org/0000-0002-0608-7093)
 
-Author, [DEG] | Affiliation | [ORCID]
-
 ## Intended audience
 
-This chapter is intended for individuals interested in the selection, implementation, and use of electronic informed consent (eConsent) platforms in clinical research settings.  The framework presented here may also be adapted to help select other platforms and tools.
+Individuals interested in the selection, implementation, and use of electronic informed consent (eConsent) platforms in clinical research settings.  The framework presented here may also be adapted to help select other platforms and tools.
 
 ## Key Words
 
@@ -23,11 +23,19 @@ eConsent; informed consent; electronic consent; Technology Assessment Tools; Tec
 
 ## Version history
 
-### Chapter
+Chapter version:  1.0
 
-Current version: Version 1.0, prepared Oct 2022
+Date:  21 Oct 2022
 
 ### eConsent Assessment Framework Tools
+
+V1.0 Qualtrics implementation: [eConsent Needs Assessment Tool (Qualtrics)](https://sagebionetworks.qualtrics.com/jfe/form/SV_0THqoj6UzltVevQ)  
+
+V1.0 PDF rendition: eConsent Needs Assessment Tool (PDF)
+
+V1.0 Qualtric implementation: [eConsent Evaluation Tool (Qualtrics](https://sagebionetworks.qualtrics.com/jfe/form/SV_6u5qGT5HDmzcxds))  
+
+V1.0 PDF rendition: eConsent Evaluation Tool (PDF)
 
 ## Why is this important?
 
@@ -35,26 +43,24 @@ Selecting or developing a suitable eConsent platform can be challenging and may 
 
 1) assess their  eConsent needs from research, administrative, technical, and financial standpoints, as well as the needs of consenting individuals.
 
-2) evaluate platforms to determine which ones meet their requirements.
+2) evaluate platforms to determine which ones meet their needs.
 
-This may require input from consenting individuals,  study teams, information technology (IT) experts, regulatory personnel,  institutional decision makers, and other relevant stakeholders. This chapter describes several considerations for the selection of an eConsent platform for clinical research studies, using a novel assessment framework to evaluate needs and eConsent platforms features. It should also be noted that while this chapter focuses on eConsent platforms, the considerations and related tools for eConsent selection may be transferable to the assessment of other platform types and research tools (e.g., electronic data capture tools).
-  
+This may require input from consenting individuals,  study teams, information technology (IT) experts, regulatory personnel,  institutional decision makers, and other relevant stakeholders. This chapter describes several considerations for the selection of an eConsent platform for clinical research studies, using a novel assessment framework to evaluate needs and eConsent platform features. It should also be noted that while this chapter focuses on eConsent platforms, the considerations and related tools for eConsent selection may be transferable to the assessment of other platform types and research tools (e.g., electronic data capture tools).
+
 ## Development of an eConsent Assessment Framework
 
-Choosing any tool or product requires balancing needs, wants, finances, and constraints with the technology tool or product specification. Similarly, when picking an eConsent platform to implement in biomedical research, one must understand what the platform is meant to achieve, how it will be used, and by whom. In collaboration with partners at the National Center for Data to Health (CD2H), representatives of the North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC) surveyed [Clinical and Translational Science Awards (CTSA) program hubs](https://ncats.nih.gov/ctsa/about/hubs) about their eConsent needs, experiences, and satisfaction. The information was used by Sage Bionetworks to develop and pilot an **eConsent Assessment Framework** composed of two related tools:
+Choosing any tool or product requires balancing needs, wants, finances, and constraints with the technology tool or product specification. Similarly, when selecting an eConsent platform to implement in biomedical research, one must understand what the platform is meant to achieve, how it will be used, and by whom. In collaboration with partners at the National Center for Data to Health (CD2H), representatives of the North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC) surveyed [Clinical and Translational Science Awards (CTSA) program hubs](https://ncats.nih.gov/ctsa/about/hubs) about their eConsent needs, experiences, and satisfaction. The information was used by Sage Bionetworks to develop and pilot an **eConsent Assessment Framework** composed of two related tools:
 
-- eConsent Needs Assessment Tool  (i.e. "what do I need in an eConsent platform?")
-- eConsent Evaluation Tool  (i.e. "what features does eConsent platform 'x' have?")  
-
-This chapter describes the considerations for the selection of eConsent platforms and how they may be evaluated through the use of the two tools.
+- **eConsent Needs Assessment Tool**  (i.e. "what do I need in an eConsent platform?")
+- **eConsent Evaluation Tool**  (i.e. "what features does eConsent platform 'x' have?")  
 
 ## Understanding Your eConsent Needs - Performing a Needs Assessment
 
-Several factors may inform the decision to select or build an eConsent platform for  clinical research use. Ultimately, the selected platform should meet as many anticipated requirements as possible, based on an assessment of eConsent needs, wants, and constraints at the user, study, and organizational levels. Answering the following questions using the **eConsent Needs Assessment Tool** can help recognize what matters most in selecting an eConsent platform:
+Several factors may inform the decision to select or build an eConsent platform for clinical research use. Ultimately, the selected platform should meet as many anticipated requirements as possible, based on an assessment of eConsent needs, wants, and constraints at the user, study, and organizational levels. Answering the following questions using the **eConsent Needs Assessment Tool** can help recognize what matters most in selecting an eConsent platform:  
 
 ### Who should evaluate the organization’s or projects’ eConsent needs?
 
-Consider which study team member(s) and organizational role(s) are best suited to determine the eConsent needs for a specific study, a  group of related studies, and/or the enterprise level. Those assessing needs must be able to differentiate essential  features that are ‘required’ from those that are ‘preferred’ and ‘not important.’ The selection of individuals best suited to evaluate eConsent platforms needs may be informed by level of familiarity with informed consent, eConsent practices and regulatory practices, prior experience with clinical research studies, technical expertise, and organizational structure, among other factors.
+Consider which study team member(s) and organizational role(s) are best suited to determine the eConsent needs for a specific study, a  group of related studies, and/or the enterprise level. Those individuals assessing needs must be able to differentiate essential  features that are ‘required’ from those that are ‘preferred’ and  ‘not important’. The selection of these individuals may be informed by their familiarity with informed consent, eConsent practices and regulatory practices, prior experience with clinical research studies, technical expertise, and organizational structure, among other factors.
 
 #### Example stakeholders to identify study or organization eConsent requirements
 
@@ -70,13 +76,23 @@ Consider which study team member(s) and organizational role(s) are best suited t
 
 ### What are the study-specific vs. enterprise-level eConsent platform needs?
 
-Consider whether the eConsent platform would be used only for a specific study or for multiple studies organization-wide. At the study-specific level, eConsent platform needs may be informed by factors such as regulatory and ethical compliance (e.g., domestic vs. international studies),  study population (e.g. familiarity with technology), study type (e.g., pediatric studies), or budgetary considerations (e.g., free-to-use vs. license-based platforms), among other factors. At the organization level, eConsent platform needs may be informed by the projected number of studies over a period of time, the need for integration with existing  infrastructure  (e.g., Clinical Trials Management System (CTMS), Clinical Data Management System (CDMS), current organization-wide licenses and subscriptions), and implementation requirements (e.g., security review and validation for new platforms), among other factors.
+Consider whether the eConsent platform would be used only for a specific study or for multiple studies organization-wide. At the study-specific level, eConsent platform needs may be informed by factors such as:
 
-#### Examples of study-specific vs. organizational eConsent platform needs
+- regulatory and ethical compliance (e.g., domestic vs. international studies),  
 
-![image](../../docs/_static/img/chapter_10-1-study-specific-organizational.jpg)
+- study population (e.g. familiarity with technology),
 
-Clinical Trials Management System (CTMS); Clinical Data Management System (CDMS)
+- study type (e.g., pediatric studies), or
+
+- budgetary considerations (e.g., free-to-use vs. license-based platforms), among other factors.
+
+At the organization level, eConsent platform needs may be informed by:
+
+- the projected number of studies  over a period of time,
+
+- the need for integration with existing  infrastructure  (e.g., Clinical Trials Management System (CTMS), Clinical Data Management System (CDMS), current organization-wide licenses and subscriptions), and
+
+- implementation requirements (e.g., security review and validation for new platforms), among other factors.  
 
 ### How will the eConsent platform be used?
 
@@ -84,7 +100,7 @@ eConsent platform needs may be informed by the intended user audience and antici
 
 ### What eConsent platform features are required?
 
-Existing free-to-use and license-based platforms offer a range of features and levels of customization. Some features may be preferred (i.e., “nice-to-have”), but not required for a given study, whereas some features may be considered “not important.” The decision to build an in-house eConsent solution should also take into consideration the extent to which specific features are considered required (i.e. essential) versus ‘nice to have’ or not important. General categories of platform features and customization include, but are not limited to:
+Existing free-to-use and license-based platforms offer a range of features and levels of customization. Some features may be required (i.e., essential) while others may be preferred (i.e., “nice-to-have”) but not required for a given study, or “not important.” General categories of platform features and customization include, but are not limited to:
 
 - Language
 
@@ -98,35 +114,23 @@ Existing free-to-use and license-based platforms offer a range of features and l
 
 - Integration
 
-#### Understanding eConsent platform needs: Resources
-
-- **eConsent Needs Assessment Tool****:**  Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool can be used by research teams to assess their eConsent platform needs and requirements, exploring each of the needs-based considerations described in this chapter.
-
-##### Additional Resources:
-
-- Doerr M, Moore S, Suver C.  **Elements of Informed Consent**. In: Sage Bionetworks [Internet]. [cited 30 June 2022]. Available: https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf
-- Cobb NL, Edwards DF, Chin EM, Lah JJ, Goldstein FC, Manzanares CM, Suver CM.  **From paper to screen: regulatory and operational considerations for modernizing the informed consent process**. J Clin Transl Sci. 2022 Mar 28;6(1):e71. doi: 10.1017/cts.2022.379. PMID: 35836789; PMCID: PMC9257776.
-- Moore S, Tassé AM, Thorogood A, Winship I, Zawati M, Doerr M.**Consent Processes for Mobile App Mediated Research: Systematic Review**. JMIR Mhealth Uhealth. 2017 Aug 30;5(8):e126. doi: 10.2196/mhealth.7014. PMID: 28855147; PMCID: PMC5597795.  
+|Understanding eConsent Platform Needs eConsent Needs Assessment Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool can be used by research teams and organization stakeholders  to assess their eConsent platform needs and requirements, exploring each of the needs-based considerations described in this chapter.  Readings  Doerr M, Moore S, Suver C. Elements of Informed Consent. In: Sage Bionetworks [Internet]. [cited 30 June 2022]. Available: [https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf](https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf) Cobb NL, Edwards DF, Chin EM, Lah JJ, Goldstein FC, Manzanares CM, Suver CM. From paper to screen: regulatory and operational considerations for modernizing the informed consent process. J Clin Transl Sci. 2022 Mar 28;6(1):e71. doi: 10.1017/cts.2022.379. PMID: 35836789; PMCID: PMC9257776. Moore S, Tassé AM, Thorogood A, Winship I, Zawati M, Doerr M. Consent Processes for Mobile App Mediated Research: Systematic Review. JMIR Mhealth Uhealth. 2017 Aug 30;5(8):e126. doi: 10.2196/mhealth.7014. PMID: 28855147; PMCID: PMC5597795. |
+| :---: |
 
 ## Evaluating eConsent platforms for potential implementation
 
-TheeConsent platforms available today offer a range of  features and levels of customization, with varying cost, compliance, implementation ease, and user considerations (see earlier sections of this chapter for some general categories of platform features). This can make it challenging for prospective users to assess which platform(s) may be best suited for implementation based on their particular eConsent needs and requirements. Additionally, the expertise to adequately evaluate eConsent platforms against user-level, study-level, and organizational-level requirements may reside across multiple individuals and roles.
+eConsent platforms available today offer a range of  features and levels of customization,with varying cost, regulatory compliance, implementation ease, and security measures). This can make it challenging for prospective users to assess which platform(s) may be best suited for implementation based on their particular  needs and requirements. Additionally, the expertise to adequately evaluate eConsent platforms against user-level, study-level, and organizational-level requirements may reside across multiple individuals and roles.
 
-The **eConsent Evaluation Tool** provides a set of harmonized criteria for objective evaluation of eConsent platform characteristics and feature availability. This approach facilitates ease of comparison and potential selection of eConsent platforms. The tool is structured to evaluate a range of feature categories by representatives across different roles and areas of expertise within an organization (e.g. study team members, regulatory experts, IT professionals), allowing for consolidated, multi-user evaluation data for a particular eConsent platform.
+The **eConsent Evaluation Tool** provides a set of harmonized criteria for objective evaluation of eConsent platform characteristics and feature availability. This approach facilitates the comparison and potential selection of eConsent platforms. The tool is structured to evaluate a range of feature categories by representatives across different roles and areas of expertise within an organization (e.g., study team members, regulatory experts, IT professionals), allowing for consolidated, multi-user evaluation of  a particular eConsent platform.
 
-#### Evaluating eConsent platforms: Resources
-
-- **eConsent Evaluation Tool****:**  Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool provides a set of criteria for research teams to harmonize their evaluation of eConsent platform characteristics and feature availability, facilitating ease of comparison and potential selection of eConsent platforms.
-
-##### Additional Resources:
-
-- [Add additional resources]
+|Evaluating eConsent platforms eConsent Evaluation Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool provides a set of criteria for research teams to harmonize their evaluation of eConsent platform characteristics and feature availability, facilitating ease of comparison and potential selection of eConsent platforms.   |
+| :---: |
 
 ## Use and applicability of the eConsent Assessment Framework
 
 The eConsent Assessment Framework was designed to facilitate the selection of eConsent platforms in clinical research settings. Although various sources of information on informed consent and eConsent practices exist, this framework, consisting of an **eConsent Needs Assessment Tool** and an **eConsent Evaluation Tool**, may be helpful to reconcile specific eConsent needs against the availability of eConsent platform features. Existing familiarity with both general study participant consent and eConsent practices may be helpful for adoption of these tools.  
 
-Similarly to first identifying the eConsent needs, acknowledging  the involvement and expertise to adequately evaluate eConsent platform features may be distributed across a range of study team personnel and organizational roles, it should be noted that the **eConsent Evaluation Tool** can be completed by several personnel in different roles within an organization (e.g. study team members, regulatory experts, IT professionals), to provide a  consolidated, multi-user evaluation of a given eConsent platform.  While the framework was developed to facilitate the selection of  eConsent platforms, a similar assessment framework structure developed with relevant stakeholder and community input could be utilized to assess other platforms and research tools for potential implementation (e.g., electronic data capture tools).  
+Similarly to first identifying the eConsent needs, acknowledging  the involvement and expertise to adequately evaluate eConsent platform features may be distributed across a range of study team personnel and organizational roles, it should be noted that the **eConsent Evaluation Tool** can be completed by several personnel in different roles within an organization (e.g., study team members, regulatory experts, IT professionals), to provide a  consolidated, multi-user evaluation of a given eConsent platform.  While the framework was developed to facilitate the selection of  eConsent platforms, a similar assessment framework structure developed with relevant stakeholder and community input could be utilized to assess other platforms and research tools for potential implementation (e.g., electronic data capture tools).  
 
 ## Limitations of the eConsent Assessment Framework
 
@@ -139,13 +143,13 @@ Several limitations were identified and acknowledged throughout the refinement a
 
 ## Summary
 
-- **There are different eConsent platform requirements for a single/small group of studies versus a platform to be used for studies across the organization and enterprise.**
-- **First identify the stakeholder needs for an eConsent platform (Needs Assessment)**
-- **Determine the current and long term future needs, if the eConsent platform will be used for FDA regulated studies or the number and types of studies.**
-- **Identify multiple eConsent platforms of interests to evaluate.**
-- **Evaluate multiple  platforms using an eConsent evaluation list of required and desired requirements  (eConsent Evaluation tool).**
-- **Involve a variety of stakeholders consisting of different roles including potential study participants, study team and regulatory administrators, and  IT and security officers in the needs assessment process and the evaluation of the eConsent tools.**
-- **This framework can be applied to other applications**  
+- **Different requirements will inform the selection of an eConsent platform for use in a single/small group of studies versus in multiple  studies across anorganization or  enterprise.**
+- **First, identify the stakeholder needs for an eConsent platform (eConsent Needs Assessment Tool)**
+- **Determine the current and long term future needs, such as if the eConsent platform will be used for FDA-regulated studies, or the number and types of studies.**
+- **Identify multiple eConsent platforms of interest to evaluate.**
+- **Evaluate multiple  platforms using an eConsent evaluation list of required and desired features  (eConsent Evaluation Tool).**
+- **Involve a variety of stakeholders consisting of different roles, including potential study participants, study team and regulatory administrators, and  IT/security officers in the eConsent needs assessment process and platform evaluation.**
+- **The eConsent Assessment Framework can be adapted and applied to other applications**  
 
 ## About the authors and contributors to this playbook chapter
 
@@ -158,7 +162,3 @@ The authors would like to thank Xindi Guo and Emily Lang at Sage Bionetworks and
 ## Funding
 
 This work was supported by the National Center for Data to Health (CD2H) of the National Institutes of Health (NIH) under award number U24TR002306 and by the National Center for Advancing Translational Sciences (NCATS), National Institutes of Health, through award number UL1TR002489. ​​The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH.
-
-## How to cite this playbook chapter
-
-[ADD]
