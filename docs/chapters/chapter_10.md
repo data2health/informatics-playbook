@@ -114,8 +114,15 @@ Existing free-to-use and license-based platforms offer a range of features and l
 
 - Integration
 
-|Understanding eConsent Platform Needs eConsent Needs Assessment Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool can be used by research teams and organization stakeholders  to assess their eConsent platform needs and requirements, exploring each of the needs-based considerations described in this chapter.  Readings  Doerr M, Moore S, Suver C. Elements of Informed Consent. In: Sage Bionetworks [Internet]. [cited 30 June 2022]. Available: [https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf](https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf) Cobb NL, Edwards DF, Chin EM, Lah JJ, Goldstein FC, Manzanares CM, Suver CM. From paper to screen: regulatory and operational considerations for modernizing the informed consent process. J Clin Transl Sci. 2022 Mar 28;6(1):e71. doi: 10.1017/cts.2022.379. PMID: 35836789; PMCID: PMC9257776. Moore S, Tassé AM, Thorogood A, Winship I, Zawati M, Doerr M. Consent Processes for Mobile App Mediated Research: Systematic Review. JMIR Mhealth Uhealth. 2017 Aug 30;5(8):e126. doi: 10.2196/mhealth.7014. PMID: 28855147; PMCID: PMC5597795. |
-| :---: |
+```eval_rst
+.. note::
+Understanding eConsent Platform Needs
+  * eConsent Needs Assessment Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool can be used by research teams and organization stakeholders  to assess their eConsent platform needs and requirements, exploring each of the needs-based considerations described in this chapter.
+  * Readings  
+    - Doerr M, Moore S, Suver C. Elements of Informed Consent. In: Sage Bionetworks [Internet]. [cited 30 June 2022]. Available: `https://sagebionetworks.org/wp-content/uploads/2020/01/SageBio_EIC-Toolkit_V3_21Jan20_final.pdf`_ 
+    - Cobb NL, Edwards DF, Chin EM, Lah JJ, Goldstein FC, Manzanares CM, Suver CM. From paper to screen: regulatory and operational considerations for modernizing the informed consent process. J Clin Transl Sci. 2022 Mar 28;6(1):e71. doi: 10.1017/cts.2022.379. PMID: 35836789; PMCID: PMC9257776. 
+    - Moore S, Tassé AM, Thorogood A, Winship I, Zawati M, Doerr M. Consent Processes for Mobile App Mediated Research: Systematic Review. JMIR Mhealth Uhealth. 2017 Aug 30;5(8):e126. doi: 10.2196/mhealth.7014. PMID: 28855147; PMCID: PMC5597795.
+```
 
 ## Evaluating eConsent platforms for potential implementation
 
@@ -123,8 +130,11 @@ eConsent platforms available today offer a range of  features and levels of cust
 
 The **eConsent Evaluation Tool** provides a set of harmonized criteria for objective evaluation of eConsent platform characteristics and feature availability. This approach facilitates the comparison and potential selection of eConsent platforms. The tool is structured to evaluate a range of feature categories by representatives across different roles and areas of expertise within an organization (e.g., study team members, regulatory experts, IT professionals), allowing for consolidated, multi-user evaluation of  a particular eConsent platform.
 
-|Evaluating eConsent platforms eConsent Evaluation Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool provides a set of criteria for research teams to harmonize their evaluation of eConsent platform characteristics and feature availability, facilitating ease of comparison and potential selection of eConsent platforms.   |
-| :---: |
+```eval_rst
+.. note::
+Evaluating eConsent platforms
+ * eConsent Evaluation Tool: Developed by Sage Bionetworks in collaboration with CD2H and North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC). One of two tools within the eConsent Assessment Framework, this tool provides a set of criteria for research teams to harmonize their evaluation of eConsent platform characteristics and feature availability, facilitating ease of comparison and potential selection of eConsent platforms.
+```
 
 ## Use and applicability of the eConsent Assessment Framework
 
