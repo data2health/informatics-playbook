@@ -31,11 +31,11 @@ Date:  21 Oct 2022
 
 V1.0 Qualtrics implementation: [eConsent Needs Assessment Tool (Qualtrics)](https://sagebionetworks.qualtrics.com/jfe/form/SV_0THqoj6UzltVevQ)  
 
-V1.0 PDF rendition: eConsent Needs Assessment Tool (PDF)
+V1.0 PDF rendition: [eConsent Needs Assessment Tool (PDF)](../_static/doc/eConsent_Needs%20Assessment%20Tool.pdf)
 
 V1.0 Qualtric implementation: [eConsent Evaluation Tool (Qualtrics](https://sagebionetworks.qualtrics.com/jfe/form/SV_6u5qGT5HDmzcxds))  
 
-V1.0 PDF rendition: eConsent Evaluation Tool (PDF)
+V1.0 PDF rendition: [eConsent Evaluation Tool (PDF)](../_static/doc/eConsent_Evaluation%20Tool.pdf)
 
 ## Why is this important?
 
@@ -51,8 +51,8 @@ This may require input from consenting individuals,  study teams, information te
 
 Choosing any tool or product requires balancing needs, wants, finances, and constraints with the technology tool or product specification. Similarly, when selecting an eConsent platform to implement in biomedical research, one must understand what the platform is meant to achieve, how it will be used, and by whom. In collaboration with partners at the National Center for Data to Health (CD2H), representatives of the North Carolina Translational and Clinical Sciences (NC TraCS) Institute at the University of North Carolina (UNC) surveyed [Clinical and Translational Science Awards (CTSA) program hubs](https://ncats.nih.gov/ctsa/about/hubs) about their eConsent needs, experiences, and satisfaction. The information was used by Sage Bionetworks to develop and pilot an **eConsent Assessment Framework** composed of two related tools:
 
-- **eConsent Needs Assessment Tool**  (i.e. "what do I need in an eConsent platform?")
-- **eConsent Evaluation Tool**  (i.e. "what features does eConsent platform 'x' have?")  
+- [**eConsent Needs Assessment Tool**](../_static/doc/eConsent_Needs%20Assessment%20Tool.pdf)  (i.e. "what do I need in an eConsent platform?")
+- [**eConsent Evaluation Tool**](../_static/doc/eConsent_Evaluation%20Tool.pdf)  (i.e. "what features does eConsent platform 'x' have?")  
 
 ## Understanding Your eConsent Needs - Performing a Needs Assessment
 
