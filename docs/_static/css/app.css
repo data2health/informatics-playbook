@@ -1,0 +1,15 @@
+:root .dark {
+    --table-cell-background-color: #3a3a3a;
+}
+
+:root body:not([class*="dark"]) {
+    --table-cell-background-color: #f6f8fa;
+}
+
+table.docutils tbody tr:nth-child(even) td {
+    background-color: var(--table-cell-background-color);
+}
+
+#project-lifecycle table thead th {
+    min-width: 30px;
+}

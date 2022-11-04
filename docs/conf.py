@@ -271,6 +271,7 @@ todo_include_todos = True
 try:
     html_theme = 'basicstrap'
     html_css_files = [
+        'css/app.css'
     ]
     html_js_files = [
     ]
