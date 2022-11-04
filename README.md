@@ -3,7 +3,7 @@ A collaborative guidebook for informatics playbook
 
 The live version is rendered at:
 
-https://reusable-data-best-practices.readthedocs.io
+https://playbook.cd2h.org
 
 Any new commit push to this repo will trigger a rebuild, so you will see the latest changes from the above URL.
 
