@@ -289,8 +289,6 @@ except ImportError:
 # for now only depth = 2 and depth = 3 makes sense
 depth = 3
 def setup(app):
-    # app.add_stylesheet('_static/css/custom.css')
-
     # Enable recommonmark's AutoStructify component
     # Ref: https://recommonmark.readthedocs.io/en/latest/auto_structify.html
     github_doc_root = "https://github.com/data2health/reusable-data-best-practices/tree/master/doc"
