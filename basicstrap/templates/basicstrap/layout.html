@@ -206,7 +206,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/basicstrap-base.css', 1) }}" type="text/css" />
-<link rel="stylesheet" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
 
 {%- if (theme_inner_theme|tobool) %}
 <link rel="stylesheet" id="current-theme" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ pathto('_static/css/bootstrap' + theme_bootstrap_version + '/' + theme_inner_theme_name + '.css', 1) }}" type="text/css" />
@@ -259,7 +258,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     {{ css() }}
     {%- if not embedded %}
     {{ script() }}
