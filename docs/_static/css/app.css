@@ -11,7 +11,7 @@ table.docutils tbody tr:nth-child(even) td {
 }
 
 #project-lifecycle table thead th {
-    min-width: 30px;
+    word-break: normal;
 }
 
 #hidden{
